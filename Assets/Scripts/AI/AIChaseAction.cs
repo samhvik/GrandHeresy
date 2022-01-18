@@ -10,6 +10,6 @@ public class AIChaseAction : AIAction
     }
     private void Chase(AIStateController controller){
         controller.navMeshAgent.destination = controller.chaseTarget.position;
-        controller.navMeshAgent.Resume();
+        controller.navMeshAgent.isStopped = false;
     }
 }

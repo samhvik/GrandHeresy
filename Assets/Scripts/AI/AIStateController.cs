@@ -33,7 +33,7 @@ public class AIStateController : MonoBehaviour
     }
 
     public void SetupAI(bool activationFromAIManager, List<Transform> waypointsFromAIManager){
-        waypointsFromAIManager = waypointsFromAIManager;
+        wayPointList = waypointsFromAIManager;
         active = activationFromAIManager;
 
         if(active) { navMeshAgent.enabled = true; }

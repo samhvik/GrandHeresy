@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/Look")]
-public class LookDecision : AIDecision {
+public class AILookDecision : AIDecision {
 
     public override bool Decide(AIStateController controller)
     {
@@ -15,6 +15,7 @@ public class LookDecision : AIDecision {
     {
         // controller.eyes is a variable in AIStateController.cs
         // wherever the AI is looking is its "eyes"
+        // use spherecast as it has a smaller margin of error when seeking targets out
         RaycastHit hit;
         Debug.DrawRay (controller.eyes.position, controller.eyes.forward.normalized * controller.enemyStats.lookRange, Color.green);
 

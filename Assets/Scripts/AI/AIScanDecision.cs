@@ -11,7 +11,7 @@ public class AIScanDecision : AIDecision
     }
 
     private bool Scan(AIStateController controller){
-        controller.navMeshAgent.Stop();
+        controller.navMeshAgent.isStopped = true;
         // turn speed can be changed based on EnemyStats
         controller.transform.Rotate(0, controller.enemyStats.searchTurnSpeed * Time.deltaTime, 0);
         // check if the countdown has elapse for how long the enemy should "scan" for
