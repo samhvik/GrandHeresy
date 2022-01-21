@@ -14,12 +14,39 @@ public class WeaponSwitching : MonoBehaviour
     private Gun currentWeapon;
     public PlayerShooting shooter;
 
+    PlayerControls controls;
+
     void Start(){
         SelectWeapon();
     }
 
+    void Awake(){
+        controls = new PlayerControls();
+
+        // callback function for the reload button
+        controls.Gameplay.SwapWeapons.performed += ctx => Handle();
+    }
+
+    // Enable and disable control input when script is enabled/disabled.
+    void OnEnable(){
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable(){
+        controls.Gameplay.Disable();
+    }
     
-    void Update(){
+    private void Handle(){
+        int previousSelectedWeapon = selectedWeapon;
+
+            selectedWeapon = (selectedWeapon + 1) % inventorySize;
+
+            if(previousSelectedWeapon != selectedWeapon){
+                SelectWeapon();
+            }
+    }
+
+    /*void Update(){
         if(Input.GetButtonDown("SwitchWeapon")){
             int previousSelectedWeapon = selectedWeapon;
 
@@ -29,7 +56,7 @@ public class WeaponSwitching : MonoBehaviour
                 SelectWeapon();
             }
         }
-    }
+    }*/
 
     public void SelectWeapon(){
         int index = 0;

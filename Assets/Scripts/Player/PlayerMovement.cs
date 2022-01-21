@@ -9,6 +9,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,14 +29,44 @@ public class PlayerMovement : MonoBehaviour
     private float left_horizontal;
     private float left_vertical;
 
+    private Vector2 left;
+
     private float right_horizontal;
     private float right_vertical;
+
+    private Vector2 right;
     private Vector3 faceDirection;
 
     [SerializeField] [Range(50f, 500f)]
     private float lookSpeed = 250f;
 
-    
+    PlayerControls controls;
+
+    void Awake(){
+        controls = new PlayerControls();
+
+        // callback functions for movement. stores joystick values into "left" Vector2.
+        controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Move.canceled += ctx => left = Vector2.zero;
+        
+        // callback functions for aiming. stores joystick values into "right" Vector2.
+        controls.Gameplay.Aim.performed += ctx => right = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Aim.canceled += ctx => right = Vector2.zero;
+
+        // callback function for running.
+        controls.Gameplay.Run.performed += ctx => BeginRun();
+        
+    }
+
+    // Enable and disable control input when script is enabled/disabled.
+    void OnEnable(){
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable(){
+        controls.Gameplay.Disable();
+    }
+
     void Start(){
         transform = this.GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody>();
@@ -72,11 +103,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void GetInput(){
-        left_horizontal = Input.GetAxis("Horizontal");
-        left_vertical = Input.GetAxis("Vertical");
+        left_horizontal = left.x;
+        left_vertical = left.y;
 
-        right_horizontal = Input.GetAxis("R_Horizontal");
-        right_vertical = Input.GetAxis("R_Vertical");
+        right_horizontal = right.x;
+        right_vertical = right.y;
 
         // AIMING
         if(Mathf.Abs(right_horizontal) > 0.1f || Mathf.Abs(right_vertical) > 0.1f){
@@ -132,6 +163,9 @@ public class PlayerMovement : MonoBehaviour
         ));
     }
 
+    private void BeginRun(){
+        currentState = PlayerMovementState.Running;
+    }
     private void Run(){
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedRun,
@@ -146,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Aim(){
-        faceDirection = Vector3.right * right_horizontal + Vector3.forward * right_vertical;
+        faceDirection = Vector3.forward * right_horizontal + Vector3.left * right_vertical;
         var desiredRotation = Quaternion.LookRotation(faceDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime);
     }
