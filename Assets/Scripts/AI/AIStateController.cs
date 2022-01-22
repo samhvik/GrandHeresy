@@ -24,23 +24,26 @@ public class AIStateController : MonoBehaviour
     void Awake(){
         // get component from Complete.TankShooting
         navMeshAgent = GetComponent<NavMeshAgent>();
+        Debug.Log(navMeshAgent);
     }
 
     void Update() {
         if(!active)
             return;
+        Debug.Log("Call State Updater");
         currState.UpdateState(this);
     }
 
     public void SetupAI(bool activationFromAIManager, List<Transform> waypointsFromAIManager){
         wayPointList = waypointsFromAIManager;
         active = activationFromAIManager;
-
+        Debug.Log("AI is Active: " + active);
         if(active) { navMeshAgent.enabled = true; }
         else { navMeshAgent.enabled = false; }
     }
 
     public void TransitionToState(AIStates next){
+        Debug.Log("Transition to: " + next);
         if(next != remainState){
             currState = next;
             OnExitState();
@@ -49,6 +52,7 @@ public class AIStateController : MonoBehaviour
 
     public bool CheckIfCountdownElapse(float duration){
         stateTimeElapsed += Time.deltaTime;
+        Debug.Log("Time Elapsed: " + (stateTimeElapsed >= duration));
         return (stateTimeElapsed >= duration);
     }
 
@@ -56,6 +60,7 @@ public class AIStateController : MonoBehaviour
         stateTimeElapsed = 0;
     }
 
+    // built in debugging "gizmo" 
     void OnDrawGizmos()
     {
         if (currState != null && eyes != null) {
