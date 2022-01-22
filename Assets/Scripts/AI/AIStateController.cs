@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-//using Complete  -> figure out what this is
+
 public class AIStateController : MonoBehaviour
 {
     public AIStates currState;
@@ -13,35 +13,36 @@ public class AIStateController : MonoBehaviour
     // hidden inspector public variables for accessing
     // we dont wanna touch these in the editor
     [HideInInspector] public NavMeshAgent navMeshAgent;
-    //[HideInInspector] public Complete.TankShooting tankShooting;
     [HideInInspector] public List<Transform> wayPointList;
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public Transform chaseTarget;
+    [HideInInspector] public Vector3   lastKnownLocation;
     [HideInInspector] public float stateTimeElapsed;
 
     private bool active;
 
     void Awake(){
-        // get component from Complete.TankShooting
+        // get ai components
         navMeshAgent = GetComponent<NavMeshAgent>();
-        Debug.Log(navMeshAgent);
     }
 
     void Update() {
         if(!active)
             return;
-        Debug.Log("Call State Updater");
         currState.UpdateState(this);
     }
 
-    public void SetupAI(bool activationFromAIManager, List<Transform> waypointsFromAIManager){
+    // The AI Manager should call this on Start() to setup each AI individually
+    public void SetupAI(bool activateAI, List<Transform> waypointsFromAIManager){
         wayPointList = waypointsFromAIManager;
-        active = activationFromAIManager;
-        Debug.Log("AI is Active: " + active);
+        active = activateAI;
         if(active) { navMeshAgent.enabled = true; }
         else { navMeshAgent.enabled = false; }
     }
 
+    // transition to the next state
+    // this function is called after checking conditions explicitly
+    // the "Current State" of the AI would call this
     public void TransitionToState(AIStates next){
         Debug.Log("Transition to: " + next);
         if(next != remainState){
@@ -50,12 +51,14 @@ public class AIStateController : MonoBehaviour
         }
     }
 
+    // can be used to as an attack cooldown etc.
     public bool CheckIfCountdownElapse(float duration){
         stateTimeElapsed += Time.deltaTime;
-        Debug.Log("Time Elapsed: " + (stateTimeElapsed >= duration));
+        //Debug.Log("Time Elapsed: " + (stateTimeElapsed >= duration));
         return (stateTimeElapsed >= duration);
     }
 
+    // reset when exiting, a built-in function
     private void OnExitState(){
         stateTimeElapsed = 0;
     }

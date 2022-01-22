@@ -19,6 +19,7 @@ public class AIAttackAction : AIAction
             Debug.Log("Attack");
             // Attack animation
             // attack operation here
+            // add an attack buffer also
         }
     }
 }

@@ -10,6 +10,7 @@ public class AIPatrolAction : AIAction
         Patrol (controller);
     }
 
+    // travel between set waypoints that are fed from the AI Manager
     private void Patrol(AIStateController controller)
     {
         controller.navMeshAgent.destination = controller.wayPointList [controller.nextWayPoint].position;

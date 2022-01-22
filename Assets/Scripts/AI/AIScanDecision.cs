@@ -16,6 +16,7 @@ public class AIScanDecision : AIDecision
         // turn speed can be changed based on EnemyStats
         controller.transform.Rotate(0, controller.enemyStats.searchTurnSpeed * Time.deltaTime, 0);
         // check if the countdown has elapse for how long the enemy should "scan" for
+        // this lets it be used with a patrolling mob etc.
         return controller.CheckIfCountdownElapse(controller.enemyStats.searchDuration);
     }
 }
