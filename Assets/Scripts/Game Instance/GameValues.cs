@@ -34,4 +34,28 @@ public class GameValues : MonoBehaviour{
         else if(instance != this)
             Destroy(gameObject);
     }
+
+    void Update(){
+        // "end" game on player death
+        if(playerHealth < 0){
+            Debug.Log("Player Death");
+            // Just close the game on player death for now its week1
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+            Application.Quit();
+        }
+        // Allow 'esc' key to exit the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+            Application.Quit();
+        }
+    }
+
+    public void UpdateHealth(int damage){
+        playerHealth -= damage;
+    }
 }

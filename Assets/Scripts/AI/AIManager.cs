@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AIManager : MonoBehaviour
@@ -18,6 +19,5 @@ public class AIManager : MonoBehaviour
             e.SetupAI(true, waypoints);
         }
     }
-
     // more to add later...
 }

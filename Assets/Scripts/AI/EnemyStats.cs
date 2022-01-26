@@ -13,4 +13,5 @@ public class EnemyStats : ScriptableObject
     public float searchTurnSpeed = 120f;
     public float searchDuration = 8.0f;
     public int  damage = 50;
+    public float  attackCD = 1f;
 }

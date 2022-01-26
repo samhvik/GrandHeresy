@@ -16,7 +16,7 @@ public class AIStateController : MonoBehaviour
     [HideInInspector] public List<Transform> wayPointList;
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public Transform chaseTarget;
-    [HideInInspector] public Vector3   lastKnownLocation;
+    [HideInInspector] public Vector3 lastKnownLocation;
     [HideInInspector] public float stateTimeElapsed;
 
     private bool active;
@@ -44,7 +44,7 @@ public class AIStateController : MonoBehaviour
     // this function is called after checking conditions explicitly
     // the "Current State" of the AI would call this
     public void TransitionToState(AIStates next){
-        Debug.Log("Transition to: " + next);
+        //Debug.Log("Transition to: " + next);
         if(next != remainState){
             currState = next;
             OnExitState();

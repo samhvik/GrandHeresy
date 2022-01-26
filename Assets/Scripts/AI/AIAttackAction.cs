@@ -16,10 +16,10 @@ public class AIAttackAction : AIAction
         if (Physics.SphereCast (controller.eyes.position, controller.enemyStats.lookSphereCastRadius, controller.eyes.forward, out hit, controller.enemyStats.attackRange)
             && hit.collider.CompareTag ("Player")) 
         {
-            Debug.Log("Attack");
-            // Attack animation
-            // attack operation here
-            // add an attack buffer also
+            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD)){
+                GameValues.instance.UpdateHealth(controller.enemyStats.damage);
+                controller.stateTimeElapsed = 0;
+            }
         }
     }
 }

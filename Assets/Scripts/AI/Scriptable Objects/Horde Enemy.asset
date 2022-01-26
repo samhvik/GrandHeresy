@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc4256962516c7a4da473e1a928829fd, type: 3}
-  m_Name: Slow Melee Enemy
+  m_Name: Horde Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  attackRange: 5
-  lookRange: 15
-  lookSphereCastRadius: 2
-  searchTurnSpeed: 55
-  searchDuration: 2
-  damage: 50
+  moveSpeed: 400
+  attackRange: 2
+  lookRange: 55
+  lookSphereCastRadius: 1
+  searchTurnSpeed: 100
+  searchDuration: 1
+  damage: 15
+  attackCD: 0.5
