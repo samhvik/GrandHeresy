@@ -1,3 +1,9 @@
+/*
+    PlayerInputHandler.cs
+
+    Handles differentiating our players, mainly baed on the player's index. (0-3)
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
