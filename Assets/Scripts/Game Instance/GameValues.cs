@@ -20,12 +20,19 @@ public class GameValues : MonoBehaviour{
     public float playerSpeedAim;
     public float playerSpeedRun;
 
+    // # of players in the game currently
+    public int numPlayers;
+
+    // Position of all players, used for Camera Controller
+    public Transform[] playerPosition = new Transform[4];
 
     void Start(){
         playerHealth = 100.0f;
         playerSpeedWalk = 10.0f;
         playerSpeedAim = 5.0f;
         playerSpeedRun = 15.0f;
+
+        numPlayers = 0;
     }
 
     void Awake(){

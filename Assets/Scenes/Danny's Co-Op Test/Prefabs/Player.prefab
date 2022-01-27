@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  lookSpeed: 500
+  smoothInputSpeed: 0.03
+  lookSpeed: 329
 --- !u!114 &1722651376011780810
 MonoBehaviour:
   m_ObjectHideFlags: 0

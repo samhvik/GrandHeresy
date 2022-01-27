@@ -757,6 +757,7 @@ MonoBehaviour:
   playerSpeedWalk: 0
   playerSpeedAim: 0
   playerSpeedRun: 0
+  numPlayers: 0
 --- !u!4 &318064435
 Transform:
   m_ObjectHideFlags: 0
