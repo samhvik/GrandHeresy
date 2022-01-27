@@ -758,6 +758,11 @@ MonoBehaviour:
   playerSpeedAim: 0
   playerSpeedRun: 0
   numPlayers: 0
+  playerPosition:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &318064435
 Transform:
   m_ObjectHideFlags: 0

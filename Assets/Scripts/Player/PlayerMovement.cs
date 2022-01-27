@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
         Idle,
         Walking,
         Running,
-        Aiming
+        Aiming,
+        Dodge
     }
 
     public PlayerMovementState currentState = PlayerMovementState.Idle;
@@ -95,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
             case PlayerMovementState.Aiming:
                 AimWalk();
                 Aim();
+                break;
+            case PlayerMovementState.Dodge:
                 break;
             default:
                 Debug.Log("Invalid PlayerMovementState Detected");
@@ -183,5 +186,9 @@ public class PlayerMovement : MonoBehaviour
         faceDirection = Vector3.forward * right_horizontal + Vector3.left * right_vertical;
         var desiredRotation = Quaternion.LookRotation(faceDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime);
+    }
+
+    private void Dodge(){
+
     }
 }
