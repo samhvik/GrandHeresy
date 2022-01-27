@@ -25,11 +25,23 @@ public class CameraControl : MonoBehaviour{
     [SerializeField] [Range(0.01f, 1f)]
     private float panSpeed = 0.250f;
 
-    public Vector3 offset = new Vector3(0.0f, 10.0f, -6.0f);
+    public Vector3 offset = new Vector3(0.0f, 10.0f, -9.0f);
 
     // Tracker that centers the camera if 2+ players are present
     public GameObject cameraTracker;
-    private Vector3 zoomPosition;
+
+    // For Tracker Camera Zoom
+    [SerializeField]
+    [Range(15f, 40f)]
+    private float maxZoom = 25f;
+    [SerializeField]
+    [Range(15f, 25f)]
+    private float minZoom = 15f;
+
+    private float largestDistance;
+    private float distance;
+
+
 
     void Start(){
         cameraMain = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -82,13 +94,32 @@ public class CameraControl : MonoBehaviour{
         }
         else
         {
+            // Track the Midpoint
             playerTransform = cameraTracker.transform;
             target = cameraTracker.transform;
-            offset.y = 15 + TrackingCamera.instance.maxDistance;
-            Debug.Log(TrackingCamera.instance.maxDistance);
-            //zoomPosition = new Vector3(0, 15 + TrackingCamera.instance.farthestPlayer.y, -9);
-            //zoomPosition = new Vector3(0, 15 + TrackingCamera.instance.maxDistance, -9);
-            //cameraMain.transform.position = zoomPosition;
+
+
+            // Zoom in and Out Function
+            largestDistance = 0;
+            distance = 0;
+
+            for (int i = 0; i < GameValues.instance.numPlayers; i++)
+            {
+                distance = Vector3.Distance(GameValues.instance.playerPosition[i].transform.position, cameraTracker.transform.position);
+
+                if (distance > largestDistance)
+                {
+                    largestDistance = distance;
+                }
+            }
+
+            // Caps how far out we can zoom
+            if ((minZoom + largestDistance) <= maxZoom)
+            {
+                offset.x = 0f;
+                offset.y = minZoom + Mathf.Abs(largestDistance);
+                offset.z = -9f;
+            }
         }
     }
 }
