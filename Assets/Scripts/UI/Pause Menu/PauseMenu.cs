@@ -6,30 +6,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    
     public GameObject pauseMenuUI;
+    public GameObject firstButton;
 
-    // Update is called once per frame
-    void Update()
+    PlayerControls controls;
+
+    void Awake()
     {
-        // if the key / button is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))       // CHANGE Escape TO A GENERALIZED TERM TO INCLUDE CONTROLLER SUPPORT
-        {
-            // if the game is already paused, resume game
-            if (GameIsPaused)
-            {
-                Resume();
-            }
+        controls = new PlayerControls();
 
-            // else, pause the game
-            else
-            {
-                Pause();
-            }
-        }
+        controls.UI.Start.performed += ctx => Pause();
+    }
+
+    void OnEnable()
+    {
+        controls.UI.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.UI.Disable();
     }
 
     // removes pause menu ui, resumes game time, and sets GameIsPaused to false
@@ -46,12 +50,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        EventSystem.current.SetSelectedGameObject(firstButton);
     }
 
     // loads the MainMenu scene
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenu"); // CHANGE "Menu" INTO A SCENE VARIABLE IN THE FUTURE
+        SceneManager.LoadScene("Justin's Main Menu"); // CHANGE "Menu" INTO A SCENE VARIABLE IN THE FUTURE
     }
 
     // closes the game application
