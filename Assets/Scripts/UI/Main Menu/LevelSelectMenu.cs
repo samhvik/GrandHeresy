@@ -1,4 +1,4 @@
-/// MainMenu.cs
+/// LevelSelectMenu.cs
 /// Created by: Justin Quan
 /// A basic main menu program that allows the buttons "Play" and "Quit"
 /// to function as they are supposed to.
@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class MainMenu : MonoBehaviour
+public class LevelSelectMenu : MonoBehaviour
 {
     public GameObject currentScreen;
     public GameObject nextScreen;
@@ -18,31 +18,33 @@ public class MainMenu : MonoBehaviour
     public GameObject prevScreen;
     public GameObject prevButton;
 
-    DefaultInputActions controls;
+    PlayerControls controls;
 
+    // sets up the controls first thing for this scene
     void Awake()
     {
-        controls = new DefaultInputActions();
+        controls = new PlayerControls();
 
+        // whenever the controller presses the Submit or Cancel buttons
         controls.UI.Submit.performed += ctx => onSelect();
         controls.UI.Cancel.performed += ctx => onCancel();
     }
 
-    // loads the Main scene
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("Main");     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
-    }
-
+    // whenever the players press submit
     void onSelect()
     {
+        // sets the current screen to false
         currentScreen.SetActive(false);
+        // activates the next screen
         nextScreen.SetActive(true);
     }
 
+    // whenever the players press cancel
     void onCancel()
     {
+        // sets the current screen to false
         currentScreen.SetActive(false);
+        // activates the next screen
         prevScreen.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(prevButton);
@@ -56,6 +58,12 @@ public class MainMenu : MonoBehaviour
     void OnDisable()
     {
         controls.UI.Disable();
+    }
+
+    // loads the Main scene
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Main");     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
     }
 
     // closes the game application

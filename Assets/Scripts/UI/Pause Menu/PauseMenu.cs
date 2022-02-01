@@ -19,18 +19,22 @@ public class PauseMenu : MonoBehaviour
 
     PlayerControls controls;
 
+    // sets up the controls first thing for this scene
     void Awake()
     {
         controls = new PlayerControls();
 
+        // Whenever the game detects the start button being pressed
         controls.UI.Start.performed += ctx => Pause();
     }
 
+    // Enables the controls for UI
     void OnEnable()
     {
         controls.UI.Enable();
     }
 
+    // Disables the controls for UI when not needed
     void OnDisable()
     {
         controls.UI.Disable();
@@ -39,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     // removes pause menu ui, resumes game time, and sets GameIsPaused to false
     public void Resume()
     {
+        // deactivates the pause menu and resumes time scale for game
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -47,10 +52,12 @@ public class PauseMenu : MonoBehaviour
     // enables pause menu ui, pauses game time, and sets GameIsPaused to true
     void Pause()
     {
+        // activates pause menu and stops time for the game
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
 
+        // sets resume as the first selected game object
         EventSystem.current.SetSelectedGameObject(firstButton);
     }
 

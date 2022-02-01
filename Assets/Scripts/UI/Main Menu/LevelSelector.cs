@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class LevelSelect : MonoBehaviour
+public class LevelSelector : MonoBehaviour
 {
     public GameObject currentLevel;
 
