@@ -60,12 +60,6 @@ public class LevelSelectMenu : MonoBehaviour
         controls.UI.Disable();
     }
 
-    // loads the Main scene
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("Main");     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
-    }
-
     // closes the game application
     public void QuitGame()
     {
