@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour{
 
+    public bool held = false;
     public WeaponSwitching inventory;
     private Gun gun;
 
@@ -18,7 +19,8 @@ public class PlayerShooting : MonoBehaviour{
         controls = new PlayerControls();
         
         // Callback function for shooting. ctx is the context handler.
-        controls.Gameplay.Shoot.performed += ctx => Fire();
+        controls.Gameplay.Shoot.started += ctx => ShootPressed(true);
+        controls.Gameplay.Shoot.canceled += ctx => ShootPressed(false);
 
         // Callback function for reloading
         controls.Gameplay.Reload.performed += ctx => Reload();
@@ -34,17 +36,14 @@ public class PlayerShooting : MonoBehaviour{
     }
 
     void Update(){
-        /*if(Input.GetButtonDown("Reload"))
-            gun.Reload();
-        
-        if(gun.IsSemi){
-            if(Input.GetButtonDown("Shoot"))
+        if(held){
+            if(gun.IsSemi){
                 gun.Fire();
-        }else{
-            if(Input.GetButton("Shoot"))
+                held = false;
+            }else{
                 gun.Fire();
-        }*/
-        
+            }
+        }
     }
 
     private void Fire(){
@@ -57,5 +56,9 @@ public class PlayerShooting : MonoBehaviour{
 
     public void SwitchWeapon(Gun newGun){
         this.gun = newGun;
+    }
+
+    private void ShootPressed(bool set){
+        held = set;
     }
 }
