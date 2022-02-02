@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 155192443757417}
   - component: {fileID: 5010262365321775372}
   m_Layer: 0
-  m_Name: Assault Rifle
+  m_Name: PumpShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,23 +111,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48058dd009e63b84d969dd33bd5d1acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: 
+  gunName: Pump Shotgun
   cameraShake: {fileID: 0}
-  shakeMagnitude: 0.07
-  shakeSharpness: 0.025
-  firerate: 11.666667
-  accuracy: 10
-  range: 10
-  roundsPerShot: 1
-  muzzleVelocity: 50
+  shakeMagnitude: 0.128
+  shakeSharpness: 0.0403
+  firerate: 150
+  accuracy: 30
+  range: 6
+  roundsPerShot: 8
+  muzzleVelocity: 75
   muzzleOffset: 2
-  singleFire: 0
+  singleFire: 1
   round: {fileID: 3609687478482029446, guid: 97006b5640dcdf641a906a0a69483d31, type: 3}
-  magSize: 30
-  reloadTime: 1
-  reloadTimeEmpty: 1.3
+  magSize: 7
+  reloadTime: 2.5
+  reloadTimeEmpty: 3.5
   shootState: 0
-  sound: {fileID: 0}
+  sound: {fileID: 5010262365321775372}
 --- !u!82 &5010262365321775372
 AudioSource:
   m_ObjectHideFlags: 0
