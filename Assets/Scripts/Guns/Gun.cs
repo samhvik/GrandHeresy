@@ -118,12 +118,14 @@ public class Gun : MonoBehaviour{
     }
 
     public void Reload(){
-        if(remainingRounds == 0) // Tactical Reload
-            nextShootTime = Time.time + reloadTimeEmpty;
-        else                     // Full Reload
-            nextShootTime = Time.time + reloadTime;
-        
-        shootState = ShootState.Reloading;
+        if(remainingRounds != magSize + 1){
+            if(remainingRounds == 0) // Tactical Reload
+                nextShootTime = Time.time + reloadTimeEmpty;
+            else                     // Full Reload
+                nextShootTime = Time.time + reloadTime;
+            
+            shootState = ShootState.Reloading;
+        }
     }
 
     public int CurrentAmmo{
