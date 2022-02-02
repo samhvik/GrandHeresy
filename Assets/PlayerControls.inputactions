@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "12f34eb0-d475-4d22-8a70-725b9e750d60",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -54,6 +54,15 @@
                     "name": "Run",
                     "type": "Button",
                     "id": "1749f11b-fa91-48d9-b197-1a1145e9396a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "1a8a4483-d8c1-490e-beb6-b96edcfe8fd0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -234,6 +243,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "296fc299-a213-4fa9-be5b-68162d5d7609",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d17a2f69-6d8d-4c59-9921-2ac4ea66b6c7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

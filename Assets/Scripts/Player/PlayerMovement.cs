@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public PlayerMovementState currentState = PlayerMovementState.Idle;
-
     private Transform transform;
     private Rigidbody rb;
     private Vector3 position;
@@ -46,16 +45,23 @@ public class PlayerMovement : MonoBehaviour
     void Awake(){
         controls = new PlayerControls();
 
+        // --------------- MOVEMENT -------------------------
         // callback functions for movement. stores joystick values into "left" Vector2.
-        controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += ctx => left = Vector2.zero;
+        // controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
+        // controls.Gameplay.Move.canceled += ctx => left = Vector2.zero;
+        controls.Gameplay.Move.performed += Movement_Performed;
         
+        // ---------------- AIMING --------------------------
         // callback functions for aiming. stores joystick values into "right" Vector2.
         controls.Gameplay.Aim.performed += ctx => right = ctx.ReadValue<Vector2>();
         controls.Gameplay.Aim.canceled += ctx => right = Vector2.zero;
 
+        // ---------------- RUNNING --------------------------
         // callback function for running.
         controls.Gameplay.Run.performed += ctx => BeginRun();
+
+        // callback function for Dodging.
+        controls.Gameplay.Dodge.performed += ctx => HandleDodgeRoll();
         
     }
 
@@ -81,28 +87,34 @@ public class PlayerMovement : MonoBehaviour
     }
 
     
-    void Update(){
+    void FixedUpdate(){
         GetInput();
+
+        // Debug line for direction player is moving
+        Debug.DrawLine(this.transform.position, (this.transform.position + new Vector3(left_horizontal, 0, left_vertical) * 3), Color.green);
+        // Debug line for direction player is aiming
+        Debug.DrawLine(this.transform.position, (this.transform.position + new Vector3(right_horizontal, 0, right_vertical) * 3), Color.yellow);
         
-        switch(currentState){
-            case PlayerMovementState.Idle:
-                break;
-            case PlayerMovementState.Walking:
-                Walk();
-                break;
-            case PlayerMovementState.Running:
-                Run();
-                break;
-            case PlayerMovementState.Aiming:
-                AimWalk();
-                Aim();
-                break;
-            case PlayerMovementState.Dodge:
-                break;
-            default:
-                Debug.Log("Invalid PlayerMovementState Detected");
-                break;
-        }
+        // switch(currentState){
+        //     case PlayerMovementState.Idle:
+        //         break;
+        //     case PlayerMovementState.Walking:
+        //         Walk();
+        //         break;
+        //     case PlayerMovementState.Running:
+        //         Run();
+        //         break;
+        //     case PlayerMovementState.Aiming:
+        //         AimWalk();
+        //         Aim();
+        //         break;
+        //     case PlayerMovementState.Dodge:
+        //         HandleDodgeRoll();
+        //         break;
+        //     default:
+        //         Debug.Log("Invalid PlayerMovementState Detected");
+        //         break;
+        // }
     }
 
     private void GetInput(){
@@ -113,36 +125,51 @@ public class PlayerMovement : MonoBehaviour
         right_vertical = right.y;
 
         // AIMING
-        if(Mathf.Abs(right_horizontal) > 0.1f || Mathf.Abs(right_vertical) > 0.1f){
-            currentState = PlayerMovementState.Aiming;
-            return;
-        }
+        // if(Mathf.Abs(right_horizontal) > 0.1f || Mathf.Abs(right_vertical) > 0.1f){
+        //     currentState = PlayerMovementState.Aiming;
+        //     return;
+        // }
+
+        // if(Input.GetButtonDown("Dodge")){
+        //     currentState = PlayerMovementState.Dodge;
+        //     return;
+        // }
         
         // BEGIN RUNNING
-        if(Input.GetButtonDown("Run") && currentState == PlayerMovementState.Walking){
-            currentState = PlayerMovementState.Running;
-            return;
-        }
+        // if(Input.GetButtonDown("Run") && currentState == PlayerMovementState.Walking){
+        //     currentState = PlayerMovementState.Running;
+        //     return;
+        // }
 
         // END RUNNING
-        if(left_horizontal == 0f && left_vertical == 0f && currentState == PlayerMovementState.Running){
-            currentState = PlayerMovementState.Idle;
-            return;
-        }
+        // if(left_horizontal == 0f && left_vertical == 0f && currentState == PlayerMovementState.Running){
+        //     currentState = PlayerMovementState.Idle;
+        //     return;
+        // }
 
         // WHILE RUNNING
-        if(currentState == PlayerMovementState.Running){
-            return;
-        }
+        // if(currentState == PlayerMovementState.Running){
+        //     return;
+        // }
         
         // WALKING
-        if(Mathf.Abs(left_horizontal) > 0.1f || Mathf.Abs(left_vertical) > 0.1f){
-            currentState = PlayerMovementState.Walking;
-            return;
-        }
+        // if(Mathf.Abs(left_horizontal) > 0.1f || Mathf.Abs(left_vertical) > 0.1f){
+        //     currentState = PlayerMovementState.Walking;
+        //     return;
+        // }
 
         // IDLE
-        currentState = PlayerMovementState.Idle;
+        // currentState = PlayerMovementState.Idle;
+    }
+
+    private void Movement_Performed(InputAction.CallbackContext context){
+        Vector2 inputVector = context.ReadValue<Vector2>();
+
+        this.GetComponent<CharacterController>().SimpleMove(new Vector3(
+            inputVector.x * GameValues.instance.playerSpeedWalk,
+            0.0f,
+            inputVector.y * GameValues.instance.playerSpeedWalk
+        ));
     }
 
     private void Walk(){
@@ -169,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
     private void BeginRun(){
         currentState = PlayerMovementState.Running;
     }
+
     private void Run(){
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedRun,
@@ -188,7 +216,8 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime);
     }
 
-    private void Dodge(){
-
+    private void HandleDodgeRoll(){
+        //var dodgeDirection = new Vector3(left_horizontal, 0, left_vertical);
+        //currentState = PlayerMovementState.Dodge;
     }
 }
