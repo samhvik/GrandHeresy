@@ -6,35 +6,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    
     public GameObject pauseMenuUI;
+    public GameObject firstButton;
 
-    // Update is called once per frame
-    void Update()
+    PlayerControls controls;
+
+    // sets up the controls first thing for this scene
+    void Awake()
     {
-        // if the key / button is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))       // CHANGE Escape TO A GENERALIZED TERM TO INCLUDE CONTROLLER SUPPORT
-        {
-            // if the game is already paused, resume game
-            if (GameIsPaused)
-            {
-                Resume();
-            }
+        controls = new PlayerControls();
 
-            // else, pause the game
-            else
-            {
-                Pause();
-            }
-        }
+        // Whenever the game detects the start button being pressed
+        controls.UI.Start.performed += ctx => Pause();
+    }
+
+    // Enables the controls for UI
+    void OnEnable()
+    {
+        controls.UI.Enable();
+    }
+
+    // Disables the controls for UI when not needed
+    void OnDisable()
+    {
+        controls.UI.Disable();
     }
 
     // removes pause menu ui, resumes game time, and sets GameIsPaused to false
     public void Resume()
     {
+        // deactivates the pause menu and resumes time scale for game
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -43,15 +52,19 @@ public class PauseMenu : MonoBehaviour
     // enables pause menu ui, pauses game time, and sets GameIsPaused to true
     void Pause()
     {
+        // activates pause menu and stops time for the game
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        // sets resume as the first selected game object
+        EventSystem.current.SetSelectedGameObject(firstButton);
     }
 
     // loads the MainMenu scene
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenu"); // CHANGE "Menu" INTO A SCENE VARIABLE IN THE FUTURE
+        SceneManager.LoadScene("Justin's Main Menu"); // CHANGE "Menu" INTO A SCENE VARIABLE IN THE FUTURE
     }
 
     // closes the game application
