@@ -21,29 +21,30 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public PlayerMovementState currentState = PlayerMovementState.Idle;
+    PlayerControls controls;
+    AnimatorManager animatorManager;
 
     private Transform transform;
     private Rigidbody rb;
     private Vector3 position;
 
+
+    [Header("Player Movement")]
+    private Vector2 left;
+    private Vector2 right;
     private float left_horizontal;
     private float left_vertical;
-
-    private Vector2 left;
-
     private float right_horizontal;
     private float right_vertical;
-
-    private Vector2 right;
     private Vector3 faceDirection;
 
     [SerializeField] [Range(50f, 500f)]
     private float lookSpeed = 250f;
 
-    PlayerControls controls;
 
     void Awake(){
         controls = new PlayerControls();
+        animatorManager = GetComponent<AnimatorManager>();
 
         // callback functions for movement. stores joystick values into "left" Vector2.
         controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
@@ -85,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         
         switch(currentState){
             case PlayerMovementState.Idle:
+                animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
                 break;
             case PlayerMovementState.Walking:
                 Walk();
@@ -143,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Walk(){
+        animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, 0.0f, 0.0f, false);
+
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedWalk,
             0.0f,
@@ -156,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void AimWalk(){
+        animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedAim,
             0.0f,
@@ -167,6 +172,9 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerMovementState.Running;
     }
     private void Run(){
+
+        animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, 0.0f, 0.0f, true);
+
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedRun,
             0.0f,
