@@ -47,6 +47,11 @@ public class AnimatorManager : MonoBehaviour
 
         // Getting the magnitude of the left stick axis to determine whether to walk, run, or sprint
         float mag = Mathf.Max(Mathf.Abs(verticalMovement), Mathf.Abs(horizontalMovement));
+        if(isRunning){
+            mag += 0.5f;
+        }
+
+        animator.SetBool("IsSprinting", isRunning);
 
         if(horizontalAiming != 0 || verticalAiming != 0){
             animator.SetBool("IsStrafing", true);
@@ -54,12 +59,8 @@ public class AnimatorManager : MonoBehaviour
         else{
             animator.SetBool("IsStrafing", false);
         }
-
-        if(isRunning){
-            mag += 0.5f;
-        }
-
-        animator.SetBool("IsSprinting", isRunning);
+    
+        
         animator.SetFloat("InputMagnitude", mag, 0.1f, Time.deltaTime);
         animator.SetFloat("InputHorizontal", horizontalMovement, 0.1f, Time.deltaTime);
         animator.SetFloat("InputVertical", verticalMovement, 0.1f, Time.deltaTime);
