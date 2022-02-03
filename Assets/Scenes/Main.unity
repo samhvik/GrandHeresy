@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c493db1cb62f9534a95422b516ab58ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
   inventory: {fileID: 2061072163}
 --- !u!114 &113232393
 MonoBehaviour:
@@ -355,7 +356,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113232391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2787,15 +2788,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f8ea3fc0e3912d740b89f6698410d626, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.56
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f8ea3fc0e3912d740b89f6698410d626, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.56
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f8ea3fc0e3912d740b89f6698410d626, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.56
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f8ea3fc0e3912d740b89f6698410d626, type: 3}
       propertyPath: m_LocalPosition.x
