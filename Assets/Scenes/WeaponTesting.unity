@@ -830,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 155192443757417, guid: f74e1326189dae84b919339539afdddc, type: 3}
       propertyPath: firerate
-      value: 2.5
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 155192443757417, guid: f74e1326189dae84b919339539afdddc, type: 3}
       propertyPath: cameraShake
