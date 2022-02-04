@@ -62,8 +62,8 @@ public class AnimatorManager : MonoBehaviour
     
         
         animator.SetFloat("InputMagnitude", mag, 0.1f, Time.deltaTime);
-        animator.SetFloat("InputHorizontal", horizontalMovement, 0.1f, Time.deltaTime);
-        animator.SetFloat("InputVertical", verticalMovement, 0.1f, Time.deltaTime);
+        animator.SetFloat("InputHorizontal", snappedHorizontal, 0.1f, Time.deltaTime);
+        animator.SetFloat("InputVertical", snappedVertical, 0.1f, Time.deltaTime);
 
         animator.SetFloat("AimInputHorizontal", horizontalAiming, 0.1f, Time.deltaTime);
         animator.SetFloat("AimInputVertical", verticalAiming, 0.1f, Time.deltaTime);

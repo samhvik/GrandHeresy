@@ -37,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
     private float right_horizontal;
     private float right_vertical;
     private Vector3 faceDirection;
+    Transform cam;
+    Vector3 camForward;
+    Vector3 move;
+    Vector3 moveInput;
+    float forwardAmount;
+    float turnAmount;
 
     [SerializeField] [Range(50f, 500f)]
     private float lookSpeed = 250f;
@@ -73,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         position = transform.position;
 
+        cam = Camera.main.transform;
+
         left_horizontal = 0.0f;
         left_vertical = 0.0f;
 
@@ -83,6 +91,22 @@ public class PlayerMovement : MonoBehaviour
     
     void Update(){
         GetInput();
+
+        // Camera math to animate character the right way when aiming
+        // if(cam != null){
+        //     camForward = Vector3.Scale(cam.up, new Vector3(1, 0, 1)).normalized; 
+        //     move = left_vertical * camForward + left_horizontal * cam.right;
+        // }
+        // else{
+        //     move = left_vertical * Vector3.forward + left_horizontal * Vector3.right;
+        // }
+
+        // if(move.magnitude > 1){
+        //     move.Normalize();
+        // }
+
+        // Move(move);
+        
         
         switch(currentState){
             case PlayerMovementState.Idle:
@@ -103,6 +127,19 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+    // private void Move(Vector3 move){
+    //     if(move.magnitude > 1){
+    //         move.Normalize();
+    //     }
+    //     this.moveInput = move;
+    //     ConvertMoveInput();
+    // }
+    // private void ConvertMoveInput(){
+    //     Vector3 localMove = transform.InverseTransformDirection(moveInput);
+    //     turnAmount = localMove.x;
+    //     forwardAmount = localMove.z;
+    //     animatorManager.HandleAnimatorValues(turnAmount, forwardAmount, 0, 0, false);
+    // }
 
     private void GetInput(){
         left_horizontal = left.x;
@@ -154,13 +191,17 @@ public class PlayerMovement : MonoBehaviour
         ));
 
         // Bug: For some reason, face direction is different here than in Aim()
-        faceDirection = Vector3.forward * left_horizontal + Vector3.left * left_vertical;
+        // Bug potentially fixed. Put left_vertical with the forward vector and left_horizontal with 
+        // Vector3.right instead of left.
+        faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
         if(faceDirection.sqrMagnitude > 0.2f)
             transform.rotation = Quaternion.LookRotation(faceDirection);
+
     }
 
     private void AimWalk(){
         animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
+
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedAim,
             0.0f,
@@ -181,14 +222,13 @@ public class PlayerMovement : MonoBehaviour
             left_vertical * GameValues.instance.playerSpeedRun
         ));
 
-        // Bug: For some reason, face direction is different here than in Aim()
-        faceDirection = Vector3.forward * left_horizontal + Vector3.left * left_vertical;
+        faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
         if(faceDirection.sqrMagnitude > 0.2f)
             transform.rotation = Quaternion.LookRotation(faceDirection);
     }
 
     private void Aim(){
-        faceDirection = Vector3.forward * right_horizontal + Vector3.left * right_vertical;
+        faceDirection = Vector3.forward * right_vertical + Vector3.right * right_horizontal;
         var desiredRotation = Quaternion.LookRotation(faceDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime);
     }
