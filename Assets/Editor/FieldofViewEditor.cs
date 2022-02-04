@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEditor;
 
@@ -18,8 +18,9 @@ public class FieldofViewEditor : Editor
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleA * fov.viewRadius);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.viewRadius);
 
-        foreach(Transform visibleTarget in fov.visibleTargets){
-            Handles.DrawLine(fov.transform.position, visibleTarget.position);
+        Handles.color = Color.red;
+        if(fov.visibleTarget != null){
+            Handles.DrawLine(fov.transform.position, fov.visibleTarget.position);
         }
     }
-}*/
+}
