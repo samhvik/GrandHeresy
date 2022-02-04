@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using UnityEngine;
 using UnityEditor;
 
@@ -22,4 +22,4 @@ public class FieldofViewEditor : Editor
             Handles.DrawLine(fov.transform.position, visibleTarget.position);
         }
     }
-}
+}*/
