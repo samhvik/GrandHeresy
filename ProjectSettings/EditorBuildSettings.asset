@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Justin's Main Menu.unity
     guid: 9c58bfd9aa0719043b7a13bbc99aa237
   - enabled: 1

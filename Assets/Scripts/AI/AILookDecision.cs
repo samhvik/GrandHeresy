@@ -7,8 +7,7 @@ public class AILookDecision : AIDecision {
 
     public override bool Decide(AIStateController controller)
     {
-        bool targetVisible = Look(controller);
-        return targetVisible;
+        return Look(controller);
     }
 
     private bool Look(AIStateController controller)
@@ -27,4 +26,16 @@ public class AILookDecision : AIDecision {
             return false;
         }
     }
+    /*
+    private bool Look(AIStateController controller)
+    {
+        AIFOV fov = controller.GetComponent<FieldOfView>();
+        if(fov == null) Debug.Log("no FOV Script I can't see"); return false;
+        
+        if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player)){
+            controller.target = fov.visibleTarget;
+            return true;
+        }
+        return false;
+    }*/
 }
