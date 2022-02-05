@@ -37,8 +37,8 @@ public class CameraController : MonoBehaviour{
     void LateUpdate(){
         switch(playerMovement.currentState){
             case PlayerMovement.PlayerMovementState.Aiming:
-                offset.x = 7f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                offset.z = -10f + -(5f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
+                offset.z = -10f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                 break;
             default:
                 offset.x = 0f;
