@@ -26,7 +26,7 @@ public class LoadoutMenu : MonoBehaviour
     // loads the Main scene
     public void PlayGame()
     {
-        SceneManager.LoadScene("Main");     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
+        SceneManager.LoadScene(GameValues.level);     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
     }
 
     void OnEnable()

@@ -22,12 +22,16 @@ public class LevelSelector : MonoBehaviour
         controls = new DefaultInputActions();
 
         controls.UI.Navigate.performed += ctx => selectLevel(ctx.ReadValue<Vector2>());
+
+        GameValues.level = currentLevel.name;
     }
 
     void selectLevel(Vector2 nav)
     {
         if(nav.x > 0)
         {
+            GameValues.level = nextLevel.name;
+
             currentLevel.SetActive(false);
             nextLevel.SetActive(true);
 
@@ -36,11 +40,15 @@ public class LevelSelector : MonoBehaviour
 
         else if(nav.x < 0)
         {
+            GameValues.level = prevLevel.name;
+
             currentLevel.SetActive(false);
             prevLevel.SetActive(true);
 
             EventSystem.current.SetSelectedGameObject(prevImage);
         }
+
+        Debug.Log(GameValues.level);
     }
 
     void OnEnable()
