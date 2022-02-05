@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
         Idle,
         Walking,
         Running,
-        Aiming
+        Aiming,
+        Dodge
     }
 
     public PlayerMovementState currentState = PlayerMovementState.Idle;
@@ -62,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
         // callback function for running.
         controls.Gameplay.Run.performed += ctx => BeginRun();
+
+        // callback function for dodging.
+        controls.Gameplay.Dodge.performed += ctx => BeginDodge();
         
     }
 
@@ -122,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
                 AimWalk();
                 Aim();
                 break;
+            // case PlayerMovementState.Dodge:
+            //     break;
             default:
                 Debug.Log("Invalid PlayerMovementState Detected");
                 break;
@@ -159,6 +165,12 @@ public class PlayerMovement : MonoBehaviour
             currentState = PlayerMovementState.Running;
             return;
         }
+
+        // BEGIN DODGING
+        // if(Input.GetButtonDown("Dodge") && currentState == PlayerMovementState.Walking){
+        //     currentState = PlayerMovementState.Dodge;
+        //     return;
+        // }
 
         // END RUNNING
         if(left_horizontal == 0f && left_vertical == 0f && currentState == PlayerMovementState.Running){
@@ -212,6 +224,11 @@ public class PlayerMovement : MonoBehaviour
     private void BeginRun(){
         currentState = PlayerMovementState.Running;
     }
+
+    private void BeginDodge(){
+        currentState = PlayerMovementState.Dodge;
+    }
+
     private void Run(){
 
         animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, 0.0f, 0.0f, true);
@@ -225,6 +242,10 @@ public class PlayerMovement : MonoBehaviour
         faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
         if(faceDirection.sqrMagnitude > 0.2f)
             transform.rotation = Quaternion.LookRotation(faceDirection);
+    }
+
+    private void Dodge(){
+
     }
 
     private void Aim(){
