@@ -1607,9 +1607,9 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
   m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 8898147322454576740, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
-  m_SubmitAction: {fileID: -992843281540004178, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
-  m_CancelAction: {fileID: -4874715310699703261, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
   m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
@@ -3478,6 +3478,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 358305690}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 435720046}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 260056692}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1070520796
 MonoBehaviour:

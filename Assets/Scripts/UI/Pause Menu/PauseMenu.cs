@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         // deactivates the pause menu and resumes time scale for game
+        controls.Gameplay.Enable();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -53,6 +54,7 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         // activates pause menu and stops time for the game
+        controls.Gameplay.Disable();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
