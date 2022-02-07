@@ -24,7 +24,7 @@ public class WeaponSwitcher : MonoBehaviour
         controls = new PlayerControls();
 
         // callback function for the reload button
-        controls.Gameplay.SwapWeapons.performed += ctx => Handle();
+        //controls.Gameplay.SwapWeapons.performed += ctx => Handle();
     }
 
     // Enable and disable control input when script is enabled/disabled.
@@ -35,15 +35,17 @@ public class WeaponSwitcher : MonoBehaviour
     void OnDisable(){
         controls.Gameplay.Disable();
     }
-    
-    private void Handle(){
+
+    public void onHandle()
+    {
         int previousSelectedWeapon = selectedWeapon;
 
-            selectedWeapon = (selectedWeapon + 1) % inventorySize;
+        selectedWeapon = (selectedWeapon + 1) % inventorySize;
 
-            if(previousSelectedWeapon != selectedWeapon){
-                SelectWeapon();
-            }
+        if (previousSelectedWeapon != selectedWeapon)
+        {
+            SelectWeapon();
+        }
     }
 
     /*void Update(){
