@@ -10,17 +10,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour{
 
-    // Character Controller GameObject
-    private CharacterController controller;
-
     public WeaponSwitcher inventory;
     private Gun gun;
     private bool held = false;
 
 
     void Awake(){
-        // Grabbing our character controller that is on our player
-        controller = gameObject.GetComponent<CharacterController>();
     }
 
     void Update()
@@ -44,7 +39,7 @@ public class PlayerShoot : MonoBehaviour{
     {
         if (context.ReadValue<float>() > 0.3f)
         {
-              held = true;
+            held = true;
         }
         else
         {

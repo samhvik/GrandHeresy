@@ -14,28 +14,11 @@ public class WeaponSwitcher : MonoBehaviour
     private Gun currentWeapon;
     public PlayerShoot shooter;
 
-    PlayerControls controls;
-
     void Start(){
         SelectWeapon();
     }
 
-    void Awake(){
-        controls = new PlayerControls();
-
-        // callback function for the reload button
-        //controls.Gameplay.SwapWeapons.performed += ctx => Handle();
-    }
-
-    // Enable and disable control input when script is enabled/disabled.
-    void OnEnable(){
-        controls.Gameplay.Enable();
-    }
-
-    void OnDisable(){
-        controls.Gameplay.Disable();
-    }
-
+    // Callback Context to switch weapons
     public void onHandle()
     {
         int previousSelectedWeapon = selectedWeapon;
