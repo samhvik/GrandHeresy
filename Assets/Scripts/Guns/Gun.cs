@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour{
 
     [Header("Camera Effects")]
     public CameraController cameraShake;                                    // Reference to CameraController object
+    //public CameraControl cameraShake;                                    // Reference to CameraControl object (AS OF NOW FOR DANNY's SCENE ONLY)
     [Range(0f, 1f)] public float shakeMagnitude;                            // Hypotenuse of camera shake
     [Range(0.01f, 0.15f)] public float shakeSharpness;                      // How quickly the camera lerps during the shake
 
@@ -37,7 +38,7 @@ public class Gun : MonoBehaviour{
     [Header("Magazine")]
     [SerializeField] private GameObject round;                              // Bullet type reference
     [SerializeField] private int magSize;                                   // How many rounds are inside the magazine, if any
-    private int remainingRounds;                                            // How many rounds are currently in the magazine (must be less/equal to magsize)
+    public int remainingRounds;                                            // How many rounds are currently in the magazine (must be less/equal to magsize)
     [SerializeField] private float reloadTime;                              // Time it takes to cycle a new magazine
     [SerializeField] private float reloadTimeEmpty;                         // Time it takes to cycle a new magazine plus charging bolt, if applicable
 

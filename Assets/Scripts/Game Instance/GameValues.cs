@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameValues : MonoBehaviour{
+
+    public static string level;
     
     public static GameValues instance = null;
 

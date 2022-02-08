@@ -59,12 +59,15 @@ public class CameraControl : MonoBehaviour{
     void LateUpdate(){
         switch(playerMovement.currentState){
             case PlayerMovements.PlayerMovementState.Aiming:
-                offset.x = 7f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                offset.z = -10f + -(5f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                if (GameValues.instance.numPlayers == 1)
+                {
+                    offset.x = 7f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
+                    offset.z = -10f + -(5f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                }
                 break;
             default:
                 offset.x = 0f;
-                offset.z = -10f;
+                //offset.z = -10f;
                 break;
         }
 
@@ -118,7 +121,7 @@ public class CameraControl : MonoBehaviour{
             {
                 offset.x = 0f;
                 offset.y = minZoom + Mathf.Abs(largestDistance);
-                offset.z = -9f;
+                offset.z = -9f - Mathf.Abs(largestDistance * 0.6f);
             }
         }
     }

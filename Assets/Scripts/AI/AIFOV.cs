@@ -11,7 +11,7 @@ public class AIFOV : MonoBehaviour
     public LayerMask targetMask; // this would be a player tag or something else denoting a player
     public LayerMask obstacleMask; // if we had specific obstacles, but can leave on "everything"
  
-    public List<Transform> visibleTargets = new List<Transform>();
+    public Transform visibleTarget;
 
     void Start(){
         StartCoroutine("FindTargetsOnDelay", 0.3f);
@@ -27,18 +27,20 @@ public class AIFOV : MonoBehaviour
 
 
     void FindVisibleTargets(){
+        visibleTarget = null;
         // Kill all previous target tranforms
-        visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
-        for(int i = 0; i < targetsInViewRadius.Length; i++){
-            Transform target = targetsInViewRadius[i].transform;
+        foreach(Collider tar in targetsInViewRadius)
+        {
+            Transform target = tar.transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2){
+            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+            {
                 float distToTarget = Vector3.Distance(transform.position, target.position);
                 // add all visible units to the list of things to chase
                 if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask)){
-                    visibleTargets.Add(target);
+                    visibleTarget = target;
                 }
             }
         }
