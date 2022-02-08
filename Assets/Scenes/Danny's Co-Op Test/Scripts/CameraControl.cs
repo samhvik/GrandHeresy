@@ -67,7 +67,7 @@ public class CameraControl : MonoBehaviour{
                 break;
             default:
                 offset.x = 0f;
-                offset.z = -10f;
+                //offset.z = -10f;
                 break;
         }
 
@@ -121,7 +121,7 @@ public class CameraControl : MonoBehaviour{
             {
                 offset.x = 0f;
                 offset.y = minZoom + Mathf.Abs(largestDistance);
-                offset.z = -9f;
+                offset.z = -9f - Mathf.Abs(largestDistance * 0.6f);
             }
         }
     }

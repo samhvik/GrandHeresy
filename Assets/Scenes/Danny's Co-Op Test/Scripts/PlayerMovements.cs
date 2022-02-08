@@ -141,8 +141,13 @@ public class PlayerMovements : MonoBehaviour
 
         // Bug: For some reason, face direction is different here than in Aim()
         faceDirection = Vector3.forward * left_horizontal + Vector3.left * left_vertical;
-        if(faceDirection.sqrMagnitude > 0.2f)
-            transform.rotation = Quaternion.LookRotation(faceDirection);
+        if (faceDirection.sqrMagnitude > 0.2f)
+        {
+            //transform.rotation = Quaternion.LookRotation(faceDirection);
+            var desiredRotation = Quaternion.LookRotation(faceDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime * 2);
+
+        }
     }
 
     private void AimWalk(){

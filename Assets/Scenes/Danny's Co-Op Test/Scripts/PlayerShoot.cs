@@ -14,7 +14,6 @@ public class PlayerShoot : MonoBehaviour{
     private Gun gun;
     private bool held = false;
 
-
     void Awake(){
     }
 
@@ -26,10 +25,13 @@ public class PlayerShoot : MonoBehaviour{
             {
                 gun.Fire();
                 held = false;
+                Debug.Log(held);
             }
             else
             {
                 gun.Fire();
+                Debug.Log("Weird");
+
             }
         }
     }
@@ -37,13 +39,18 @@ public class PlayerShoot : MonoBehaviour{
     // OnFire fires our gun from our player
     public void OnFire(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() > 0.3f)
+        // If pressed down (Sets true once)
+        if(context.started)
         {
             held = true;
+            Debug.Log(gun.name);
         }
-        else
+
+        // If released (Sets false once)
+        if (context.canceled)
         {
             held = false;
+            Debug.Log("Canceled" + gun.name);
         }
     }
 

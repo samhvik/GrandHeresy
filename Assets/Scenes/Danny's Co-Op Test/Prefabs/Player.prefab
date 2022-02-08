@@ -427,6 +427,7 @@ MonoBehaviour:
   singleFire: 0
   round: {fileID: 3609687478482029446, guid: 97006b5640dcdf641a906a0a69483d31, type: 3}
   magSize: 30
+  remainingRounds: 0
   reloadTime: 1
   reloadTimeEmpty: 1.3
   shootState: 0
@@ -651,6 +652,7 @@ MonoBehaviour:
   singleFire: 1
   round: {fileID: 3609687478482029446, guid: 97006b5640dcdf641a906a0a69483d31, type: 3}
   magSize: 12
+  remainingRounds: 0
   reloadTime: 0.5
   reloadTimeEmpty: 0.6
   shootState: 0

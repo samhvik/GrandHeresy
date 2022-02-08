@@ -574,8 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f992dcba26d63874e82db8121a01f496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farthestPlayer: {x: 0, y: 0, z: 0}
-  maxDistance: 0
 --- !u!1 &663616203
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,10 +829,10 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 8dbd65da-04e2-4b4f-831d-b9c178745538
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1061,6 +1059,8 @@ MonoBehaviour:
   panSpeed: 0.25
   offset: {x: 0, y: 15, z: -9}
   cameraTracker: {fileID: 606554732}
+  maxZoom: 25
+  minZoom: 15
 --- !u!1 &1076914373
 GameObject:
   m_ObjectHideFlags: 0
