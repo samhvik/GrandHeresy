@@ -9,7 +9,7 @@ public class AILookDecision : AIDecision {
     {
         return Look(controller);
     }
-
+    /*
     private bool Look(AIStateController controller)
     {
         // controller.eyes is a variable in AIStateController.cs
@@ -26,16 +26,18 @@ public class AILookDecision : AIDecision {
             return false;
         }
     }
-    /*
+    */
+
     private bool Look(AIStateController controller)
     {
-        AIFOV fov = controller.GetComponent<FieldOfView>();
-        if(fov == null) Debug.Log("no FOV Script I can't see"); return false;
+        AIFOV fov = controller.GetComponent<AIFOV>();
+        if(fov == null) {Debug.Log("no FOV Script I can't see"); return false;}
         
-        if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player)){
-            controller.target = fov.visibleTarget;
+        if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
+            Debug.Log("");
+            controller.chaseTarget = fov.visibleTarget;
             return true;
         }
         return false;
-    }*/
+    }
 }
