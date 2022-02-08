@@ -117,7 +117,6 @@ public class PlayerMovement : MonoBehaviour
         
         switch(currentState){
             case PlayerMovementState.Idle:
-                
                 break;
             case PlayerMovementState.Walking:
                 Walk();
@@ -197,33 +196,33 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Walk(){
-        animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, 0.0f, 0.0f, false);
-
+        // ---------------- May need this later
+        //animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, 0.0f, 0.0f, false);
+        
+        // Move the character depending on stick direction
         this.GetComponent<CharacterController>().SimpleMove(new Vector3(
             left_horizontal * GameValues.instance.playerSpeedWalk,
             0.0f,
             left_vertical * GameValues.instance.playerSpeedWalk
         ));
 
-        // Bug: For some reason, face direction is different here than in Aim()
-        // Bug potentially fixed. Put left_vertical with the forward vector and left_horizontal with 
+        // -------------- Old way to rotate character -----------------------------
         // Vector3.right instead of left.
         // faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
-
-        // Debug.DrawLine(this.transform.position, faceDirection, Color.red);
         // if(faceDirection.sqrMagnitude > 0.1f){
         //     this.transform.rotation = Quaternion.LookRotation(faceDirection);
         // }
 
+        // -------------- New way to rotate character w/ lookSpeed variable -------
         faceDirection = new Vector3(left_horizontal, 0 , left_vertical);
         faceDirection.Normalize();
 
         transform.Translate(faceDirection * Time.deltaTime, Space.World);
-
         if(faceDirection != Vector3.zero){
             Quaternion toRotation = Quaternion.LookRotation(faceDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, lookSpeed * Time.deltaTime);
         }
+        //Debug.DrawLine(this.transform.position, faceDirection, Color.red);
 
     }
 

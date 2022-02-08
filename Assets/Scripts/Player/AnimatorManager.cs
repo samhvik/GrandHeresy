@@ -5,8 +5,8 @@ using UnityEngine;
 public class AnimatorManager : MonoBehaviour
 {
     public Animator animator;
-    float snappedHorizontal;
-    float snappedVertical;
+    private float snappedHorizontal;
+    private float snappedVertical;
     private Vector3 moveDirection;
 
     private void Awake()
@@ -29,16 +29,20 @@ public class AnimatorManager : MonoBehaviour
         // else snappedVertical = 0;        
 
         // Getting the magnitude of the left stick axis to determine whether to walk, run, or sprint
-        float mag = Mathf.Ceil(Mathf.Max(Mathf.Abs(v_Movement), Mathf.Abs(h_Movement)));
+        float mag = Mathf.Max(Mathf.Abs(v_Movement), Mathf.Abs(h_Movement));
+        //mag = Mathf.Ceil(mag);
         if(isRunning) mag *= 2f;
         animator.SetBool("IsSprinting", isRunning);
 
         // Checking whether in freelocomotion or strafe locomotion
         HandleLocomotionState(h_Aiming, v_Aiming);
         
+        // Setting animator values for locomotion to use
         animator.SetFloat("InputMagnitude", mag, 0.1f, Time.deltaTime);
+        animator.SetFloat("AimInputHorizontal", h_Aiming, 0.1f, Time.deltaTime);
+        animator.SetFloat("AimInputVertical", v_Aiming, 0.1f, Time.deltaTime);
         
-        // Animate Character Depending which mode they are in
+        // These are set a bit differently, strafing requires some math to animate correctly
         if(animator.GetBool("IsStrafing")){
 
             moveDirection = new Vector3(h_Movement, 0, v_Movement);
@@ -56,9 +60,6 @@ public class AnimatorManager : MonoBehaviour
             animator.SetFloat("InputVertical", v_Movement, 0.1f, Time.deltaTime);
         }
 
-        // Getting values for aiming with the right stick
-        animator.SetFloat("AimInputHorizontal", h_Aiming, 0.1f, Time.deltaTime);
-        animator.SetFloat("AimInputVertical", v_Aiming, 0.1f, Time.deltaTime);
     }
 
     private void HandleLocomotionState(float h_Aiming, float v_Aiming){
