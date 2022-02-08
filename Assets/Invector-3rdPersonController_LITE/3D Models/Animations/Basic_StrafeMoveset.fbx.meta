@@ -1,203 +1,587 @@
 fileFormatVersion: 2
 guid: 13d2640367521314591db34597e3f5d6
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Armature
-    100002: //RootNode
-    100004: collisionAudio
-    100006: leftFoot_trigger
-    100008: Mesh_LOD
-    100010: ragdollAudioSource
-    100012: rightFoot_trigger
-    100014: VBOT_:Head
-    100016: VBOT_:HeadTop_End
-    100018: VBOT_:HeadTop_End_end
-    100020: VBOT_:Hips
-    100022: VBOT_:LeftArm
-    100024: VBOT_:LeftFoot
-    100026: VBOT_:LeftForeArm
-    100028: VBOT_:LeftHand
-    100030: VBOT_:LeftHandIndex1
-    100032: VBOT_:LeftHandIndex2
-    100034: VBOT_:LeftHandIndex3
-    100036: VBOT_:LeftHandIndex4
-    100038: VBOT_:LeftHandIndex4_end
-    100040: VBOT_:LeftHandMiddle1
-    100042: VBOT_:LeftHandMiddle2
-    100044: VBOT_:LeftHandMiddle3
-    100046: VBOT_:LeftHandMiddle4
-    100048: VBOT_:LeftHandMiddle4_end
-    100050: VBOT_:LeftHandPinky1
-    100052: VBOT_:LeftHandPinky2
-    100054: VBOT_:LeftHandPinky3
-    100056: VBOT_:LeftHandPinky4
-    100058: VBOT_:LeftHandPinky4_end
-    100060: VBOT_:LeftHandRing1
-    100062: VBOT_:LeftHandRing2
-    100064: VBOT_:LeftHandRing3
-    100066: VBOT_:LeftHandRing4
-    100068: VBOT_:LeftHandRing4_end
-    100070: VBOT_:LeftHandThumb1
-    100072: VBOT_:LeftHandThumb2
-    100074: VBOT_:LeftHandThumb3
-    100076: VBOT_:LeftHandThumb4
-    100078: VBOT_:LeftHandThumb4_end
-    100080: VBOT_:LeftLeg
-    100082: VBOT_:LeftShoulder
-    100084: VBOT_:LeftToe_End
-    100086: VBOT_:LeftToe_End_end
-    100088: VBOT_:LeftToeBase
-    100090: VBOT_:LeftUpLeg
-    100092: VBOT_:Neck
-    100094: VBOT_:RightArm
-    100096: VBOT_:RightFoot
-    100098: VBOT_:RightForeArm
-    100100: VBOT_:RightHand
-    100102: VBOT_:RightHandIndex1
-    100104: VBOT_:RightHandIndex2
-    100106: VBOT_:RightHandIndex3
-    100108: VBOT_:RightHandIndex4
-    100110: VBOT_:RightHandIndex4_end
-    100112: VBOT_:RightHandMiddle1
-    100114: VBOT_:RightHandMiddle2
-    100116: VBOT_:RightHandMiddle3
-    100118: VBOT_:RightHandMiddle4
-    100120: VBOT_:RightHandMiddle4_end
-    100122: VBOT_:RightHandPinky1
-    100124: VBOT_:RightHandPinky2
-    100126: VBOT_:RightHandPinky3
-    100128: VBOT_:RightHandPinky4
-    100130: VBOT_:RightHandPinky4_end
-    100132: VBOT_:RightHandRing1
-    100134: VBOT_:RightHandRing2
-    100136: VBOT_:RightHandRing3
-    100138: VBOT_:RightHandRing4
-    100140: VBOT_:RightHandRing4_end
-    100142: VBOT_:RightHandThumb1
-    100144: VBOT_:RightHandThumb2
-    100146: VBOT_:RightHandThumb3
-    100148: VBOT_:RightHandThumb4
-    100150: VBOT_:RightHandThumb4_end
-    100152: VBOT_:RightLeg
-    100154: VBOT_:RightShoulder
-    100156: VBOT_:RightToe_End
-    100158: VBOT_:RightToe_End_end
-    100160: VBOT_:RightToeBase
-    100162: VBOT_:RightUpLeg
-    100164: VBOT_:Spine
-    100166: VBOT_:Spine1
-    100168: VBOT_:Spine2
-    100170: VBOT_:VBOT_LOD0
-    100172: VBOT_:VBOT_LOD1
-    100174: VBOT_:VBOT_LOD2
-    100176: VBOT_:VBOT_LOD3
-    400000: Armature
-    400002: //RootNode
-    400004: collisionAudio
-    400006: leftFoot_trigger
-    400008: Mesh_LOD
-    400010: ragdollAudioSource
-    400012: rightFoot_trigger
-    400014: VBOT_:Head
-    400016: VBOT_:HeadTop_End
-    400018: VBOT_:HeadTop_End_end
-    400020: VBOT_:Hips
-    400022: VBOT_:LeftArm
-    400024: VBOT_:LeftFoot
-    400026: VBOT_:LeftForeArm
-    400028: VBOT_:LeftHand
-    400030: VBOT_:LeftHandIndex1
-    400032: VBOT_:LeftHandIndex2
-    400034: VBOT_:LeftHandIndex3
-    400036: VBOT_:LeftHandIndex4
-    400038: VBOT_:LeftHandIndex4_end
-    400040: VBOT_:LeftHandMiddle1
-    400042: VBOT_:LeftHandMiddle2
-    400044: VBOT_:LeftHandMiddle3
-    400046: VBOT_:LeftHandMiddle4
-    400048: VBOT_:LeftHandMiddle4_end
-    400050: VBOT_:LeftHandPinky1
-    400052: VBOT_:LeftHandPinky2
-    400054: VBOT_:LeftHandPinky3
-    400056: VBOT_:LeftHandPinky4
-    400058: VBOT_:LeftHandPinky4_end
-    400060: VBOT_:LeftHandRing1
-    400062: VBOT_:LeftHandRing2
-    400064: VBOT_:LeftHandRing3
-    400066: VBOT_:LeftHandRing4
-    400068: VBOT_:LeftHandRing4_end
-    400070: VBOT_:LeftHandThumb1
-    400072: VBOT_:LeftHandThumb2
-    400074: VBOT_:LeftHandThumb3
-    400076: VBOT_:LeftHandThumb4
-    400078: VBOT_:LeftHandThumb4_end
-    400080: VBOT_:LeftLeg
-    400082: VBOT_:LeftShoulder
-    400084: VBOT_:LeftToe_End
-    400086: VBOT_:LeftToe_End_end
-    400088: VBOT_:LeftToeBase
-    400090: VBOT_:LeftUpLeg
-    400092: VBOT_:Neck
-    400094: VBOT_:RightArm
-    400096: VBOT_:RightFoot
-    400098: VBOT_:RightForeArm
-    400100: VBOT_:RightHand
-    400102: VBOT_:RightHandIndex1
-    400104: VBOT_:RightHandIndex2
-    400106: VBOT_:RightHandIndex3
-    400108: VBOT_:RightHandIndex4
-    400110: VBOT_:RightHandIndex4_end
-    400112: VBOT_:RightHandMiddle1
-    400114: VBOT_:RightHandMiddle2
-    400116: VBOT_:RightHandMiddle3
-    400118: VBOT_:RightHandMiddle4
-    400120: VBOT_:RightHandMiddle4_end
-    400122: VBOT_:RightHandPinky1
-    400124: VBOT_:RightHandPinky2
-    400126: VBOT_:RightHandPinky3
-    400128: VBOT_:RightHandPinky4
-    400130: VBOT_:RightHandPinky4_end
-    400132: VBOT_:RightHandRing1
-    400134: VBOT_:RightHandRing2
-    400136: VBOT_:RightHandRing3
-    400138: VBOT_:RightHandRing4
-    400140: VBOT_:RightHandRing4_end
-    400142: VBOT_:RightHandThumb1
-    400144: VBOT_:RightHandThumb2
-    400146: VBOT_:RightHandThumb3
-    400148: VBOT_:RightHandThumb4
-    400150: VBOT_:RightHandThumb4_end
-    400152: VBOT_:RightLeg
-    400154: VBOT_:RightShoulder
-    400156: VBOT_:RightToe_End
-    400158: VBOT_:RightToe_End_end
-    400160: VBOT_:RightToeBase
-    400162: VBOT_:RightUpLeg
-    400164: VBOT_:Spine
-    400166: VBOT_:Spine1
-    400168: VBOT_:Spine2
-    400170: VBOT_:VBOT_LOD0
-    400172: VBOT_:VBOT_LOD1
-    400174: VBOT_:VBOT_LOD2
-    400176: VBOT_:VBOT_LOD3
-    7400000: WalkBack
-    7400002: WalkBackRight
-    7400004: WalkForwardRight
-    7400006: WalkRight
-    7400008: RunBack
-    7400010: RunBackRight
-    7400012: RunForwardRight
-    7400014: RunRight
-    7400016: Crouch_WalkBack
-    7400018: Crouch_WalkBackRight
-    7400020: Crouch_WalkLeft
-    7400022: Crouch_WalkLeftForward
-    7400024: Crouch_WalkRight
-    9500000: //RootNode
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Armature
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: collisionAudio
+  - first:
+      1: 100006
+    second: leftFoot_trigger
+  - first:
+      1: 100008
+    second: Mesh_LOD
+  - first:
+      1: 100010
+    second: ragdollAudioSource
+  - first:
+      1: 100012
+    second: rightFoot_trigger
+  - first:
+      1: 100014
+    second: VBOT_:Head
+  - first:
+      1: 100016
+    second: VBOT_:HeadTop_End
+  - first:
+      1: 100018
+    second: VBOT_:HeadTop_End_end
+  - first:
+      1: 100020
+    second: VBOT_:Hips
+  - first:
+      1: 100022
+    second: VBOT_:LeftArm
+  - first:
+      1: 100024
+    second: VBOT_:LeftFoot
+  - first:
+      1: 100026
+    second: VBOT_:LeftForeArm
+  - first:
+      1: 100028
+    second: VBOT_:LeftHand
+  - first:
+      1: 100030
+    second: VBOT_:LeftHandIndex1
+  - first:
+      1: 100032
+    second: VBOT_:LeftHandIndex2
+  - first:
+      1: 100034
+    second: VBOT_:LeftHandIndex3
+  - first:
+      1: 100036
+    second: VBOT_:LeftHandIndex4
+  - first:
+      1: 100038
+    second: VBOT_:LeftHandIndex4_end
+  - first:
+      1: 100040
+    second: VBOT_:LeftHandMiddle1
+  - first:
+      1: 100042
+    second: VBOT_:LeftHandMiddle2
+  - first:
+      1: 100044
+    second: VBOT_:LeftHandMiddle3
+  - first:
+      1: 100046
+    second: VBOT_:LeftHandMiddle4
+  - first:
+      1: 100048
+    second: VBOT_:LeftHandMiddle4_end
+  - first:
+      1: 100050
+    second: VBOT_:LeftHandPinky1
+  - first:
+      1: 100052
+    second: VBOT_:LeftHandPinky2
+  - first:
+      1: 100054
+    second: VBOT_:LeftHandPinky3
+  - first:
+      1: 100056
+    second: VBOT_:LeftHandPinky4
+  - first:
+      1: 100058
+    second: VBOT_:LeftHandPinky4_end
+  - first:
+      1: 100060
+    second: VBOT_:LeftHandRing1
+  - first:
+      1: 100062
+    second: VBOT_:LeftHandRing2
+  - first:
+      1: 100064
+    second: VBOT_:LeftHandRing3
+  - first:
+      1: 100066
+    second: VBOT_:LeftHandRing4
+  - first:
+      1: 100068
+    second: VBOT_:LeftHandRing4_end
+  - first:
+      1: 100070
+    second: VBOT_:LeftHandThumb1
+  - first:
+      1: 100072
+    second: VBOT_:LeftHandThumb2
+  - first:
+      1: 100074
+    second: VBOT_:LeftHandThumb3
+  - first:
+      1: 100076
+    second: VBOT_:LeftHandThumb4
+  - first:
+      1: 100078
+    second: VBOT_:LeftHandThumb4_end
+  - first:
+      1: 100080
+    second: VBOT_:LeftLeg
+  - first:
+      1: 100082
+    second: VBOT_:LeftShoulder
+  - first:
+      1: 100084
+    second: VBOT_:LeftToe_End
+  - first:
+      1: 100086
+    second: VBOT_:LeftToe_End_end
+  - first:
+      1: 100088
+    second: VBOT_:LeftToeBase
+  - first:
+      1: 100090
+    second: VBOT_:LeftUpLeg
+  - first:
+      1: 100092
+    second: VBOT_:Neck
+  - first:
+      1: 100094
+    second: VBOT_:RightArm
+  - first:
+      1: 100096
+    second: VBOT_:RightFoot
+  - first:
+      1: 100098
+    second: VBOT_:RightForeArm
+  - first:
+      1: 100100
+    second: VBOT_:RightHand
+  - first:
+      1: 100102
+    second: VBOT_:RightHandIndex1
+  - first:
+      1: 100104
+    second: VBOT_:RightHandIndex2
+  - first:
+      1: 100106
+    second: VBOT_:RightHandIndex3
+  - first:
+      1: 100108
+    second: VBOT_:RightHandIndex4
+  - first:
+      1: 100110
+    second: VBOT_:RightHandIndex4_end
+  - first:
+      1: 100112
+    second: VBOT_:RightHandMiddle1
+  - first:
+      1: 100114
+    second: VBOT_:RightHandMiddle2
+  - first:
+      1: 100116
+    second: VBOT_:RightHandMiddle3
+  - first:
+      1: 100118
+    second: VBOT_:RightHandMiddle4
+  - first:
+      1: 100120
+    second: VBOT_:RightHandMiddle4_end
+  - first:
+      1: 100122
+    second: VBOT_:RightHandPinky1
+  - first:
+      1: 100124
+    second: VBOT_:RightHandPinky2
+  - first:
+      1: 100126
+    second: VBOT_:RightHandPinky3
+  - first:
+      1: 100128
+    second: VBOT_:RightHandPinky4
+  - first:
+      1: 100130
+    second: VBOT_:RightHandPinky4_end
+  - first:
+      1: 100132
+    second: VBOT_:RightHandRing1
+  - first:
+      1: 100134
+    second: VBOT_:RightHandRing2
+  - first:
+      1: 100136
+    second: VBOT_:RightHandRing3
+  - first:
+      1: 100138
+    second: VBOT_:RightHandRing4
+  - first:
+      1: 100140
+    second: VBOT_:RightHandRing4_end
+  - first:
+      1: 100142
+    second: VBOT_:RightHandThumb1
+  - first:
+      1: 100144
+    second: VBOT_:RightHandThumb2
+  - first:
+      1: 100146
+    second: VBOT_:RightHandThumb3
+  - first:
+      1: 100148
+    second: VBOT_:RightHandThumb4
+  - first:
+      1: 100150
+    second: VBOT_:RightHandThumb4_end
+  - first:
+      1: 100152
+    second: VBOT_:RightLeg
+  - first:
+      1: 100154
+    second: VBOT_:RightShoulder
+  - first:
+      1: 100156
+    second: VBOT_:RightToe_End
+  - first:
+      1: 100158
+    second: VBOT_:RightToe_End_end
+  - first:
+      1: 100160
+    second: VBOT_:RightToeBase
+  - first:
+      1: 100162
+    second: VBOT_:RightUpLeg
+  - first:
+      1: 100164
+    second: VBOT_:Spine
+  - first:
+      1: 100166
+    second: VBOT_:Spine1
+  - first:
+      1: 100168
+    second: VBOT_:Spine2
+  - first:
+      1: 100170
+    second: VBOT_:VBOT_LOD0
+  - first:
+      1: 100172
+    second: VBOT_:VBOT_LOD1
+  - first:
+      1: 100174
+    second: VBOT_:VBOT_LOD2
+  - first:
+      1: 100176
+    second: VBOT_:VBOT_LOD3
+  - first:
+      4: 400000
+    second: Armature
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: collisionAudio
+  - first:
+      4: 400006
+    second: leftFoot_trigger
+  - first:
+      4: 400008
+    second: Mesh_LOD
+  - first:
+      4: 400010
+    second: ragdollAudioSource
+  - first:
+      4: 400012
+    second: rightFoot_trigger
+  - first:
+      4: 400014
+    second: VBOT_:Head
+  - first:
+      4: 400016
+    second: VBOT_:HeadTop_End
+  - first:
+      4: 400018
+    second: VBOT_:HeadTop_End_end
+  - first:
+      4: 400020
+    second: VBOT_:Hips
+  - first:
+      4: 400022
+    second: VBOT_:LeftArm
+  - first:
+      4: 400024
+    second: VBOT_:LeftFoot
+  - first:
+      4: 400026
+    second: VBOT_:LeftForeArm
+  - first:
+      4: 400028
+    second: VBOT_:LeftHand
+  - first:
+      4: 400030
+    second: VBOT_:LeftHandIndex1
+  - first:
+      4: 400032
+    second: VBOT_:LeftHandIndex2
+  - first:
+      4: 400034
+    second: VBOT_:LeftHandIndex3
+  - first:
+      4: 400036
+    second: VBOT_:LeftHandIndex4
+  - first:
+      4: 400038
+    second: VBOT_:LeftHandIndex4_end
+  - first:
+      4: 400040
+    second: VBOT_:LeftHandMiddle1
+  - first:
+      4: 400042
+    second: VBOT_:LeftHandMiddle2
+  - first:
+      4: 400044
+    second: VBOT_:LeftHandMiddle3
+  - first:
+      4: 400046
+    second: VBOT_:LeftHandMiddle4
+  - first:
+      4: 400048
+    second: VBOT_:LeftHandMiddle4_end
+  - first:
+      4: 400050
+    second: VBOT_:LeftHandPinky1
+  - first:
+      4: 400052
+    second: VBOT_:LeftHandPinky2
+  - first:
+      4: 400054
+    second: VBOT_:LeftHandPinky3
+  - first:
+      4: 400056
+    second: VBOT_:LeftHandPinky4
+  - first:
+      4: 400058
+    second: VBOT_:LeftHandPinky4_end
+  - first:
+      4: 400060
+    second: VBOT_:LeftHandRing1
+  - first:
+      4: 400062
+    second: VBOT_:LeftHandRing2
+  - first:
+      4: 400064
+    second: VBOT_:LeftHandRing3
+  - first:
+      4: 400066
+    second: VBOT_:LeftHandRing4
+  - first:
+      4: 400068
+    second: VBOT_:LeftHandRing4_end
+  - first:
+      4: 400070
+    second: VBOT_:LeftHandThumb1
+  - first:
+      4: 400072
+    second: VBOT_:LeftHandThumb2
+  - first:
+      4: 400074
+    second: VBOT_:LeftHandThumb3
+  - first:
+      4: 400076
+    second: VBOT_:LeftHandThumb4
+  - first:
+      4: 400078
+    second: VBOT_:LeftHandThumb4_end
+  - first:
+      4: 400080
+    second: VBOT_:LeftLeg
+  - first:
+      4: 400082
+    second: VBOT_:LeftShoulder
+  - first:
+      4: 400084
+    second: VBOT_:LeftToe_End
+  - first:
+      4: 400086
+    second: VBOT_:LeftToe_End_end
+  - first:
+      4: 400088
+    second: VBOT_:LeftToeBase
+  - first:
+      4: 400090
+    second: VBOT_:LeftUpLeg
+  - first:
+      4: 400092
+    second: VBOT_:Neck
+  - first:
+      4: 400094
+    second: VBOT_:RightArm
+  - first:
+      4: 400096
+    second: VBOT_:RightFoot
+  - first:
+      4: 400098
+    second: VBOT_:RightForeArm
+  - first:
+      4: 400100
+    second: VBOT_:RightHand
+  - first:
+      4: 400102
+    second: VBOT_:RightHandIndex1
+  - first:
+      4: 400104
+    second: VBOT_:RightHandIndex2
+  - first:
+      4: 400106
+    second: VBOT_:RightHandIndex3
+  - first:
+      4: 400108
+    second: VBOT_:RightHandIndex4
+  - first:
+      4: 400110
+    second: VBOT_:RightHandIndex4_end
+  - first:
+      4: 400112
+    second: VBOT_:RightHandMiddle1
+  - first:
+      4: 400114
+    second: VBOT_:RightHandMiddle2
+  - first:
+      4: 400116
+    second: VBOT_:RightHandMiddle3
+  - first:
+      4: 400118
+    second: VBOT_:RightHandMiddle4
+  - first:
+      4: 400120
+    second: VBOT_:RightHandMiddle4_end
+  - first:
+      4: 400122
+    second: VBOT_:RightHandPinky1
+  - first:
+      4: 400124
+    second: VBOT_:RightHandPinky2
+  - first:
+      4: 400126
+    second: VBOT_:RightHandPinky3
+  - first:
+      4: 400128
+    second: VBOT_:RightHandPinky4
+  - first:
+      4: 400130
+    second: VBOT_:RightHandPinky4_end
+  - first:
+      4: 400132
+    second: VBOT_:RightHandRing1
+  - first:
+      4: 400134
+    second: VBOT_:RightHandRing2
+  - first:
+      4: 400136
+    second: VBOT_:RightHandRing3
+  - first:
+      4: 400138
+    second: VBOT_:RightHandRing4
+  - first:
+      4: 400140
+    second: VBOT_:RightHandRing4_end
+  - first:
+      4: 400142
+    second: VBOT_:RightHandThumb1
+  - first:
+      4: 400144
+    second: VBOT_:RightHandThumb2
+  - first:
+      4: 400146
+    second: VBOT_:RightHandThumb3
+  - first:
+      4: 400148
+    second: VBOT_:RightHandThumb4
+  - first:
+      4: 400150
+    second: VBOT_:RightHandThumb4_end
+  - first:
+      4: 400152
+    second: VBOT_:RightLeg
+  - first:
+      4: 400154
+    second: VBOT_:RightShoulder
+  - first:
+      4: 400156
+    second: VBOT_:RightToe_End
+  - first:
+      4: 400158
+    second: VBOT_:RightToe_End_end
+  - first:
+      4: 400160
+    second: VBOT_:RightToeBase
+  - first:
+      4: 400162
+    second: VBOT_:RightUpLeg
+  - first:
+      4: 400164
+    second: VBOT_:Spine
+  - first:
+      4: 400166
+    second: VBOT_:Spine1
+  - first:
+      4: 400168
+    second: VBOT_:Spine2
+  - first:
+      4: 400170
+    second: VBOT_:VBOT_LOD0
+  - first:
+      4: 400172
+    second: VBOT_:VBOT_LOD1
+  - first:
+      4: 400174
+    second: VBOT_:VBOT_LOD2
+  - first:
+      4: 400176
+    second: VBOT_:VBOT_LOD3
+  - first:
+      74: 7400000
+    second: WalkBack
+  - first:
+      74: 7400002
+    second: WalkBackRight
+  - first:
+      74: 7400004
+    second: WalkForwardRight
+  - first:
+      74: 7400006
+    second: WalkRight
+  - first:
+      74: 7400008
+    second: RunBack
+  - first:
+      74: 7400010
+    second: RunBackRight
+  - first:
+      74: 7400012
+    second: RunForwardRight
+  - first:
+      74: 7400014
+    second: RunRight
+  - first:
+      74: 7400016
+    second: Crouch_WalkBack
+  - first:
+      74: 7400018
+    second: Crouch_WalkBackRight
+  - first:
+      74: 7400020
+    second: Crouch_WalkLeft
+  - first:
+      74: 7400022
+    second: Crouch_WalkLeftForward
+  - first:
+      74: 7400024
+    second: Crouch_WalkRight
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -206,6 +590,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -226,6 +611,7 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkBack
       takeName: WalkBack
+      internalID: 0
       firstFrame: 0
       lastFrame: 34
       wrapMode: 0
@@ -254,6 +640,7 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkBackRight
       takeName: WalkBackRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 34.000004
       wrapMode: 0
@@ -282,6 +669,7 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkForwardRight
       takeName: WalkForwardRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -310,8 +698,9 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkRight
       takeName: WalkRight
+      internalID: 0
       firstFrame: 0
-      lastFrame: 34.000004
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -323,7 +712,7 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -338,6 +727,7 @@ ModelImporter:
     - serializedVersion: 16
       name: RunBack
       takeName: RunBack
+      internalID: 0
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -366,6 +756,7 @@ ModelImporter:
     - serializedVersion: 16
       name: RunBackRight
       takeName: RunBackRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -394,6 +785,7 @@ ModelImporter:
     - serializedVersion: 16
       name: RunForwardRight
       takeName: RunForwardRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -422,6 +814,7 @@ ModelImporter:
     - serializedVersion: 16
       name: RunRight
       takeName: RunRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 21
       wrapMode: 0
@@ -454,25 +847,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -481,10 +883,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: VBOT_:Hips
       humanName: Hips
@@ -983,8 +1385,7 @@ ModelImporter:
     - name: VBOT_:LeftHandThumb4
       parentName: 
       position: {x: 0.12360834, y: 3.4833553, z: -0.0000096559515}
-      rotation: {x: 0.000000011175872, y: 0.000000011175872, z: 0.000000056810677,
-        w: 1}
+      rotation: {x: 0.000000011175872, y: 0.000000011175872, z: 0.000000056810677, w: 1}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: VBOT_:LeftHandThumb4_end
       parentName: 
@@ -1059,8 +1460,7 @@ ModelImporter:
     - name: VBOT_:LeftHandRing4
       parentName: 
       position: {x: -0.00041358636, y: 2.9665046, z: 0.000024707986}
-      rotation: {x: 0.00000003154195, y: 0.0000000055908194, z: 0.0000000044438986,
-        w: 1}
+      rotation: {x: 0.00000003154195, y: 0.0000000055908194, z: 0.0000000044438986, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: VBOT_:LeftHandRing4_end
       parentName: 
@@ -1130,8 +1530,7 @@ ModelImporter:
     - name: VBOT_:RightHandThumb4
       parentName: 
       position: {x: -0.18034028, y: 3.4578032, z: -0.00000989437}
-      rotation: {x: -0.000000001862645, y: -0.0000000037252899, z: 0.000000028870998,
-        w: 1}
+      rotation: {x: -0.000000001862645, y: -0.0000000037252899, z: 0.000000028870998, w: 1}
       scale: {x: 1.0000001, y: 1, z: 1}
     - name: VBOT_:RightHandThumb4_end
       parentName: 
@@ -1206,8 +1605,7 @@ ModelImporter:
     - name: VBOT_:RightHandRing4
       parentName: 
       position: {x: -0.000018931923, y: 3.1309967, z: -0.000009484588}
-      rotation: {x: -0.000000040627246, y: -0.000000007421774, z: 0.0000000014611032,
-        w: 1}
+      rotation: {x: -0.000000040627246, y: -0.000000007421774, z: 0.0000000014611032, w: 1}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: VBOT_:RightHandRing4_end
       parentName: 
@@ -1232,8 +1630,7 @@ ModelImporter:
     - name: VBOT_:RightHandPinky4
       parentName: 
       position: {x: -0.00018684844, y: 2.5621476, z: 0.0000047087665}
-      rotation: {x: 0.00000000583043, y: -0.0000000037147578, z: 0.000000024821702,
-        w: 1}
+      rotation: {x: 0.00000000583043, y: -0.0000000037147578, z: 0.000000024821702, w: 1}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: VBOT_:RightHandPinky4_end
       parentName: 
@@ -1327,14 +1724,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 340f99b8334a14c4a8a01dce6e1e5348,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 340f99b8334a14c4a8a01dce6e1e5348, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

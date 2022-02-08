@@ -22,9 +22,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public PlayerMovementState currentState = PlayerMovementState.Idle;
+
+    [Header("Found on Awake")]
     PlayerControls controls;
     AnimatorManager animatorManager;
+    public StateProcessor stateProcessor;
 
+    [Header("Found on Start")]
     private Transform transform;
     private Rigidbody rb;
     private Vector3 position;
@@ -38,20 +42,17 @@ public class PlayerMovement : MonoBehaviour
     private float right_horizontal;
     private float right_vertical;
     private Vector3 faceDirection;
-    Transform cam;
-    Vector3 camForward;
-    Vector3 move;
-    Vector3 moveInput;
-    float forwardAmount;
-    float turnAmount;
-
-    [SerializeField] [Range(50f, 500f)]
+    [SerializeField] [Range(50f, 900f)]
     private float lookSpeed = 250f;
 
 
     void Awake(){
         controls = new PlayerControls();
         animatorManager = GetComponent<AnimatorManager>();
+
+        // init state machine
+        // stateProcessor = this.gameObject.GetComponentInChildren<StateProcessor>();
+        // stateProcessor.TransitionTo(typeof(Idle));
 
         // callback functions for movement. stores joystick values into "left" Vector2.
         controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
@@ -83,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         position = transform.position;
 
-        cam = Camera.main.transform;
+        // cam = Camera.main.transform;
 
         left_horizontal = 0.0f;
         left_vertical = 0.0f;
@@ -95,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Update(){
         GetInput();
+        animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
+        //Movement();
 
         // Camera math to animate character the right way when aiming
         // if(cam != null){
@@ -114,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         
         switch(currentState){
             case PlayerMovementState.Idle:
-                animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
+                
                 break;
             case PlayerMovementState.Walking:
                 Walk();
@@ -160,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         
-        // BEGIN RUNNING
+        // // BEGIN RUNNING
         if(Input.GetButtonDown("Run") && currentState == PlayerMovementState.Walking){
             currentState = PlayerMovementState.Running;
             return;
@@ -172,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
         //     return;
         // }
 
-        // END RUNNING
+        // // END RUNNING
         if(left_horizontal == 0f && left_vertical == 0f && currentState == PlayerMovementState.Running){
             currentState = PlayerMovementState.Idle;
             return;
@@ -190,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // IDLE
-        currentState = PlayerMovementState.Idle;
+        // currentState = PlayerMovementState.Idle;
     }
 
     private void Walk(){
@@ -205,9 +208,22 @@ public class PlayerMovement : MonoBehaviour
         // Bug: For some reason, face direction is different here than in Aim()
         // Bug potentially fixed. Put left_vertical with the forward vector and left_horizontal with 
         // Vector3.right instead of left.
-        faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
-        if(faceDirection.sqrMagnitude > 0.2f)
-            transform.rotation = Quaternion.LookRotation(faceDirection);
+        // faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
+
+        // Debug.DrawLine(this.transform.position, faceDirection, Color.red);
+        // if(faceDirection.sqrMagnitude > 0.1f){
+        //     this.transform.rotation = Quaternion.LookRotation(faceDirection);
+        // }
+
+        faceDirection = new Vector3(left_horizontal, 0 , left_vertical);
+        faceDirection.Normalize();
+
+        transform.Translate(faceDirection * Time.deltaTime, Space.World);
+
+        if(faceDirection != Vector3.zero){
+            Quaternion toRotation = Quaternion.LookRotation(faceDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, lookSpeed * Time.deltaTime);
+        }
 
     }
 
