@@ -9,7 +9,7 @@ using UnityEditor;
 public class FieldofViewEditor : Editor
 {
     void OnSceneGUI(){
-        AIFOV fov = (AIFOV) target;
+        AIFOV fov = (AIFOV)target;
         Handles.color = Color.white;
         Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.viewRadius);
         Vector3 viewAngleA = fov.DirFromAngle(-fov.viewAngle / 2, false);

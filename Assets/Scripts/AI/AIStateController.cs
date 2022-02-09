@@ -7,7 +7,7 @@ public class AIStateController : MonoBehaviour
 {
     public AIStates currState;
     public EnemyStats enemyStats; // Enemy Base Class create this next time
-    public Transform eyes;
+    //public Transform eyes;
     public AIStates remainState;
 
     // hidden inspector public variables for accessing
@@ -63,12 +63,13 @@ public class AIStateController : MonoBehaviour
         stateTimeElapsed = 0;
     }
 
-    // built in debugging "gizmo" 
+    // built in debugging "gizmo"
+    /* turn on if FOV is not used anymore
     void OnDrawGizmos()
     {
         if (currState != null && eyes != null) {
             Gizmos.color = currState.sceneGizmoColor;
             Gizmos.DrawWireSphere (eyes.position, enemyStats.lookSphereCastRadius);
         }
-    }
+    }*/
 }

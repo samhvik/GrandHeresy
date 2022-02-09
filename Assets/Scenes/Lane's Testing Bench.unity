@@ -855,7 +855,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: {fileID: 11400000, guid: 67f1600820fd7e2429643ba19a36efff, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
-  eyes: {fileID: 327566156}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
   navMeshAgent: {fileID: 0}
   wayPointList: []
@@ -2425,7 +2424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: {fileID: 11400000, guid: 906bc4c147b6bcc4fa0b6cb739bced08, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
-  eyes: {fileID: 1345465641}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
   navMeshAgent: {fileID: 0}
   wayPointList: []
@@ -2467,7 +2465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a96e91ce8f45724dbfe0c3919743c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 12
+  viewRadius: 15.37
   viewAngle: 80
   targetMask:
     serializedVersion: 2
@@ -2765,7 +2763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: 7e980283d8b391248816469e190c21bf, type: 2}
-  eyes: {fileID: 1926950143}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
   navMeshAgent: {fileID: 0}
   wayPointList: []
