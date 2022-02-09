@@ -27,11 +27,11 @@ public class PlayerShooting : MonoBehaviour{
     }
 
     // Enable and disable control input when script is enabled/disabled.
-    void OnEnable(){
+    public void OnEnable(){
         controls.Gameplay.Enable();
     }
 
-    void OnDisable(){
+    public void OnDisable(){
         controls.Gameplay.Disable();
     }
 

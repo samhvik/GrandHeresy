@@ -12,16 +12,22 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
-    
     public GameObject pauseMenuUI;
     public GameObject firstButton;
+    public GameObject player;
+
+    PlayerMovement movement;
+    PlayerShooting shooting;
 
     PlayerControls controls;
 
     // sets up the controls first thing for this scene
     void Awake()
     {
+        // sets the variables for moving and shooting
+        movement = player.GetComponent<PlayerMovement>();
+        shooting = player.GetComponent<PlayerShooting>();
+
         controls = new PlayerControls();
 
         // Whenever the game detects the start button being pressed
@@ -44,20 +50,24 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         // deactivates the pause menu and resumes time scale for game
-        controls.Gameplay.Enable();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+
+        // enables player to start moving and shooting again
+        movement.OnEnable();
+        shooting.OnEnable();
     }
 
     // enables pause menu ui, pauses game time, and sets GameIsPaused to true
     void Pause()
     {
+        // disables player's ability to move and shoot
+        movement.OnDisable();
+        shooting.OnDisable();
+
         // activates pause menu and stops time for the game
-        controls.Gameplay.Disable();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
 
         // sets resume as the first selected game object
         EventSystem.current.SetSelectedGameObject(firstButton);
