@@ -128,8 +128,9 @@ public class PlayerMovement : MonoBehaviour
                 AimWalk();
                 Aim();
                 break;
-            // case PlayerMovementState.Dodge:
-            //     break;
+            case PlayerMovementState.Dodge:
+                HandleDodgeRoll();
+                break;
             default:
                 Debug.Log("Invalid PlayerMovementState Detected");
                 break;
@@ -258,10 +259,13 @@ public class PlayerMovement : MonoBehaviour
         if(faceDirection.sqrMagnitude > 0.2f)
             transform.rotation = Quaternion.LookRotation(faceDirection);
     }
-
-    private void Dodge(){
-
+    
+    private void HandleDodgeRoll(){
+        float slideSpeed = 100f;
+        faceDirection = Vector3.forward * left_vertical + Vector3.right * left_horizontal;
+        transform.position += faceDirection * slideSpeed * Time.deltaTime;
     }
+
 
     private void Aim(){
         faceDirection = Vector3.forward * right_vertical + Vector3.right * right_horizontal;
