@@ -135,13 +135,13 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Arms
     m_StateMachine: {fileID: -1532135179844893073}
-    m_Mask: {fileID: 31900000, guid: 523195e7d1c8cde40986189a7e15d6d5, type: 2}
+    m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 0
-    m_IKPass: 1
+    m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
 --- !u!114 &11400864
