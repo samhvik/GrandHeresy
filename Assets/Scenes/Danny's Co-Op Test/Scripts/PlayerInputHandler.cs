@@ -23,12 +23,20 @@ public class PlayerInputHandler : MonoBehaviour
         // Increases how many players are in the game
         GameValues.instance.numPlayers++;
 
-        Debug.Log("Player Index: " + playerIndex + " | Number of Players: " + GameValues.instance.numPlayers);
+        // Adds Player to Player Array in Game Values
+        GameValues.instance.Players[playerIndex] = this.gameObject;
+
+        Debug.Log("Player Index: " + playerIndex + " | Number of Players: " + GameValues.instance.getNumPlayers());
     }
 
     void Update()
     {
         // Gives updates to the players position to GameValues script so that we can track the Camera based on midpoint
         GameValues.instance.playerPosition[playerIndex] = this.GetComponent<Transform>();
+    }
+
+    public int getPlayerIndex()
+    {
+        return playerIndex;
     }
 }

@@ -22,9 +22,16 @@ public class GameValues : MonoBehaviour{
     public float playerSpeedAim;
     public float playerSpeedRun;
 
+    /// <summary>
+    /// Handling Player
+    /// </summary>
+    /// 
     // # of players in the game currently
     public int numPlayers;
-
+    //
+    // Holds our Players to be called upon
+    public GameObject[] Players = new GameObject[4];
+    //
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
 
@@ -62,9 +69,23 @@ public class GameValues : MonoBehaviour{
             #endif
             Application.Quit();
         }
+
+
     }
 
     public void UpdateHealth(int damage){
         playerHealth -= damage;
+    }
+
+    // Returns how many players are in the game currently
+    public int getNumPlayers()
+    {
+        return numPlayers;
+    }
+
+    // Returns the gameobject of the player with the given index
+    public GameObject getPlayer(int index)
+    {
+        return Players[index];
     }
 }
