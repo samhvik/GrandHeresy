@@ -11,22 +11,41 @@ public class ObjectiveController : MonoBehaviour
     public GameObject[] spawnsNE;
     public GameObject[] spawnsNW;
     public GameObject[] chosenSpawns;
+    //should be set within inspector to some gameobject (default is a tree)
     public GameObject objective1ToSpawn;
-    List<GameObject> spawnedObjects = new List<GameObject>();
+
+    public GameObject[] objectivesToSpawn;
+    private GameObject objectSpawned;
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     void Awake()
     {
         //objective1ToSpawn = (GameObject)Resources.Load("name of prefab to spawn", typeof(GameObject));
+        //why we have to use resources folder: https://answers.unity.com/questions/1170405/resourcesload-without-a-resources-folder.html
        objective1ToSpawn = (GameObject)Resources.Load("Tree",typeof(GameObject));
        //choose spawn groups
        chosenSpawns = chooseSpawnGroup();
        //go through chosen spawns and instantiate at each point 
+       //currently only handles spawning one objective type
        foreach (GameObject spawnPoint in chosenSpawns){
            objectSpawned = GameObject.Instantiate(objective1ToSpawn, spawnPoint.transform.position, Quaternion.identity);
            spawnedObjects.Add(objectSpawned);
+           print(objectSpawned.name);
            print("object should be spawned");
            print(spawnPoint.transform.position);
            print(spawnPoint.name);
        }
+       /*
+        //picks a random objective from a list of objectives to spawn at a specified spawn point 
+        if(objectiveToSpawn.Length >= 2){
+            foreach(GameObject spawnPoint in chosenSpawns){
+                int objSpawn = Random.Range(1,objectiveToSpawn.Length);
+                objectSpawned = GameObject.Instantiate(objectivesToSpawn[objSpawn], spawnPoint.transform.position, Quaternion.identity);
+                spawnedObjects.Add(objectSpawned);
+            }
+        }
+       
+       
+       */
        
     }
 
@@ -43,7 +62,7 @@ public class ObjectiveController : MonoBehaviour
    
     /*
        GameObject[] getSpawnPointsByGroup( string TargetGroup):
-        Returns null if parameter not specified, else array of GameObjectPoints used for objective spawning
+        helper method that returns null if parameter not specified, else array of GameObjectPoints used for objective spawning
         Points are specified by acceptable parameter strings: SW, SE, NW, NE
     */
     GameObject[] getSpawnPointsByGroup( string TargetGroup){
@@ -95,4 +114,18 @@ public class ObjectiveController : MonoBehaviour
             return null;
         }
     }
+    //Destroys and removes objectives completed from spawnedObjects list
+    // void destroyObject( GameObject Obj){
+    //     if(spawnedObjects.Find(Obj)){
+    //         spawnedObjects.Remove(Obj);
+    //         Destroy(Obj);
+    //     }
+        
+    // }
+
+    // void ObjectiveCompleted(GameObject Obj){
+    //     //do necessary stuff for completing objectives 
+    //     //destroy the objective now that its done 
+    //     destroyObject(Obj);
+    // }
 }
