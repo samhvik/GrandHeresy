@@ -24,9 +24,8 @@ public class PlayerMovement : MonoBehaviour
     public PlayerMovementState currentState = PlayerMovementState.Idle;
 
     [Header("Found on Awake")]
-    PlayerControls controls;
+    public PlayerControls controls;
     AnimatorManager animatorManager;
-    public StateProcessor stateProcessor;
 
     [Header("Found on Start")]
     private Transform transform;
@@ -41,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     private float left_vertical;
     private float right_horizontal;
     private float right_vertical;
-    private Vector3 faceDirection;
+    public Vector3 faceDirection;
     [SerializeField] [Range(50f, 900f)]
-    private float lookSpeed = 250f;
+    public float lookSpeed = 250f;
 
 
     void Awake(){
@@ -84,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         position = transform.position;
 
-        // cam = Camera.main.transform;
+        //cam = Camera.main.transform;
 
         left_horizontal = 0.0f;
         left_vertical = 0.0f;
@@ -97,23 +96,6 @@ public class PlayerMovement : MonoBehaviour
     void Update(){
         GetInput();
         animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
-        //Movement();
-
-        // Camera math to animate character the right way when aiming
-        // if(cam != null){
-        //     camForward = Vector3.Scale(cam.up, new Vector3(1, 0, 1)).normalized; 
-        //     move = left_vertical * camForward + left_horizontal * cam.right;
-        // }
-        // else{
-        //     move = left_vertical * Vector3.forward + left_horizontal * Vector3.right;
-        // }
-
-        // if(move.magnitude > 1){
-        //     move.Normalize();
-        // }
-
-        // Move(move);
-        
         
         switch(currentState){
             case PlayerMovementState.Idle:
