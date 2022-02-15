@@ -9,10 +9,10 @@ using UnityEngine;
 
 public class Round : MonoBehaviour
 {
-    public float damage;
-    public float despawnTime = 1.5f;
+    public float damage;                    // how much enemy HP is reduced by on impact
+    public float despawnTime = 1.5f;        // travel time in seconds before despawning
     private float counter = 0f;
-    public bool overPenetrate = false;
+    public bool overPenetrate = false;      // determines if bullet will go through targets
 
     void Update(){
         counter += Time.deltaTime;

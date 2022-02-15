@@ -29,7 +29,6 @@ public class Gun : MonoBehaviour{
     [Header("Properties")]
     [SerializeField] [Range(1f, 2000f)] private float firerate;             // How fast the gun shoots in rounds per minute
     [SerializeField] [Range(0f, 45f)] private float accuracy;               // The spawn angle of the round shot
-    [SerializeField] private float range;                                   // Distance the round travels
     [SerializeField] private int roundsPerShot;                             // How many rounds are shot in one fire instance
     [Range(0.5f, 100f)] public float muzzleVelocity;                        // How fast the round travels
     [SerializeField] private float muzzleOffset;                            // Distance of the gun's muzzle from the origin point
