@@ -3633,6 +3633,7 @@ MonoBehaviour:
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
   lookSpeed: 700
+  slideSpeed: 50
 --- !u!1 &994822704
 GameObject:
   m_ObjectHideFlags: 0

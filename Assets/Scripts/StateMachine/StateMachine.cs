@@ -30,10 +30,13 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
+    public virtual string GetCurrentState(){
+        return currentState.name;
+    }
+
     public void ChangeState(BaseState newState)
     {
         currentState.Exit();
-
         currentState = newState;
         newState.Enter();
     }

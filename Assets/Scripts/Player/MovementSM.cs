@@ -11,6 +11,8 @@ public class MovementSM : StateMachine
     [HideInInspector]
     public Running runningState;
     [HideInInspector]
+    public Dodge dodgeState;
+    [HideInInspector]
     public Aim aimState;
     [HideInInspector]
     public StrafeAim strafeAimState;
@@ -19,19 +21,22 @@ public class MovementSM : StateMachine
     public PlayerControls controls;
     AnimatorManager animatorManager;
 
-    [Header("Found on Start")]
-    public Rigidbody rb;
-
     [Header("Player Movement")]
-    private Vector2 left;
-    private Vector2 right;
     public float left_horizontal;
     public float left_vertical;
     public float right_horizontal;
     public float right_vertical;
     public Vector3 faceDirection;
-    [SerializeField] [Range(50f, 900f)]
+    private Vector2 left;
+    private Vector2 right;
+
+    [Header("Player Tweaking")]
+    [SerializeField] [Range(400f, 900f)]
     public float lookSpeed = 250f;
+    [SerializeField] [Range(50f, 300f)]
+    public float slideSpeed = 250f;
+    [SerializeField] [Range(1f, 20f)]
+    public float slideFalloff = 10f;
 
 
     private void Awake(){
@@ -40,6 +45,7 @@ public class MovementSM : StateMachine
         aimState = new Aim(this);
         runningState = new Running(this);
         strafeAimState = new StrafeAim(this);
+        dodgeState = new Dodge(this);
 
         initValue();
     }
@@ -50,7 +56,6 @@ public class MovementSM : StateMachine
 
     void initValue(){
         controls = new PlayerControls();
-        rb = GetComponent<Rigidbody>();
         animatorManager = GetComponent<AnimatorManager>();
 
         // callback functions for movement. stores joystick values into "left" Vector2.
@@ -61,11 +66,6 @@ public class MovementSM : StateMachine
         controls.Gameplay.Aim.performed += ctx => right = ctx.ReadValue<Vector2>();
         controls.Gameplay.Aim.canceled += ctx => right = Vector2.zero;
 
-        // callback function for running.
-        // controls.Gameplay.Run.performed += ctx => {ChangeState(runningState);};
-
-        // callback function for dodging.
-        // controls.Gameplay.Dodge.performed += ctx => BeginDodge();
     }
 
     // ------- There must be a way to make getting inputs and animating its own scripts-------------
