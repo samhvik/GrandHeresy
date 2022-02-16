@@ -67,4 +67,8 @@ public class AnimatorManager : MonoBehaviour
         else animator.SetBool("IsStrafing", false);
     }
 
+    public void HandleDodgeRollState(bool condition){
+        animator.SetBool("IsDodging", condition);
+    }
+
 }
