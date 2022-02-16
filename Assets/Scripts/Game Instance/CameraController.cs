@@ -14,7 +14,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour{
     
     private Camera cameraMain;
-    private PlayerMovement playerMovement;
+    private MovementSM playerMovement;
 
     private Transform transform;
     public Transform target;
@@ -29,14 +29,15 @@ public class CameraController : MonoBehaviour{
 
     void Start(){
         cameraMain = GameObject.Find("Main Camera").GetComponent<Camera>();
-        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerMovement = GameObject.Find("Player").GetComponent<MovementSM>();
         transform = this.GetComponent<Transform>();
     }
 
     
     void LateUpdate(){
-        switch(playerMovement.currentState){
-            case PlayerMovement.PlayerMovementState.Aiming:
+        switch(playerMovement.GetCurrentState()){
+            case "Aim":
+            case "StrafeAim":
                 offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
                 offset.z = -10f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                 break;
