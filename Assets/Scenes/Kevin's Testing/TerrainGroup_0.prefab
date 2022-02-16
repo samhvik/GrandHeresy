@@ -50,6 +50,7 @@ MonoBehaviour:
   spawnsNW: []
   chosenSpawns: []
   objective1ToSpawn: {fileID: 5779263247399187983, guid: fec1ab4a4382a400fab5a14cdf379f16, type: 3}
+  objectivesToSpawn: []
 --- !u!1 &6677534692848386524
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6677534693410595388}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e6b19c38229de47eabfd4de816f18817, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: e7fce0c6649e8471496698ab6f3f4bf4, type: 2}
   m_EnableTreeColliders: 1
