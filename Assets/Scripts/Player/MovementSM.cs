@@ -19,7 +19,7 @@ public class MovementSM : StateMachine
 
     [Header("Found on Awake")]
     public PlayerControls controls;
-    AnimatorManager animatorManager;
+    public AnimatorManager animatorManager;
 
     [Header("Player Movement")]
     public float left_horizontal;
@@ -34,9 +34,9 @@ public class MovementSM : StateMachine
     [SerializeField] [Range(400f, 900f)]
     public float lookSpeed = 250f;
     [SerializeField] [Range(50f, 300f)]
-    public float slideSpeed = 250f;
+    public float dodgeSlideSpeed = 250f;
     [SerializeField] [Range(1f, 20f)]
-    public float slideFalloff = 10f;
+    public float dodgeSlideFalloff = 10f;
 
 
     private void Awake(){
@@ -72,6 +72,10 @@ public class MovementSM : StateMachine
     void FixedUpdate(){
         GetInput();
         animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
+        // if(controls.Gameplay.Dodge.triggered) {
+        //     Debug.Log("DodgeRolling Anim....");
+        //     animatorManager.HandleDodgeRollState(true);
+        // }
     }
 
     private void GetInput(){
