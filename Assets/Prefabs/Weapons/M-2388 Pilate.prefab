@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4532611741402156278}
   m_Layer: 0
   m_Name: M-2388 Pilate
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

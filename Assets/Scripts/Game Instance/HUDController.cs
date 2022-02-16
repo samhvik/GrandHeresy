@@ -17,12 +17,12 @@ public class HUDController : MonoBehaviour
     private PlayerMovement movement;
 
     public Text currentWeaponText;
-    private WeaponSwitching inventory;
+    private PlayerGear inventory;
 
     void Start()
     {
         movement = GameObject.Find("Player").GetComponent<PlayerMovement>();
-        inventory = GameObject.Find("WeaponInventory").GetComponent<WeaponSwitching>();
+        inventory = GameObject.Find("Player").GetComponent<PlayerGear>();
     }
 
     void LateUpdate()

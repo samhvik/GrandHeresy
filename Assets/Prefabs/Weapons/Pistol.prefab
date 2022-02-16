@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8814395278966582712}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,13 +117,13 @@ MonoBehaviour:
   shakeSharpness: 0.025
   firerate: 350
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 50
   muzzleOffset: 1
   singleFire: 1
   round: {fileID: 3609687478482029446, guid: 97006b5640dcdf641a906a0a69483d31, type: 3}
   magSize: 12
+  remainingRounds: 0
   reloadTime: 0.5
   reloadTimeEmpty: 0.6
   shootState: 0

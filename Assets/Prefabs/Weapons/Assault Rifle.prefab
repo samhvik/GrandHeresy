@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5010262365321775372}
   m_Layer: 0
   m_Name: Assault Rifle
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,13 +117,13 @@ MonoBehaviour:
   shakeSharpness: 0.025
   firerate: 11.666667
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 50
   muzzleOffset: 2
   singleFire: 0
   round: {fileID: 3609687478482029446, guid: 97006b5640dcdf641a906a0a69483d31, type: 3}
   magSize: 30
+  remainingRounds: 0
   reloadTime: 1
   reloadTimeEmpty: 1.3
   shootState: 0

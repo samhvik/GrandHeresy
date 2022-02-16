@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - ObjectiveSpawnNE
+  - ObjectiveSpawnSW
+  - ObjectiveSpawnNW
+  - ObjectiveSpawnSE
+  - Drop
+  - Gear
   layers:
   - Default
   - TransparentFX
