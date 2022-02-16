@@ -21,13 +21,13 @@ public class AIAttackAction : AIAction
                 controller.stateTimeElapsed = 0;
             }
         }
-    } OLD ATTACK FUNCTION*/
+    } OLD ATTACK FUNCTION END*/
     private void Attack(AIStateController controller){
         AIFOV fov = controller.GetComponent<AIFOV>();
         if(fov == null) return;
         
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
-            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD)){
+            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //GameValues.instance.UpdateHealth(controller.enemyStats.damage);
                 Debug.Log("Attack");
                 controller.stateTimeElapsed = 0;
