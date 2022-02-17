@@ -371,10 +371,10 @@ GameObject:
   - component: {fileID: 113232398}
   - component: {fileID: 113232402}
   - component: {fileID: 113232392}
-  - component: {fileID: 113232393}
   - component: {fileID: 113232400}
   - component: {fileID: 113232404}
-  - component: {fileID: 113232405}
+  - component: {fileID: 113232406}
+  - component: {fileID: 113232407}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -395,21 +395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   held: 0
---- !u!114 &113232393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113232391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ccda5d93b785c43afee63cc2a671c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  stateProcessor: {fileID: 0}
-  lookSpeed: 835
 --- !u!136 &113232394
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -589,7 +574,7 @@ MonoBehaviour:
   - {fileID: 1890308213}
   - {fileID: 383689154}
   - {fileID: 1098142375}
---- !u!114 &113232405
+--- !u!114 &113232406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -598,11 +583,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 113232391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b5d983e1d94c90ba01c08c479116ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 63b1d62a36696884c904c020c16e6242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 5
-  starterGun: {fileID: 5066759550108367686, guid: d35214f1bc5bce74a9344b5ce0ecb3db, type: 3}
+  animatorManager: {fileID: 113232400}
+  left_horizontal: 0
+  left_vertical: 0
+  right_horizontal: 0
+  right_vertical: 0
+  faceDirection: {x: 0, y: 0, z: 0}
+  lookSpeed: 250
+  dodgeSlideSpeed: 250
+  dodgeSlideFalloff: 10
+--- !u!114 &113232407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113232391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f817de0a2cbec47828af04d822e60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 2
+  starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
   pickupRadius: 10
 --- !u!4 &137938781 stripped
 Transform:

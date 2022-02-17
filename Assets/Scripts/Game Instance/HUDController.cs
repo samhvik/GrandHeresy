@@ -14,14 +14,14 @@ public class HUDController : MonoBehaviour
     public Text ammoText;
 
     public Text playerMovementStateText;
-    private PlayerMovement movement;
+    private MovementSM movement;
 
     public Text currentWeaponText;
     private PlayerGear inventory;
 
     void Start()
     {
-        movement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        movement = GameObject.Find("Player").GetComponent<MovementSM>();
         inventory = GameObject.Find("Player").GetComponent<PlayerGear>();
     }
 
@@ -36,7 +36,7 @@ public class HUDController : MonoBehaviour
                 break;
         }
 
-        playerMovementStateText.text = "Movement State: " + movement.currentState;
+        playerMovementStateText.text = "Movement State: " + movement.currentState.name;
 
         currentWeaponText.text = "" + inventory.CurrentWeapon.Name;
     }
