@@ -220,7 +220,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
       parentName: PSX_Player(Clone)
-      position: {x: -0, y: 0, z: 0}
+      position: {x: -0, y: -1.6, z: 0}
       rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
       scale: {x: 100, y: 100, z: 100}
     - name: IK.L
@@ -245,7 +245,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: Pelvis
       parentName: Armature
-      position: {x: -0, y: 0, z: 0.06996154}
+      position: {x: 0, y: 0, z: 0.0866}
       rotation: {x: 0.7071067, y: 0.00000003948177, z: -0.000000021427837, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: Torso
@@ -291,12 +291,12 @@ ModelImporter:
     - name: LowerArm.R
       parentName: UpperArm.R
       position: {x: 0.0000000034024552, y: 0.023402708, z: 3.1664968e-10}
-      rotation: {x: 0.029272387, y: -0.009696157, z: -0.0075814594, w: 0.9994957}
+      rotation: {x: 0.029272394, y: -0.009696157, z: -0.007581461, w: 0.9994957}
       scale: {x: 1.0000005, y: 1.0000004, z: 1}
     - name: Hand.R
       parentName: LowerArm.R
       position: {x: -0.0000000014867692, y: 0.0199466, z: -0.000000003185123}
-      rotation: {x: -0.058361128, y: 0.00031953212, z: 0.0005641193, w: 0.9982953}
+      rotation: {x: -0.058361143, y: 0.00031953212, z: 0.00056411955, w: 0.9982953}
       scale: {x: 1.0000005, y: 1.0000006, z: 0.99999994}
     - name: Hand.R_end
       parentName: Hand.R
