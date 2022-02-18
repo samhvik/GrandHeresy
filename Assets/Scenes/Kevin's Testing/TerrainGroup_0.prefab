@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6677534693258815162}
   m_Layer: 0
   m_Name: ObjectivePointNE2
-  m_TagString: ObjectiveSpawnNE
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 6677534693654359626}
   m_Layer: 0
   m_Name: ObjectivePointSW2
-  m_TagString: ObjectiveSpawnSW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 6677534693812221469}
   m_Layer: 0
   m_Name: ObjectivePointNW1
-  m_TagString: ObjectiveSpawnNW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 6677534693984367520}
   m_Layer: 0
   m_Name: ObjectivePointNE1
-  m_TagString: ObjectiveSpawnNE
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 6677534694143962821}
   m_Layer: 0
   m_Name: ObjectivePointSW3
-  m_TagString: ObjectiveSpawnSW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 6677534694184607276}
   m_Layer: 0
   m_Name: ObjectivePointNW3
-  m_TagString: ObjectiveSpawnNW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 6677534694213902664}
   m_Layer: 0
   m_Name: ObjectivePointSE2
-  m_TagString: ObjectiveSpawnSE
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 6677534694229470257}
   m_Layer: 0
   m_Name: ObjectivePointSE1
-  m_TagString: ObjectiveSpawnSE
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 6677534694274735322}
   m_Layer: 0
   m_Name: ObjectivePointSE3
-  m_TagString: ObjectiveSpawnSE
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 6677534694316770330}
   m_Layer: 0
   m_Name: ObjectivePointNW2
-  m_TagString: ObjectiveSpawnNW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 6677534694413213043}
   m_Layer: 0
   m_Name: ObjectivePointSW1
-  m_TagString: ObjectiveSpawnSW
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 6677534694507394568}
   m_Layer: 0
   m_Name: ObjectivePointNE3
-  m_TagString: Untagged
+  m_TagString: ObjectiveSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

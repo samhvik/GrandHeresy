@@ -1840,6 +1840,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2096781765}
     - target: {fileID: 6677534693917700355, guid: d255debed5e7647d287ce1ea5f0956ec, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6677534693917700355, guid: d255debed5e7647d287ce1ea5f0956ec, type: 3}
       propertyPath: m_Name
       value: TerrainGroup_0
       objectReference: {fileID: 0}
@@ -1885,6 +1889,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6677534693917700357, guid: d255debed5e7647d287ce1ea5f0956ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677534693917700357, guid: d255debed5e7647d287ce1ea5f0956ec, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Target
   - ObjectiveSpawnGroup
+  - ObjectiveSpawnNE
+  - ObjectiveSpawnSW
+  - ObjectiveSpawnNW
+  - ObjectiveSpawnSE
+  - ObjectiveSpawn
   layers:
   - Default
   - TransparentFX
