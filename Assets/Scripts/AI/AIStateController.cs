@@ -36,7 +36,14 @@ public class AIStateController : MonoBehaviour
     public void SetupAI(bool activateAI, List<Transform> waypointsFromAIManager){
         wayPointList = waypointsFromAIManager;
         active = activateAI;
-        if(active) { navMeshAgent.enabled = true; }
+        // setup the NavmeshAgent
+        if(active) { 
+            navMeshAgent.enabled = true; 
+            navMeshAgent.speed = enemyStats.moveSpeed;
+            navMeshAgent.angularSpeed = enemyStats.searchTurnSpeed * 2f; // I *2 because otherwise its search speed is too fast
+            this.GetComponent<AIFOV>().viewAngle  = enemyStats.lookAngle;
+            this.GetComponent<AIFOV>().viewRadius = enemyStats.lookRadius;
+        }
         else { navMeshAgent.enabled = false; }
     }
 
@@ -56,6 +63,13 @@ public class AIStateController : MonoBehaviour
         stateTimeElapsed += Time.deltaTime;
         //Debug.Log("Time Elapsed: " + (stateTimeElapsed >= duration));
         return (stateTimeElapsed >= duration);
+    }
+
+    // check if the AI is within attacking distance of the player its chasing
+    public bool checkRange(){
+        float dist = Vector3.Distance(chaseTarget.position, this.transform.position);
+        if(dist < enemyStats.attackRange){Debug.Log("CheckRange: " + dist);}
+        return (dist <= enemyStats.attackRange);
     }
 
     // reset when exiting, a built-in function

@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameValues : MonoBehaviour{
 
@@ -21,20 +22,33 @@ public class GameValues : MonoBehaviour{
     public float playerSpeedWalk;
     public float playerSpeedAim;
     public float playerSpeedRun;
+    private Text winText;
 
+    /// <summary>
+    /// Handling Player
+    /// </summary>
+    /// 
     // # of players in the game currently
     public int numPlayers;
-
+    //
+    // Holds our Players to be called upon
+    public GameObject[] Players = new GameObject[4];
+    //
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
 
+    public int objectivesTotal;
+    public int objectivesCompleted;
+
     void Start(){
         playerHealth = 100.0f;
-        playerSpeedWalk = 10.0f;
-        playerSpeedAim = 5.0f;
-        playerSpeedRun = 15.0f;
+        playerSpeedWalk = 15.0f;
+        playerSpeedAim = 10.0f;
+        playerSpeedRun = 25.0f;
 
         numPlayers = 0;
+
+        winText = GameObject.Find("Win Text").GetComponent<Text>();
     }
 
     void Awake(){
@@ -62,9 +76,29 @@ public class GameValues : MonoBehaviour{
             #endif
             Application.Quit();
         }
+
+        if(objectivesCompleted < objectivesTotal)
+            winText.text = "Objectives Completed: " + objectivesCompleted;
+
     }
 
     public void UpdateHealth(int damage){
         playerHealth -= damage;
+    }
+
+    // Returns how many players are in the game currently
+    public int getNumPlayers()
+    {
+        return numPlayers;
+    }
+
+    // Returns the gameobject of the player with the given index
+    public GameObject getPlayer(int index)
+    {
+        return Players[index];
+    }
+
+    public void GameCompleted(){
+        winText.text = "Game Over, You Win!";
     }
 }

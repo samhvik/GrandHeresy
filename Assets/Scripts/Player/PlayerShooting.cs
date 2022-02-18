@@ -10,7 +10,6 @@ using UnityEngine.InputSystem;
 public class PlayerShooting : MonoBehaviour{
 
     public bool held = false;
-    public WeaponSwitching inventory;
     private Gun gun;
 
     PlayerControls controls;
@@ -54,8 +53,8 @@ public class PlayerShooting : MonoBehaviour{
         gun.Reload();
     }
 
-    public void SwitchWeapon(Gun newGun){
-        this.gun = newGun;
+    public void SwitchWeapon(Gun gun){
+        this.gun = gun;
     }
 
     private void ShootPressed(bool set){

@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - ObjectiveSpawnNE
+  - ObjectiveSpawnSW
+  - ObjectiveSpawnNW
+  - ObjectiveSpawnSE
+  - Drop
+  - Gear
+  - ObjectiveSpawn
+  - Rune
   layers:
   - Default
   - TransparentFX

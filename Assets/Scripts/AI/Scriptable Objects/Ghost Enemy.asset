@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4256962516c7a4da473e1a928829fd, type: 3}
   m_Name: Ghost Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 5
   attackRange: 15
-  lookRange: 35
-  lookSphereCastRadius: 1
+  lookRadius: 80
+  lookAngle: 15
   searchTurnSpeed: 120
-  searchDuration: 8
+  searchDuration: 4
   damage: 50
   attackCD: 2

@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour{
     [SerializeField] private string gunName;
 
     [Header("Camera Effects")]
-    public CameraController cameraShake;                                    // Reference to CameraController object
+    private CameraController cameraShake;                                    // Reference to CameraController object
     //public CameraControl cameraShake;                                    // Reference to CameraControl object (AS OF NOW FOR DANNY's SCENE ONLY)
     [Range(0f, 1f)] public float shakeMagnitude;                            // Hypotenuse of camera shake
     [Range(0.01f, 0.15f)] public float shakeSharpness;                      // How quickly the camera lerps during the shake
@@ -29,7 +29,6 @@ public class Gun : MonoBehaviour{
     [Header("Properties")]
     [SerializeField] [Range(1f, 2000f)] private float firerate;             // How fast the gun shoots in rounds per minute
     [SerializeField] [Range(0f, 45f)] private float accuracy;               // The spawn angle of the round shot
-    [SerializeField] private float range;                                   // Distance the round travels
     [SerializeField] private int roundsPerShot;                             // How many rounds are shot in one fire instance
     [Range(0.5f, 100f)] public float muzzleVelocity;                        // How fast the round travels
     [SerializeField] private float muzzleOffset;                            // Distance of the gun's muzzle from the origin point
@@ -50,7 +49,8 @@ public class Gun : MonoBehaviour{
     
 
     
-    void Start(){
+    void Start() {
+        cameraShake = GameObject.Find("Main Camera").GetComponent<CameraController>();
         // Fill the magazine
         firerate /= 60;
         remainingRounds = magSize;
@@ -151,5 +151,9 @@ public class Gun : MonoBehaviour{
         get{
             return gunName;
         }
+    }
+
+    public void setCamera(CameraController cameraController) {
+        
     }
 }

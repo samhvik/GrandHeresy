@@ -16,6 +16,8 @@ public class WeaponSwitching : MonoBehaviour
 
     PlayerControls controls;
 
+    private static Collider[] drops = new Collider[1];
+    
     void Start(){
         SelectWeapon();
     }
@@ -25,6 +27,8 @@ public class WeaponSwitching : MonoBehaviour
 
         // callback function for the reload button
         controls.Gameplay.SwapWeapons.performed += ctx => Handle();
+
+        controls.Gameplay.Interact.performed += ctx => PickupWeapon();
     }
 
     // Enable and disable control input when script is enabled/disabled.
@@ -58,6 +62,16 @@ public class WeaponSwitching : MonoBehaviour
         }
     }*/
 
+    public void PickupWeapon() {
+        float pickupRadius = 10;
+        Physics.OverlapSphereNonAlloc(transform.position, pickupRadius, drops);
+        foreach (var drop in drops) {
+            if (drop.CompareTag("Drop")) {
+                Destroy(drop.gameObject);
+            }
+        }
+    }
+    
     public void SelectWeapon(){
         int index = 0;
         foreach(Transform weapon in transform){

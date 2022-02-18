@@ -34,7 +34,7 @@ public class AILookDecision : AIDecision {
         if(fov == null) {Debug.Log("no FOV Script I can't see"); return false;}
         
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
-            Debug.Log("");
+            //Debug.Log("");
             controller.chaseTarget = fov.visibleTarget;
             return true;
         }

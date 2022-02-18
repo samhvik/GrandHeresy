@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    BaseState currentState;
+    public BaseState currentState;
 
     void Start()
     {

@@ -67,7 +67,6 @@ public class CameraControl : MonoBehaviour{
                 break;
             default:
                 offset.x = 0f;
-                //offset.z = -10f;
                 break;
         }
 

@@ -26,6 +26,9 @@ public class PlayerMovements : MonoBehaviour
     private CharacterController controller;
 
     // Handling Movement
+    [SerializeField]
+    [Range(1f, 15f)]
+    private float rotationSpeed = 2f;
     private Vector2 movementInput = Vector2.zero;
     private float left_horizontal;
     private float left_vertical;
@@ -143,9 +146,8 @@ public class PlayerMovements : MonoBehaviour
         faceDirection = Vector3.forward * left_horizontal + Vector3.left * left_vertical;
         if (faceDirection.sqrMagnitude > 0.2f)
         {
-            //transform.rotation = Quaternion.LookRotation(faceDirection);
             var desiredRotation = Quaternion.LookRotation(faceDirection);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime * 2);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, lookSpeed * Time.deltaTime * rotationSpeed);
 
         }
     }
