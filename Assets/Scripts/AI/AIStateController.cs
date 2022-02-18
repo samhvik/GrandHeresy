@@ -68,7 +68,7 @@ public class AIStateController : MonoBehaviour
     // check if the AI is within attacking distance of the player its chasing
     public bool checkRange(){
         float dist = Vector3.Distance(chaseTarget.position, this.transform.position);
-        if(dist < enemyStats.attackRange){Debug.Log("CheckRange: " + dist);}
+        //if(dist < enemyStats.attackRange){Debug.Log("CheckRange: " + dist);}
         return (dist <= enemyStats.attackRange);
     }
 

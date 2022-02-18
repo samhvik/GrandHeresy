@@ -1049,7 +1049,6 @@ MonoBehaviour:
   shakeSharpness: 0.025
   firerate: 350
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 50
   muzzleOffset: 1
@@ -1929,11 +1928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8221758851035576623, guid: 47bc04081bce2414fa3c76e2d2ad4311, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.01
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8221758851035576623, guid: 47bc04081bce2414fa3c76e2d2ad4311, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.499999
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8221758851035576623, guid: 47bc04081bce2414fa3c76e2d2ad4311, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2193,7 +2192,6 @@ MonoBehaviour:
   shakeSharpness: 0.025
   firerate: 700
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 80
   muzzleOffset: 2

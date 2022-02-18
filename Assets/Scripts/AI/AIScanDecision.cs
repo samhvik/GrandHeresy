@@ -6,8 +6,7 @@ using UnityEngine;
 public class AIScanDecision : AIDecision
 {
     public override bool Decide(AIStateController controller){
-        bool noEnemy = Scan(controller);
-        return noEnemy;
+        return Scan(controller);
     }
 
     private bool Scan(AIStateController controller){
