@@ -25,13 +25,10 @@ public class PlayerShoot : MonoBehaviour{
             {
                 gun.Fire();
                 held = false;
-                Debug.Log(held);
             }
             else
             {
                 gun.Fire();
-                Debug.Log("Weird");
-
             }
         }
     }
@@ -43,14 +40,12 @@ public class PlayerShoot : MonoBehaviour{
         if(context.started)
         {
             held = true;
-            Debug.Log(gun.name);
         }
 
         // If released (Sets false once)
         if (context.canceled)
         {
             held = false;
-            Debug.Log("Canceled" + gun.name);
         }
     }
 

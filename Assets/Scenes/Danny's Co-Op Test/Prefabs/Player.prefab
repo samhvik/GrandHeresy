@@ -129,7 +129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502440632243268691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 157ea8306ef2612458beadd280b97ee5, type: 3}
   m_Name: 
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502440632243268691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feed214eab7e4534ba406618ad28a87f, type: 3}
   m_Name: 
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502440632243268691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dd85c1dd1ee8a54ca45c17646bb63f9, type: 3}
   m_Name: 
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502440632243268691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -420,12 +420,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Assault Rifle
-  cameraShake: {fileID: 0}
   shakeMagnitude: 0.07
   shakeSharpness: 0.025
   firerate: 700
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 80
   muzzleOffset: 2
@@ -645,12 +643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Pistol
-  cameraShake: {fileID: 0}
   shakeMagnitude: 0.1
   shakeSharpness: 0.025
   firerate: 350
   accuracy: 10
-  range: 10
   roundsPerShot: 1
   muzzleVelocity: 50
   muzzleOffset: 1

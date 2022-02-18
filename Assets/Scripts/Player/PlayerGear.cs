@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class PlayerGear : MonoBehaviour {
     public int inventorySize;
@@ -30,11 +32,6 @@ public class PlayerGear : MonoBehaviour {
 
     void Awake(){
         controls = new PlayerControls();
-
-        // callback function for the reload button
-        controls.Gameplay.SwapWeapons.performed += ctx => SwapWeapons();
-
-        controls.Gameplay.Interact.performed += ctx => PickupWeapon();
     }
     
     // Enable and disable control input when script is enabled/disabled.
@@ -45,14 +42,9 @@ public class PlayerGear : MonoBehaviour {
     void OnDisable(){
         controls.Gameplay.Disable();
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void SwapWeapons() {
+    // When button to swap weapons is used
+    public void OnSwapWeapons(InputAction.CallbackContext context) {
         if (guns.Count > 1) {
             guns[head].gameObject.SetActive(false);
             head = (head + 1) % Math.Min(inventorySize,guns.Count);
@@ -61,7 +53,8 @@ public class PlayerGear : MonoBehaviour {
         }
     }
 
-    private void PickupWeapon() {
+    // When button to pickup weapon is used
+    public void OnPickupWeapon(InputAction.CallbackContext context) {
         Collider[] colliders = Physics.OverlapSphere(transform.position, pickupRadius);
         foreach (var drop in colliders) {
             if (drop.CompareTag("Drop")) {
@@ -79,6 +72,4 @@ public class PlayerGear : MonoBehaviour {
     public Gun CurrentWeapon {
         get { return guns[head]; }
     }
-
-
 }

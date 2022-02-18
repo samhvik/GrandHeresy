@@ -27,11 +27,5 @@ public class Moving : BaseState
         if(L_horizontalInput == 0 && L_verticalInput == 0){
             stateMachine.ChangeState(sm.idleState);
         }
-
-        // If the dodge button is pressed at any time WHILE moving, switch to dodge state
-        else if(sm.controls.Gameplay.Dodge.triggered){
-            stateMachine.ChangeState(sm.dodgeState);
-        }
     }
-
 }

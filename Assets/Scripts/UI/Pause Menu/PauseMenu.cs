@@ -14,9 +14,9 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject firstButton;
-    public GameObject player;
+    private GameObject player;
 
-    PlayerMovement movement;
+    MovementSM movement;
     PlayerShooting shooting;
 
     PlayerControls controls;
@@ -24,14 +24,24 @@ public class PauseMenu : MonoBehaviour
     // sets up the controls first thing for this scene
     void Awake()
     {
-        // sets the variables for moving and shooting
-        movement = player.GetComponent<PlayerMovement>();
-        shooting = player.GetComponent<PlayerShooting>();
+
 
         controls = new PlayerControls();
 
         // Whenever the game detects the start button being pressed
         controls.UI.Start.performed += ctx => Pause();
+    }
+
+    private void Update()
+    {
+        // This is temporary to stop errors
+        if (GameValues.instance.numPlayers == 1)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            // sets the variables for moving and shooting
+            movement = player.GetComponent<MovementSM>();
+            shooting = player.GetComponent<PlayerShooting>();
+        }
     }
 
     // Enables the controls for UI
