@@ -39,11 +39,11 @@ public class CameraController : MonoBehaviour{
             case "Aim":
             case "StrafeAim":
                 offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                offset.z = -10f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                offset.z = -18f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                 break;
             default:
                 offset.x = 0f;
-                offset.z = -10f;
+                offset.z = -18f;
                 break;
         }
 

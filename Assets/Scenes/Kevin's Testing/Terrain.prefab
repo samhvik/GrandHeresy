@@ -341,7 +341,6 @@ Transform:
   - {fileID: 6677534693454381154}
   - {fileID: 6677534693119434211}
   - {fileID: 6677534692848386525}
-  - {fileID: 2813412918646452421}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -637,54 +636,3 @@ Transform:
   m_Father: {fileID: 6677534693119434211}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6850659559689836544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2813412918646452421}
-  - component: {fileID: 914214995260813224}
-  m_Layer: 0
-  m_Name: ObjectiveController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2813412918646452421
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6850659559689836544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 167.4, y: 0, z: 93}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6677534693917700357}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &914214995260813224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6850659559689836544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910ae377590d94c28873eb4d61879baa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnsSW: []
-  spawnsSE: []
-  spawnsNE: []
-  spawnsNW: []
-  chosenSpawns: []
-  objective1ToSpawn: {fileID: 2699908657057253105, guid: 5962be20892ab48c698399ec7a34e906, type: 3}
-  objectivesToSpawn: []

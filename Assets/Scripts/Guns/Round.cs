@@ -28,5 +28,13 @@ public class Round : MonoBehaviour
             if(!overPenetrate)
                 Destroy(this.gameObject);
         }
+        
+        if(other.gameObject.tag == "Rune"){
+            other.gameObject.GetComponent<RuneObjective>().Hit(damage);
+
+            // Destroy this round if not overpenetratable 
+            if(!overPenetrate)
+                Destroy(this.gameObject);
+        }
     }
 }

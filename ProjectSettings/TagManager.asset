@@ -11,6 +11,8 @@ TagManager:
   - ObjectiveSpawnSE
   - Drop
   - Gear
+  - ObjectiveSpawn
+  - Rune
   layers:
   - Default
   - TransparentFX

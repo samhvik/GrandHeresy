@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameValues : MonoBehaviour{
 
@@ -21,6 +22,7 @@ public class GameValues : MonoBehaviour{
     public float playerSpeedWalk;
     public float playerSpeedAim;
     public float playerSpeedRun;
+    private Text winText;
 
     /// <summary>
     /// Handling Player
@@ -35,13 +37,18 @@ public class GameValues : MonoBehaviour{
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
 
+    public int objectivesTotal;
+    public int objectivesCompleted;
+
     void Start(){
         playerHealth = 100.0f;
-        playerSpeedWalk = 10.0f;
-        playerSpeedAim = 5.0f;
-        playerSpeedRun = 15.0f;
+        playerSpeedWalk = 15.0f;
+        playerSpeedAim = 10.0f;
+        playerSpeedRun = 25.0f;
 
         numPlayers = 0;
+
+        winText = GameObject.Find("Win Text").GetComponent<Text>();
     }
 
     void Awake(){
@@ -70,6 +77,8 @@ public class GameValues : MonoBehaviour{
             Application.Quit();
         }
 
+        if(objectivesCompleted < objectivesTotal)
+            winText.text = "Objectives Completed: " + objectivesCompleted;
 
     }
 
@@ -87,5 +96,9 @@ public class GameValues : MonoBehaviour{
     public GameObject getPlayer(int index)
     {
         return Players[index];
+    }
+
+    public void GameCompleted(){
+        winText.text = "Game Over, You Win!";
     }
 }
