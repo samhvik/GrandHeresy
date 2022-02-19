@@ -18,8 +18,6 @@ public class Idle : Stationary
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
 
-        //Debug.Log("In Idle");
-
         // If the right stick is in motion, switch to aim state
         if(R_horizontalInput != 0 || R_verticalInput != 0){
             stateMachine.ChangeState(sm.aimState);

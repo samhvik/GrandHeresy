@@ -27,6 +27,7 @@ public class Dodge : BaseState
         L_verticalInput = sm.left_vertical;
         _slideSpeed = sm.dodgeSlideSpeed;
         _slideFalloff = sm.dodgeSlideFalloff;
+
         moveDir = new Vector3(L_horizontalInput, 0, L_verticalInput).normalized;
         sm.animatorManager.HandleDodgeRollState(true);
     }
@@ -38,15 +39,14 @@ public class Dodge : BaseState
         
         Debug.DrawLine(sm.transform.position, new Vector3(L_horizontalInput, 0, L_verticalInput), Color.green);
         
-
         //sm.transform.position += moveDir * _slideSpeed * Time.deltaTime;
         TryMove(moveDir, _slideSpeed * Time.deltaTime);
         _slideSpeed -= _slideSpeed * _slideFalloff * Time.deltaTime;
 
         // When slide speed is slowing down, switch back to idle state
-        if(_slideSpeed < 5f){
+        if(_slideSpeed < 0.3f){
             sm.animatorManager.HandleDodgeRollState(false);
-            stateMachine.ChangeState(sm.idleState);
+            stateMachine.ChangeState(sm.walkingState);
         }
     }
 

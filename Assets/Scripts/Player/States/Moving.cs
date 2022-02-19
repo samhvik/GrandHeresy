@@ -16,6 +16,7 @@ public class Moving : BaseState
         base.Enter();
         L_horizontalInput = sm.left_horizontal;
         L_verticalInput = sm.left_vertical;
+        sm.rigLayer_HandIK.weight = 0;
     }
 
     public override void UpdateLogic(){
@@ -24,7 +25,8 @@ public class Moving : BaseState
         L_verticalInput = sm.left_vertical;
 
         // If the left stick is not in motion no more, switch to idle state
-        if(L_horizontalInput == 0 && L_verticalInput == 0){
+        if((stateMachine.GetCurrentState() != "Dodge") && (L_horizontalInput == 0 && L_verticalInput == 0)){
+            //Debug.Log("Going back to idle...");
             stateMachine.ChangeState(sm.idleState);
         }
     }

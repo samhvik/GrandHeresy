@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Animations.Rigging;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,7 @@ public class MovementSM : StateMachine
     [Header("Found on Awake")]
     public PlayerControls controls;
     public AnimatorManager animatorManager;
+    public Rig rigLayer_HandIK;
 
     [Header("Player Movement")]
     public float left_horizontal;

@@ -54,7 +54,9 @@ public class GameValues : MonoBehaviour{
         }
         numPlayers = 0;
 
-        winText = GameObject.Find("Win Text").GetComponent<Text>();
+        // Uncomment this later, giving errors in my own scene
+        // may need a better way to implement this so people can do stuff in their own scene
+        //winText = GameObject.Find("Win Text").GetComponent<Text>();
     }
 
     void Awake(){
