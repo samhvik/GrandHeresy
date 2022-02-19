@@ -11,6 +11,7 @@ public class PlayerGear : MonoBehaviour {
     public int inventorySize;
     public Gun starterGun;
     public float pickupRadius;
+    public GameObject gunPosition;
     
     private List<Gun> guns = new List<Gun>();
     private PlayerShooting shooter;
@@ -21,7 +22,7 @@ public class PlayerGear : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        var gun = Instantiate(starterGun,transform);
+        var gun = Instantiate(starterGun,gunPosition.transform);
         gun.tag = "Gear";
         guns.Add(gun);
         
@@ -60,9 +61,9 @@ public class PlayerGear : MonoBehaviour {
             if (drop.CompareTag("Drop")) {
                 
                 drop.tag = "Gear";
-                drop.transform.parent = transform;
-                drop.transform.position = transform.position;
-                drop.transform.forward = transform.forward;
+                drop.transform.parent = gunPosition.transform;
+                drop.transform.position = gunPosition.transform.position;
+                drop.transform.forward = gunPosition.transform.forward;
                 drop.gameObject.SetActive(false);
                 guns.Add(drop.gameObject.GetComponent<Gun>());
             }

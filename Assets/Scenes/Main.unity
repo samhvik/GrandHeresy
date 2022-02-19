@@ -936,8 +936,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256961209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.570665, y: -23.08608, z: -10.211204}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -21.570665, y: -24.8, z: -10.211204}
+  m_LocalScale: {x: 1, y: 1.53, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1892468630}
@@ -1688,7 +1688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318064433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23333073, y: 2.3657875, z: -1.8893447}
+  m_LocalPosition: {x: 2, y: -18, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10368,7 +10368,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 849709334750888112, guid: 3364ba163134a2b4bbedc10f9ded9d12, type: 3}
+  m_PlayerPrefab: {fileID: 849709334750888112, guid: 8e674a2d2d702a14384636146a82da89, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
