@@ -46,6 +46,12 @@ public class GameValues : MonoBehaviour{
         playerSpeedAim = 10.0f;
         playerSpeedRun = 25.0f;
 
+        // Initializing player variables
+        for(int i = 0; i < 4; i++)
+        {
+            playerPosition[i] = this.transform;
+
+        }
         numPlayers = 0;
 
         // Uncomment this later, giving errors in my own scene

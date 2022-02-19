@@ -50,11 +50,5 @@ public class Walking : Moving
         if(R_horizontalInput != 0 || R_verticalInput != 0){
             stateMachine.ChangeState(sm.strafeAimState);
         }
-
-        // If you press run button while walking, switch to run state
-        else if(sm.controls.Gameplay.Run.triggered){
-            stateMachine.ChangeState(sm.runningState);
-        }
     }
-
 }

@@ -29,11 +29,5 @@ public class Moving : BaseState
             //Debug.Log("Going back to idle...");
             stateMachine.ChangeState(sm.idleState);
         }
-
-        // If the dodge button is pressed at any time WHILE moving, switch to dodge state
-        else if(sm.controls.Gameplay.Dodge.triggered){
-            stateMachine.ChangeState(sm.dodgeState);
-        }
     }
-
 }

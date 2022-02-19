@@ -41,11 +41,13 @@ public class StateMachine : MonoBehaviour
         newState.Enter();
     }
 
+    /* Temporarily Commenting out to test co-op canvas text
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(10f, 10f, 200f, 100f));
+        GUILayout.BeginArea(new Rect(300f, 10f, 200f, 100f));
         string content = currentState != null ? currentState.name : "(no current state)";
         GUILayout.Label($"<color='red'><size=40>{content}</size></color>");
         GUILayout.EndArea();
     }
+    */
 }

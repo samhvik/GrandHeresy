@@ -9,20 +9,61 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour{
 
-    public bool held = false;
+    //public WeaponSwitching inventory;
+    private PlayerGear inventory;
     private Gun gun;
+    private bool held = false;
 
     PlayerControls controls;
 
-    void Awake(){
-        controls = new PlayerControls();
-        
-        // Callback function for shooting. ctx is the context handler.
-        controls.Gameplay.Shoot.started += ctx => ShootPressed(true);
-        controls.Gameplay.Shoot.canceled += ctx => ShootPressed(false);
 
-        // Callback function for reloading
-        controls.Gameplay.Reload.performed += ctx => Reload();
+    void Awake()
+    {
+        inventory = this.GetComponent<PlayerGear>();
+        controls = new PlayerControls();
+    }
+
+    void Update()
+    {
+        if (held)
+        {
+            if (gun.IsSemi)
+            {
+                gun.Fire();
+                held = false;
+            }
+            else
+            {
+                gun.Fire();
+            }
+        }
+    }
+
+    // OnFire fires our gun from our player
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        // If pressed down (Sets true once)
+        if (context.started)
+        {
+            held = true;
+        }
+
+        // If released (Sets false once)
+        if (context.canceled)
+        {
+            held = false;
+        }
+    }
+
+    // OnReload reloads our gun on our player
+    public void OnReload(InputAction.CallbackContext context)
+    {
+        gun.Reload();
+    }
+
+    public void SwitchWeapon(Gun newGun)
+    {
+        this.gun = newGun;
     }
 
     // Enable and disable control input when script is enabled/disabled.
@@ -34,30 +75,4 @@ public class PlayerShooting : MonoBehaviour{
         controls.Gameplay.Disable();
     }
 
-    void Update(){
-        if(held){
-            if(gun.IsSemi){
-                gun.Fire();
-                held = false;
-            }else{
-                gun.Fire();
-            }
-        }
-    }
-
-    private void Fire(){
-        gun.Fire();
-    }
-
-    private void Reload(){
-        gun.Reload();
-    }
-
-    public void SwitchWeapon(Gun gun){
-        this.gun = gun;
-    }
-
-    private void ShootPressed(bool set){
-        held = set;
-    }
 }

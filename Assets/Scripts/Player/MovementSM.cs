@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Animations.Rigging;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementSM : StateMachine
 {
@@ -31,9 +32,12 @@ public class MovementSM : StateMachine
     public Vector3 faceDirection;
     private Vector2 left;
     private Vector2 right;
+    private Vector2 movementInput = Vector2.zero;
+    private Vector2 aimInput = Vector2.zero;
+
 
     [Header("Player Tweaking")]
-    [SerializeField] [Range(400f, 900f)]
+    [SerializeField] [Range(200f, 900f)]
     public float lookSpeed = 250f;
     [SerializeField] [Range(50f, 300f)]
     public float dodgeSlideSpeed = 250f;
@@ -52,6 +56,30 @@ public class MovementSM : StateMachine
         initValue();
     }
 
+    // OnMove moves our player with the left joystick
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        movementInput = context.ReadValue<Vector2>();
+    }
+
+    // OnAim rotates our player to aim with the right joystick
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        aimInput = context.ReadValue<Vector2>();
+    }
+
+    // OnRun will make our player run
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        ChangeState(runningState);
+    }
+
+    // OnDodge will make our player Dodge
+    public void OnDodge(InputAction.CallbackContext context)
+    {
+        ChangeState(dodgeState);
+    }
+
     protected override BaseState GetInitialState(){
         return idleState;
     }
@@ -59,15 +87,6 @@ public class MovementSM : StateMachine
     void initValue(){
         controls = new PlayerControls();
         animatorManager = GetComponent<AnimatorManager>();
-
-        // callback functions for movement. stores joystick values into "left" Vector2.
-        controls.Gameplay.Move.performed += ctx => left = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += ctx => left = Vector2.zero;
-        
-        // callback functions for aiming. stores joystick values into "right" Vector2.
-        controls.Gameplay.Aim.performed += ctx => right = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Aim.canceled += ctx => right = Vector2.zero;
-
     }
 
     // ------- There must be a way to make getting inputs and animating its own scripts-------------
@@ -81,11 +100,13 @@ public class MovementSM : StateMachine
     }
 
     private void GetInput(){
-        left_horizontal = left.x;
-        left_vertical = left.y;
+        // Set Left Joystick Values
+        left_horizontal = movementInput.x;
+        left_vertical = movementInput.y;
 
-        right_horizontal = right.x;
-        right_vertical = right.y;
+        // Set Right Joystick Values
+        right_horizontal = aimInput.x;
+        right_vertical = aimInput.y;
     }
     // --------------------------------------------------------------------------------
 

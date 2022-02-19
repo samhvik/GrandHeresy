@@ -11,33 +11,52 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
-    public Text ammoText;
+    // Holds Text for weapons, ammo, and state for debugging
+    public Text[] weaponText = new Text[4];
+    public Text[] ammoText = new Text[4];
+    public Text[] stateText = new Text[4];
 
-    public Text playerMovementStateText;
-    private MovementSM movement;
-
-    public Text currentWeaponText;
+    // Holds our players inventory
     private PlayerGear inventory;
 
-    void Start()
+    void Awake()
     {
-        movement = GameObject.Find("Player").GetComponent<MovementSM>();
-        inventory = GameObject.Find("Player").GetComponent<PlayerGear>();
+        // Disable all text to begin with
+        for (int i = 0; i < 4; i++)
+        {
+            weaponText[i].gameObject.SetActive(false);
+            ammoText[i].gameObject.SetActive(false);
+            stateText[i].gameObject.SetActive(false);
+        }
     }
 
     void LateUpdate()
     {
-        switch(inventory.CurrentWeapon.shootState){
-            case Gun.ShootState.Reloading:
-                ammoText.text = "Reloading...";
-                break;
-            default:
-                ammoText.text = inventory.CurrentWeapon.CurrentAmmo + "/" + inventory.CurrentWeapon.MaxAmmo;
-                break;
+        // Enabling Text to Display and Update Text
+        for (int i = 0; i < GameValues.instance.getNumPlayers(); i++)
+        {
+            PlayerGear inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerGear>(); // Danny: Change when implementing to main
+
+
+            // Set the weapon text
+            weaponText[i].gameObject.SetActive(true);
+            weaponText[i].text = "" + inventory.CurrentWeapon.Name; // Danny: Change when implementing to main
+
+            // Set the ammo text
+            ammoText[i].gameObject.SetActive(true);
+            switch (inventory.CurrentWeapon.shootState) // Danny: Change when implementing to main
+            {
+                case Gun.ShootState.Reloading:
+                    ammoText[i].text = "Reloading...";
+                    break;
+                default:
+                    ammoText[i].text = inventory.CurrentWeapon.CurrentAmmo + "/" + inventory.CurrentWeapon.MaxAmmo;
+                    break;
+            }
+
+            // Set the state text
+            stateText[i].gameObject.SetActive(true);
+            stateText[i].text = "Movement State: " + GameValues.instance.getPlayer(i).GetComponent<MovementSM>().currentState; 
         }
-
-        playerMovementStateText.text = "Movement State: " + movement.currentState.name;
-
-        currentWeaponText.text = "" + inventory.CurrentWeapon.Name;
     }
 }
