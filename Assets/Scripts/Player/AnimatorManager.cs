@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AnimatorManager : MonoBehaviour
 {
@@ -69,6 +70,23 @@ public class AnimatorManager : MonoBehaviour
 
     public void HandleDodgeRollState(bool condition){
         animator.SetBool("IsDodging", condition);
+    }
+
+    public bool AnimatorIsPlaying(){
+     return this.animator.GetCurrentAnimatorStateInfo(0).length >
+            this.animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+    }
+
+    public bool AnimatorIsPlaying(string stateName){
+        return AnimatorIsPlaying() && this.animator.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+    }
+
+    public IEnumerator CheckAnimationCompleted(string CurrentAnim, Action Oncomplete)
+    {
+         while (!animator.GetCurrentAnimatorStateInfo(0).IsName(CurrentAnim))
+             yield return null;
+         if (Oncomplete != null)
+             Oncomplete();
     }
 
 }
