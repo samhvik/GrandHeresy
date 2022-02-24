@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     'n' should be larger than the average camera zoom, but smaller than 1.5x the camera's furthest zoom.
 
     The EnemySpawner object will travel at a speed slower than the players' walking speed. (eg 70% walking speed)
+    It will always travel towards the players' midpoint.
 
     The EnemyDirector script will destroy the EnemySpawner object when it exists too far from the players. When
     destroyed, the global 'detected' state will revert back to false. When the EnemySpawer object is destroyed, all
