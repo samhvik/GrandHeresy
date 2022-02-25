@@ -7,8 +7,8 @@ public class AIStateController : MonoBehaviour
 {
     public AIStates currState;
     public EnemyStats enemyStats; // Enemy Base Class create this next time
-    //public Transform eyes;
     public AIStates remainState;
+    public AIManager manager;
 
     // hidden inspector public variables for accessing
     // we dont wanna touch these in the editor
@@ -77,13 +77,8 @@ public class AIStateController : MonoBehaviour
         stateTimeElapsed = 0;
     }
 
-    // built in debugging "gizmo"
-    /* turn on if FOV is not used anymore
-    void OnDrawGizmos()
-    {
-        if (currState != null && eyes != null) {
-            Gizmos.color = currState.sceneGizmoColor;
-            Gizmos.DrawWireSphere (eyes.position, enemyStats.lookSphereCastRadius);
-        }
-    }*/
+    public void Combat(bool status){
+        manager.inCombat = status;
+        Debug.Log("Combat Status Changed: " + manager.inCombat);
+    }
 }

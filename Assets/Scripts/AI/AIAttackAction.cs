@@ -9,19 +9,6 @@ public class AIAttackAction : AIAction
         Attack(controller);
     }
 
-    /*private void Attack(AIStateController controller){
-        RaycastHit hit;
-        Debug.DrawRay (controller.eyes.position, controller.eyes.forward.normalized * controller.enemyStats.attackRange, Color.red);
-
-        if (Physics.SphereCast (controller.eyes.position, controller.enemyStats.lookSphereCastRadius, controller.eyes.forward, out hit, controller.enemyStats.attackRange)
-            && hit.collider.CompareTag ("Player")) 
-        {
-            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD)){
-                GameValues.instance.UpdateHealth(controller.enemyStats.damage);
-                controller.stateTimeElapsed = 0;
-            }
-        }
-    } OLD ATTACK FUNCTION END*/
     private void Attack(AIStateController controller){
         AIFOV fov = controller.GetComponent<AIFOV>();
         if(fov == null) return;
@@ -29,7 +16,8 @@ public class AIAttackAction : AIAction
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //GameValues.instance.UpdateHealth(controller.enemyStats.damage);
-                Debug.Log("Attack");
+                //Debug.Log("Play Attack Sound Here");
+                //Debug.Log("Attack");
                 controller.stateTimeElapsed = 0;
             }
         }

@@ -16,10 +16,10 @@ public class EnemyDirector : MonoBehaviour
         
     }
 
-    
     void Update()
     {
-        
+        // check if Combat is Flagged
+        // then spawn
     }
 }
 

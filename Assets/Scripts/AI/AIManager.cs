@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AIManager : MonoBehaviour
 {
+    public bool inCombat;
     public List<Transform> waypoints;
     private AIStateController[] enemies; // should change down the line to use less resources finding stuff
     /* Ideas for changing above
@@ -14,6 +15,7 @@ public class AIManager : MonoBehaviour
     */
 
     private void Start(){
+        inCombat = false;
         enemies = FindObjectsOfType<AIStateController>();
         foreach(var e in enemies){
             e.SetupAI(true, waypoints);
