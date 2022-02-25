@@ -10,23 +10,28 @@ public class LoadoutMenu : MonoBehaviour
 {
     PlayerControls controls;
 
+    public GameObject currentScreen;
+    public GameObject prevScreen;
+
     void Awake()
     {
         controls = new PlayerControls();
 
-        controls.UI.Submit.performed += ctx => onJoining();
         controls.UI.Start.performed += ctx => PlayGame();
-    }
-
-    void onJoining()
-    {
-
+        controls.UI.Cancel.performed += ctx => GoBack();
     }
 
     // loads the Main scene
     public void PlayGame()
     {
-        SceneManager.LoadScene(GameValues.level);     // CHANGE "Main" INTO A SCENE VARIABLE IN THE FUTURE
+        SceneManager.LoadScene(GameValues.level);
+    }
+
+    public void GoBack()
+    {
+        currentScreen.SetActive(false);
+
+        prevScreen.SetActive(true);
     }
 
     void OnEnable()
