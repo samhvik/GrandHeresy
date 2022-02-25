@@ -148,6 +148,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -1334,6 +1336,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -1438,6 +1441,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -3252,6 +3256,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -3325,6 +3330,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -3912,6 +3918,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -4779,6 +4786,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -5136,6 +5144,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -5370,6 +5379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d220cd9e7bec8494688f428f7116201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inCombat: 0
   waypoints:
   - {fileID: 1597507938}
   - {fileID: 74686741}
@@ -6540,6 +6550,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -8147,6 +8158,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -8566,6 +8578,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -8832,6 +8845,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -9147,6 +9161,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -9443,6 +9458,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -10185,6 +10201,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -10565,6 +10582,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -10736,6 +10754,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -11178,6 +11197,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -11358,6 +11378,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -12073,6 +12094,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -12147,6 +12169,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -12411,6 +12434,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -12568,6 +12592,7 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  manager: {fileID: 1030899690}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
