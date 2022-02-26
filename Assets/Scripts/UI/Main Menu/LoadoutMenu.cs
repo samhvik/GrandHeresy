@@ -34,12 +34,12 @@ public class LoadoutMenu : MonoBehaviour
         prevScreen.SetActive(true);
     }
 
-    void OnEnable()
+    public void OnEnable()
     {
         controls.UI.Enable();
     }
 
-    void OnDisable()
+    public void OnDisable()
     {
         controls.UI.Disable();
     }
