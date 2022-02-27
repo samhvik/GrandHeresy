@@ -26,15 +26,17 @@ public class PlayerShooting : MonoBehaviour{
     void Update()
     {
         if (held)
-        {
-            if (gun.IsSemi)
-            {
-                gun.Fire();
-                held = false;
-            }
-            else
-            {
-                gun.Fire();
+        {   
+            if(gun != null){
+                if (gun.IsSemi)
+                {
+                    gun.Fire();
+                    held = false;
+                }
+                else
+                {
+                    gun.Fire();
+                }
             }
         }
     }
