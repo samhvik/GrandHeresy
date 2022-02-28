@@ -8,18 +8,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Extract : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int requiredAmount;
+    public int currentAmount;
+    public float extractionTime;
+    public bool extractionOpen = false;
+
+    public bool IsReached()
     {
-        
+        return (currentAmount >= requiredAmount);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CompletedMission()
     {
-        
+        currentAmount++;
+    }
+
+    public void Extraction()
+    {
+        if (IsReached())
+        {
+            extractionOpen = true;
+            extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        }
     }
 }
 
