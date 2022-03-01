@@ -13,10 +13,20 @@ public class EnemySpawner : MonoBehaviour
     public GameObject RangedEnemyToSpawn; // the ranged enemy which will target a player automatically during spawn
     private float TimeElapsed;
     // set player midpoint
-    
+    // Temp Player Object until player grabbing is more dynamic
+    public GameObject Player;
+    // Temp Manager Gameobject until I move things over to Director for calls
+    public AIManager Director;
     void Start(){  
         TimeElapsed = 0f;
      }
+
+    //TO DO
+    // Have EnemyDirector Call EnemySpawner Instead when an objective is active
+    // or Players are in Combat.
+    // Implement the Exit Combat Status && Merge AIManager and EnemyDirector
+    // Grab Objective Count for spawnRate
+    // Grab Players Randomly as Targets for newly spawned AI
 
     
     void Update(){
@@ -25,23 +35,24 @@ public class EnemySpawner : MonoBehaviour
 
         if(spawnRate(5)){
             // spawn enemies randomly within the distance
-            //Debug.Log("Enemy Wave Spawn");
-            //int waveNum = numberToSpawn();
-            //var pos = Random Point In Circle;
-            //for(int i = 0; i < waveNum; i++){
-            //  Instantitate(hordeEnemyToSpawn, pos, Quaternion.identity);
-            //  pos.z += 5 // add some offset so enemies dont spawn ontop of each other    
-            //}
+            int waveNum = numberToSpawn();
 
-            /* maybe we choose a random player and set them as the target and have the default rotation
-            // of the AI to be looking at that player.
-               this could add some spice 
-            */
-            // TimeElapsed = 0f; // reset timer upon exit of WaveSpawn
+            for(int i = 0; i < waveNum; i++){
+                // pos += midpoint.position; // start the spawn point from the Player's Midpoint
+                var pos = Random.insideUnitCircle * 10; // Random Point within a Circle; *5 is the Radius of the circle
+                GameObject nAI = Instantiate(hordeEnemyToSpawn, pos, Quaternion.identity);
+                // Setup Newly Spawned AI
+                var newController = nAI.GetComponent<AIStateController>();
+                newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
+                newController.manager = Director;                   
+                newController.chaseTarget = Player.transform;
+                nAI.GetComponent<AIFOV>().visibleTarget = Player.transform; // This will be a random player
+            }
+            TimeElapsed = 0f; // reset timer upon exit of WaveSpawn
         }
     }
 
-    // change the range of random to influence group spawning
+    // change the range of random to influence amount per group spawned
     private int numberToSpawn(){
         return Random.Range(1, 6);
     }
@@ -50,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
     // grab the gamevalue for completedObjectives at some point
     private bool spawnRate(int completedObjectives){
         var complObj = completedObjectives;
-        if(complObj <= 0){ complObj = 1; }
+        if(complObj <= 0){ complObj = 1; } // don't divide by zero
         TimeElapsed += Time.deltaTime;
         // default 20 second spawn timer reduced by number of completed objectives
         // once completedObjectives is a static VAR we wont need to pass in a rate

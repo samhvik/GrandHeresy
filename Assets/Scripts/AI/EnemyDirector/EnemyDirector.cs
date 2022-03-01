@@ -9,18 +9,25 @@ using UnityEngine;
 
 public class EnemyDirector : MonoBehaviour
 {
-
+    public bool inCombat;
+    public List<Transform> waypoints;
+    private AIStateController[] enemies; // should change down the line to use less resources finding stuff
     
-    void Start()
-    {
-        
+    private void Start(){
+        inCombat = false;
+        enemies = FindObjectsOfType<AIStateController>();
+        foreach(var e in enemies){
+            e.SetupAI(true, waypoints);
+        }
     }
 
-    void Update()
-    {
-        // check if Combat is Flagged
-        // then spawn
-    }
+    // TODO
+    // Finish EnemySpawner TODO
+    // Enable / Disable EnemySpawner based on Combat Status
+    // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
+              // -- This may need some tuning in terms of how we want combat to behave
+    // Call spawnRate; while(Combat) instead of Update(); on EnemySpawner rather than have it be an update
+    // Flag Combat status when Objective has started
 }
 
 /*

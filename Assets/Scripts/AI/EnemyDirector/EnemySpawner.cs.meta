@@ -3,7 +3,9 @@ guid: ed25a77d6720bcd44bb7e19518b86031
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hordeEnemyToSpawn: {fileID: 8699875790224936442, guid: baf0a9a3bc37bab4797f68d34769ca6e, type: 3}
+  - RangedEnemyToSpawn: {fileID: 9102500643093532865, guid: d535f883134410c4ea55797a9847a9a3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
