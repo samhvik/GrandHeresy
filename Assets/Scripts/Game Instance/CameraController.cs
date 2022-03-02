@@ -11,7 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour{
+    public class CameraController : MonoBehaviour{
     
     private Camera cameraMain;
     private MovementSM playerMovement;
@@ -67,10 +67,23 @@ public class CameraController : MonoBehaviour{
                         offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
                         offset.z = -10f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                     }
+                    else
+                    {
+                        offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
+                        offset.z = -10f + (2f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                    }
                     break;
                 default:
-                    offset.x = 0f;
-                    offset.z = -9f;
+                    if (GameValues.instance.numPlayers == 1)
+                    {
+                        offset.x = 0f;
+                        offset.z = -9f;
+                    }
+                    else
+                    {
+                        offset.x = 0f;
+                        offset.z = -18f;
+                    }
                     break;
             }
         }
@@ -129,7 +142,7 @@ public class CameraController : MonoBehaviour{
             {
                 offset.x = 0f;
                 offset.y = minZoom + Mathf.Abs(largestDistance);
-                offset.z = -9f - Mathf.Abs(largestDistance * 2f);
+                offset.z = -18f - Mathf.Abs(largestDistance);
             }
         }
     }

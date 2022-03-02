@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 849709334750888097}
   - component: {fileID: 849709334750888096}
   - component: {fileID: 8748554809732624351}
+  - component: {fileID: -941179049529082362}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 849709334750888103}
+  rigLayer_HandIK: {fileID: 0}
   left_horizontal: 0
   left_vertical: 0
   right_horizontal: 0
@@ -314,6 +316,7 @@ MonoBehaviour:
   inventorySize: 5
   starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
   pickupRadius: 10
+  gunPosition: {fileID: 0}
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +491,18 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-941179049529082362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b306c98f7188db341a88357564b3ca3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &849709335332641820
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,9 +683,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -2326449397927751001, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1542975268118416960 stripped
+--- !u!4 &341374501149216224 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -7015629689911422426, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1114087233543737734, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5224764015002292518 stripped
@@ -728,9 +743,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4981608191498854493, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8202302148184936630 stripped
+--- !u!4 &4933793926224217313 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8799655971966192848, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
+  m_CorrespondingSourceObject: {fileID: -3480546612128835449, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &876555507002370943 stripped
@@ -758,14 +773,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4306424328713632109, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &341374501149216224 stripped
+--- !u!4 &8202302148184936630 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1114087233543737734, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
-  m_PrefabInstance: {fileID: 849709335357168742}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4933793926224217313 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3480546612128835449, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8799655971966192848, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &248208794648452293 stripped
@@ -786,6 +796,11 @@ Transform:
 --- !u!4 &7116971294046185892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7570068890274395586, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
+  m_PrefabInstance: {fileID: 849709335357168742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1542975268118416960 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7015629689911422426, guid: ff4a3d9b8c232e24ba9d80a4da6dfeee, type: 3}
   m_PrefabInstance: {fileID: 849709335357168742}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1259402656040267377 stripped

@@ -23,6 +23,7 @@ public class MovementSM : StateMachine
     public PlayerControls controls;
     public AnimatorManager animatorManager;
     public Rig rigLayer_HandIK;
+    public PlayerInputHandler input;
 
     [Header("Player Movement")]
     public float left_horizontal;
@@ -52,6 +53,8 @@ public class MovementSM : StateMachine
         runningState = new Running(this);
         strafeAimState = new StrafeAim(this);
         dodgeState = new Dodge(this);
+
+        input = this.gameObject.GetComponent<PlayerInputHandler>();
 
         initValue();
     }

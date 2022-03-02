@@ -1677,6 +1677,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  whatGamepad:
+  - 
+  - 
+  - 
+  - 
   playerPosition:
   - {fileID: 0}
   - {fileID: 0}
@@ -10389,7 +10394,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_JoinAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Join
       m_Type: 0
@@ -10399,7 +10404,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -2788692971196504852, guid: 3d4dc91b8aa42544999eff9bd88a1225, type: 3}
   m_PlayerPrefab: {fileID: 849709334750888112, guid: 8e674a2d2d702a14384636146a82da89, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0

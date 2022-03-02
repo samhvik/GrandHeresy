@@ -39,5 +39,9 @@ public class TrackingCamera : MonoBehaviour
 
             this.transform.position = midpoint;
         }
+        else if(GameValues.instance.numPlayers == 1)
+        {
+            this.transform.position = GameValues.instance.Players[0].transform.position;
+        }
     }
 }

@@ -34,6 +34,9 @@ public class GameValues : MonoBehaviour{
     // Holds our Players to be called upon
     public GameObject[] Players = new GameObject[4];
     //
+    // Holds if player is on a controller or keyboard (Stored with names "keyboard" or "controller"
+    public string[] whatGamepad = new string[4];
+    //
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
 
