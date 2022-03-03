@@ -513,10 +513,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 2
+  m_Height: 6
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!143 &1615809914957209495
 CharacterController:
   m_ObjectHideFlags: 0
@@ -574,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 0}
   rigLayer_HandIK: {fileID: 1615809915739055598}
+  input: {fileID: 0}
   left_horizontal: 0
   left_vertical: 0
   right_horizontal: 0
@@ -867,6 +868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ea8306ef2612458beadd280b97ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIndex: 0
+  playerRings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentRing: {fileID: 0}
 --- !u!1 &1615809915305914541
 GameObject:
   m_ObjectHideFlags: 0

@@ -207,6 +207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ea8306ef2612458beadd280b97ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIndex: 0
+  playerRings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentRing: {fileID: 0}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 849709334750888103}
   rigLayer_HandIK: {fileID: 0}
+  input: {fileID: 0}
   left_horizontal: 0
   left_vertical: 0
   right_horizontal: 0
@@ -503,6 +511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b306c98f7188db341a88357564b3ca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XaxisClampWidth: 32
+  ZaxisClampHeight: 15
+  cameraTracker: {fileID: 0}
 --- !u!1 &849709335332641820
 GameObject:
   m_ObjectHideFlags: 0

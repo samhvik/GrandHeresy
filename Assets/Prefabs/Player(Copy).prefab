@@ -187,10 +187,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 2
+  m_Height: 6
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!143 &849709334750888121
 CharacterController:
   m_ObjectHideFlags: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   - {fileID: 196196488680161150, guid: 5896051ed842d5e42a9d06ed014d733f, type: 3}
   - {fileID: 7905042338127913087, guid: 5c25bde56c5eed444989483e95b0eb9a, type: 3}
   - {fileID: 8739888211239660928, guid: b2dd047c876e6954daae3580543b7de6, type: 3}
+  currentRing: {fileID: 0}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
