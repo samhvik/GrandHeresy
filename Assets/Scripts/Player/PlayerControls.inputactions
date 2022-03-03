@@ -82,7 +82,18 @@
                 {
                     "name": "",
                     "id": "dde54143-30d5-437a-9d92-3ef8f925ef0b",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<DualShockGamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d9fa091-e27c-4771-adfe-3ce4f6ae97e9",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -170,7 +181,7 @@
                 {
                     "name": "",
                     "id": "be79090a-162b-415a-8d8d-45bac307cc9b",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<XInputController>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -181,7 +192,18 @@
                 {
                     "name": "",
                     "id": "e17e9773-e7c3-4f79-a894-afb828717683",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<DualShockGamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b1f0dd5-79d0-4976-9864-cd684cd32c95",
+                    "path": "<XInputController>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -225,7 +247,7 @@
                 {
                     "name": "",
                     "id": "252b6967-cbf8-4ad1-802c-e0bcd1b687f4",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -236,7 +258,18 @@
                 {
                     "name": "",
                     "id": "93b634a1-a879-4aa1-ae91-8590e77479d7",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24618898-de26-45cb-821b-82f34e2ce8e1",
+                    "path": "<DualShockGamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -280,7 +313,7 @@
                 {
                     "name": "",
                     "id": "9628ebd3-511c-45c1-b128-eccb928c40f3",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<XInputController>/leftStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -291,7 +324,18 @@
                 {
                     "name": "",
                     "id": "5e10cdd4-dbf1-4dfb-8a44-f9748aeb6894",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b0d8f49-144b-4545-921e-66d4581627a8",
+                    "path": "<DualShockGamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -302,7 +346,18 @@
                 {
                     "name": "",
                     "id": "15f06629-e41a-400d-9572-32e9e7a9c9a6",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65281fe1-59c9-4573-a0a5-fa3139c5aa29",
+                    "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -379,7 +434,18 @@
                 {
                     "name": "",
                     "id": "4c1dd33b-0cb5-4fa1-86cc-c9bf29a57c8b",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64b8144a-979a-4580-a3f0-d9f9e0fe657e",
+                    "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -401,7 +467,18 @@
                 {
                     "name": "",
                     "id": "e9727693-4bc8-44e0-8b62-fd8559755bf2",
-                    "path": "<Gamepad>/start",
+                    "path": "<DualShockGamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "538757cf-b5dd-4dce-883c-49af755c7c8e",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -665,7 +742,18 @@
                 {
                     "name": "",
                     "id": "cccae8de-17db-465f-9cfc-b2f26153b333",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff9bc758-efc1-4a0c-a6cb-fc670b8f4ef4",
+                    "path": "<DualShockGamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
