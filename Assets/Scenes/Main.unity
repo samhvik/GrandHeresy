@@ -5029,7 +5029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 849709334750888122, guid: 3364ba163134a2b4bbedc10f9ded9d12, type: 3}
   panSpeed: 0.25
-  offset: {x: 0, y: 15, z: -9}
+  offset: {x: 0, y: 30, z: -18}
   cameraTracker: {fileID: 2005110469}
   maxZoom: 40
   minZoom: -14.3
@@ -6257,7 +6257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076914373}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c764451a4370d240b85969cbe77eec5, type: 3}
   m_Name: 
