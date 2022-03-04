@@ -15,12 +15,12 @@ public class RuneObjective : MonoBehaviour
     void Start(){
         health = 50;
         mat = gameObject.GetComponent<Renderer>();
-        mat.material.color = new Color(255f,255f,255f,0f);
+        mat.material.color = Color.black;
     }
 
     void Update(){
         if(health <= 0){
-            mat.material.color = new Color(0f,255f,0f,0f);
+            mat.material.color = Color.green;
             GameValues.instance.objectivesCompleted++;
 
             if(GameValues.instance.objectivesCompleted == GameValues.instance.objectivesTotal){
