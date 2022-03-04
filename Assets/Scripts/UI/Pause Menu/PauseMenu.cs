@@ -24,8 +24,6 @@ public class PauseMenu : MonoBehaviour
     // sets up the controls first thing for this scene
     void Awake()
     {
-
-
         controls = new PlayerControls();
 
         // Whenever the game detects the start button being pressed
