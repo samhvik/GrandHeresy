@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7df03ba1a1bf847bbc56456f034a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 4783816675926520030, guid: c3d628e26d4cc76438493def91df7762, type: 3}
   damage: 25
   despawnTime: 0.2
   overPenetrate: 0

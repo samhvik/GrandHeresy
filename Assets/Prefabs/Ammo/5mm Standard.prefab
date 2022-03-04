@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7df03ba1a1bf847bbc56456f034a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 4783816675926520030, guid: c3d628e26d4cc76438493def91df7762, type: 3}
   damage: 18
   despawnTime: 0.45
   overPenetrate: 0
@@ -176,7 +177,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.69233257, b: 0.2117647, a: 1}
+  m_Color: {r: 0.8867924, g: 0.6059707, b: 0.16313636, a: 1}
   m_Intensity: 100
   m_Range: 5
   m_SpotAngle: 30

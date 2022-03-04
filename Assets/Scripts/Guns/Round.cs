@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class Round : MonoBehaviour
 {
+    public GameObject blood;
     public float damage;                    // how much enemy HP is reduced by on impact
     public float despawnTime = 1.5f;        // travel time in seconds before despawning
     private float counter = 0f;
@@ -22,6 +23,12 @@ public class Round : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Target"){
+            GameObject gust = Instantiate(
+                    blood,
+                    transform.position,
+                    transform.rotation
+                );
+
             other.gameObject.GetComponent<Target>().Hit(damage);
 
             // Destroy this round if not overpenetratable 

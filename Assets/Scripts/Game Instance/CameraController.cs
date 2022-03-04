@@ -25,7 +25,7 @@ using UnityEngine;
     [SerializeField] [Range(0.01f, 1f)]
     private float panSpeed = 0.250f;
 
-    public Vector3 offset = new Vector3(0.0f, 10.0f, -9.0f);
+    public Vector3 offset = new Vector3(0.0f, 30.0f, -18.0f);
 
     // Tracker that centers the camera if 2+ players are present
     public GameObject cameraTracker;
@@ -65,25 +65,17 @@ using UnityEngine;
                     if (GameValues.instance.numPlayers == 1)
                     {
                         offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                        offset.z = -10f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                        offset.z = -18f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                     }
                     else
                     {
                         offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                        offset.z = -10f + (2f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                        offset.z = -18f + (2f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
                     }
                     break;
                 default:
-                    if (GameValues.instance.numPlayers == 1)
-                    {
-                        offset.x = 0f;
-                        offset.z = -9f;
-                    }
-                    else
-                    {
                         offset.x = 0f;
                         offset.z = -18f;
-                    }
                     break;
             }
         }
