@@ -78,7 +78,7 @@ public class AIStateController : MonoBehaviour
     }
 
     public void Combat(bool status){
-        manager.inCombat = status;
-        Debug.Log("Combat Status Changed: " + manager.inCombat);
+        GameValues.inCombatStatus = status;
+        //Debug.Log("Combat Status Changed: " + GameValues.inCombatStatus);
     }
 }

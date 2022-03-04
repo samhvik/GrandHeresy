@@ -9,20 +9,39 @@ using UnityEngine;
 
 public class EnemyDirector : MonoBehaviour
 {
-    public bool inCombat;
     public List<Transform> waypoints;
     private AIStateController[] enemies; // should change down the line to use less resources finding stuff
     
     private void Start(){
-        inCombat = false;
+        GameValues.inCombatStatus = false;
+        // Initialize the Pre-Set Enemies
         enemies = FindObjectsOfType<AIStateController>();
         foreach(var e in enemies){
             e.SetupAI(true, waypoints);
         }
+        StartCoroutine(CheckForCombat()); // forcing a delay on combatFlag Checking
+    }
+
+    // check for combat once in "awhile" not every frame
+    // it'll be TRUE a lot but untrue less often
+    IEnumerator CheckForCombat(){
+        yield return new WaitForSeconds(0.3f);
+        if(GameValues.inCombatStatus){
+            // check if EnemySpawner Exists
+            // if Not Spawn it then execute the rest
+            // spawn EnemySpawner
+            // Enemyspawner will handle enemy spawning
+        } else{
+            Debug.Log("Not In Combat");
+            // Not in Combat
+            // check if EnemySpawner is enabled
+            // if Enabled Turn OFF
+            // if you wanted to check any AI left behind we could do so here
+        }
     }
 
     // TODO
-    // Finish EnemySpawner TODO
+    // Finish EnemySpawner
     // Enable / Disable EnemySpawner based on Combat Status
     // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
               // -- This may need some tuning in terms of how we want combat to behave

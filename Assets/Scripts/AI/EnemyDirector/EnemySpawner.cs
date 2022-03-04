@@ -19,28 +19,34 @@ public class EnemySpawner : MonoBehaviour
     public AIManager Director;
     void Start(){  
         TimeElapsed = 0f;
-     }
+        StartCoroutine(CheckMidpointDistance()); // delay checking where the midpoint is
+    }
 
+    // Tutorial Recommended delay on execution
+    IEnumerator CheckMidpointDistance(){
+        yield return new WaitForSeconds(0.5f);
+        // if midpointDistance > tolerance:
+        // GameValues.inCombatStatus = false;
+    }
     //TO DO
     // Have EnemyDirector Call EnemySpawner Instead when an objective is active
-    // or Players are in Combat.
+    // figure out the tolerance for moving the enemyspawner
     // Implement the Exit Combat Status && Merge AIManager and EnemyDirector
     // Grab Objective Count for spawnRate
     // Grab Players Randomly as Targets for newly spawned AI
-
     
     void Update(){
         // update spawning range based on the midpoint. 
         // do this every frame for accuracy
 
-        if(spawnRate(5)){
+        if(spawnRate(5)){ // replace 5 with objectives completed
             // spawn enemies randomly within the distance
             int waveNum = numberToSpawn();
 
             for(int i = 0; i < waveNum; i++){
                 // pos += midpoint.position; // start the spawn point from the Player's Midpoint
-                var pos = Random.insideUnitCircle * 10; // Random Point within a Circle; *5 is the Radius of the circle
-                GameObject nAI = Instantiate(hordeEnemyToSpawn, pos, Quaternion.identity);
+                var pos = Random.insideUnitCircle * new Vector3(25, 1, 25); // Random Point within a Circle; *5 is the Radius of the circle
+                GameObject nAI = Instantiate(hordeEnemyToSpawn, pos, Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
                 newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
@@ -54,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
 
     // change the range of random to influence amount per group spawned
     private int numberToSpawn(){
-        return Random.Range(1, 6);
+        return Random.Range(1, 6);//6);
     }
 
     // just subtly increase the frequency to spawn enemies based on objective completion for now

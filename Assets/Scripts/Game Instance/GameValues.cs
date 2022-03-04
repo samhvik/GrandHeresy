@@ -17,6 +17,7 @@ public class GameValues : MonoBehaviour{
     public static string level;
     
     public static GameValues instance = null;
+    public static bool inCombatStatus = false;
 
     public float playerHealth;
     public float playerSpeedWalk;
@@ -75,9 +76,10 @@ public class GameValues : MonoBehaviour{
             Debug.Log("Player Death");
             // Just close the game on player death for now its week1
             #if UNITY_EDITOR
+            Debug.Log("A Player Died");
             UnityEditor.EditorApplication.isPlaying = false;
             #endif
-            Application.Quit();
+            Application.Quit(); // change this to be how we want player death to interact
         }
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
