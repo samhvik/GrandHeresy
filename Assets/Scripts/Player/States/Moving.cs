@@ -16,7 +16,7 @@ public class Moving : BaseState
         base.Enter();
         L_horizontalInput = sm.left_horizontal;
         L_verticalInput = sm.left_vertical;
-        //sm.rigLayer_HandIK.weight = 0;
+        sm.rigLayer_HandIK.weight = 0;
     }
 
     public override void UpdateLogic(){
