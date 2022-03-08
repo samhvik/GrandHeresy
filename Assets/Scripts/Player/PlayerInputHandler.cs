@@ -18,10 +18,6 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject[] playerRings = new GameObject[4];
     public GameObject currentRing;
 
-    // Holds the Colored Cursor for the keyboard user
-    public GameObject[] playerCursors = new GameObject[4];
-    public GameObject currentCursor;
-
     private void Awake()
     {
         // Assigns the Player Index
@@ -34,19 +30,12 @@ public class PlayerInputHandler : MonoBehaviour
         // Adds Player to Player Array in Game Values
         GameValues.instance.Players[playerIndex] = this.gameObject;
 
-        // Sets player to be alive initially
-        GameValues.instance.playerAlive[playerIndex] = true;
-        GameValues.instance.numAlive++;
-
         Debug.Log("Player Index: " + playerIndex + " | Number of Players: " + GameValues.instance.getNumPlayers());
 
         // Setting the color of our player outlines & instantiating the ring as a child of our player
         setPlayerOutlines();
         currentRing = Instantiate(currentRing, new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
         currentRing.transform.parent = this.transform;
-
-        // Setting our cursor
-        GameValues.instance.playerCursors[playerIndex] = currentCursor;
     }
 
     void Update()
@@ -76,7 +65,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    // Function will set the players outlines to specific colors & assign which color ring to place under player & Cursor Color
+    // Function will set the players outlines to specific colors & assign which color ring to place under player
     public void setPlayerOutlines()
     {
 
@@ -89,25 +78,21 @@ public class PlayerInputHandler : MonoBehaviour
         {
             outline.OutlineColor = Color.red;
             currentRing = playerRings[0];
-            currentCursor = playerCursors[0];
         }
         else if(playerIndex == 1)
         {
             outline.OutlineColor = Color.green;
             currentRing = playerRings[1];
-            currentCursor = playerCursors[1];
         }
         else if (playerIndex == 2)
         {
             outline.OutlineColor = Color.blue;
             currentRing = playerRings[2];
-            currentCursor = playerCursors[2];
         }
         else if (playerIndex == 3)
         {
             outline.OutlineColor = Color.yellow;
             currentRing = playerRings[3];
-            currentCursor = playerCursors[3];
         }
     }
 }

@@ -3,6 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//                      * IN PROGRESS *
+public static class Algorithms
+{
+    public static float Remap(this float from, float fromMin, float fromMax, float toMin, float toMax)
+    {
+        var fromAbs = from - fromMin;
+        var fromMaxAbs = fromMax - fromMin;
+
+        var normal = fromAbs / fromMaxAbs;
+
+        var toMaxAbs = toMax - toMin;
+        var toAbs = toMaxAbs * normal;
+
+        var to = toAbs + toMin;
+
+        return to;
+    }
+}
+//
+
 public class Aim : Stationary
 {   
     private float R_horizontalInput;
@@ -28,6 +48,8 @@ public class Aim : Stationary
         {
             R_horizontalInput = sm.right_horizontal;
             R_verticalInput = sm.right_vertical;
+            //Debug.Log("HORIZONTAL: " + R_horizontalInput);
+            //Debug.Log("VERTICAL: " + R_verticalInput);
 
             sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
             var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
@@ -39,22 +61,30 @@ public class Aim : Stationary
                 stateMachine.ChangeState(sm.idleState);
             }
         } 
-        // If a Keyboard is being used, aim with this method  
+        // If a Keyboard is being used, aim with this method                            * IN PROGRESS *
         else
         {
-            if(GameValues.instance.cursorLock == false)
-            {
-                GameValues.instance.playerCursors[sm.input.playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[sm.input.playerIndex], new Vector3(sm.transform.position.x, sm.transform.position.y, sm.transform.position.z), sm.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
-                GameValues.instance.cursorLock = true;
-            }
+            R_horizontalInput = sm.right_horizontal;
+            //R_horizontalInput = Algorithms.Remap(R_horizontalInput,-1200, 1200, -1, 1);
+            //Debug.Log("HORIZONTAL: " + R_horizontalInput);
 
-            sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
-            sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+            R_verticalInput = sm.right_vertical;
+            //R_verticalInput = Algorithms.Remap(R_verticalInput, -600, 600, -1, 1);
+            //Debug.Log("VERTICAL: " + R_verticalInput);
 
-            if(sm.isAiming == false)
+            //Vector3 temp = new Vector3(R_horizontalInput, 0, R_verticalInput);
+            //sm.transform.LookAt(temp);
+
+            //sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
+            //var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
+            // sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
+
+            // If the right stick is not in motion, switch to idle state
+            if (R_horizontalInput == 0 && R_verticalInput == 0)
             {
                 stateMachine.ChangeState(sm.idleState);
             }
         }
     }
+
 }

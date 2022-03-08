@@ -296,12 +296,6 @@ MonoBehaviour:
   - {fileID: 7905042338127913087, guid: 5c25bde56c5eed444989483e95b0eb9a, type: 3}
   - {fileID: 8739888211239660928, guid: b2dd047c876e6954daae3580543b7de6, type: 3}
   currentRing: {fileID: 0}
-  playerCursors:
-  - {fileID: 381334848421640850, guid: 40f33472904387c4e8b14b2b1016c602, type: 3}
-  - {fileID: 4720424804554719100, guid: 9ddc205e2cd71964baad06d6b63aee67, type: 3}
-  - {fileID: 2562497820196136352, guid: 17f00b01d36816d4cb839e59fb9e7db9, type: 3}
-  - {fileID: 3031745002903537865, guid: 1aad6a12a6f06c34587ec6cb0ecf65af, type: 3}
-  currentCursor: {fileID: 0}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +341,6 @@ MonoBehaviour:
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
-  isAiming: 0
   lookSpeed: 705
   dodgeSlideSpeed: 67
   dodgeSlideFalloff: 10
@@ -477,18 +470,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
