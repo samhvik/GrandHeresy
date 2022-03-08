@@ -14,45 +14,42 @@ public class EnemySpawner : MonoBehaviour
     private float TimeElapsed;
     // set player midpoint
     // Temp Player Object until player grabbing is more dynamic
-    public GameObject Player;
     // Temp Manager Gameobject until I move things over to Director for calls
     public AIManager Director;
+    public GameObject CameraMidpoint;
+    private Transform midpoint;
     void Start(){  
         TimeElapsed = 0f;
-        StartCoroutine(CheckMidpointDistance()); // delay checking where the midpoint is
     }
 
-    // Tutorial Recommended delay on execution
-    IEnumerator CheckMidpointDistance(){
-        yield return new WaitForSeconds(0.5f);
-        // if midpointDistance > tolerance:
-        // GameValues.inCombatStatus = false;
-    }
     //TO DO
-    // Have EnemyDirector Call EnemySpawner Instead when an objective is active
-    // figure out the tolerance for moving the enemyspawner
     // Implement the Exit Combat Status && Merge AIManager and EnemyDirector
-    // Grab Objective Count for spawnRate
-    // Grab Players Randomly as Targets for newly spawned AI
     
     void Update(){
         // update spawning range based on the midpoint. 
         // do this every frame for accuracy
-
-        if(spawnRate(5)){ // replace 5 with objectives completed
+        midpoint = CameraMidpoint.transform;
+        if(spawnRate(GameValues.instance.objectivesCompleted)){
             // spawn enemies randomly within the distance
             int waveNum = numberToSpawn();
-
             for(int i = 0; i < waveNum; i++){
-                // pos += midpoint.position; // start the spawn point from the Player's Midpoint
-                var pos = Random.insideUnitCircle * new Vector3(25, 1, 25); // Random Point within a Circle; *5 is the Radius of the circle
-                GameObject nAI = Instantiate(hordeEnemyToSpawn, pos, Quaternion.LookRotation(-pos));
+                // Improvement: Add a value to X and Y of pos
+                // to prevent AI spawning inside / really close to the player
+                //
+                // Random Point within a Circle; *25f is the Radius of the circle, -17.5f is our floor level
+                var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
+                //Debug.Log("Spawnpoint: " + pos);
+                pos += midpoint.position; // move the spawnpoint near the player
+                // we use CheckBounds for making sure pos is valid
+                GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
                 newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
-                newController.manager = Director;                   
-                newController.chaseTarget = Player.transform;
-                nAI.GetComponent<AIFOV>().visibleTarget = Player.transform; // This will be a random player
+                newController.manager = Director;
+                // Setup Chase Target
+                Transform playerT = GrabAPlayer();               
+                newController.chaseTarget = playerT;
+                nAI.GetComponent<AIFOV>().visibleTarget = playerT; // This will be a random player
             }
             TimeElapsed = 0f; // reset timer upon exit of WaveSpawn
         }
@@ -63,11 +60,33 @@ public class EnemySpawner : MonoBehaviour
         return Random.Range(1, 6);//6);
     }
 
+    // current Greybox bounds are roughly 
+    // -85 <= x <= 100
+    // -65 <= z <= 115
+    private Vector3 CheckBounds(Vector3 p){
+        if(p.x < -85){ p.x = -85; }
+        if(p.x > 100){ p.x = 100; }
+        if(p.z < -65){ p.z = -65; }
+        if(p.z > 115){ p.z = 115; }
+        return p;
+    }
+
+    // grab a player based on the number of players
+    private Transform GrabAPlayer(){
+        var pAmount = GameValues.instance.numPlayers;
+        if (pAmount == 1){
+            Debug.Log("SinglePlayer");
+            return GameValues.instance.Players[0].transform;
+        }
+        // grab first player
+        return GameValues.instance.Players[Random.Range(0, pAmount - 1)].transform;
+    }
+
     // just subtly increase the frequency to spawn enemies based on objective completion for now
     // grab the gamevalue for completedObjectives at some point
     private bool spawnRate(int completedObjectives){
-        var complObj = completedObjectives;
-        if(complObj <= 0){ complObj = 1; } // don't divide by zero
+        var complObj = completedObjectives; //add to this value to increase spawn rate 
+        if(complObj <= 0){ complObj = 1; } // don't divide by zero, our default spawn rate
         TimeElapsed += Time.deltaTime;
         // default 20 second spawn timer reduced by number of completed objectives
         // once completedObjectives is a static VAR we wont need to pass in a rate

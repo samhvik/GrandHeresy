@@ -11,42 +11,60 @@ public class EnemyDirector : MonoBehaviour
 {
     public List<Transform> waypoints;
     private AIStateController[] enemies; // should change down the line to use less resources finding stuff
+    public GameObject CameraMidpoint;
+    private GameObject player;
     
     private void Start(){
+        // make sure the spawner is off at start of gameplay
+        if(this.GetComponent<EnemySpawner>().enabled){
+            this.GetComponent<EnemySpawner>().enabled = false;
+        }
         GameValues.inCombatStatus = false;
-        // Initialize the Pre-Set Enemies
+        // Initialize the Patrol Enemies
         enemies = FindObjectsOfType<AIStateController>();
         foreach(var e in enemies){
             e.SetupAI(true, waypoints);
         }
+        this.transform.position = CameraMidpoint.transform.position;
         StartCoroutine(CheckForCombat()); // forcing a delay on combatFlag Checking
     }
 
     // check for combat once in "awhile" not every frame
     // it'll be TRUE a lot but untrue less often
     IEnumerator CheckForCombat(){
-        yield return new WaitForSeconds(0.3f);
-        if(GameValues.inCombatStatus){
-            // check if EnemySpawner Exists
-            // if Not Spawn it then execute the rest
-            // spawn EnemySpawner
-            // Enemyspawner will handle enemy spawning
-        } else{
-            Debug.Log("Not In Combat");
-            // Not in Combat
-            // check if EnemySpawner is enabled
-            // if Enabled Turn OFF
-            // if you wanted to check any AI left behind we could do so here
+        while(true){
+            yield return new WaitForSeconds(0.3f);
+            //Debug.Log("Cam: " + CameraMidpoint.transform.position);
+            //Debug.Log("This Pos:" + this.transform.position);
+            float dist = Vector3.Distance(CameraMidpoint.transform.position,
+                    this.transform.position);
+            //Debug.Log(dist);
+            if(GameValues.inCombatStatus){
+                // check if EnemySpawner Exists
+                // Enemyspawner will handle enemy spawning
+                if(!this.GetComponent<EnemySpawner>().enabled){
+                    Debug.Log("Combat Enabled");
+                    this.GetComponent<EnemySpawner>().enabled = true;
+                }
+                if(dist >= 12){
+                    Debug.Log("Combat Should End Now");
+                    // Despawn Enemies here if wanted
+                    GameValues.inCombatStatus = false;
+                    this.GetComponent<EnemySpawner>().enabled = false;
+                }
+            }
+            this.transform.position = CameraMidpoint.transform.position * 0.90f;
         }
     }
 
+    public void moveDirector(){
+        this.transform.position = CameraMidpoint.transform.position;
+    }
+
     // TODO
-    // Finish EnemySpawner
-    // Enable / Disable EnemySpawner based on Combat Status
     // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
               // -- This may need some tuning in terms of how we want combat to behave
-    // Call spawnRate; while(Combat) instead of Update(); on EnemySpawner rather than have it be an update
-    // Flag Combat status when Objective has started
+    // Move Spawner to In Progress Objectives
 }
 
 /*
