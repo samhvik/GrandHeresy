@@ -367,17 +367,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d1b3c600-edc5-4924-b367-447f2dcf4116"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Dodge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""15f06629-e41a-400d-9572-32e9e7a9c9a6"",
                     ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
