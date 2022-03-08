@@ -6,90 +6,57 @@
 */
 
 using UnityEngine;
+using System.Collections.Generic;
 
-public class WeaponSwitching : MonoBehaviour
-{
-    public int selectedWeapon = 0;
-    public int inventorySize;
-    private Gun currentWeapon;
-    public PlayerShooting shooter;
+public class WeaponSwitching : MonoBehaviour {
+  private Gun currentWeapon;
+  private PlayerShooting shooter;
+  private PlayerInventory inventory;
+  PlayerControls controls;
+  private List<Gun> guns;
 
-    PlayerControls controls;
+  void Start() {
+  }
 
-    private static Collider[] drops = new Collider[1];
-    
-    void Start(){
-        SelectWeapon();
+  void Awake() {
+    inventory = GetComponent<PlayerInventory>();
+    shooter = gameObject.GetComponent<PlayerShooting>();
+    controls = new PlayerControls();
+
+    // callback function for the reload button
+    controls.Gameplay.SwapWeapons.performed += ctx => Handle();
+  }
+
+  // Enable and disable control input when script is enabled/disabled.
+  void OnEnable() {
+    controls.Gameplay.Enable();
+  }
+
+  void OnDisable() {
+    controls.Gameplay.Disable();
+  }
+
+  private void Handle() {
+    Debug.Log("I AM HERE OH YEA");
+    int prevWeaponIndex = inventory.getHead();
+    int newWeaponIndex = inventory.incrementHead();
+    if (prevWeaponIndex != newWeaponIndex) {
+      Debug.Log("WE FUCKING SELECTING WOOOOOOO");
+      SelectWeapon();
     }
+  }
 
-    void Awake(){
-        controls = new PlayerControls();
+  private void SelectWeapon() {
+    int weaponIndex = inventory.getHead();
+    int inventoryCurrentSize = inventory.InventoryCurrentSize();
+    int prevWeaponIndex = (weaponIndex + inventoryCurrentSize - 1) % inventoryCurrentSize;
+    currentWeapon = inventory.getGunAtIndex(weaponIndex);
+    currentWeapon.gameObject.SetActive(true);
+    shooter.SwitchWeapon(currentWeapon);
+    inventory.getGunAtIndex(prevWeaponIndex).gameObject.SetActive(false);
+  }
 
-        // callback function for the reload button
-        controls.Gameplay.SwapWeapons.performed += ctx => Handle();
-
-        controls.Gameplay.Interact.performed += ctx => PickupWeapon();
-    }
-
-    // Enable and disable control input when script is enabled/disabled.
-    void OnEnable(){
-        controls.Gameplay.Enable();
-    }
-
-    void OnDisable(){
-        controls.Gameplay.Disable();
-    }
-    
-    private void Handle(){
-        int previousSelectedWeapon = selectedWeapon;
-
-            selectedWeapon = (selectedWeapon + 1) % inventorySize;
-
-            if(previousSelectedWeapon != selectedWeapon){
-                SelectWeapon();
-            }
-    }
-
-    /*void Update(){
-        if(Input.GetButtonDown("SwitchWeapon")){
-            int previousSelectedWeapon = selectedWeapon;
-
-            selectedWeapon = (selectedWeapon + 1) % inventorySize;
-
-            if(previousSelectedWeapon != selectedWeapon){
-                SelectWeapon();
-            }
-        }
-    }*/
-
-    public void PickupWeapon() {
-        float pickupRadius = 10;
-        Physics.OverlapSphereNonAlloc(transform.position, pickupRadius, drops);
-        foreach (var drop in drops) {
-            if (drop.CompareTag("Drop")) {
-                Destroy(drop.gameObject);
-            }
-        }
-    }
-    
-    public void SelectWeapon(){
-        int index = 0;
-        foreach(Transform weapon in transform){
-            if(index == selectedWeapon){
-                weapon.gameObject.SetActive(true);
-                currentWeapon = weapon.gameObject.GetComponent<Gun>();
-                shooter.SwitchWeapon(currentWeapon);
-            }
-            else{
-                weapon.gameObject.SetActive(false);
-            }
-            index++;
-        }
-    }
-
-    public Gun CurrentWeapon{
-        get{
-            return currentWeapon;
-        }
-    }
+  public Gun CurrentWeapon {
+    get { return currentWeapon; }
+  }
 }

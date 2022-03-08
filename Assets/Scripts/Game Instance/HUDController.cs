@@ -17,7 +17,7 @@ public class HUDController : MonoBehaviour
     public Text[] stateText = new Text[4];
 
     // Holds our players inventory
-    private PlayerGear inventory;
+    private PlayerInventory inventory;
 
     void Awake()
     {
@@ -35,7 +35,7 @@ public class HUDController : MonoBehaviour
         // Enabling Text to Display and Update Text
         for (int i = 0; i < GameValues.instance.getNumPlayers(); i++)
         {
-            PlayerGear inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerGear>(); // Danny: Change when implementing to main
+            PlayerInventory inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerInventory>(); // Danny: Change when implementing to main
 
 
             // Set the weapon text

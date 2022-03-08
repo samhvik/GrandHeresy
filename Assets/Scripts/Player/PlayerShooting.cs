@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerShooting : MonoBehaviour{
 
     //public WeaponSwitching inventory;
-    private PlayerGear inventory;
+    private PlayerInventory inventory;
     private Gun gun;
     private bool held = false;
 
@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour{
 
     void Awake()
     {
-        inventory = this.GetComponent<PlayerGear>();
+        inventory = this.GetComponent<PlayerInventory>();
         controls = new PlayerControls();
     }
 

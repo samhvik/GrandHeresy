@@ -48,7 +48,7 @@ public class GameValues : MonoBehaviour{
         playerHealth = 100.0f;
         playerSpeedWalk = 15.0f;
         playerSpeedAim = 10.0f;
-        playerSpeedRun = 25.0f;
+        playerSpeedRun = 20.0f;
 
         // Initializing player variables
         for(int i = 0; i < 4; i++)
