@@ -15,15 +15,11 @@ public class EnemySpawner : MonoBehaviour
     // set player midpoint
     // Temp Player Object until player grabbing is more dynamic
     // Temp Manager Gameobject until I move things over to Director for calls
-    public AIManager Director;
     public GameObject CameraMidpoint;
     private Transform midpoint;
     void Start(){  
         TimeElapsed = 0f;
     }
-
-    //TO DO
-    // Implement the Exit Combat Status && Merge AIManager and EnemyDirector
     
     void Update(){
         // update spawning range based on the midpoint. 
@@ -45,7 +41,6 @@ public class EnemySpawner : MonoBehaviour
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
                 newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
-                newController.manager = Director;
                 // Setup Chase Target
                 Transform playerT = GrabAPlayer();               
                 newController.chaseTarget = playerT;

@@ -64,7 +64,7 @@ public class EnemyDirector : MonoBehaviour
     // TODO
     // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
               // -- This may need some tuning in terms of how we want combat to behave
-    // Move Spawner to In Progress Objectives
+    // Move Spawner to In Progress Objectives && Turn Combat On
 }
 
 /*
