@@ -49,20 +49,27 @@ using UnityEngine;
 
     void Update()
     {
-        if (GameValues.instance.numPlayers == 1)
+        if (GameValues.instance.numAlive == 1)
         {
-            playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementSM>();
+            if (GameValues.instance.numPlayers > 1)
+            {
+                playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementSM>();
+            }
+            else
+            {
+                playerMovement = GameValues.instance.Players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
+            }
         }
         trackPlayers();
     }
 
     void LateUpdate(){
-        if(GameValues.instance.numPlayers >= 1)
+        if(GameValues.instance.numAlive >= 1)
         {
             switch (playerMovement.GetCurrentState()) {
                 case "Aim":
                 case "StrafeAim":
-                    if (GameValues.instance.numPlayers == 1)
+                    if (GameValues.instance.numAlive == 1)
                     {
                         offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
                         offset.z = -18f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
@@ -98,14 +105,22 @@ using UnityEngine;
     void trackPlayers()
     {
         // Finding Prefab Players with tag "Player"
-        if(GameValues.instance.numPlayers == 0)
+        if(GameValues.instance.numAlive == 0)
         {
             playerTransform = cameraTracker.transform;
             target = cameraTracker.transform;
         }
-        else if (GameValues.instance.numPlayers == 1)
+        else if (GameValues.instance.numAlive == 1)
         {
-            playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementSM>();
+            if (GameValues.instance.numPlayers > 1)
+            {
+                playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementSM>();
+            }
+            else
+            {
+                playerMovement = GameValues.instance.Players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
+            }
+
             playerTransform = playerMovement.transform;
             target = playerMovement.transform;
         }
