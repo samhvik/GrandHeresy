@@ -8,7 +8,6 @@ public class AIStateController : MonoBehaviour
     public AIStates currState;
     public EnemyStats enemyStats; // Enemy Base Class create this next time
     public AIStates remainState;
-    public AIManager manager;
 
     // hidden inspector public variables for accessing
     // we dont wanna touch these in the editor
