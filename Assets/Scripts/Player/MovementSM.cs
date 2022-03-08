@@ -35,6 +35,7 @@ public class MovementSM : StateMachine
     private Vector2 right;
     private Vector2 movementInput = Vector2.zero;
     private Vector2 aimInput = Vector2.zero;
+    public bool isAiming = false;
 
 
     [Header("Player Tweaking")]
@@ -44,7 +45,6 @@ public class MovementSM : StateMachine
     public float dodgeSlideSpeed = 250f;
     [SerializeField] [Range(1f, 20f)]
     public float dodgeSlideFalloff = 10f;
-
 
     private void Awake(){
         idleState = new Idle(this);
@@ -68,7 +68,22 @@ public class MovementSM : StateMachine
     // OnAim rotates our player to aim with the right joystick
     public void OnAim(InputAction.CallbackContext context)
     {
-        aimInput = context.ReadValue<Vector2>();
+        if (GameValues.instance.whatGamepad[this.input.playerIndex] == "controller")
+        {
+            aimInput = context.ReadValue<Vector2>();
+        }
+        else
+        {
+            // Aiming if RMB is held down
+            if(context.ReadValue<float>() > 0.1f)
+            {
+                isAiming = true;
+            }
+            else
+            {
+                isAiming = false;
+            }
+        }
     }
 
     // OnRun will make our player run
@@ -100,6 +115,7 @@ public class MovementSM : StateMachine
         //     Debug.Log("DodgeRolling Anim....");
         //     animatorManager.HandleDodgeRollState(true);
         // }
+        
     }
 
     private void GetInput(){
@@ -121,5 +137,4 @@ public class MovementSM : StateMachine
     public void OnDisable(){
         controls.Gameplay.Disable();
     }
-
 }

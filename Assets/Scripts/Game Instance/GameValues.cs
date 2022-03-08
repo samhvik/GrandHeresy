@@ -40,6 +40,14 @@ public class GameValues : MonoBehaviour{
     //
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
+    //
+    // Check to see if the player is alive or not
+    public bool[] playerAlive = new bool[4];
+    public int numAlive;
+    //
+    // Holds the Keyboard players cursor
+    public GameObject[] playerCursors = new GameObject[4];
+    public bool cursorLock = false;
 
     public int objectivesTotal;
     public int objectivesCompleted;
@@ -54,13 +62,19 @@ public class GameValues : MonoBehaviour{
         for(int i = 0; i < 4; i++)
         {
             playerPosition[i] = this.transform;
+            playerAlive[i] = false;
 
         }
         numPlayers = 0;
+        numAlive = 0;
+
 
         // Uncomment this later, giving errors in my own scene
         // may need a better way to implement this so people can do stuff in their own scene
         winText = GameObject.Find("Win Text").GetComponent<Text>();
+
+        //Set Cursor to not be visible
+        Cursor.visible = false;
     }
 
     void Awake(){
@@ -84,6 +98,9 @@ public class GameValues : MonoBehaviour{
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //Set Cursor to be visible
+            Cursor.visible = true;
+
             #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
             #endif
@@ -114,4 +131,17 @@ public class GameValues : MonoBehaviour{
     public void GameCompleted(){
         winText.text = "Game Over, You Win!";
     }
+
+    // Returns the only player that is alive
+    public int findWhosAlive(){
+        for(int i = 0; i < numPlayers; i++)
+        {
+            if(playerAlive[i] == true)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+   }
 }
