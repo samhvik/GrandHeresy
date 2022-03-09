@@ -298,6 +298,12 @@ MonoBehaviour:
   - {fileID: 7905042338127913087, guid: 5c25bde56c5eed444989483e95b0eb9a, type: 3}
   - {fileID: 8739888211239660928, guid: b2dd047c876e6954daae3580543b7de6, type: 3}
   currentRing: {fileID: 0}
+  playerCursors:
+  - {fileID: 381334848421640850, guid: c20b96a3b8996d040be5f24f03a4ea39, type: 3}
+  - {fileID: 4720424804554719100, guid: baf63433eec6b134993e571572062755, type: 3}
+  - {fileID: 2562497820196136352, guid: 9012c0f1df8194246add95218dfa5dea, type: 3}
+  - {fileID: 3031745002903537865, guid: 0d70fb8a385d3454ba7ffb6ce8d8e945, type: 3}
+  currentCursor: {fileID: 0}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +349,7 @@ MonoBehaviour:
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
+  isAiming: 0
   lookSpeed: 705
   dodgeSlideSpeed: 67
   dodgeSlideFalloff: 10

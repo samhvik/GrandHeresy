@@ -35,7 +35,7 @@ public class MovementSM : StateMachine
     private Vector2 right;
     private Vector2 movementInput = Vector2.zero;
     private Vector2 aimInput = Vector2.zero;
-
+    public bool isAiming = false;
 
     [Header("Player Tweaking")]
     [SerializeField] [Range(200f, 900f)]
@@ -68,6 +68,22 @@ public class MovementSM : StateMachine
     // OnAim rotates our player to aim with the right joystick
     public void OnAim(InputAction.CallbackContext context)
     {
+        if (GameValues.instance.whatGamepad[this.input.playerIndex] == "controller")
+        {
+            aimInput = context.ReadValue<Vector2>();
+        }
+        else
+        {
+            // Aiming if RMB is held down
+            if (context.ReadValue<float>() > 0.1f)
+            {
+                isAiming = true;
+            }
+            else
+            {
+                isAiming = false;
+            }
+        }
         aimInput = context.ReadValue<Vector2>();
     }
 

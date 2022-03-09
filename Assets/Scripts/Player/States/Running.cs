@@ -50,7 +50,8 @@ public class Running : Moving
         }
 
         // If right stick is moved, switch to strafe aim state
-        if(R_horizontalInput != 0 || R_verticalInput != 0){
+        if (R_horizontalInput != 0 || R_verticalInput != 0 || sm.isAiming == true)
+        {
             stateMachine.ChangeState(sm.strafeAimState);
         }
     }

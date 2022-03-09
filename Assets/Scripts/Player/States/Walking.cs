@@ -47,7 +47,8 @@ public class Walking : Moving
         }
 
         // If you aim while walking, switch to strafe state
-        if(R_horizontalInput != 0 || R_verticalInput != 0){
+        if (R_horizontalInput != 0 || R_verticalInput != 0 || sm.isAiming == true)
+        {
             stateMachine.ChangeState(sm.strafeAimState);
         }
     }
