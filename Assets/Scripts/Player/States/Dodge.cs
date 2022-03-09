@@ -30,7 +30,7 @@ public class Dodge : BaseState
 
         moveDir = new Vector3(L_horizontalInput, 0, L_verticalInput).normalized;
         sm.animatorManager.HandleDodgeRollState(true);
-        sm.rigLayer_HandIK.weight = 0;
+        //sm.rigLayer_HandIK.weight = 0;
     }
 
     public override void UpdateLogic(){
