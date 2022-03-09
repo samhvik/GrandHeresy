@@ -35,13 +35,35 @@ public class StrafeAim : Moving
             L_verticalInput * GameValues.instance.playerSpeedAim
         ));
 
-        sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
-        var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
-        sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
+        // If a Controller is being used, aim with this method
+        if (GameValues.instance.whatGamepad[sm.input.playerIndex] == "controller")
+        {
+            R_horizontalInput = sm.right_horizontal;
+            R_verticalInput = sm.right_vertical;
 
-        // If the right stick is not in motion, switch to idle state
-        if(R_horizontalInput == 0 && R_verticalInput == 0){
-            stateMachine.ChangeState(sm.idleState);
+            sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
+            var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
+            sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
+
+            // If the right stick is not in motion, switch to idle state
+            if (R_horizontalInput == 0 && R_verticalInput == 0)
+            {
+                stateMachine.ChangeState(sm.idleState);
+            }
+        }
+        // If a Keyboard is being used, aim with this method  
+        else
+        {
+            sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
+
+            sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+
+            if (sm.isAiming == false)
+            {
+                stateMachine.ChangeState(sm.idleState);
+            }
+
+        
         }
         
     }

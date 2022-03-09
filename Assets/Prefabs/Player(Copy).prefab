@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 8748554809732624351}
   - component: {fileID: 173795876912715698}
   - component: {fileID: -2136038907444891355}
-  - component: {fileID: 6607693706342602170}
   - component: {fileID: 2198884338211547498}
   m_Layer: 6
   m_Name: Player(Copy)
@@ -298,6 +297,12 @@ MonoBehaviour:
   - {fileID: 7905042338127913087, guid: 5c25bde56c5eed444989483e95b0eb9a, type: 3}
   - {fileID: 8739888211239660928, guid: b2dd047c876e6954daae3580543b7de6, type: 3}
   currentRing: {fileID: 0}
+  playerCursors:
+  - {fileID: 381334848421640850, guid: c20b96a3b8996d040be5f24f03a4ea39, type: 3}
+  - {fileID: 4720424804554719100, guid: baf63433eec6b134993e571572062755, type: 3}
+  - {fileID: 2562497820196136352, guid: 9012c0f1df8194246add95218dfa5dea, type: 3}
+  - {fileID: 3031745002903537865, guid: 0d70fb8a385d3454ba7ffb6ce8d8e945, type: 3}
+  currentCursor: {fileID: 0}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +348,7 @@ MonoBehaviour:
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
+  isAiming: 0
   lookSpeed: 705
   dodgeSlideSpeed: 67
   dodgeSlideFalloff: 10
@@ -361,7 +367,6 @@ MonoBehaviour:
   inventorySize: 5
   starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
   gunPosition: {fileID: 8057053086923493147}
-  guns: []
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,20 +584,6 @@ MonoBehaviour:
   XaxisClampWidth: 32
   ZaxisClampHeight: 15
   cameraTracker: {fileID: 0}
---- !u!114 &6607693706342602170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d31ffa86cc53d7801b50a7456ea8a0d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupRadius: 10
-  maxInteractables: 10
 --- !u!114 &2198884338211547498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,10 +596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff04f21e5b1fdbe47b727b517aa92cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 0
-  inventorySize: 5
-  currentWeapon: {fileID: 0}
-  shooter: {fileID: 0}
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,10 +1500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff04f21e5b1fdbe47b727b517aa92cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 0
-  inventorySize: 2
-  currentWeapon: {fileID: 0}
-  shooter: {fileID: 0}
 --- !u!1 &5751168303381433048
 GameObject:
   m_ObjectHideFlags: 0
