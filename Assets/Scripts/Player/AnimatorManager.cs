@@ -32,7 +32,7 @@ public class AnimatorManager : MonoBehaviour
         // Getting the magnitude of the left stick axis to determine whether to walk, run, or sprint
         float mag = Mathf.Max(Mathf.Abs(v_Movement), Mathf.Abs(h_Movement));
         //mag = Mathf.Ceil(mag);
-        if(isRunning) mag *= 2f;
+        if(isRunning) mag *= 4f;
         animator.SetBool("IsSprinting", isRunning);
 
         // Checking whether in freelocomotion or strafe locomotion

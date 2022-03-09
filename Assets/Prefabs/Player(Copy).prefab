@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &676614620558355306
 GameObject:
@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 173795876912715698}
   - component: {fileID: -2136038907444891355}
   - component: {fileID: 2198884338211547498}
+  - component: {fileID: 3993233900559306110}
   m_Layer: 6
   m_Name: Player(Copy)
   m_TagString: Player
@@ -596,6 +597,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff04f21e5b1fdbe47b727b517aa92cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3993233900559306110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d148c69bd9ca3443ada5ae485b228e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRadius: 3
+  maxInteractables: 4
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0

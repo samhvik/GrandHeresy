@@ -26,6 +26,8 @@ public class Running : Moving
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
 
+        sm.animatorManager.HandleAnimatorValues(L_horizontalInput, L_verticalInput, R_horizontalInput, R_verticalInput, true);
+
         // Move the character depending on stick direction
         sm.GetComponent<CharacterController>().SimpleMove(new Vector3(
             L_horizontalInput * GameValues.instance.playerSpeedRun,
