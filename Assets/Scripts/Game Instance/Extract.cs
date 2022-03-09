@@ -11,19 +11,12 @@ using UnityEngine;
 [System.Serializable]
 public class Extract : MonoBehaviour
 {
-    public int requiredAmount;
-    public int currentAmount;
     public float extractionTime;
     public bool extractionOpen = false;
 
     public bool IsReached()
     {
-        return (currentAmount >= requiredAmount);
-    }
-
-    public void CompletedMission()
-    {
-        currentAmount++;
+        return (GameValues.objectivesCompleted >= GameValues.objectivesTotal);
     }
 
     public void Extraction()
