@@ -45,15 +45,17 @@ public class Gun : MonoBehaviour{
 
     private float nextShootTime = 0f;                                       // The next time the gun is able to shoot
 
-    public AudioSource sound;
-    
+    private string eventpath = "event:/ShootingGun";
+    private FMOD.Studio.EventInstance e_instance;
 
-    
+
+
     void Start() {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraController>();
         // Fill the magazine
         firerate /= 60;
         remainingRounds = magSize;
+        e_instance = FMODUnity.RuntimeManager.CreateInstance(eventpath);
     }
 
     void Update(){
@@ -73,6 +75,14 @@ public class Gun : MonoBehaviour{
                     else
                         remainingRounds = magSize + 1;
                     shootState = ShootState.Ready;
+                }
+                break;
+            default:
+                FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                e_instance.getPlaybackState(out fmodPbState);
+                if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
                 break;
         }
@@ -106,10 +116,15 @@ public class Gun : MonoBehaviour{
             // Decrease the remaining ammo by 1
             remainingRounds--;
 
-            sound.Play();
+            FMOD.Studio.PLAYBACK_STATE fmodPbState;
+            e_instance.getPlaybackState(out fmodPbState);
+            if (fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                e_instance.start();
+            }
 
             // If mag is empty, reload. If not, change to shooting state and calculate next shooting time
-            if(remainingRounds > 0){
+            if (remainingRounds > 0){
                 nextShootTime = Time.time + (1f / firerate);
                 shootState = ShootState.Shooting;
             } else{
