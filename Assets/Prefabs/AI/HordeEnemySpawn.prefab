@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2711238399754506758}
   - component: {fileID: 8144044541081797091}
   - component: {fileID: 8144044541081797101}
+  - component: {fileID: 8756196213503985177}
   m_Layer: 0
   m_Name: HordeEnemySpawn
   m_TagString: Target
@@ -257,10 +258,22 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: e7168a873a9a9bb4cb14dcdcc19f5f8d, type: 2}
   enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
-  manager: {fileID: 0}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
   chaseTarget: {fileID: 0}
   lastKnownLocation: {x: 0, y: 0, z: 0}
   stateTimeElapsed: 0
+--- !u!114 &8756196213503985177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699875790224936442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69f1a4bc3cd44a4a99e128bfc78fa30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StepDistance: 4.3

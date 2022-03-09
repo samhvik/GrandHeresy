@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 849709334750888096}
   - component: {fileID: 8748554809732624351}
   - component: {fileID: -941179049529082362}
+  - component: {fileID: -685652658952908131}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -323,7 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySize: 5
   starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
-  pickupRadius: 10
   gunPosition: {fileID: 0}
 --- !u!114 &8748554809732624351
 MonoBehaviour:
@@ -514,6 +514,19 @@ MonoBehaviour:
   XaxisClampWidth: 32
   ZaxisClampHeight: 15
   cameraTracker: {fileID: 0}
+--- !u!114 &-685652658952908131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c08800829fd9244ba62173374f16567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StepDistance: 5
 --- !u!1 &849709335332641820
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7180ad68-e29b-4044-bb91-53b45e9b0096}">
+		<property name="assetPath">
+			<value>LinSounds/Hit_Hurt.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.22768707482993197</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{adb1a8e6-21f3-4265-b426-05904231e6b8}</destination>
+		</relationship>
+	</object>
+</objects>
