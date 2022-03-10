@@ -14,9 +14,6 @@ public class LevelSelectMenu : MonoBehaviour
 {
     public GameObject currentScreen;
 
-    public GameObject nextScreen;
-    public GameObject nextButton;
-
     public GameObject prevScreen;
     public GameObject prevButton;
 
@@ -28,30 +25,18 @@ public class LevelSelectMenu : MonoBehaviour
         controls = new PlayerControls();
 
         // whenever the controller presses the Submit or Cancel buttons
-        controls.UI.Submit.performed += ctx => onSelect();
         controls.UI.Cancel.performed += ctx => onCancel();
-    }
-
-    // whenever the players press submit
-    void onSelect()
-    {
-        // sets the current screen to false
-        currentScreen.SetActive(false);
-        // activates the next screen
-        nextScreen.SetActive(true);
-
-        EventSystem.current.SetSelectedGameObject(nextButton);
     }
 
     // whenever the players press cancel
     void onCancel()
     {
+        EventSystem.current.SetSelectedGameObject(prevButton);
+
         // sets the current screen to false
         currentScreen.SetActive(false);
         // activates the next screen
         prevScreen.SetActive(true);
-
-        EventSystem.current.SetSelectedGameObject(prevButton);
     }
 
     void OnEnable()
