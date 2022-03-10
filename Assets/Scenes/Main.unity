@@ -5412,7 +5412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quad: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  targetHeight: 200
+  targetHeight: 300
   overrideFPS: 1
   fps: 30
   filterMode: 0

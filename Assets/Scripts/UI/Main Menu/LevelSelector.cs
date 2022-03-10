@@ -10,10 +10,8 @@ public class LevelSelector : MonoBehaviour
     public GameObject currentLevel;
 
     public GameObject nextLevel;
-    public GameObject nextImage;
 
     public GameObject prevLevel;
-    public GameObject prevImage;
 
     DefaultInputActions controls;
 
@@ -34,8 +32,6 @@ public class LevelSelector : MonoBehaviour
 
             currentLevel.SetActive(false);
             nextLevel.SetActive(true);
-
-            EventSystem.current.SetSelectedGameObject(nextImage);
         }
 
         else if(nav.x < 0)
@@ -44,8 +40,6 @@ public class LevelSelector : MonoBehaviour
 
             currentLevel.SetActive(false);
             prevLevel.SetActive(true);
-
-            EventSystem.current.SetSelectedGameObject(prevImage);
         }
 
         Debug.Log(GameValues.level);
