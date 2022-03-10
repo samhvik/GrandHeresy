@@ -6,34 +6,101 @@ public class BeaconBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool playerInCollider = false; 
+    public GameObject redRing;
+    public GameObject blueRing;
+    public GameObject greenRing;
+    public Collider playerCollider;
+
+    private bool allPlayersIn = false;
+    private bool extractionAvailable = false;
     void Start()
     {
-        
+        blueRing.SetActive(false);
+        greenRing.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // print(GetColliders());
+       if(IsReached()){
+           extractionAvailable = true;
+       }
+       updateRing();
     }
 
-    private HashSet<Collider> colliders = new HashSet<Collider>();
+    // private HashSet<Collider> colliders = new HashSet<Collider>();
  
-    public HashSet<Collider> GetColliders () { return colliders; }
+    // public HashSet<Collider> GetColliders () { return colliders; }
   
-    private void OnTriggerEnter (Collider other) {
-          colliders.Add(other); //hashset automatically handles duplicates
-          print(other.tag + "this just entered the beacon range");
-          if(other.tag =="Player"){
-              playerInCollider = true; 
-          }
+    // private void OnTriggerEnter (Collider other) {
+    //       colliders.Add(other); //hashset automatically handles duplicates
+    //       print(other.tag + "this just entered the beacon range");
+    //       if(other.tag =="Player"){
+    //           playerInCollider = true; 
+    //       }
+    // }
+  
+    // private void OnTriggerExit (Collider other) {
+    //       colliders.Remove(other);
+    //        print(other.tag + "this just left the beacon range");
+    //       if(other.tag =="Player"){
+    //           playerInCollider = false; 
+    //       }
+    // }
+
+    
+ 
+    //called when something enters the trigger
+    private List<Collider> colliders = new List<Collider>();
+     public List<Collider> GetColliders () { return colliders; }
+ 
+     private void OnTriggerEnter (Collider other) {
+        if (other.tag == "Player") { 
+            colliders.Add(other); 
+        }
+     }
+ 
+     private void OnTriggerExit (Collider other) {
+         colliders.Remove(other);
+     }
+     private bool checkAllPlayersInRange(){ 
+         int count = 0;
+         foreach(Collider col in colliders){
+             count++;
+         }
+         if(count == GameValues.instance.numPlayers){
+             allPlayersIn = true;
+             
+         }
+         else{
+             allPlayersIn = false;
+         }
+         return allPlayersIn;
+     }
+    private void updateRing(){
+        if(extractionAvailable){
+            redRing.SetActive(false);
+            checkAllPlayersInRange();
+            if(allPlayersIn){
+                print("greenRing is active");
+                blueRing.SetActive(false);
+                greenRing.SetActive(true);
+            }
+            else{
+                print("blueRing is active");
+                greenRing.SetActive(false);
+                blueRing.SetActive(true);
+            }
+        }
+        else{
+            print("redRing is active");
+            redRing.SetActive(true);
+        }
+        // redRing.SetActive(true);
     }
-  
-    private void OnTriggerExit (Collider other) {
-          colliders.Remove(other);
-           print(other.tag + "this just left the beacon range");
-          if(other.tag =="Player"){
-              playerInCollider = false; 
-          }
+    private bool IsReached()
+    {
+
+        return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
     }
 }

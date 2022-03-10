@@ -42,6 +42,8 @@ public class Extract : MonoBehaviour
     public GameObject beaconPrefab;
     private GameObject beaconSpawnPoint;
     private GameObject beaconSpawned;
+    public bool timerIsRunning;
+    public float timeRemaining;
     void Start()
     {
         if(beaconPrefab == null){
@@ -49,12 +51,37 @@ public class Extract : MonoBehaviour
         }
         beaconSpawnPoint = chooseBeaconPoint();
         GameObject.Instantiate(beaconPrefab, beaconSpawnPoint.transform.position, Quaternion.identity);
-        
+        extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+
     }
 
     void Update()
     {
-        
+         if (IsReached())
+        {
+            extractionOpen = true;
+            timeRemaining = extractionTime;
+
+            //allow players to interact with beacon ask quinn how to do 
+            //check if beacon is active (after being interacted with)
+            //check if all players are in the collider 
+            //if not all players in collider || beacon not active timerIsRunning is false
+            
+        }
+        if(timerIsRunning){
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                print(timeRemaining);
+            }
+            else{ 
+                Debug.Log("Timer is done");
+                timeRemaining = 0;
+                timerIsRunning = false; 
+                //this is where we would change scenes to the recap scene
+            }
+        }
+            
     }
     /*
     * Chooses from a list of BeaconSpawnPoints to spawn a beacon for extraction at
