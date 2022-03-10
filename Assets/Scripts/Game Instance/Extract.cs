@@ -16,7 +16,7 @@ public class Extract : MonoBehaviour
 
     public bool IsReached()
     {
-        return (GameValues.objectivesCompleted >= GameValues.objectivesTotal);
+        return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
     }
 
     public void Extraction()
