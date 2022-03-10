@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Horde Enemy
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  attackRange: 3
+  attackRange: 4
   lookRadius: 80
   lookAngle: 35
   searchTurnSpeed: 240

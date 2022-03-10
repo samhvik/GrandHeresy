@@ -13,6 +13,7 @@ TagManager:
   - Gear
   - ObjectiveSpawn
   - Rune
+  - BeaconPoint
   layers:
   - Default
   - TransparentFX

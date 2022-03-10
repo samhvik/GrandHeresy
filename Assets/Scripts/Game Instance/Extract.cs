@@ -3,32 +3,6 @@
 
     Handles the extraction procedure upon player interaction.
 */
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[System.Serializable]
-public class Extract : MonoBehaviour
-{
-    public float extractionTime;
-    public bool extractionOpen = false;
-
-    public bool IsReached()
-    {
-        return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
-    }
-
-    public void Extraction()
-    {
-        if (IsReached())
-        {
-            extractionOpen = true;
-            extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
-        }
-    }
-}
-
 /*
     How extraction should work:
 
@@ -52,3 +26,104 @@ public class Extract : MonoBehaviour
     The players will then be taken to a recap screen that lets them know the run was completed,
     display in-game stats, etc. They will then have the option to return to the main menu/map selection.
 */
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class Extract : MonoBehaviour
+{
+    public float extractionTime;
+    // public bool extractionOpen = false;
+    public GameObject[] beaconSpawns;
+    // set in inspector to some gameObject (default is a tree)
+    public GameObject beaconPrefab;
+    private GameObject beaconSpawnPoint;
+    private GameObject beaconSpawned;
+    public bool timerIsRunning;
+    public float timeRemaining;
+    void Start()
+    {
+        if(beaconPrefab == null){
+           beaconPrefab = (GameObject)Resources.Load("Tree",typeof(GameObject));
+        }
+        beaconSpawnPoint = chooseBeaconPoint();
+        GameObject.Instantiate(beaconPrefab, beaconSpawnPoint.transform.position, Quaternion.identity);
+        extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+
+    }
+
+    void Update()
+    {
+         if (IsReached())
+        {
+            GameValues.instance.extractionOpen = true;
+            timeRemaining = extractionTime;
+
+            //allow players to interact with beacon ask quinn how to do done
+            //check if beacon is active (after being interacted with) done
+            //check if all players are in the collider done
+            if(GameValues.instance.allPlayersInExtractionRange && GameValues.instance.extractionStarted){
+                timerIsRunning = true;    
+            }
+        }
+        
+        else{
+            timerIsRunning = false; 
+        }
+        if(timerIsRunning){
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                print(timeRemaining);
+            }
+            else{ 
+                Debug.Log("Timer is done");
+                timeRemaining = 0;
+                timerIsRunning = false; 
+                //this is where we would change scenes to the recap scene
+            }
+        }
+            
+    }
+    /*
+    * Chooses from a list of BeaconSpawnPoints to spawn a beacon for extraction at
+    */
+    GameObject chooseBeaconPoint(){
+        beaconSpawns = getBeaconSpawnPoints();
+        int spawnDest = Random.Range(1,4);
+        switch(spawnDest){
+            case 1:
+                return beaconSpawns[0];
+            case 2:
+                return beaconSpawns[1];
+            case 3: 
+                return beaconSpawns[2];
+            default:
+                return beaconSpawns[0];
+        }
+            
+    }
+    /*
+    * Gets the list of BeaconSpawnsPoints tagged with BeaconPoint
+    */
+    GameObject[] getBeaconSpawnPoints(){
+        return GameObject.FindGameObjectsWithTag("BeaconPoint");
+    }
+
+    public bool IsReached()
+    {
+        return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
+    }
+
+    public void Extraction()
+    {
+        if (IsReached())
+        {
+            GameValues.instance.extractionOpen = true;
+            extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        }
+    }
+}

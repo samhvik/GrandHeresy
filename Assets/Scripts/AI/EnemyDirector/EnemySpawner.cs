@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
         TimeElapsed += Time.deltaTime;
         // default 20 second spawn timer reduced by number of completed objectives
         // once completedObjectives is a static VAR we wont need to pass in a rate
-        return (TimeElapsed >= 20/complObj);
+        return (TimeElapsed >= 10/complObj);
     }
 }
 

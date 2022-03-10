@@ -11,6 +11,7 @@ public class PlayerInventory : MonoBehaviour {
     public int inventorySize;
     public Gun starterGun;
     public GameObject gunPosition;
+    public float health = 100.0f;
     
     private List<Gun> guns = new List<Gun>();
     private PlayerShooting shooter;
@@ -72,5 +73,10 @@ public class PlayerInventory : MonoBehaviour {
 
     public Gun getGunAtIndex(int index) {
         return guns[index];
+    }
+
+    // update health 
+    public void UpdateHealth(int damage){
+        health -= damage;
     }
 }
