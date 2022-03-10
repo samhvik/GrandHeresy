@@ -45,6 +45,7 @@ public class EnemyDirector : MonoBehaviour
                 if(!this.GetComponent<EnemySpawner>().enabled){
                     Debug.Log("Combat Enabled");
                     this.GetComponent<EnemySpawner>().enabled = true;
+                    moveDirector();
                 }
                 if(dist >= 12){
                     Debug.Log("Combat Should End Now");

@@ -85,10 +85,12 @@ public class GameValues : MonoBehaviour{
 
     void Update(){
         // "end" game on player death
-        //for(int i = 0; i < numPlayers - 1; i++){
-            // if players[i].health < 0: player.alive == 0
-            //Debug.Log("Player Death");
-        //}
+        for(int i = 0; i < numPlayers - 1; i++){
+            if (Players[i].GetComponent<PlayerInventory>().health < 0){
+                playerAlive[i] = false;
+            }
+            Debug.Log("Player Death");
+        }
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
