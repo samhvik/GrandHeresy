@@ -116,7 +116,7 @@ public class ObjectiveController : MonoBehaviour
     }
 
     GameObject[] chooseSpawnsMapWide(int numObjs){
-        GameValues.instance.objectivesTotal = numObjs;
+       GameValues.instance.objectivesTotal = numObjs;
        mapWideSpawns = GameObject.FindGameObjectsWithTag("ObjectiveSpawn"); 
        int randSpawn = 0; 
        int j =0;
@@ -129,7 +129,7 @@ public class ObjectiveController : MonoBehaviour
            }
        }
        foreach( int spawnInd in spawnChoices){
-           print("debugging" + spawnInd);
+        //    print("debugging" + spawnInd);
            spawns[j] = mapWideSpawns[spawnInd];
         //    print(mapWideSpawns[spawnInd].name + " added to spawns");
            j++;
