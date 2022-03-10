@@ -18,6 +18,7 @@ public class GameValues : MonoBehaviour{
     
     public static GameValues instance = null;
     public static bool inCombatStatus = false;
+    
 
     public float playerHealth;
     public float playerSpeedWalk;
@@ -51,6 +52,10 @@ public class GameValues : MonoBehaviour{
 
     public int objectivesTotal;
     public int objectivesCompleted;
+
+    public bool extractionStarted = false;
+    public bool extractionOpen = false;
+    public bool allPlayersInExtractionRange = false;
 
     void Start(){
         playerHealth = 100.0f;

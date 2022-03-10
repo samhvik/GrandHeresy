@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2138444751}
   m_Layer: 0
   m_Name: Beacon
-  m_TagString: Untagged
+  m_TagString: Beacon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   redRing: {fileID: 7636412940959934141}
   blueRing: {fileID: 3618053397165877733}
   greenRing: {fileID: 192093408238797075}
+  playerCollider: {fileID: 0}
 --- !u!120 &2138444752
 LineRenderer:
   m_ObjectHideFlags: 0

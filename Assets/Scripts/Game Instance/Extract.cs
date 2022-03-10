@@ -36,7 +36,7 @@ using UnityEngine;
 public class Extract : MonoBehaviour
 {
     public float extractionTime;
-    public bool extractionOpen = false;
+    // public bool extractionOpen = false;
     public GameObject[] beaconSpawns;
     // set in inspector to some gameObject (default is a tree)
     public GameObject beaconPrefab;
@@ -59,14 +59,19 @@ public class Extract : MonoBehaviour
     {
          if (IsReached())
         {
-            extractionOpen = true;
+            GameValues.instance.extractionOpen = true;
             timeRemaining = extractionTime;
 
-            //allow players to interact with beacon ask quinn how to do 
-            //check if beacon is active (after being interacted with)
-            //check if all players are in the collider 
-            //if not all players in collider || beacon not active timerIsRunning is false
-            
+            //allow players to interact with beacon ask quinn how to do done
+            //check if beacon is active (after being interacted with) done
+            //check if all players are in the collider done
+            if(GameValues.instance.allPlayersInExtractionRange && GameValues.instance.extractionStarted){
+                timerIsRunning = true;    
+            }
+        }
+        
+        else{
+            timerIsRunning = false; 
         }
         if(timerIsRunning){
             if(timeRemaining > 0)
@@ -117,7 +122,7 @@ public class Extract : MonoBehaviour
     {
         if (IsReached())
         {
-            extractionOpen = true;
+            GameValues.instance.extractionOpen = true;
             extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
         }
     }

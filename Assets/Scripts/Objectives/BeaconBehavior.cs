@@ -5,7 +5,6 @@ using UnityEngine;
 public class BeaconBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
-    public bool playerInCollider = false; 
     public GameObject redRing;
     public GameObject blueRing;
     public GameObject greenRing;
@@ -26,33 +25,11 @@ public class BeaconBehavior : MonoBehaviour
            extractionAvailable = true;
        }
        updateRing();
-    }
-
-    // private HashSet<Collider> colliders = new HashSet<Collider>();
- 
-    // public HashSet<Collider> GetColliders () { return colliders; }
-  
-    // private void OnTriggerEnter (Collider other) {
-    //       colliders.Add(other); //hashset automatically handles duplicates
-    //       print(other.tag + "this just entered the beacon range");
-    //       if(other.tag =="Player"){
-    //           playerInCollider = true; 
-    //       }
-    // }
-  
-    // private void OnTriggerExit (Collider other) {
-    //       colliders.Remove(other);
-    //        print(other.tag + "this just left the beacon range");
-    //       if(other.tag =="Player"){
-    //           playerInCollider = false; 
-    //       }
-    // }
-
-    
+    }    
  
     //called when something enters the trigger
     private List<Collider> colliders = new List<Collider>();
-     public List<Collider> GetColliders () { return colliders; }
+    public List<Collider> GetColliders () { return colliders; }
  
      private void OnTriggerEnter (Collider other) {
         if (other.tag == "Player") { 
@@ -70,10 +47,12 @@ public class BeaconBehavior : MonoBehaviour
          }
          if(count == GameValues.instance.numPlayers){
              allPlayersIn = true;
-             
+             GameValues.instance.allPlayersInExtractionRange = true;
          }
          else{
              allPlayersIn = false;
+             GameValues.instance.allPlayersInExtractionRange = false;
+
          }
          return allPlayersIn;
      }
@@ -96,11 +75,9 @@ public class BeaconBehavior : MonoBehaviour
             print("redRing is active");
             redRing.SetActive(true);
         }
-        // redRing.SetActive(true);
     }
     private bool IsReached()
     {
-
         return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
     }
 }

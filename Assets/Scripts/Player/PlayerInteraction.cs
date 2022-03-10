@@ -44,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour {
                      interactable.CompareTag("ObjectiveSpawnNW") ||
                      interactable.CompareTag("ObjectiveSpawnSE") ||
                      interactable.CompareTag("ObjectiveSpawnSW") ||
+                     interactable.CompareTag("Beacon")||
                      interactable.CompareTag("Drop")) {
                 var interactableDist = Vector3.Distance(interactable.transform.position, transform.position);
                 if (minDist > interactableDist) {
@@ -62,6 +63,11 @@ public class PlayerInteraction : MonoBehaviour {
                 // run gear script
                 playerInventory.OnPickupWeapon(toInteract);
                 //Destroy(toInteract.gameObject);
+                break;
+            case "Beacon":
+                if(GameValues.instance.extractionOpen){
+                    GameValues.instance.extractionStarted = true;
+                }
                 break;
             case "ObjectiveSpawn":
             case "ObjectiveSpawnNE":
