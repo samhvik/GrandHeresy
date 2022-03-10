@@ -45,6 +45,7 @@ public class EnemyDirector : MonoBehaviour
                 if(!this.GetComponent<EnemySpawner>().enabled){
                     Debug.Log("Combat Enabled");
                     this.GetComponent<EnemySpawner>().enabled = true;
+                    moveDirector();
                 }
                 if(dist >= 12){
                     Debug.Log("Combat Should End Now");
@@ -53,7 +54,7 @@ public class EnemyDirector : MonoBehaviour
                     this.GetComponent<EnemySpawner>().enabled = false;
                 }
             }
-            this.transform.position = CameraMidpoint.transform.position * 0.90f;
+            this.transform.position = CameraMidpoint.transform.position * 0.80f;
         }
     }
 
@@ -64,7 +65,6 @@ public class EnemyDirector : MonoBehaviour
     // TODO
     // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
               // -- This may need some tuning in terms of how we want combat to behave
-    // Move Spawner to In Progress Objectives && Turn Combat On
 }
 
 /*

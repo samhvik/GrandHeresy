@@ -90,14 +90,11 @@ public class GameValues : MonoBehaviour{
 
     void Update(){
         // "end" game on player death
-        if(playerHealth < 0){
+        for(int i = 0; i < numPlayers - 1; i++){
+            if (Players[i].GetComponent<PlayerInventory>().health < 0){
+                playerAlive[i] = false;
+            }
             Debug.Log("Player Death");
-            // Just close the game on player death for now its week1
-            #if UNITY_EDITOR
-            Debug.Log("A Player Died");
-            UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-            Application.Quit(); // change this to be how we want player death to interact
         }
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
