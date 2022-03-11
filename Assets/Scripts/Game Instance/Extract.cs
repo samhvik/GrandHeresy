@@ -1,27 +1,19 @@
 /*
     Extract.cs
-
     Handles the extraction procedure upon player interaction.
 */
 /*
     How extraction should work:
-
     Before players load into the map, a beacon location will be randomly selected and a beacon
     prefab will spawn in its place. (Similar to objective spawns)
-
     Players will be able to extract when all objectives are either Completed or Failed.
-
     When this condition is met, players will now be able to interact with the extraction beacon.
-
     When the extraction beacon is triggered, this script is essentailly activated and all players are
     immediately detected.
-
     When triggered, a timer will initiate. The time shall be random, between 30 and 90 seconds.
     Players are expected to survive for the duration of the beacon's timer.
-
     The beacon will also have a set radius that, when a player leaves, will cause the current beacon
     procedure to completely stop. Players will have to re-interact with the beacon to restart the process.
-
     Upon the timer's completion, all players are "warped" back to HQ and the game is over.
     The players will then be taken to a recap screen that lets them know the run was completed,
     display in-game stats, etc. They will then have the option to return to the main menu/map selection.
@@ -42,8 +34,10 @@ public class Extract : MonoBehaviour
     public GameObject beaconPrefab;
     private GameObject beaconSpawnPoint;
     private GameObject beaconSpawned;
-    public bool timerIsRunning;
+    public bool timerIsRunning = false;
     public float timeRemaining;
+    private int nextUpdate=1;
+    private float elapsed = 0f;
     void Start()
     {
         if(beaconPrefab == null){
@@ -51,7 +45,10 @@ public class Extract : MonoBehaviour
         }
         beaconSpawnPoint = chooseBeaconPoint();
         GameObject.Instantiate(beaconPrefab, beaconSpawnPoint.transform.position, Quaternion.identity);
-        extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        // extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        extractionTime = Mathf.Round(Random.Range(30.0f, 90.0f));
+        // print("extractionTime = " + extractionTime);
+        timeRemaining = extractionTime;
 
     }
 
@@ -60,33 +57,25 @@ public class Extract : MonoBehaviour
          if (IsReached())
         {
             GameValues.instance.extractionOpen = true;
-            timeRemaining = extractionTime;
-
-            //allow players to interact with beacon ask quinn how to do done
-            //check if beacon is active (after being interacted with) done
-            //check if all players are in the collider done
+            //check if all players are inside range and if extraction has started before allowing timer to run
             if(GameValues.instance.allPlayersInExtractionRange && GameValues.instance.extractionStarted){
                 timerIsRunning = true;    
             }
-        }
-        
-        else{
-            timerIsRunning = false; 
-        }
-        if(timerIsRunning){
-            if(timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                print(timeRemaining);
-            }
-            else{ 
-                Debug.Log("Timer is done");
-                timeRemaining = 0;
-                timerIsRunning = false; 
-                //this is where we would change scenes to the recap scene
+            else{
+                timerIsRunning = false;
             }
         }
-            
+        //makes sure 1 second has passed before updating timer.
+        elapsed += Time.deltaTime;
+        if (elapsed >= 1f) {
+            elapsed = elapsed % 1f;
+            timerUpdate();
+        }
+        if(timeRemaining == 0){ 
+            //change scene to recap scene
+            print("change to recap scene");
+        }
+
     }
     /*
     * Chooses from a list of BeaconSpawnPoints to spawn a beacon for extraction at
@@ -118,12 +107,20 @@ public class Extract : MonoBehaviour
         return (GameValues.instance.objectivesCompleted >= GameValues.instance.objectivesTotal);
     }
 
-    public void Extraction()
-    {
-        if (IsReached())
-        {
-            GameValues.instance.extractionOpen = true;
-            extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+    private void timerUpdate(){
+        // Debug.Log("From timerUpdate" + Time.time);
+        // print("From time is running " + timerIsRunning);
+        if(timerIsRunning){
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= 1f;
+                print(timeRemaining + " Time remaining");
+            }
+            else{ 
+                Debug.Log("Timer is done");
+                timeRemaining = 0;
+                timerIsRunning = false; 
+            }
         }
     }
 }

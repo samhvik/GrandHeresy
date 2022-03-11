@@ -60,7 +60,7 @@ public class BeaconBehavior : MonoBehaviour
         if(extractionAvailable){
             redRing.SetActive(false);
             checkAllPlayersInRange();
-            if(allPlayersIn){
+            if(allPlayersIn && GameValues.instance.extractionStarted){
                 //print("greenRing is active");
                 blueRing.SetActive(false);
                 greenRing.SetActive(true);
