@@ -72,7 +72,7 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("IsDodging", condition);
     }
 
-    public void TriggerReload(){
+    public void TriggerReload(float reloadTime){
         animator.SetTrigger("Reloading");
     }
 

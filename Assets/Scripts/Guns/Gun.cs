@@ -153,6 +153,12 @@ public class Gun : MonoBehaviour{
         }
     }
 
+    public float reloadingTime{
+        get{
+            return reloadTime;
+        }
+    }
+
     public void setCamera(CameraController cameraController) {
         
     }

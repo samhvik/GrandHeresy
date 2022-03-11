@@ -78,7 +78,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""id"": ""ead688cb-59da-4c17-8681-4fb35f603704"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -349,7 +349,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -360,7 +360,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

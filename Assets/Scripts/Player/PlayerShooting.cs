@@ -62,8 +62,8 @@ public class PlayerShooting : MonoBehaviour{
     // OnReload reloads our gun on our player
     public void OnReload(InputAction.CallbackContext context)
     {
-        animManager.TriggerReload();
         gun.Reload();
+        animManager.TriggerReload(gun.reloadingTime);
     }
 
     public void SwitchWeapon(Gun newGun)

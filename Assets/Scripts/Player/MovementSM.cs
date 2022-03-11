@@ -96,7 +96,7 @@ public class MovementSM : StateMachine
     // OnDodge will make our player Dodge
     public void OnDodge(InputAction.CallbackContext context)
     {
-        this.rigLayer_HandIK.weight = 0;
+        Debug.Log("Dodging...");
         ChangeState(dodgeState);
     }
 

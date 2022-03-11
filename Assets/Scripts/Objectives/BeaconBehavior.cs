@@ -61,18 +61,18 @@ public class BeaconBehavior : MonoBehaviour
             redRing.SetActive(false);
             checkAllPlayersInRange();
             if(allPlayersIn){
-                print("greenRing is active");
+                //print("greenRing is active");
                 blueRing.SetActive(false);
                 greenRing.SetActive(true);
             }
             else{
-                print("blueRing is active");
+                //print("blueRing is active");
                 greenRing.SetActive(false);
                 blueRing.SetActive(true);
             }
         }
         else{
-            print("redRing is active");
+            //print("redRing is active");
             redRing.SetActive(true);
         }
     }
