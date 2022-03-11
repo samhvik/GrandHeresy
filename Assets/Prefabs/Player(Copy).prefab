@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: -2136038907444891355}
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
-  - component: {fileID: -6437983159491060544}
   m_Layer: 6
   m_Name: Player(Copy)
   m_TagString: Player
@@ -369,7 +368,6 @@ MonoBehaviour:
   inventorySize: 5
   starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
   gunPosition: {fileID: 8057053086923493147}
-  health: 100
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,24 +611,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRadius: 3
   maxInteractables: 4
---- !u!114 &-6437983159491060544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 2
-  outlineColor: {r: 0.8490566, g: 0, b: 0, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0
