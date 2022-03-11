@@ -43,10 +43,10 @@ public class ObjectiveController : MonoBehaviour
        foreach (GameObject spawnPoint in chosenSpawns){
            objectSpawned = GameObject.Instantiate(objective1ToSpawn, spawnPoint.transform.position, Quaternion.identity);
            spawnedObjects.Add(objectSpawned);
-           print(objectSpawned.name);
-           print("object should be spawned");
-           print(spawnPoint.transform.position);
-           print(spawnPoint.name);
+           //print(objectSpawned.name);
+           //print("object should be spawned");
+           //print(spawnPoint.transform.position);
+           //print(spawnPoint.name);
        }
        /*
 
@@ -121,7 +121,7 @@ public class ObjectiveController : MonoBehaviour
        int randSpawn = 0; 
        int j =0;
        GameObject[] spawns = new GameObject[numObjs];
-       print(mapWideSpawns.Length);
+       //print(mapWideSpawns.Length);
        while(spawnChoices.Count < numObjs){
            randSpawn = Random.Range(0,12);
            if(!spawnChoices.Contains(randSpawn)){
@@ -135,7 +135,7 @@ public class ObjectiveController : MonoBehaviour
            j++;
        }
        foreach(GameObject spawnPoint in spawns){
-           print("sanity check " + spawnPoint.name);
+           //print("sanity check " + spawnPoint.name);
        }
        return spawns;
     }

@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour{
 
     //public WeaponSwitching inventory;
     private PlayerInventory inventory;
+    private AnimatorManager animManager;
     private Gun gun;
     private bool held = false;
 
@@ -20,6 +21,7 @@ public class PlayerShooting : MonoBehaviour{
     void Awake()
     {
         inventory = this.GetComponent<PlayerInventory>();
+        animManager = this.GetComponent<AnimatorManager>();
         controls = new PlayerControls();
     }
 
@@ -27,14 +29,16 @@ public class PlayerShooting : MonoBehaviour{
     {
         if (held)
         {
-            if (gun.IsSemi)
-            {
-                gun.Fire();
-                held = false;
-            }
-            else
-            {
-                gun.Fire();
+            if(gun!=null){
+                if (gun.IsSemi)
+                {
+                    gun.Fire();
+                    held = false;
+                }
+                else
+                {
+                    gun.Fire();
+                }
             }
         }
     }
@@ -59,6 +63,7 @@ public class PlayerShooting : MonoBehaviour{
     public void OnReload(InputAction.CallbackContext context)
     {
         gun.Reload();
+        animManager.TriggerReload(gun.reloadingTime);
     }
 
     public void SwitchWeapon(Gun newGun)

@@ -72,6 +72,10 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("IsDodging", condition);
     }
 
+    public void TriggerReload(float reloadTime){
+        animator.SetTrigger("Reloading");
+    }
+
     public bool AnimatorIsPlaying(){
      return this.animator.GetCurrentAnimatorStateInfo(0).length >
             this.animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
