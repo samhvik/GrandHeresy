@@ -93,20 +93,18 @@ GameObject:
   - component: {fileID: 849709334750888125}
   - component: {fileID: 849709334750888121}
   - component: {fileID: 849709334750888101}
-  - component: {fileID: 849709334750888099}
   - component: {fileID: 2493648352027477128}
   - component: {fileID: 849709334750888103}
   - component: {fileID: 5899519913269160901}
   - component: {fileID: 849709334750888097}
   - component: {fileID: 849709334750888096}
   - component: {fileID: 8748554809732624351}
-  - component: {fileID: 173795876912715698}
   - component: {fileID: -2136038907444891355}
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
-  - component: {fileID: -6437983159491060544}
+  - component: {fileID: -6361333492348817897}
   m_Layer: 6
-  m_Name: Player(Copy)
+  m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,58 +226,15 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'UpperArm.L'\n\tTransform 'LowerArm.L'\n\tTransform
+    'LowerArm.R'\n\tTransform 'Hand.R'\n\tTransform 'UpperArm.R'\n\tTransform 'Hand.L'\n\tTransform
+    'UpperArm.L'\n\tTransform 'LowerArm.L'\n\tTransform 'LowerArm.R'\n\tTransform
+    'Hand.R'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &849709334750888099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 6173311423881550593}
-  - {fileID: 7568982787456035213}
-  - {fileID: 1707439828505757824}
-  - {fileID: 141422210295513846}
-  - {fileID: 3705335880198238675}
-  - {fileID: 8127553130922565217}
-  - {fileID: 6587664394146343687}
-  - {fileID: 6213571176355073795}
-  - {fileID: 5508862789913562911}
-  - {fileID: 6150382783353545613}
-  - {fileID: 8660152562683444020}
-  - {fileID: 7566710955454108044}
-  - {fileID: 5645925356920648319}
-  - {fileID: 7744515004176002951}
-  - {fileID: 8206300019180142607}
-  - {fileID: 5948273936258626055}
-  - {fileID: 6919910774148323555}
-  - {fileID: 7974798455617434759}
-  - {fileID: 7713161762633186091}
-  - {fileID: 8000821504398767917}
-  - {fileID: 8828375899873617593}
-  - {fileID: 4851419931837653380}
-  - {fileID: 712635433358162015}
-  - {fileID: 2445038870957190196}
-  - {fileID: 224375529453811009}
-  - {fileID: 5873181495836981950}
-  - {fileID: 7868049150465191254}
-  - {fileID: 5359766831262014457}
-  - {fileID: 7039131943648474184}
 --- !u!114 &2493648352027477128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,22 +511,6 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &173795876912715698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 1353468217115253648}
-    m_Active: 1
-  m_Effectors: []
 --- !u!114 &-2136038907444891355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,24 +552,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRadius: 3
   maxInteractables: 4
---- !u!114 &-6437983159491060544
-MonoBehaviour:
+--- !u!54 &-6361333492348817897
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 2
-  outlineColor: {r: 0.8490566, g: 0, b: 0, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0
