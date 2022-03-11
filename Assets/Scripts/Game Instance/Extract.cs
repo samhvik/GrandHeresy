@@ -42,8 +42,10 @@ public class Extract : MonoBehaviour
     public GameObject beaconPrefab;
     private GameObject beaconSpawnPoint;
     private GameObject beaconSpawned;
-    public bool timerIsRunning;
+    public bool timerIsRunning = false;
     public float timeRemaining;
+    private int nextUpdate=1;
+    private float elapsed = 0f;
     void Start()
     {
         if(beaconPrefab == null){
@@ -51,7 +53,10 @@ public class Extract : MonoBehaviour
         }
         beaconSpawnPoint = chooseBeaconPoint();
         GameObject.Instantiate(beaconPrefab, beaconSpawnPoint.transform.position, Quaternion.identity);
-        extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        // extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        extractionTime = Random.Range(30.0f, 90.0f);
+        print("extractionTime = " + extractionTime);
+        timeRemaining = extractionTime;
 
     }
 
@@ -60,33 +65,30 @@ public class Extract : MonoBehaviour
          if (IsReached())
         {
             GameValues.instance.extractionOpen = true;
-            timeRemaining = extractionTime;
-
+            
             //allow players to interact with beacon ask quinn how to do done
             //check if beacon is active (after being interacted with) done
             //check if all players are in the collider done
             if(GameValues.instance.allPlayersInExtractionRange && GameValues.instance.extractionStarted){
                 timerIsRunning = true;    
             }
+            else{
+                timerIsRunning = false;
+            }
         }
         
-        else{
-            timerIsRunning = false; 
+             
+        elapsed += Time.deltaTime;
+        print("Elapsed: " + elapsed);
+        if (elapsed >= 1f) {
+            print("Inside check");
+            elapsed = elapsed % 1f;
+            timerUpdate();
         }
-        if(timerIsRunning){
-            if(timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                print(timeRemaining);
-            }
-            else{ 
-                Debug.Log("Timer is done");
-                timeRemaining = 0;
-                timerIsRunning = false; 
-                //this is where we would change scenes to the recap scene
-            }
+        if(timeRemaining == 0){ 
+            //change scene to recap scene
         }
-            
+
     }
     /*
     * Chooses from a list of BeaconSpawnPoints to spawn a beacon for extraction at
@@ -124,6 +126,23 @@ public class Extract : MonoBehaviour
         {
             GameValues.instance.extractionOpen = true;
             extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        }
+    }
+    private void timerUpdate(){
+        Debug.Log("From timerUpdate" + Time.time);
+        print("From time is running" + timerIsRunning);
+        if(timerIsRunning){
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= 1f;
+                print(timeRemaining + " Time remaining");
+            }
+            else{ 
+                Debug.Log("Timer is done");
+                timeRemaining = 0;
+                timerIsRunning = false; 
+                //this is where we would change scenes to the recap scene
+            }
         }
     }
 }
