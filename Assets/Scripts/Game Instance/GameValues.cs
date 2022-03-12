@@ -63,9 +63,9 @@ public class GameValues : MonoBehaviour{
 
     void Start(){
         playerHealth = 100.0f;
-        playerSpeedWalk = 15.0f;
-        playerSpeedAim = 10.0f;
-        playerSpeedRun = 20.0f;
+        playerSpeedWalk = 10.0f;
+        playerSpeedAim = 7.0f;
+        playerSpeedRun = 16.0f;
 
         // Initializing player variables
         for(int i = 0; i < 4; i++)
@@ -138,7 +138,7 @@ public class GameValues : MonoBehaviour{
     }
 
     public void GameCompleted(){
-        winText.text = "Game Over, You Win!";
+        winText.text = "All objectives complete, proceed to extract.";
     }
 
     // Returns the only player that is alive
