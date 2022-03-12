@@ -63,6 +63,7 @@ public class EnemySpawner : MonoBehaviour
         if(p.x > 100){ p.x = 100; }
         if(p.z < -65){ p.z = -65; }
         if(p.z > 115){ p.z = 115; }
+        p.y = 0;
         return p;
     }
 
