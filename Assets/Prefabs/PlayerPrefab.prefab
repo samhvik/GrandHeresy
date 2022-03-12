@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
   m_Layer: 6
-  m_Name: Player(Copy)
+  m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,6 +368,7 @@ MonoBehaviour:
   inventorySize: 5
   starterGun: {fileID: 1093810530844706124, guid: a2aa245084c7cc14d95b982fb88c07e2, type: 3}
   gunPosition: {fileID: 8057053086923493147}
+  health: 100
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
