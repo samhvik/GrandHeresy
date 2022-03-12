@@ -11,7 +11,10 @@ public class AIChaseAction : AIAction
     private void Chase(AIStateController controller){
         controller.navMeshAgent.destination = controller.chaseTarget.position;
         controller.navMeshAgent.isStopped = false;
+        // speed up chasing units
         controller.navMeshAgent.speed     = controller.enemyStats.moveSpeed;
+        controller.navMeshAgent.acceleration = 15;
+        controller.navMeshAgent.angularSpeed = 300;
         controller.Combat(true);
         //Debug.Log("Play the Combat Music Sounds Here");
 
