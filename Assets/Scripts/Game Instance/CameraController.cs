@@ -57,7 +57,7 @@ using UnityEngine;
             }
             else
             {
-                playerMovement = GameValues.instance.Players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
+                playerMovement = GameValues.instance.players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
             }
         }
         trackPlayers();
@@ -118,7 +118,7 @@ using UnityEngine;
             }
             else
             {
-                playerMovement = GameValues.instance.Players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
+                playerMovement = GameValues.instance.players[GameValues.instance.findWhosAlive()].GetComponent<MovementSM>();
             }
         }
         else

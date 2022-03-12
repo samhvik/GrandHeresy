@@ -44,7 +44,7 @@ public class TrackingCamera : MonoBehaviour
         }
         else if (GameValues.instance.numAlive == 1)
         {
-            this.transform.position = GameValues.instance.Players[GameValues.instance.findWhosAlive()].transform.position;
+            this.transform.position = GameValues.instance.players[GameValues.instance.findWhosAlive()].transform.position;
         }
     }
 }

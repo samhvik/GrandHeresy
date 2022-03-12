@@ -71,10 +71,10 @@ public class EnemySpawner : MonoBehaviour
         var pAmount = GameValues.instance.numPlayers;
         if (pAmount == 1){
             //Debug.Log("SinglePlayer");
-            return GameValues.instance.Players[0].transform;
+            return GameValues.instance.players[0].transform;
         }
         // grab first player
-        return GameValues.instance.Players[Random.Range(0, pAmount - 1)].transform;
+        return GameValues.instance.players[Random.Range(0, pAmount - 1)].transform;
     }
 
     // just subtly increase the frequency to spawn enemies based on objective completion for now

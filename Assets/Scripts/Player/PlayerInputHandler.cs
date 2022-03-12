@@ -32,7 +32,7 @@ public class PlayerInputHandler : MonoBehaviour
         GameValues.instance.numPlayers++;
 
         // Adds Player to Player Array in Game Values
-        GameValues.instance.Players[playerIndex] = this.gameObject;
+        GameValues.instance.players[playerIndex] = this.gameObject;
 
         // Sets player to be alive initially
         GameValues.instance.playerAlive[playerIndex] = true;

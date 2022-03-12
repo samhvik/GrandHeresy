@@ -35,13 +35,16 @@ public class GameValues : MonoBehaviour{
     public int numPlayers;
     //
     // Holds our Players to be called upon
-    public GameObject[] Players = new GameObject[4];
+    public GameObject[] players = new GameObject[4];
     //
     // Holds if player is on a controller or keyboard (Stored with names "keyboard" or "controller"
     public string[] whatGamepad = new string[4];
     //
     // Position of all players, used for Camera Controller
     public Transform[] playerPosition = new Transform[4];
+    //
+    // Get player kills
+    public int[] playerKills = new int[4];
     //
     // Check to see if the player is alive or not
     public bool[] playerAlive = new bool[4];
@@ -91,14 +94,16 @@ public class GameValues : MonoBehaviour{
 
     void Update(){
         // "end" game on player death
-        for(int i = 0; i < numPlayers; i++){
-            if (Players[i].GetComponent<PlayerInventory>().health < 0){
+        for(int i = 0; i < numPlayers; i++) {
+            var playerInventory = players[i].GetComponent<PlayerInventory>();
+            if (playerInventory.health < 0){
                 playerAlive[i] = false;
                 numAlive -= 1;
             }
             if(findWhosAlive() < 0) { //Debug.Log("Player Death");
                 SceneManager.LoadScene("Justin's Main Menu"); 
             }
+            playerKills[i] = playerInventory.getKills();
         }
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -129,7 +134,7 @@ public class GameValues : MonoBehaviour{
     // Returns the gameobject of the player with the given index
     public GameObject getPlayer(int index)
     {
-        return Players[index];
+        return players[index];
     }
 
     public void GameCompleted(){
