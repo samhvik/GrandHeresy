@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
     private Transform GrabAPlayer(){
         var pAmount = GameValues.instance.numPlayers;
         if (pAmount == 1){
-            Debug.Log("SinglePlayer");
+            //Debug.Log("SinglePlayer");
             return GameValues.instance.Players[0].transform;
         }
         // grab first player

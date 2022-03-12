@@ -10,7 +10,8 @@ public class AIChaseAction : AIAction
     }
     private void Chase(AIStateController controller){
         controller.navMeshAgent.destination = controller.chaseTarget.position;
-        controller.navMeshAgent.isStopped = false; 
+        controller.navMeshAgent.isStopped = false;
+        controller.navMeshAgent.speed     = controller.enemyStats.moveSpeed;
         controller.Combat(true);
         //Debug.Log("Play the Combat Music Sounds Here");
 

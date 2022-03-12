@@ -43,12 +43,13 @@ public class EnemyDirector : MonoBehaviour
                 // check if EnemySpawner Exists
                 // Enemyspawner will handle enemy spawning
                 if(!this.GetComponent<EnemySpawner>().enabled){
-                    Debug.Log("Combat Enabled");
                     this.GetComponent<EnemySpawner>().enabled = true;
                     moveDirector();
+                    dist = 0f;
+                    //Debug.Log("Combat Enabled" + dist);
                 }
                 if(dist >= 12){
-                    Debug.Log("Combat Should End Now");
+                    //Debug.Log("Combat Should End Now" + dist);
                     // Despawn Enemies here if wanted
                     GameValues.inCombatStatus = false;
                     this.GetComponent<EnemySpawner>().enabled = false;

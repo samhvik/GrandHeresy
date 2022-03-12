@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameValues : MonoBehaviour{
 
@@ -90,11 +91,14 @@ public class GameValues : MonoBehaviour{
 
     void Update(){
         // "end" game on player death
-        for(int i = 0; i < numPlayers - 1; i++){
+        for(int i = 0; i < numPlayers; i++){
             if (Players[i].GetComponent<PlayerInventory>().health < 0){
                 playerAlive[i] = false;
+                numAlive -= 1;
             }
-            Debug.Log("Player Death");
+            if(findWhosAlive() < 0) { //Debug.Log("Player Death");
+                SceneManager.LoadScene("Justin's Main Menu"); 
+            }
         }
         // Allow 'esc' key to exit the game
         if (Input.GetKeyDown(KeyCode.Escape))
