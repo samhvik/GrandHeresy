@@ -73,6 +73,7 @@ public class AnimatorManager : MonoBehaviour
     }
 
     public void TriggerReload(float reloadTime){
+        animator.SetFloat("ReloadTime", reloadTime, 0.1f, Time.deltaTime);
         animator.SetTrigger("Reloading");
     }
 
