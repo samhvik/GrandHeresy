@@ -101,7 +101,7 @@ public class GameValues : MonoBehaviour{
                 numAlive -= 1;
             }
             if(findWhosAlive() < 0) { //Debug.Log("Player Death");
-                SceneManager.LoadScene("Justin's Main Menu"); 
+                SceneManager.LoadScene("Justin's Recap"); 
             }
             playerKills[i] = playerInventory.getKills();
         }
