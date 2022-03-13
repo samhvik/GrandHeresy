@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     private string eventpath = "event:/humanWalkRun";
+    private FMODUnity.StudioEventEmitter walkEmitter;
 
     // step info
     public float m_StepDistance = 5.0f;
