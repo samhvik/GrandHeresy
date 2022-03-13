@@ -18,5 +18,5 @@ MonoBehaviour:
   lookAngle: 35
   searchTurnSpeed: 240
   searchDuration: 1
-  damage: 15
-  attackCD: 0.75
+  damage: 10
+  attackCD: 1
