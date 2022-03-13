@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: -2136038907444891355}
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
+  - component: {fileID: -3078163367453586472}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -612,6 +613,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRadius: 3
   maxInteractables: 4
+--- !u!114 &-3078163367453586472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c08800829fd9244ba62173374f16567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StepDistance: 5
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,7 +1870,6 @@ MonoBehaviour:
   reloadTime: 0.5
   reloadTimeEmpty: 0.6
   shootState: 0
-  sound: {fileID: 2098263726363259367}
 --- !u!82 &2098263726363259367
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2192,7 +2205,6 @@ MonoBehaviour:
   reloadTime: 1
   reloadTimeEmpty: 1.3
   shootState: 0
-  sound: {fileID: 5963550701107871641}
 --- !u!82 &5963550701107871641
 AudioSource:
   m_ObjectHideFlags: 0
