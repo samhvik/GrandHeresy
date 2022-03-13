@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 public class AnimatorManager : MonoBehaviour
 {
@@ -72,9 +75,17 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("IsDodging", condition);
     }
 
-    public void TriggerReload(float reloadTime){
-        animator.SetFloat("ReloadTime", reloadTime, 0.1f, Time.deltaTime);
+    public void TriggerReload(){
+        //animator.SetFloat("ReloadTime", reloadTime, 0.1f, Time.deltaTime);
         animator.SetTrigger("Reloading");
+    }
+
+    public void TriggerPray(){
+        animator.SetTrigger("Pray");
+    }
+
+    public void TriggerInteract(){
+        animator.SetTrigger("Interact");
     }
 
     public bool AnimatorIsPlaying(){

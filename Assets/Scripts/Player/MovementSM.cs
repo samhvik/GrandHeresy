@@ -96,8 +96,12 @@ public class MovementSM : StateMachine
     // OnDodge will make our player Dodge
     public void OnDodge(InputAction.CallbackContext context)
     {
-        Debug.Log("Dodging...");
-        ChangeState(dodgeState);
+        if (context.performed){
+            Debug.Log("Dodging...");
+            if(GetCurrentState() != "Dodge"){
+                ChangeState(dodgeState);
+            }
+        }
     }
 
     protected override BaseState GetInitialState(){

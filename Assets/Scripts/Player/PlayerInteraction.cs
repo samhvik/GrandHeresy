@@ -67,6 +67,7 @@ public class PlayerInteraction : MonoBehaviour {
                 //Destroy(toInteract.gameObject);
                 break;
             case "Beacon":
+                animManager.TriggerInteract();
                 if(GameValues.instance.extractionOpen){
                     GameValues.instance.extractionStarted = true;
                 }
