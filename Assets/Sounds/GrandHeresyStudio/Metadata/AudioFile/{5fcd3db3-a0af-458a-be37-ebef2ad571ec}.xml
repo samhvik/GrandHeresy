@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5fcd3db3-a0af-458a-be37-ebef2ad571ec}">
+		<property name="assetPath">
+			<value>LinSounds/gunshot1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.25934240362811789</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{adb1a8e6-21f3-4265-b426-05904231e6b8}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6826f275-b1bc-4c86-bdef-d513dc64a736}">
+		<property name="name">
+			<value>Pure Ambience</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9ffb0e43-b773-4d22-889d-f5a5e6f43ca8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3fcb9516-b4e7-46bb-963a-4170c5a1bb4d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3fcb9516-b4e7-46bb-963a-4170c5a1bb4d}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

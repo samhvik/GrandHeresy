@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 8641224233823771327}
   - component: {fileID: 8641224233823771326}
   - component: {fileID: 8641224233823771313}
+  - component: {fileID: -5813189408686537527}
   m_Layer: 0
   m_Name: Range Patrol Ghost
   m_TagString: Target
@@ -235,7 +236,6 @@ MonoBehaviour:
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
   enemyStats: {fileID: 11400000, guid: 7e980283d8b391248816469e190c21bf, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
-  manager: {fileID: 0}
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
@@ -263,3 +263,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   visibleTarget: {fileID: 0}
+--- !u!114 &-5813189408686537527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102500643093532865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69f1a4bc3cd44a4a99e128bfc78fa30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StepDistance: 4.3

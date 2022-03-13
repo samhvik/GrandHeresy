@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{47adb8fe-70c9-4bc3-9407-2275f3b9e3c1}">
+		<property name="assetPath">
+			<value>LinSounds/enemyexplode.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.6983673469387757</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{adb1a8e6-21f3-4265-b426-05904231e6b8}</destination>
+		</relationship>
+	</object>
+</objects>
