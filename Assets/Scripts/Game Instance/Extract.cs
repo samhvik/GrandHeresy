@@ -49,7 +49,7 @@ public class Extract : MonoBehaviour
         extractionTime = Mathf.Round(Random.Range(30.0f, 90.0f));
         // print("extractionTime = " + extractionTime);
         timeRemaining = extractionTime;
-
+        GameValues.instance.extractionTimer = extractionTime;
     }
 
     void Update()
@@ -114,11 +114,13 @@ public class Extract : MonoBehaviour
             if(timeRemaining > 0)
             {
                 timeRemaining -= 1f;
+                GameValues.instance.extractionTimer = timeRemaining;
                 print(timeRemaining + " Time remaining");
             }
             else{ 
                 Debug.Log("Timer is done");
                 timeRemaining = 0;
+                GameValues.instance.extractionTimer =timeRemaining;
                 timerIsRunning = false; 
             }
         }

@@ -60,7 +60,7 @@ public class GameValues : MonoBehaviour{
     public bool extractionStarted = false;
     public bool extractionOpen = false;
     public bool allPlayersInExtractionRange = false;
-
+    public float extractionTimer;
     void Start(){
         playerHealth = 100.0f;
         playerSpeedWalk = 10.0f;
