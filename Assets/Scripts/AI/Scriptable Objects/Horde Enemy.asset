@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4256962516c7a4da473e1a928829fd, type: 3}
   m_Name: Horde Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 13
   attackRange: 4
   lookRadius: 80
   lookAngle: 35
