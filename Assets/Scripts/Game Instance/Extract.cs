@@ -23,6 +23,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Extract : MonoBehaviour
@@ -38,6 +40,7 @@ public class Extract : MonoBehaviour
     public float timeRemaining;
     private int nextUpdate=1;
     private float elapsed = 0f;
+    public Text timerText;
     void Start()
     {
         if(beaconPrefab == null){
@@ -50,11 +53,12 @@ public class Extract : MonoBehaviour
         // print("extractionTime = " + extractionTime);
         timeRemaining = extractionTime;
         GameValues.instance.extractionTimer = extractionTime;
+        
     }
 
     void Update()
     {
-         if (IsReached())
+        if (IsReached())
         {
             GameValues.instance.extractionOpen = true;
             //check if all players are inside range and if extraction has started before allowing timer to run
@@ -65,6 +69,12 @@ public class Extract : MonoBehaviour
                 timerIsRunning = false;
             }
         }
+
+        if(timerIsRunning){
+            timerText.text = "Time Remaining: " + timeRemaining;
+        }else{
+            timerText.text = "";
+        }
         //makes sure 1 second has passed before updating timer.
         elapsed += Time.deltaTime;
         if (elapsed >= 1f) {
@@ -73,7 +83,8 @@ public class Extract : MonoBehaviour
         }
         if(timeRemaining == 0){ 
             //change scene to recap scene
-            print("change to recap scene");
+            //print("change to recap scene");
+            SceneManager.LoadScene("Justin's Recap");
         }
 
     }
