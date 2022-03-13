@@ -11,10 +11,12 @@ public class PlayerInteraction : MonoBehaviour {
     private PlayerControls controls;
     private static Collider[] interactables;
     private PlayerInventory playerInventory;
+    private AnimatorManager animManager;
 
     private void Start() {
         interactables = new Collider[maxInteractables];
         playerInventory = GetComponent<PlayerInventory>();
+        animManager = this.GetComponent<AnimatorManager>();
     }
 
     private void Awake() {
