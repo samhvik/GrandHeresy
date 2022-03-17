@@ -64,7 +64,6 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - b7716510a1f36934c87976f3a81dbf3d
   - 52eb9df5db46521439908db3a29a1bbb
   - e7a046c753c3c3d4aacc91f6597f310d
   - 0f8eb3f400726694eb47beb1a9f94ce8
@@ -73,6 +72,7 @@ MonoBehaviour:
   - fd7c55dab0fce234b8c25f6ffca523c1
   - 46fbfdf3fc43db0458918377fd40293e
   - c88d16e5272a4e241b0ef0ac2e53b73d
+  - b7716510a1f36934c87976f3a81dbf3d
 --- !u!114 &-5303344913382432120
 MonoBehaviour:
   m_ObjectHideFlags: 0
