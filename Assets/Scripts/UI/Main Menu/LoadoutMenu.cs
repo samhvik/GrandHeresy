@@ -12,6 +12,7 @@ public class LoadoutMenu : MonoBehaviour
 
     public GameObject currentScreen;
     public GameObject prevScreen;
+    public GameObject levelButton;
 
     void Awake()
     {
@@ -29,6 +30,8 @@ public class LoadoutMenu : MonoBehaviour
 
     public void GoBack()
     {
+        EventSystem.current.SetSelectedGameObject(levelButton);
+
         currentScreen.SetActive(false);
 
         prevScreen.SetActive(true);
