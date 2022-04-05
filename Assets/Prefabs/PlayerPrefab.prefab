@@ -305,6 +305,14 @@ MonoBehaviour:
   - {fileID: 2562497820196136352, guid: 9012c0f1df8194246add95218dfa5dea, type: 3}
   - {fileID: 3031745002903537865, guid: 0d70fb8a385d3454ba7ffb6ce8d8e945, type: 3}
   currentCursor: {fileID: 0}
+  playerSpawn:
+  - {fileID: 5972687589519913122, guid: 9f44239582a56934999da49f4ab381b5, type: 3}
+  - {fileID: 7776458811269401123, guid: 3aa7e7782c75b444891385b25103a6e2, type: 3}
+  - {fileID: 5591673472106774710, guid: e83bd74cf6c5b0842a2dab06d4b3d101, type: 3}
+  - {fileID: 7027180071321386020, guid: ce5c626f743463f4cac1b76cddf2af65, type: 3}
+  - {fileID: 6067778618121871272, guid: 1fedb4705a7774949abc9820c44c2e75, type: 3}
+  - {fileID: 6709497803969559250, guid: 5339d5393994d27478cafb21e97f0eac, type: 3}
+  - {fileID: 7229195791440251472, guid: 064abf110ab8f594cb5b96ee31c9b24b, type: 3}
 --- !u!114 &849709334750888103
 MonoBehaviour:
   m_ObjectHideFlags: 0
