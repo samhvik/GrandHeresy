@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "AI/Actions/Attack")]
-public class AIAttackAction : AIAction
+[CreateAssetMenu (menuName = "AI/Actions/Special Attack")]
+public class AISpecialAttack: AIAction
 {
     public override void Act(AIStateController controller){
         Attack(controller);
@@ -12,8 +12,15 @@ public class AIAttackAction : AIAction
     private void Attack(AIStateController controller){
         AIFOV fov = controller.GetComponent<AIFOV>();
         if(fov == null) return;
-        
-        if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
+
+        if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){ // visible target found
+            // do special attack
+            // if controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)
+            // enemy STOPS moving for the entire attack
+            // controller.StartCoroutine(attackingPause(controller));
+            // then do the attack here   
+
+            // basic attack
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
@@ -23,14 +30,13 @@ public class AIAttackAction : AIAction
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
                 controller.StartCoroutine(attackingPause(controller));
-                controller.stateTimeElapsed = -0.5f;  //= 0  offset by how long im waiting to resume the attacking pause
             }
         }
     }
 
     // delay AI movement below, defaul is wait half a second before turning the agent back on 
     IEnumerator attackingPause(AIStateController controller){
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         controller.navMeshAgent.isStopped = false;
     }
 }
