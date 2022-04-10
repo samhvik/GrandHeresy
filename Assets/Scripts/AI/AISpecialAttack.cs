@@ -18,7 +18,7 @@ public class AISpecialAttack: AIAction
             // if controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)
             // enemy STOPS moving for the entire attack
             // controller.StartCoroutine(attackingPause(controller));
-            // then do the attack here   
+            // then do the attack here
 
             // basic attack
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
@@ -29,14 +29,16 @@ public class AISpecialAttack: AIAction
                 Debug.Log("Play Attack Sound Here");
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
-                controller.StartCoroutine(attackingPause(controller));
             }
+            controller.navMeshAgent.isStopped = false;
         }
     }
-
-    // delay AI movement below, defaul is wait half a second before turning the agent back on 
-    IEnumerator attackingPause(AIStateController controller){
-        yield return new WaitForSeconds(1f);
-        controller.navMeshAgent.isStopped = false;
-    }
 }
+
+// Ranged Attack Issues
+// using a bullet since the script is already made, altering the "round" script to detect when a bullet hits a "Player"
+// would induce friendly fire into the game. a way around that?
+// IDEAS
+// copy paste round to be something else and instantiate as that
+
+// ???
