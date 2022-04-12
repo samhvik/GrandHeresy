@@ -14,7 +14,7 @@ public class AISpecialAttack: AIAction
         if(fov == null) return;
 
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){ // visible target found
-            // do special attack
+            // do special attack IF possible
             // if controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)
             // enemy STOPS moving for the entire attack
             // controller.StartCoroutine(attackingPause(controller));

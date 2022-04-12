@@ -37,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
                 //Debug.Log("Spawnpoint: " + pos);
                 pos += midpoint.position; // move the spawnpoint near the player
                 // we use CheckBounds for making sure pos is valid
+                // Physics.CheckSphere(transform.position, sphereRadius, LayerMask) // Might be useful for boundary spawning
                 GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
