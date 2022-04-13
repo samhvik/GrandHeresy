@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "AI/Actions/Special Attack")]
 public class AISpecialAttack: AIAction
 {
+    [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private ParticleSystem GroundEffect;
     public override void Act(AIStateController controller){
         Attack(controller);
     }
@@ -19,18 +21,16 @@ public class AISpecialAttack: AIAction
 
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){ // visible target found
             // do special attack IF possible
-            //if(controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)){
-            //    controller.navMeshAgent.isStopped = true;
-                //Debug.Log("Attack Animation Here");
-                // Projector / Draw Circle on the ground
-                // Debug.Log("Attack Sound Here");
-                // Cast time later just get it to work
+            // controller.enemyStats.specialCD != 0 && 
+            if(controller.CheckIfCountdownElapse(controller.enemyStats.specialCD)){
+                controller.navMeshAgent.isStopped = true;
+                Debug.Log("Starting to Cast...");
+                // update the players health & attack
+                controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
+                controller.stateTimeElapsed = -controller.enemyStats.specialCD; // reset time elapsed
+            }
 
-                // update the players health
-            //    fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
-            //}
-
-            // basic attack
+            /* basic attack
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
@@ -39,9 +39,19 @@ public class AISpecialAttack: AIAction
                 Debug.Log("Play Attack Sound Here");
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
-            }
-            controller.navMeshAgent.isStopped = false;
+            }*/
         }
+    }
+
+    IEnumerator attackingPause(GameObject tar, AIStateController c){
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Attack Animation Here && Draw Circle on Ground");
+        // only hit players and update health
+        Collider[] hits = Physics.OverlapSphere(tar.transform.position, 3, PlayerLayer);
+        foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage);  }
+
+        yield return new WaitForSeconds(0.25f);
+        c.navMeshAgent.isStopped = false; // let the AI walk again
     }
 }
 

@@ -23,7 +23,7 @@ public class AIAttackAction : AIAction
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
                 controller.StartCoroutine(attackingPause(controller));
-                controller.stateTimeElapsed = -0.5f;  //= 0  offset by how long im waiting to resume the attacking pause
+                controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //= 0  offset by how long im waiting to resume the attacking pause
             }
         }
     }
