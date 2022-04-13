@@ -19,16 +19,16 @@ public class AISpecialAttack: AIAction
 
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){ // visible target found
             // do special attack IF possible
-            if(controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)){
-                controller.navMeshAgent.isStopped = true;
+            //if(controller.enemyStats.SpecialCD != 0 && controller.CheckIfCountdownElapse(controller.enemyStats.SpecialCD)){
+            //    controller.navMeshAgent.isStopped = true;
                 //Debug.Log("Attack Animation Here");
                 // Projector / Draw Circle on the ground
                 // Debug.Log("Attack Sound Here");
                 // Cast time later just get it to work
 
                 // update the players health
-                fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
-            }
+            //    fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
+            //}
 
             // basic attack
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
