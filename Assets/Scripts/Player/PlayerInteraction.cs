@@ -46,8 +46,9 @@ public class PlayerInteraction : MonoBehaviour {
                      interactable.CompareTag("ObjectiveSpawnNW") ||
                      interactable.CompareTag("ObjectiveSpawnSE") ||
                      interactable.CompareTag("ObjectiveSpawnSW") ||
-                     interactable.CompareTag("Beacon")||
-                     interactable.CompareTag("Drop")) {
+                     interactable.CompareTag("Beacon") ||
+                     interactable.CompareTag("Drop") ||
+                     interactable.CompareTag("Upload")){
                 var interactableDist = Vector3.Distance(interactable.transform.position, transform.position);
                 if (minDist > interactableDist) {
                     minDist = interactableDist;
@@ -71,6 +72,10 @@ public class PlayerInteraction : MonoBehaviour {
                 if(GameValues.instance.extractionOpen){
                     GameValues.instance.extractionStarted = true;
                 }
+                break;
+             // This is Temporary for Upload Data Script
+            case "Upload":
+                toInteract.gameObject.GetComponent<UploadObjective>().StartUpload();
                 break;
             case "ObjectiveSpawn":
             case "ObjectiveSpawnNE":
