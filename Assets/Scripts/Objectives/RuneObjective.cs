@@ -32,7 +32,7 @@ public class RuneObjective : MonoBehaviour
 
     public void Hit(float damage){
         health -= damage;
-        Debug.Log("Hit Objective");
+        //Debug.Log("Hit Objective");
         // enable combat for enemy spawning
         GameValues.inCombatStatus = true;
     }

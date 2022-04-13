@@ -17,6 +17,6 @@ public class Target : MonoBehaviour{
 
     public void Hit(float damage){
         health -= damage;
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
     }
 }

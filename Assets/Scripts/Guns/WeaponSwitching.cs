@@ -37,11 +37,11 @@ public class WeaponSwitching : MonoBehaviour {
   }
 
   private void Handle() {
-    Debug.Log("I AM HERE OH YEA");
+    //Debug.Log("I AM HERE OH YEA");
     int prevWeaponIndex = inventory.getHead();
     int newWeaponIndex = inventory.incrementHead();
     if (prevWeaponIndex != newWeaponIndex) {
-      Debug.Log("WE FUCKING SELECTING WOOOOOOO");
+      //Debug.Log("WE FUCKING SELECTING WOOOOOOO");
       SelectWeapon();
     }
   }

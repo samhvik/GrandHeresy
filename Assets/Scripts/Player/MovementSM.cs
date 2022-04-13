@@ -97,7 +97,7 @@ public class MovementSM : StateMachine
     public void OnDodge(InputAction.CallbackContext context)
     {
         if (context.performed){
-            Debug.Log("Dodging...");
+            //Debug.Log("Dodging...");
             if(GetCurrentState() != "Dodge"){
                 ChangeState(dodgeState);
             }
