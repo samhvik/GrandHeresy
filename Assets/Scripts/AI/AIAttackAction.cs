@@ -18,11 +18,12 @@ public class AIAttackAction : AIAction
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
                 //Debug.Log("Attack Animation Here");
+                //Debug.Log("Attack Sound Here");
                 Debug.Log("Play Attack Sound Here");
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
                 controller.StartCoroutine(attackingPause(controller));
-                controller.stateTimeElapsed = -0.5f;  //= 0  offset by how long im waiting to resume the attacking pause
+                controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //= 0  offset by how long im waiting to resume the attacking pause
             }
         }
     }

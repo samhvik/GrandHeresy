@@ -22,6 +22,9 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject[] playerCursors = new GameObject[4];
     public GameObject currentCursor;
 
+    // Holds the Player Spawning Particles
+    public ParticleSystem[] playerSpawn = new ParticleSystem[7];
+
     private void Awake()
     {
         // Assigns the Player Index
@@ -47,6 +50,12 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Setting our cursor
         GameValues.instance.playerCursors[playerIndex] = currentCursor;
+
+        // Playing our Partilce System
+        for(int i = 0; i < 7; i++)
+        {
+            Instantiate(playerSpawn[i], new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
+        }
     }
 
     void Update()
