@@ -32,9 +32,8 @@ public class EnemySpawner : MonoBehaviour
                 // Improvement: Add a value to X and Y of pos
                 // to prevent AI spawning inside / really close to the player
                 //
-                // Random Point within a Circle; *25f is the Radius of the circle, -17.5f is our floor level
+                // Random Point within a Circle; *25f is the Radius of the circle, 0 is our floor level
                 var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
-                //Debug.Log("Spawnpoint: " + pos);
                 pos += midpoint.position; // move the spawnpoint near the player
                 // we use CheckBounds for making sure pos is valid
                 // Physics.CheckSphere(transform.position, sphereRadius, LayerMask) // Might be useful for boundary spawning

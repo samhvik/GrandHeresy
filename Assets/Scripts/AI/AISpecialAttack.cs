@@ -6,7 +6,7 @@ using UnityEngine;
 public class AISpecialAttack: AIAction
 {
     [SerializeField] private LayerMask PlayerLayer;
-    [SerializeField] private ParticleSystem AoEParticleSet;
+    [SerializeField] private GameObject AoEParticleSet;
     public override void Act(AIStateController controller){
         Attack(controller);
     }
@@ -22,7 +22,9 @@ public class AISpecialAttack: AIAction
                 controller.navMeshAgent.isStopped = true;
                 //Debug.Log("Starting to Cast...");
                 // update the players health & attack
-                controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
+                Vector3 location = fov.visibleTarget.gameObject.transform.position;
+                location.y = -19;
+                controller.StartCoroutine(attackingPause(location, controller));
                 controller.stateTimeElapsed = -controller.enemyStats.specialCD; // reset time elapsed
             }
 
@@ -39,20 +41,17 @@ public class AISpecialAttack: AIAction
         }
     }
 
-    IEnumerator attackingPause(GameObject tar, AIStateController c){
-        // instantiate particle system
-        // GameObject AoE = Instantiate(AoEParticleSet, tar.transform.position, Quaternion.identity);
-        Destroy(Instantiate(AoEParticleSet, tar.transform.position, Quaternion.identity), 1); // destroy after cast
-        yield return new WaitForSeconds(0.5f);
-        Debug.Log("Attack Animation Here && Draw Circle on Ground");
+    IEnumerator attackingPause(Vector3 locale, AIStateController c){
+        Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 2); // destroy after cast
+        yield return new WaitForSeconds(1.5f);
+        //Debug.Log("Attack Animation Here && Draw Circle on Ground");
         // only hit players and update health
-        Collider[] hits = Physics.OverlapSphere(tar.transform.position, 3, PlayerLayer);
-        foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage);  
-        Debug.Log("Hit: " + h.GetComponent<PlayerInventory>().health);}
+        Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
+        Debug.Log(hits);
+        foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); 
+        Debug.Log("Ranged Hit");}
 
         yield return new WaitForSeconds(0.25f);
-        // destroy particle system
-        // Destroy(AoE);
         c.navMeshAgent.isStopped = false; // let the AI walk again
     }
 }
