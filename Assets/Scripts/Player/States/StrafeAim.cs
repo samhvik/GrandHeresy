@@ -54,6 +54,9 @@ public class StrafeAim : Moving
         // If a Keyboard is being used, aim with this method  
         else
         {
+            R_horizontalInput = sm.right_horizontal;
+            R_verticalInput = sm.right_vertical;
+
             sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
 
             sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
@@ -63,7 +66,6 @@ public class StrafeAim : Moving
                 stateMachine.ChangeState(sm.idleState);
             }
 
-        
         }
         
     }

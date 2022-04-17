@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
   - component: {fileID: -3078163367453586472}
+  - component: {fileID: -9014476814642839160}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -351,17 +352,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 849709334750888103}
-  rigLayer_HandIK: {fileID: 1353468217115253648}
   input: {fileID: 0}
+  characterController: {fileID: 0}
+  rb: {fileID: 0}
   left_horizontal: 0
   left_vertical: 0
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
   isAiming: 0
-  lookSpeed: 705
-  dodgeSlideSpeed: 67
-  dodgeSlideFalloff: 10
+  lookSpeed: 900
+  dashSpeed: 20
+  dashTime: 0.6
+  endingDodgeSlow: 0.16
+  dodgeCoolDown: 0.5
+  dodgeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.1947656
+      inSlope: 3.1520548
+      outSlope: 3.1520548
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.17684603
+      value: 2.752194
+      inSlope: 6.9994864
+      outSlope: 6.9994864
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4270225
+      value: 5.4658375
+      inSlope: 10.846918
+      outSlope: 10.846918
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &849709334750888096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +671,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StepDistance: 3.5
+--- !u!54 &-9014476814642839160
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 1
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0
