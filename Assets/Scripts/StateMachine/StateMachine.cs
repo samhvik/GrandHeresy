@@ -31,7 +31,10 @@ public class StateMachine : MonoBehaviour
     }
 
     public virtual string GetCurrentState(){
-        return currentState.name;
+        if (currentState != null)
+            return currentState.name;
+
+        return "NULL STATE";
     }
 
     public void ChangeState(BaseState newState)

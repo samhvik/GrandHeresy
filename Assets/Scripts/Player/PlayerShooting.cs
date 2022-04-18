@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour{
 
     //public WeaponSwitching inventory;
     private PlayerInventory inventory;
+    private MovementSM movementSM;
     private AnimatorManager animManager;
     private Gun gun;
     private bool held = false;
@@ -22,12 +23,13 @@ public class PlayerShooting : MonoBehaviour{
     {
         inventory = this.GetComponent<PlayerInventory>();
         animManager = this.GetComponent<AnimatorManager>();
+        movementSM = this.GetComponent<MovementSM>();
         controls = new PlayerControls();
     }
 
     void Update()
     {
-        if (held)
+        if (held && (movementSM.GetCurrentState() != "Dodge" && movementSM.GetCurrentState() != "Running") )
         {
             if(gun!=null){
                 if (gun.IsSemi)
@@ -57,6 +59,7 @@ public class PlayerShooting : MonoBehaviour{
         {
             held = false;
         }
+
     }
 
     // OnReload reloads our gun on our player
