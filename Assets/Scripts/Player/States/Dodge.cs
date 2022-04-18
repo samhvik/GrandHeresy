@@ -58,14 +58,14 @@ public class Dodge : BaseState
         // Finishing the dodge
         if(Time.fixedTime > (endTime - sm.endDashTime))
         {
-            Debug.Log("Slowing down");
+            //Debug.Log("Slowing down");
             sm.characterController.SimpleMove(-moveDir * sm.endDashSpeed);
         }
 
         // Finishing the dodge
         if(Time.fixedTime > endTime)
         {
-            Debug.Log("Finished Dodge");
+            //Debug.Log("Finished Dodge");
             sm.animatorManager.HandleDodgeRollState(false);
             stateMachine.ChangeState(sm.runningState);
         }

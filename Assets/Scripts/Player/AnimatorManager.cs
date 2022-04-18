@@ -39,7 +39,7 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("IsSprinting", isRunning);
 
         // Checking whether in freelocomotion or strafe locomotion
-        HandleLocomotionState(h_Aiming, v_Aiming);
+        // HandleLocomotionState(h_Aiming, v_Aiming);
         
         // Setting animator values for locomotion to use
         animator.SetFloat("InputMagnitude", mag, 0.1f, Time.deltaTime);
@@ -47,8 +47,9 @@ public class AnimatorManager : MonoBehaviour
         animator.SetFloat("AimInputVertical", v_Aiming, 0.1f, Time.deltaTime);
         
         // These are set a bit differently, strafing requires some math to animate correctly
-        if(animator.GetBool("IsStrafing")){
+        if(this.animator.GetBool("IsStrafing")){
 
+            // Debug.Log("Strafing");
             moveDirection = new Vector3(h_Movement, 0, v_Movement);
             if(moveDirection.magnitude > 1.0f){
                 moveDirection = moveDirection.normalized;
@@ -59,16 +60,24 @@ public class AnimatorManager : MonoBehaviour
             animator.SetFloat("InputVertical", moveDirection.z, 0.1f, Time.deltaTime);
         }
         else{
-
+            
+            // Debug.Log("Not Strafing: " + animator.GetBool("IsStrafing"));
             animator.SetFloat("InputHorizontal", h_Movement, 0.1f, Time.deltaTime);
             animator.SetFloat("InputVertical", v_Movement, 0.1f, Time.deltaTime);
         }
 
     }
 
-    private void HandleLocomotionState(float h_Aiming, float v_Aiming){
-        if(h_Aiming != 0 || v_Aiming != 0) animator.SetBool("IsStrafing", true);
-        else animator.SetBool("IsStrafing", false);
+    // private void HandleLocomotionState(float h_Aiming, float v_Aiming){
+    //     if(h_Aiming != 0 || v_Aiming != 0) animator.SetBool("IsStrafing", true);
+    //     else{
+    //         //if(GameValues.instance.whatGamepad[input.playerIndex] == "controller")
+    //         //animator.SetBool("IsStrafing", false);
+    //     }
+    // }
+
+    public void HandleKeyboardAimState(bool aimState){
+        animator.SetBool("IsStrafing", aimState);
     }
 
     public void HandleDodgeRollState(bool condition){
