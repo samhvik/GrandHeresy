@@ -8,6 +8,8 @@ public class AIStateController : MonoBehaviour
     public AIStates currState;
     public EnemyStats enemyStats; // Enemy Base Class create this next time
     public AIStates remainState;
+    // public AudioSource aSource;
+    // public AudioClips[] enemysounds;
 
     // hidden inspector public variables for accessing
     // we dont wanna touch these in the editor
@@ -23,6 +25,7 @@ public class AIStateController : MonoBehaviour
     void Awake(){
         // get ai components
         navMeshAgent = GetComponent<NavMeshAgent>();
+        // aSource = GetComponent<AudioSource>();
     }
 
     void Update() {
