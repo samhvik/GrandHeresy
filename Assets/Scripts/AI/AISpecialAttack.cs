@@ -32,9 +32,6 @@ public class AISpecialAttack: AIAction
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
-                //Debug.Log("Attack Animation Here");
-                //Debug.Log("Attack Sound Here");
-                Debug.Log("Play Attack Sound Here");
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
             }*/
@@ -45,8 +42,8 @@ public class AISpecialAttack: AIAction
         Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 2); // destroy after cast
         yield return new WaitForSeconds(1.5f); // Cast time
         //Debug.Log("Attack Animation Here && Draw Circle on Ground");
-        // c.aSource.clip = c.enemySounds[Random.Range(0, c.enemySounds.Length)];
-        // c.aSource.play();
+        //c.aSource.clip = c.enemySounds[Random.Range(0, c.enemySounds.Length-1)];
+        //c.aSource.Play();
         // only hit players and update health
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
         //Debug.Log(hits);

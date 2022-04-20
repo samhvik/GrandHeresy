@@ -17,20 +17,22 @@ public class AIAttackAction : AIAction
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
-                //Debug.Log("Attack Animation Here");
-                //Debug.Log("Attack Sound Here");
-                Debug.Log("Play Attack Sound Here");
-                // update the players health
-                fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
-                controller.StartCoroutine(attackingPause(controller));
+                controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
                 controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //= 0  offset by how long im waiting to resume the attacking pause
             }
         }
     }
 
     // delay AI movement below, defaul is wait half a second before turning the agent back on 
-    IEnumerator attackingPause(AIStateController controller){
-        yield return new WaitForSeconds(0.5f);
-        controller.navMeshAgent.isStopped = false;
+    IEnumerator attackingPause(GameObject target, AIStateController c){
+        yield return new WaitForSeconds(0.25f);
+        // Play Animation Here
+        // Play Sound
+        c.aSource.clip = c.enemySounds[Random.Range(0, c.enemySounds.Length-1)];
+        c.aSource.Play();
+        yield return new WaitForSeconds(0.25f); // following a target CD time
+        // update the players health
+        target.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage);
+        c.navMeshAgent.isStopped = false; // let the AI walk again
     }
 }

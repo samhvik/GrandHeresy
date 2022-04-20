@@ -31,8 +31,7 @@ public class EnemySpawner : MonoBehaviour
             int waveNum = numberToSpawn();
             for(int i = 0; i < waveNum; i++){
                 // Random Point within a Circle; *25f is the Radius of the circle, 0 is our floor level
-                var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
-                pos += midpoint.position; // move the spawnpoint near the player
+                var pos = getRandPoint();
                 // we use CheckBounds for making sure pos is valid
                 GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
@@ -65,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
         for(int i = 0; i < 3; i++){
             if(Physics.CheckSphere(p, 1)){ // add LayerMask to fix 
                 // spawned inside something
-                Debug.Log("Spawning inside something.. Hold on");
+                // Debug.Log("Spawning inside something.. Hold on");
                 p = getRandPoint();
             }
         }
