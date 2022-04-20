@@ -28,8 +28,8 @@ public class AIAttackAction : AIAction
         yield return new WaitForSeconds(0.25f);
         // Play Animation Here
         // Play Sound
-        c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
-        c.aSource.Play();
+        //c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
+        //c.aSource.Play();
         yield return new WaitForSeconds(0.25f); // following a target CD time
         // update the players health
         target.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage);
