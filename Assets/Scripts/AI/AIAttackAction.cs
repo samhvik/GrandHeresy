@@ -27,6 +27,8 @@ public class AIAttackAction : AIAction
     IEnumerator attackingPause(GameObject target, AIStateController c){
         yield return new WaitForSeconds(0.25f);
         // Play Animation Here
+        // Lunge Idea: transform.Translate ((lungeSpeed + lungeDistance, lungeHeight, 0)*Time.deltaTime)
+        // a yiled return wait
         // Play Sound
         c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
         c.aSource.Play();
