@@ -78,9 +78,19 @@ public class Gun : MonoBehaviour{
                         remainingRounds = magSize + 1;
                     shootState = ShootState.Ready;
                 }
+
+                // Not the best way. Just a fix for now while we get reloading sounds in
+                FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                e_instance.getPlaybackState(out fmodPbState);
+                if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+
+
                 break;
             default:
-                FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                //FMOD.Studio.PLAYBACK_STATE fmodPbState;
                 e_instance.getPlaybackState(out fmodPbState);
                 if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {

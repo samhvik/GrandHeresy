@@ -354,17 +354,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 849709334750888103}
-  rigLayer_HandIK: {fileID: 1353468217115253648}
   input: {fileID: 0}
+  characterController: {fileID: 0}
+  rb: {fileID: 0}
   left_horizontal: 0
   left_vertical: 0
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
   isAiming: 0
-  lookSpeed: 705
-  dodgeSlideSpeed: 67
-  dodgeSlideFalloff: 10
+  lookSpeed: 900
+  dashSpeed: 20
+  dashTime: 0.6
+  endingDodgeSlow: 0.16
+  dodgeCoolDown: 0.5
+  dodgeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.1947656
+      inSlope: 3.1520548
+      outSlope: 3.1520548
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.17684603
+      value: 2.752194
+      inSlope: 6.9994864
+      outSlope: 6.9994864
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4270225
+      value: 5.4658375
+      inSlope: 10.846918
+      outSlope: 10.846918
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &849709334750888096
 MonoBehaviour:
   m_ObjectHideFlags: 0

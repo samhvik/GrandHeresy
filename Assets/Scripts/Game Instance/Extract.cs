@@ -38,7 +38,7 @@ public class Extract : MonoBehaviour
     private GameObject beaconSpawned;
     public bool timerIsRunning = false;
     public float timeRemaining;
-    private int nextUpdate=1;
+    //private int nextUpdate=1;
     private float elapsed = 0f;
     public Text timerText;
     void Start()

@@ -15,3 +15,4 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 64
+  AoEParticleSet: {fileID: 4691051846242378908, guid: 6078771e3c504834984b5912dae21356, type: 3}
