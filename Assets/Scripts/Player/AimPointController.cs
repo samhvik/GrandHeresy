@@ -14,7 +14,7 @@ public class AimPointController : MonoBehaviour
     Vector3 worldPosition;
     Ray ray;
 
-    public float cursorDistance = 45f;
+    public float cursorDistance = 40f;
 
     void Start()
     {

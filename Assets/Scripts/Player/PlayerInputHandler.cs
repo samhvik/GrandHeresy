@@ -62,6 +62,16 @@ public class PlayerInputHandler : MonoBehaviour
     {
         // Gives updates to the players position to GameValues script so that we can track the Camera based on midpoint
         GameValues.instance.playerPosition[playerIndex] = this.GetComponent<Transform>();
+
+        // Instantiates Cursor
+        if (GameValues.instance.whatGamepad[playerIndex] != "controller")
+        {
+            if (GameValues.instance.cursorLock == false)
+            {
+                GameValues.instance.playerCursors[playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[playerIndex], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
+                GameValues.instance.cursorLock = true;
+            }
+        }
     }
 
     public int getPlayerIndex()
