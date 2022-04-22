@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 318064436}
   - component: {fileID: 318064437}
   - component: {fileID: 318064438}
+  - component: {fileID: 318064439}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1263,6 +1264,14 @@ MonoBehaviour:
   timerIsRunning: 0
   timeRemaining: 0
   timerText: {fileID: 1504745700}
+--- !u!81 &318064439
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318064433}
+  m_Enabled: 1
 --- !u!1 &326797499
 GameObject:
   m_ObjectHideFlags: 0

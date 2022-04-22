@@ -105,6 +105,9 @@ GameObject:
   - component: {fileID: 2198884338211547498}
   - component: {fileID: 3993233900559306110}
   - component: {fileID: -3078163367453586472}
+  - component: {fileID: -456863289942064739}
+  - component: {fileID: 7802562146992813176}
+  - component: {fileID: -7372704348808804457}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -191,9 +194,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 2
-  m_Height: 6
+  m_Height: 8
   m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!143 &849709334750888121
 CharacterController:
   m_ObjectHideFlags: 0
@@ -437,6 +440,18 @@ MonoBehaviour:
     m_ActionName: Gameplay/Shoot[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: -456863289942064739}
+        m_TargetAssemblyTypeName: VoiceLines, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5899519913269160901}
         m_TargetAssemblyTypeName: PlayerShooting, Assembly-CSharp
         m_MethodName: OnReload
@@ -530,12 +545,12 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 849709334750888096}
-        m_TargetAssemblyTypeName: PlayerGear, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
         m_MethodName: OnPickupWeapon
-        m_Mode: 0
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -559,6 +574,70 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 62514854-33a5-4c69-a45b-36122909eb66
     m_ActionName: UI/Navigate[/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -456863289942064739}
+        m_TargetAssemblyTypeName: VoiceLines, Assembly-CSharp
+        m_MethodName: ProceedOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 53d66c1a-c4ac-44d9-8948-cb2dc01a98b2
+    m_ActionName: Gameplay/ProceedOrder[/Keyboard/1,/DualShock4GamepadHID/dpad/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -456863289942064739}
+        m_TargetAssemblyTypeName: VoiceLines, Assembly-CSharp
+        m_MethodName: RetreatOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1e5405b9-a9ef-4d20-b86c-a30b0681d766
+    m_ActionName: Gameplay/RetreatOrder[/Keyboard/2,/DualShock4GamepadHID/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -456863289942064739}
+        m_TargetAssemblyTypeName: VoiceLines, Assembly-CSharp
+        m_MethodName: RequestHelp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7d35bb4c-807c-4502-8e66-4aafaee2ce0f
+    m_ActionName: Gameplay/RequestHelp[/Keyboard/3,/DualShock4GamepadHID/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -456863289942064739}
+        m_TargetAssemblyTypeName: VoiceLines, Assembly-CSharp
+        m_MethodName: BattleCry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6cb8d207-dcb7-4d03-975d-2a8924eab033
+    m_ActionName: Gameplay/BattleCry[/Keyboard/4,/DualShock4GamepadHID/dpad/up]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -634,6 +713,178 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StepDistance: 3.5
+--- !u!114 &-456863289942064739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7daf3588261b2324786e0eafbfb84b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proceedOrdersNormal:
+  - {fileID: 8300000, guid: 77073292a6555554fb3067b08243904c, type: 3}
+  - {fileID: 8300000, guid: 9c64f3b8b0742914d968d88d492118cc, type: 3}
+  proceedOrdersStress:
+  - {fileID: 8300000, guid: 9c4ebbcd9493a7744834361163303d2f, type: 3}
+  - {fileID: 8300000, guid: 49084cd72fe07f046b501d1307a14f35, type: 3}
+  retreatOrdersNormal:
+  - {fileID: 8300000, guid: 22ac819921da4b34a902da81d5256f61, type: 3}
+  - {fileID: 8300000, guid: 360da3f75579d04418f2689fd3eb68fd, type: 3}
+  retreatOrdersStress:
+  - {fileID: 8300000, guid: 50689a3af2caf45429b9e0d77696a218, type: 3}
+  - {fileID: 8300000, guid: 7afea04a63fbf874ba4d2e72913988f3, type: 3}
+  helpRequestsNormal:
+  - {fileID: 8300000, guid: 5cecd241e3749b340b0356edc16831a8, type: 3}
+  - {fileID: 8300000, guid: 33c11521de130c344990ca89aa4ab3fe, type: 3}
+  helpRequestsStress:
+  - {fileID: 8300000, guid: 8a371d8e87e93574899ac2202c0f30e9, type: 3}
+  - {fileID: 8300000, guid: 09be82e968427414eacb22b6107818bd, type: 3}
+  battleCriesNormal: []
+  battleCriesStress:
+  - {fileID: 8300000, guid: 1c47d60fd5398b240a9710cdc17844ab, type: 3}
+  recieveDamageNormal:
+  - {fileID: 8300000, guid: 10a4cbaa9852b1e4a9148e5b7d71c713, type: 3}
+  - {fileID: 8300000, guid: 1007547142f9e9546a54c5c157261c24, type: 3}
+  recieveDamageStress:
+  - {fileID: 8300000, guid: 71ef3cfcb1f67c44188af369c5ca53c2, type: 3}
+  - {fileID: 8300000, guid: de387a77c7c432b48a0b8f38bb517670, type: 3}
+  friendlyFireNormal:
+  - {fileID: 8300000, guid: 60dabc1842a7da942bc7543105786916, type: 3}
+  - {fileID: 8300000, guid: 0cf2af289eb75b34ab1e60cfec57492b, type: 3}
+  friendlyFireStress:
+  - {fileID: 8300000, guid: 59ee79866dd8dd64c80c86722c84e1e7, type: 3}
+  - {fileID: 8300000, guid: 2ab2277fae98da946a4e1e072801a5f1, type: 3}
+  reloadNormal:
+  - {fileID: 8300000, guid: a8690bc25717bfb479a73ce78758244e, type: 3}
+  - {fileID: 8300000, guid: 3c57da4733056a94e8c71acace145af6, type: 3}
+  reloadStress:
+  - {fileID: 8300000, guid: 63f2be86204ad9c4c8445394339eafe7, type: 3}
+  - {fileID: 8300000, guid: 12c3c510efada6e4cb3ddce8596474bd, type: 3}
+  deploymentNormal:
+  - {fileID: 8300000, guid: ff570b12a25ce3241a00d9746601a7c8, type: 3}
+  - {fileID: 8300000, guid: 51baef515926d2e42bc038705ceab622, type: 3}
+  objectiveCompleteNormal:
+  - {fileID: 8300000, guid: f1f002ed74e0b4640b1489526d16c80b, type: 3}
+  - {fileID: 8300000, guid: 9e273979dac208a468ae7ac071983e3b, type: 3}
+  objectiveCompleteStress:
+  - {fileID: 8300000, guid: e1974c3d58ab6754ba756bce4de169fa, type: 3}
+  - {fileID: 8300000, guid: 3db801edefd474243b0f1225a92db622, type: 3}
+  tauntNormal:
+  - {fileID: 8300000, guid: 74544baee0de38043bec5b0b063a2701, type: 3}
+  tauntStress:
+  - {fileID: 8300000, guid: 211c6c87555e06f49bb5a92dfa745dcc, type: 3}
+--- !u!82 &7802562146992813176
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-7372704348808804457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849709334750888112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aaf3d0d3a15b4e4e88112d1db1f0ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &971921770938473176
 GameObject:
   m_ObjectHideFlags: 0

@@ -98,6 +98,42 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ProceedOrder"",
+                    ""type"": ""Button"",
+                    ""id"": ""53d66c1a-c4ac-44d9-8948-cb2dc01a98b2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RetreatOrder"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e5405b9-a9ef-4d20-b86c-a30b0681d766"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RequestHelp"",
+                    ""type"": ""Button"",
+                    ""id"": ""7d35bb4c-807c-4502-8e66-4aafaee2ce0f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BattleCry"",
+                    ""type"": ""Button"",
+                    ""id"": ""6cb8d207-dcb7-4d03-975d-2a8924eab033"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -338,7 +374,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -382,7 +418,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -393,7 +429,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -404,8 +440,140 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a7d79e8-1e1c-4669-8577-eea1d37dcf47"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ProceedOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab74f79c-083e-416c-889b-5ff0095029eb"",
+                    ""path"": ""<DualShockGamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ProceedOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""028b735a-ea24-4d08-8fb1-5e351dbe9027"",
+                    ""path"": ""<XInputController>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ProceedOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a795ef14-843c-4f08-9e1d-ea3ccbcca993"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RetreatOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b864516f-6868-47e6-9845-5cfabdf0b5d0"",
+                    ""path"": ""<DualShockGamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RetreatOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed5c9243-57de-4927-97b2-bde2f0a033db"",
+                    ""path"": ""<XInputController>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RetreatOrder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab01a14b-a7fa-401e-8a2a-7a7454d9bb0f"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RequestHelp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c39a9be-65d6-42e5-9aa0-bd2d91a767a5"",
+                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RequestHelp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1257d1e7-85ec-41f4-a234-8286535b4823"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RequestHelp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""edec128b-da94-4675-a41b-c95ccac512d7"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BattleCry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9df15fc3-8e10-472c-922d-cf1d07fde224"",
+                    ""path"": ""<DualShockGamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BattleCry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b81594c-0d50-4212-a2c4-24bff000dd8f"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BattleCry"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -837,6 +1005,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_Dodge = m_Gameplay.FindAction("Dodge", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_ProceedOrder = m_Gameplay.FindAction("ProceedOrder", throwIfNotFound: true);
+        m_Gameplay_RetreatOrder = m_Gameplay.FindAction("RetreatOrder", throwIfNotFound: true);
+        m_Gameplay_RequestHelp = m_Gameplay.FindAction("RequestHelp", throwIfNotFound: true);
+        m_Gameplay_BattleCry = m_Gameplay.FindAction("BattleCry", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
@@ -910,6 +1082,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Dodge;
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_ProceedOrder;
+    private readonly InputAction m_Gameplay_RetreatOrder;
+    private readonly InputAction m_Gameplay_RequestHelp;
+    private readonly InputAction m_Gameplay_BattleCry;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -922,6 +1098,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Dodge => m_Wrapper.m_Gameplay_Dodge;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @ProceedOrder => m_Wrapper.m_Gameplay_ProceedOrder;
+        public InputAction @RetreatOrder => m_Wrapper.m_Gameplay_RetreatOrder;
+        public InputAction @RequestHelp => m_Wrapper.m_Gameplay_RequestHelp;
+        public InputAction @BattleCry => m_Wrapper.m_Gameplay_BattleCry;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -955,6 +1135,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                @ProceedOrder.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProceedOrder;
+                @ProceedOrder.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProceedOrder;
+                @ProceedOrder.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProceedOrder;
+                @RetreatOrder.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRetreatOrder;
+                @RetreatOrder.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRetreatOrder;
+                @RetreatOrder.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRetreatOrder;
+                @RequestHelp.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRequestHelp;
+                @RequestHelp.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRequestHelp;
+                @RequestHelp.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRequestHelp;
+                @BattleCry.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
+                @BattleCry.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
+                @BattleCry.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -983,6 +1175,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ProceedOrder.started += instance.OnProceedOrder;
+                @ProceedOrder.performed += instance.OnProceedOrder;
+                @ProceedOrder.canceled += instance.OnProceedOrder;
+                @RetreatOrder.started += instance.OnRetreatOrder;
+                @RetreatOrder.performed += instance.OnRetreatOrder;
+                @RetreatOrder.canceled += instance.OnRetreatOrder;
+                @RequestHelp.started += instance.OnRequestHelp;
+                @RequestHelp.performed += instance.OnRequestHelp;
+                @RequestHelp.canceled += instance.OnRequestHelp;
+                @BattleCry.started += instance.OnBattleCry;
+                @BattleCry.performed += instance.OnBattleCry;
+                @BattleCry.canceled += instance.OnBattleCry;
             }
         }
     }
@@ -1072,6 +1276,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnProceedOrder(InputAction.CallbackContext context);
+        void OnRetreatOrder(InputAction.CallbackContext context);
+        void OnRequestHelp(InputAction.CallbackContext context);
+        void OnBattleCry(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
