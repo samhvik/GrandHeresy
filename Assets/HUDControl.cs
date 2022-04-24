@@ -11,6 +11,8 @@ public class HUDControl : MonoBehaviour
     public Text[] healthText = new Text[4];
     public GameObject[] playerHUDPanels = new GameObject[4];
     public GameObject[] playerHUDHighlights = new GameObject[4];
+    public Sprite[] weaponSprites = new Sprite[7];
+    public Image[] weaponIcons = new Image[4];
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,8 +25,7 @@ public class HUDControl : MonoBehaviour
     }
     void Start()
     {
-       print("Number of Players" );
-       print(GameValues.instance.getNumPlayers());
+
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class HUDControl : MonoBehaviour
         else{
             objectiveText.text = "Proceed to extraction";
         }
+        
     }
     void LateUpdate()
     {
@@ -45,6 +47,34 @@ public class HUDControl : MonoBehaviour
         for (int i = 0; i < GameValues.instance.getNumPlayers(); i++)
         {
             PlayerInventory inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerInventory>(); // Danny: Change when implementing to main
+            print(inventory.CurrentWeapon.Name);
+            switch(inventory.CurrentWeapon.Name){
+                case "Apostle":
+                    weaponIcons[i].sprite = weaponSprites[0];
+                    break;
+                case "Aribiter":
+                    weaponIcons[i].sprite = weaponSprites[1];
+                    break;
+                case "Bishop":
+                    weaponIcons[i].sprite = weaponSprites[2];
+                    break;
+                case "Harpy":
+                    weaponIcons[i].sprite = weaponSprites[3];
+                    break;
+                case "Patriarch":
+                    weaponIcons[i].sprite = weaponSprites[4];
+                    break;
+                case "Pilate":
+                    weaponIcons[i].sprite = weaponSprites[5];
+                    break;
+                case "Vindicator":
+                    weaponIcons[i].sprite = weaponSprites[6];
+                    break;
+                default:
+                    break;
+            }
+            // weaponIcons[i].sprite = 
+            
             //set health text
             healthText[i].text = inventory.health + "";
             // Set the ammo text
@@ -60,6 +90,7 @@ public class HUDControl : MonoBehaviour
             }
         }
     }
+    //Unfinished
     void changeWeapon(){
 
     }
