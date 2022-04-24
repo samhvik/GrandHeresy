@@ -71,7 +71,8 @@ public class Extract : MonoBehaviour
         }
 
         if(timerIsRunning){
-            timerText.text = "Time Remaining: " + timeRemaining;
+            // timerText.text = "Time Remaining: " + timeRemaining;
+            timerText.text = ""+timeRemaining;
         }else{
             timerText.text = "";
         }
