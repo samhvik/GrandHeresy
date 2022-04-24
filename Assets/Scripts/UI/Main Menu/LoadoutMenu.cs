@@ -11,10 +11,6 @@ public class LoadoutMenu : MonoBehaviour
 {
     PlayerControls controls;
 
-    public GameObject currentScreen;
-    public GameObject prevScreen;
-    public GameObject levelButton;
-
     public GameObject P2;
     public GameObject P2Button;
     public GameObject P3;
@@ -30,24 +26,7 @@ public class LoadoutMenu : MonoBehaviour
     {
         controls = new PlayerControls();
 
-        controls.UI.Start.performed += ctx => GoNext();
-        controls.UI.Cancel.performed += ctx => GoBack();
         controls.UI.Submit.performed += ctx => HandleJoin(input.playerIndex);
-    }
-
-    // loads the Main scene
-    public void GoNext()
-    {
-        SceneManager.LoadScene(GameValues.level);
-    }
-
-    public void GoBack()
-    {
-        EventSystem.current.SetSelectedGameObject(levelButton);
-
-        currentScreen.SetActive(false);
-
-        prevScreen.SetActive(true);
     }
 
     public void HandleJoin(int index)
