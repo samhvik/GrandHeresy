@@ -563,14 +563,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195961cbd6be94e1992949764b95bf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1HUDPanel: {fileID: 501571315}
-  player2HUDPanel: {fileID: 1675100278}
-  player3HUDPanel: {fileID: 146792036}
-  player4HUDPanel: {fileID: 1177228697}
-  player1HUDHighlight: {fileID: 1285288765}
-  player2HUDHighlight: {fileID: 291316820}
-  player3HUDHighlight: {fileID: 581638092}
-  player4HUDHighlight: {fileID: 2068895324}
+  ammoText:
+  - {fileID: 261945291}
+  - {fileID: 291004906}
+  - {fileID: 952027568}
+  - {fileID: 1100455725}
+  healthText:
+  - {fileID: 1030740104}
+  - {fileID: 1207511801}
+  - {fileID: 1182853334}
+  - {fileID: 1862524597}
+  playerHUDPanels:
+  - {fileID: 501571315}
+  - {fileID: 1675100278}
+  - {fileID: 146792036}
+  - {fileID: 1177228697}
+  playerHUDHighlights:
+  - {fileID: 1285288765}
+  - {fileID: 291316820}
+  - {fileID: 581638092}
+  - {fileID: 2068895324}
 --- !u!1 &74686740
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,7 +6636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b3222d53ab7f94890b1e4643ee9302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quad: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  quad: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 3}
   targetHeight: 300
   overrideFPS: 1
   fps: 30

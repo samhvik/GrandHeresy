@@ -6,34 +6,20 @@ using UnityEngine.UI;
 
 public class HUDControl : MonoBehaviour
 {
-    public GameObject player1HUDPanel;
-    public GameObject player2HUDPanel;
-    public GameObject player3HUDPanel;
-    public GameObject player4HUDPanel;
-    public GameObject player1HUDHighlight;
-    public GameObject player2HUDHighlight;
-    public GameObject player3HUDHighlight;
-    public GameObject player4HUDHighlight;
-    public Text player1AmmoText;
-    public Text player2AmmoText;
-    public Text player3AmmoText;
-    public Text player4AmmoText;
-    public Text player1HealthText;
-    public Text player2HealthText;
-    public Text player3HealthText;
-    public Text player4HealthText;
-    
-    private GameObject[] HUDPanels= {player1HUDPanel, player2HUDPanel, player3HUDPanel, player4HUDPanel};
-    private GameObject[] HUDHighlights= {player1HUDHighlight, player2HUDHighlight, player3HUDHighlight, player4HUDHighlight};
+    public Text objectiveText;
+    public Text[] ammoText = new Text[4];
+    public Text[] healthText = new Text[4];
+    public GameObject[] playerHUDPanels = new GameObject[4];
+    public GameObject[] playerHUDHighlights = new GameObject[4];
     // Start is called before the first frame update
     void Awake()
     {
-        player2HUDPanel.SetActive(false);
-        player2HUDHighlight.SetActive(false);
-        player3HUDPanel.SetActive(false);
-        player3HUDHighlight.SetActive(false);
-        player4HUDPanel.SetActive(false);
-        player4HUDHighlight.SetActive(false);
+       playerHUDPanels[1].SetActive(false);
+       playerHUDPanels[2].SetActive(false);
+       playerHUDPanels[3].SetActive(false);
+       playerHUDHighlights[1].SetActive(false);
+       playerHUDHighlights[2].SetActive(false);
+       playerHUDHighlights[3].SetActive(false);
     }
     void Start()
     {
@@ -44,51 +30,45 @@ public class HUDControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        activateHUDElemnt(GameValues.instance.getNumPlayers());
+        if(GameValues.instance.objectivesCompleted< GameValues.instance.objectivesTotal){
+            objectiveText.text = "Objectives Completed: " + GameValues.instance.objectivesCompleted;
+        }
+        else{
+            objectiveText.text = "Proceed to extraction";
+        }
     }
     void LateUpdate()
     {
+        
         // Enabling Text to Display and Update Text
         for (int i = 0; i < GameValues.instance.getNumPlayers(); i++)
         {
             PlayerInventory inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerInventory>(); // Danny: Change when implementing to main
             //set health text
-
-            // Set the weapon text
-            // weaponText[i].gameObject.SetActive(true);
-            // weaponText[i].text = "" + inventory.CurrentWeapon.Name; // Danny: Change when implementing to main
-
+            healthText[i].text = inventory.health + "";
             // Set the ammo text
-            ammoText[i].gameObject.SetActive(true);
+            
             switch (inventory.CurrentWeapon.shootState) // Danny: Change when implementing to main
             {
                 case Gun.ShootState.Reloading:
-                    ammoText[i].text = "Reloading...";
+                    ammoText[i].text = "R";
                     break;
                 default:
-                    ammoText[i].text = inventory.CurrentWeapon.CurrentAmmo + "/" + inventory.CurrentWeapon.MaxAmmo;
+                    ammoText[i].text = inventory.CurrentWeapon.CurrentAmmo + "";
                     break;
             }
-
-            // Set the state text
-            stateText[i].gameObject.SetActive(true);
-            stateText[i].text = "Movement State: " + GameValues.instance.getPlayer(i).GetComponent<MovementSM>().currentState; 
         }
-    }
-    void updateHealth()
-    {
-
-    }
-    void updateAmmo()
-    {
-        // ammoText[i].gameObject
     }
     void changeWeapon(){
 
     }
-    void activateHUDElemnt(int x){
-        HUDPanels[x].SetActive(true);
-        HUDHighlights[x].SetActive(true);
+    void activateHUDElemnt(int numPlayers){
+        for(int i = 0; i < numPlayers; i++){
+            playerHUDPanels[i].SetActive(true);
+            playerHUDHighlights[i].SetActive(true);
+        }
+       
     }
     
 }
