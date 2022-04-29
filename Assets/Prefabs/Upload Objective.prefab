@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385211765575660186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,6 +116,6 @@ MonoBehaviour:
   slider: {fileID: 1972323371265000202, guid: 686d1fd0a88e2444593aba139c5a68e0, type: 3}
   loadingBarText: {fileID: 2684066735323104794, guid: 41fe7206f1f08654a856ec75583399f5, type: 3}
   ourCanvas: {fileID: 0}
+  interactText: {fileID: 5827193815183001825, guid: 568328b2b83ec154d8a5c2cf71a18b75, type: 3}
   uploadRange: 25
   ringRadius: {fileID: 7467886075838926559, guid: 78de0eb667a2ee245bbf62698bd0f982, type: 3}
-  interactText: {fileID: 5827193815183001825, guid: 568328b2b83ec154d8a5c2cf71a18b75, type: 3}

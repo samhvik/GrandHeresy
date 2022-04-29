@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     // Temp Manager Gameobject until I move things over to Director for calls
     public GameObject CameraMidpoint;
     private Transform midpoint;
+
     void Start(){  
         TimeElapsed = 0f;
     }
@@ -29,14 +30,9 @@ public class EnemySpawner : MonoBehaviour
             // spawn enemies randomly within the distance
             int waveNum = numberToSpawn();
             for(int i = 0; i < waveNum; i++){
-                // Improvement: Add a value to X and Y of pos
-                // to prevent AI spawning inside / really close to the player
-                //
                 // Random Point within a Circle; *25f is the Radius of the circle, 0 is our floor level
-                var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
-                pos += midpoint.position; // move the spawnpoint near the player
+                var pos = getRandPoint();
                 // we use CheckBounds for making sure pos is valid
-                // Physics.CheckSphere(transform.position, sphereRadius, LayerMask) // Might be useful for boundary spawning
                 GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
@@ -55,14 +51,29 @@ public class EnemySpawner : MonoBehaviour
         return Random.Range(1, 6);//6);
     }
 
-    // current Greybox bounds are roughly 
+    private Vector3 getRandPoint(){
+        var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
+        return pos += midpoint.position; 
+    }
+
+    // TO DO/Improve by: Replace below with NavMesh.SamplePosition 
     // -85 <= x <= 100
     // -65 <= z <= 115
     private Vector3 CheckBounds(Vector3 p){
+        // Check if inside an object up to 3 times
+        for(int i = 0; i < 3; i++){
+            if(Physics.CheckSphere(p, 1)){ // add LayerMask to fix 
+                // spawned inside something
+                // Debug.Log("Spawning inside something.. Hold on");
+                p = getRandPoint();
+            }
+        }
+        // Outside Boundaries
         if(p.x < -85){ p.x = -85; }
         if(p.x > 100){ p.x = 100; }
         if(p.z < -65){ p.z = -65; }
         if(p.z > 115){ p.z = 115; }
+        // Flat Plane of the level
         p.y = -20;
         return p;
     }

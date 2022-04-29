@@ -61,6 +61,11 @@ using UnityEngine;
             }
         }
         trackPlayers();
+
+        if(this.transform.position.y < 10f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, 10f, this.transform.position.z);
+        }
     }
 
     void LateUpdate(){

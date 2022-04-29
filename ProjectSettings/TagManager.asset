@@ -16,6 +16,7 @@ TagManager:
   - BeaconPoint
   - Beacon
   - Upload
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

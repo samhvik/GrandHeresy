@@ -32,9 +32,6 @@ public class AISpecialAttack: AIAction
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
                 //Stop Controller from Moving briefly for animations
                 controller.navMeshAgent.isStopped = true;
-                //Debug.Log("Attack Animation Here");
-                //Debug.Log("Attack Sound Here");
-                Debug.Log("Play Attack Sound Here");
                 // update the players health
                 fov.visibleTarget.gameObject.GetComponent<PlayerInventory>().UpdateHealth(controller.enemyStats.damage);
             }*/
@@ -43,15 +40,16 @@ public class AISpecialAttack: AIAction
 
     IEnumerator attackingPause(Vector3 locale, AIStateController c){
         Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 2); // destroy after cast
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f); // Cast time
         //Debug.Log("Attack Animation Here && Draw Circle on Ground");
+        //c.aSource.clip = c.enemySounds[Random.Range(0, c.enemySounds.Length-1)];
+        //c.aSource.Play();
         // only hit players and update health
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
-        Debug.Log(hits);
-        foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); 
-        Debug.Log("Ranged Hit");}
+        //Debug.Log(hits);
+        foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); }
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.25f); // following a target CD time
         c.navMeshAgent.isStopped = false; // let the AI walk again
     }
 }
@@ -61,5 +59,4 @@ public class AISpecialAttack: AIAction
 // would induce friendly fire into the game. a way around that?
 // IDEAS
 // copy paste round to be something else and instantiate as that
-
 // ???

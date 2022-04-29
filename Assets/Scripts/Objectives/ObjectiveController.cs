@@ -15,8 +15,8 @@ public class ObjectiveController : MonoBehaviour
     public GameObject[] chosenSpawns;
     //should be set within inspector to some gameobject (default is a tree)
     public GameObject objective1ToSpawn;
-
-    public GameObject[] objectivesToSpawn;
+    //set the size of this array to the total number of unique objectives
+    public GameObject[] objectivesToSpawn = new GameObject[2];
     private GameObject objectSpawned;
     private List<GameObject> spawnedObjects = new List<GameObject>();
     private List<int> spawnChoices = new List<int>();
@@ -36,31 +36,33 @@ public class ObjectiveController : MonoBehaviour
        
        chosenSpawns = chooseSpawnsMapWide(4);
        //choose spawn groups
-    //    chosenSpawns = chooseSpawnGroup();
+
        //go through chosen spawns and instantiate at each point 
        //currently only handles spawning one objective type
-
-       foreach (GameObject spawnPoint in chosenSpawns){
-           objectSpawned = GameObject.Instantiate(objective1ToSpawn, spawnPoint.transform.position, Quaternion.identity);
-           spawnedObjects.Add(objectSpawned);
-           //print(objectSpawned.name);
-           //print("object should be spawned");
-           //print(spawnPoint.transform.position);
-           //print(spawnPoint.name);
-       }
-       /*
+    //    foreach (GameObject spawnPoint in chosenSpawns){
+    //        objectSpawned = GameObject.Instantiate(objective1ToSpawn, spawnPoint.transform.position, Quaternion.identity);
+    //        spawnedObjects.Add(objectSpawned);
+    //        //print(objectSpawned.name);
+    //        //print("object should be spawned");
+    //        //print(spawnPoint.transform.position);
+    //        //print(spawnPoint.name);
+    //    }
+       
 
         //picks a random objective from a list of objectives to spawn at a specified spawn point 
-        if(objectiveToSpawn.Length >= 2){
+        if(objectivesToSpawn.Length >= 2){
             foreach(GameObject spawnPoint in chosenSpawns){
-                int objSpawn = Random.Range(1,objectiveToSpawn.Length);
-                objectSpawned = GameObject.Instantiate(objectivesToSpawn[objSpawn], spawnPoint.transform.position, Quaternion.identity);
+                print(objectivesToSpawn.Length);
+                int objSpawn = Random.Range(0,objectivesToSpawn.Length);
+                print("Random number" + objSpawn);
+                Vector3 fixedSpawn = spawnPoint.transform.position;
+                fixedSpawn.y = -17;
+                objectSpawned = GameObject.Instantiate(objectivesToSpawn[objSpawn], fixedSpawn, Quaternion.identity);
+                print(spawnPoint.transform.position);
                 spawnedObjects.Add(objectSpawned);
             }
         }
        
-       
-       */
     }
 
     // Update is called once per frame

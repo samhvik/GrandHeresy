@@ -36,11 +36,16 @@ public class Extract : MonoBehaviour
     public GameObject beaconPrefab;
     private GameObject beaconSpawnPoint;
     private GameObject beaconSpawned;
+    public GameObject TimerPanel;
+    public Text timerText;
     public bool timerIsRunning = false;
     public float timeRemaining;
     //private int nextUpdate=1;
     private float elapsed = 0f;
-    public Text timerText;
+    
+    void Awake(){
+        TimerPanel.SetActive(false);
+    }
     void Start()
     {
         if(beaconPrefab == null){
@@ -61,6 +66,8 @@ public class Extract : MonoBehaviour
         if (IsReached())
         {
             GameValues.instance.extractionOpen = true;
+            TimerPanel.SetActive(true);
+            timerText.text = ""+timeRemaining;
             //check if all players are inside range and if extraction has started before allowing timer to run
             if(GameValues.instance.allPlayersInExtractionRange && GameValues.instance.extractionStarted){
                 timerIsRunning = true;    
@@ -71,10 +78,12 @@ public class Extract : MonoBehaviour
         }
 
         if(timerIsRunning){
-            timerText.text = "Time Remaining: " + timeRemaining;
-        }else{
-            timerText.text = "";
+            // timerText.text = "Time Remaining: " + timeRemaining;
+            timerText.text = ""+timeRemaining;
         }
+        // else{
+        //     timerText.text = "";
+        // }
         //makes sure 1 second has passed before updating timer.
         elapsed += Time.deltaTime;
         if (elapsed >= 1f) {
