@@ -16,6 +16,7 @@ public class Walking : Moving
         L_verticalInput = sm.left_vertical;
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+        sm.animatorManager.HandleKeyboardAimState(false);
     }
 
     public override void UpdateLogic()

@@ -63,7 +63,6 @@ public class StrafeAim : Moving
             // sm.animatorManager.HandleAnimatorValues(sm.left_horizontal, sm.left_vertical, sm.right_horizontal, sm.right_vertical, false);
 
             sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
-
             sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
 
             //sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;

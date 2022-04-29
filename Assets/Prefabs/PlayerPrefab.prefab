@@ -361,10 +361,12 @@ MonoBehaviour:
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
   isAiming: 0
-  lookSpeed: 900
+  lookSpeed: 541
+  runningLookSpeed: 377
   dashSpeed: 20
-  dashTime: 0.6
-  endingDodgeSlow: 0.16
+  dashTime: 0.75
+  endDashTime: 0.2
+  endDashSpeed: 12.82
   dodgeCoolDown: 0.5
   dodgeCurve:
     serializedVersion: 2
