@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657928, g: 0.4964133, b: 0.5748188, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641293, b: 0.5748183, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,6 +584,19 @@ MonoBehaviour:
   - {fileID: 291316820}
   - {fileID: 581638092}
   - {fileID: 2068895324}
+  weaponSprites:
+  - {fileID: 21300000, guid: 8c619e36df898434a8a6dc04bd328cfc, type: 3}
+  - {fileID: 21300000, guid: 29ad1891b1b4c44be904891c394c8dc5, type: 3}
+  - {fileID: 21300000, guid: fe21c0f892d014255aee1e40c9c874a8, type: 3}
+  - {fileID: 21300000, guid: d2a3eae09c7b14d399aabcc2f49e7c90, type: 3}
+  - {fileID: 21300000, guid: b0bfa191ae01b4996a6529ebb738d00c, type: 3}
+  - {fileID: 21300000, guid: 5211b1e0ff5d648c795fcc5e4935c82a, type: 3}
+  - {fileID: 21300000, guid: e43492f1c4579499f8dc462d9c9022c5, type: 3}
+  weaponIcons:
+  - {fileID: 105429488}
+  - {fileID: 722129531}
+  - {fileID: 654423018}
+  - {fileID: 138306689}
 --- !u!1 &74686740
 GameObject:
   m_ObjectHideFlags: 0
