@@ -1,6 +1,157 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8003738076367465667
+--- !u!114 &-7731570218940196808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Footsteps.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Footsteps.bank
+  Name: Footsteps
+  StudioPath: bank:/Footsteps
+  lastModified: 637828808642426765
+  FileSizes:
+  - Name: Desktop
+    Value: 58080
+  Exists: 1
+--- !u!114 &-7426376784604322164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637828808642636964
+  FileSizes:
+  - Name: Desktop
+    Value: 3157184
+  Exists: 1
+--- !u!114 &-5713130072525487905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HumanWalkRun
+  m_EditorClassIdentifier: 
+  Path: event:/HumanWalkRun
+  Guid:
+    Data1: -2025534260
+    Data2: 1266910223
+    Data3: -1948458306
+    Data4: 2026667563
+  Banks:
+  - {fileID: -7731570218940196808}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5938143870440343156}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 333
+--- !u!114 &-3443081327360159927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ShootingGun
+  m_EditorClassIdentifier: 
+  Path: event:/ShootingGun
+  Guid:
+    Data1: 62461997
+    Data2: 1133582571
+    Data3: 1491903131
+    Data4: -1452477010
+  Banks:
+  - {fileID: -7426376784604322164}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1400
+--- !u!114 &-3051839781539705036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience and Exploration
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience and Exploration
+  Guid:
+    Data1: 1699172295
+    Data2: 1266684743
+    Data3: -296252772
+    Data4: 1664851471
+  Banks:
+  - {fileID: -7426376784604322164}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 887768730236872051}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 160032
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 7572683295186737330}
+  - {fileID: -7731570218940196808}
+  - {fileID: -7426376784604322164}
+  EditorEvents:
+  - {fileID: 8613150723390777529}
+  - {fileID: -5713130072525487905}
+  - {fileID: -3443081327360159927}
+  - {fileID: -3051839781539705036}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7426376784604322164}
+  StringsBanks:
+  - {fileID: 7572683295186737330}
+  cacheTime: 637828808642676991
+  cacheVersion: 10
+--- !u!114 &887768730236872051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,155 +175,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7657670171243389148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ZombieWalkRun/WalkRun
-  m_EditorClassIdentifier: 
-  Name: WalkRun
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3247646508
-    data2: 2655151290
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-7548163074021203990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience and Exploration
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience and Exploration
-  Guid:
-    Data1: 1699172295
-    Data2: 1266684743
-    Data3: -296252772
-    Data4: 1664851471
-  Banks:
-  - {fileID: -6409788644325087852}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -8003738076367465667}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 160032
---- !u!114 &-6409788644325087852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637827771489919166
-  FileSizes:
-  - Name: Desktop
-    Value: 3157184
-  Exists: 1
---- !u!114 &-5549701600191647799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ZombieWalkRun
-  m_EditorClassIdentifier: 
-  Path: event:/ZombieWalkRun
-  Guid:
-    Data1: -999426478
-    Data2: 1271908954
-    Data3: -1146936152
-    Data4: -2103640056
-  Banks:
-  - {fileID: 7927267606816008878}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -7657670171243389148}
-  MinDistance: 1
-  MaxDistance: 85
-  Length: 333
---- !u!114 &-2342904123143537797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637827662074853392
-  FileSizes:
-  - Name: Desktop
-    Value: 1072
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2342904123143537797}
-  - {fileID: 7927267606816008878}
-  - {fileID: -6409788644325087852}
-  EditorEvents:
-  - {fileID: -5549701600191647799}
-  - {fileID: 5080131767149152813}
-  - {fileID: 4731634025341658940}
-  - {fileID: -7548163074021203990}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -6409788644325087852}
-  StringsBanks:
-  - {fileID: -2342904123143537797}
-  cacheTime: 637827771489919166
-  cacheVersion: 10
---- !u!114 &2820590861474821843
+--- !u!114 &5938143870440343156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,62 +199,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &4731634025341658940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ShootingGun
-  m_EditorClassIdentifier: 
-  Path: event:/ShootingGun
-  Guid:
-    Data1: 62461997
-    Data2: 1133582571
-    Data3: 1491903131
-    Data4: -1452477010
-  Banks:
-  - {fileID: -6409788644325087852}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1400
---- !u!114 &5080131767149152813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HumanWalkRun
-  m_EditorClassIdentifier: 
-  Path: event:/HumanWalkRun
-  Guid:
-    Data1: -2025534260
-    Data2: 1266910223
-    Data3: -1948458306
-    Data4: 2026667563
-  Banks:
-  - {fileID: 7927267606816008878}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 2820590861474821843}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 333
---- !u!114 &7927267606816008878
+--- !u!114 &7572683295186737330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,13 +209,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Footsteps.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Footsteps.bank
-  Name: Footsteps
-  StudioPath: bank:/Footsteps
-  lastModified: 637827771489567971
+  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637828808642676991
   FileSizes:
   - Name: Desktop
-    Value: 58080
+    Value: 1072
   Exists: 1
+--- !u!114 &8592666443049021908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ZombieWalkRun/WalkRun
+  m_EditorClassIdentifier: 
+  Name: WalkRun
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3247646508
+    data2: 2655151290
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8613150723390777529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ZombieWalkRun
+  m_EditorClassIdentifier: 
+  Path: event:/ZombieWalkRun
+  Guid:
+    Data1: -999426478
+    Data2: 1271908954
+    Data3: -1146936152
+    Data4: -2103640056
+  Banks:
+  - {fileID: -7731570218940196808}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8592666443049021908}
+  MinDistance: 1
+  MaxDistance: 85
+  Length: 333

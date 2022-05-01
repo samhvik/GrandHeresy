@@ -47,7 +47,7 @@ public class HUDControl : MonoBehaviour
         for (int i = 0; i < GameValues.instance.getNumPlayers(); i++)
         {
             PlayerInventory inventory = GameValues.instance.getPlayer(i).GetComponentInChildren<PlayerInventory>(); // Danny: Change when implementing to main
-            print(inventory.CurrentWeapon.Name);
+            //print(inventory.CurrentWeapon.Name);
             switch(inventory.CurrentWeapon.Name){
                 case "Apostle":
                     weaponIcons[i].sprite = weaponSprites[0];

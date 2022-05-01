@@ -41,6 +41,8 @@ public class MovementSM : StateMachine
     [Header("Dodge Tweaking")]
     [SerializeField] [Range(200f, 900f)]
     public float lookSpeed = 250f;
+    [SerializeField] [Range(50f, 900f)]
+    public float runningLookSpeed = 250f;
     public float dashSpeed;
     public float dashTime;
     public float endDashTime;
@@ -102,6 +104,7 @@ public class MovementSM : StateMachine
     public void OnRun(InputAction.CallbackContext context)
     {
         if(GetCurrentState() != "Dodge"){
+            animatorManager.HandleKeyboardAimState(false);
             ChangeState(runningState);
         }
     }

@@ -11,6 +11,7 @@ public class Idle : Stationary
         base.Enter();
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+        sm.animatorManager.HandleKeyboardAimState(false);
     }
 
     public override void UpdateLogic(){
