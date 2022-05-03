@@ -40,7 +40,7 @@ public class Aim : Stationary
             }
         } 
         // If a Keyboard is being used, aim with this method                         
-        else
+        else if(GameValues.instance.whatGamepad[sm.input.playerIndex] == "keyboard")
         {
             // Temporary Comment
             // (GameValues.instance.cursorLock == false)

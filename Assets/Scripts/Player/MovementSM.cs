@@ -88,7 +88,8 @@ public class MovementSM : StateMachine
         else
         {
             // Aiming if RMB is held down
-            if (context.ReadValue<float>() > 0.1f)
+            //if (context.ReadValue<float>() > 0.1f)
+            if (context.performed)
             {
                 isAiming = true;
             }
@@ -96,8 +97,11 @@ public class MovementSM : StateMachine
             {
                 isAiming = false;
             }
+
+            aimInput = context.ReadValue<Vector2>();
         }
-        aimInput = context.ReadValue<Vector2>();
+
+        //aimInput = context.ReadValue<Vector2>();
     }
 
     // OnRun will make our player run
