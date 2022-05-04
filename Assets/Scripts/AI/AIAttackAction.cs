@@ -6,6 +6,7 @@ using UnityEngine;
 public class AIAttackAction : AIAction
 {
     public override void Act(AIStateController controller){
+
         Attack(controller);
     }
 
@@ -14,21 +15,22 @@ public class AIAttackAction : AIAction
         if(fov == null) return;
         
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
-            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD) && controller.checkRange()){
+            if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD)){
                 //Stop Controller from Moving briefly for animations
-                controller.navMeshAgent.isStopped = true;
-                controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
-                controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //= 0  offset by how long im waiting to resume the attacking pause
+                if (controller.checkRange()){
+                    controller.navMeshAgent.isStopped = true;
+                    controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
+                    controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //offset by how long im waiting to resume the attacking pause
+                }
             }
         }
     }
 
     // delay AI movement below, defaul is wait half a second before turning the agent back on 
     IEnumerator attackingPause(GameObject target, AIStateController c){
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         // Play Animation Here
         // Lunge Idea: transform.Translate ((lungeSpeed + lungeDistance, lungeHeight, 0)*Time.deltaTime)
-        // a yiled return wait
         // Play Sound
         c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
         c.aSource.Play();

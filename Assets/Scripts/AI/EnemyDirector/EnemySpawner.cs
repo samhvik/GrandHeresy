@@ -12,14 +12,14 @@ public class EnemySpawner : MonoBehaviour
     public GameObject hordeEnemyToSpawn; // the horde enemy which will target a player automatically during spawn
     public GameObject RangedEnemyToSpawn; // the ranged enemy which will target a player automatically during spawn
     private float TimeElapsed;
-    // set player midpoint
-    // Temp Player Object until player grabbing is more dynamic
-    // Temp Manager Gameobject until I move things over to Director for calls
+    
+    private int maxSpawns; // max number of enemies to spawn
     public GameObject CameraMidpoint;
     private Transform midpoint;
 
     void Start(){  
         TimeElapsed = 0f;
+        maxSpawns   = 6;
     }
     
     void Update(){
@@ -32,7 +32,12 @@ public class EnemySpawner : MonoBehaviour
             for(int i = 0; i < waveNum; i++){
                 // Random Point within a Circle; *25f is the Radius of the circle, 0 is our floor level
                 var pos = getRandPoint();
-                // we use CheckBounds for making sure pos is valid
+                // if waveNum % (maxSpawn//3) == 0){ // spawn Ranged Enemy
+                //      enemyCreator(RangedPrefab, CheckBound(pos), Quaternion.LookRotation(-pos))
+                // }
+                // enemyCreator(Prefab, CheckBound(pos), Quaternion.LookRotation(-pos))
+
+                // Remove Below Later
                 GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
@@ -48,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
 
     // change the range of random to influence amount per group spawned
     private int numberToSpawn(){
-        return Random.Range(1, 6);//6);
+        return Random.Range(1, maxSpawns);
     }
 
     private Vector3 getRandPoint(){
@@ -56,9 +61,15 @@ public class EnemySpawner : MonoBehaviour
         return pos += midpoint.position; 
     }
 
-    // TO DO/Improve by: Replace below with NavMesh.SamplePosition 
-    // -85 <= x <= 100
-    // -65 <= z <= 115
+    // AI.NavMeshHit hit;
+    // IFF Frame Rate issues reduce maxdist from 25f to 10f, iff persists lower to 4f
+    // float dist = Vector3.Distance(CameraMidpoint.transform.position,
+    //               this.transform.position);
+    // if dist < 5:
+    //   spawnDist = 5; 
+    // e;se: spawnDist = 0;
+    // NavMesh.SamplePosition(midpoint.position + spawnDist, out hit, 5.0f, NavMesh.Walkable)
+    // return hit.position 
     private Vector3 CheckBounds(Vector3 p){
         // Check if inside an object up to 3 times
         for(int i = 0; i < 3; i++){
@@ -85,7 +96,7 @@ public class EnemySpawner : MonoBehaviour
             //Debug.Log("SinglePlayer");
             return GameValues.instance.players[0].transform;
         }
-        // grab first player
+        // grab a player to focus
         return GameValues.instance.players[Random.Range(0, pAmount - 1)].transform;
     }
 
@@ -98,6 +109,18 @@ public class EnemySpawner : MonoBehaviour
         // default 20 second spawn timer reduced by number of completed objectives
         // once completedObjectives is a static VAR we wont need to pass in a rate
         return (TimeElapsed >= 10/complObj);
+    }
+
+    private void enemyCreator(GameObject prefab, Vector3 p, Quaternion lookRot){
+        // we use CheckBounds for making sure pos is valid
+        GameObject nAI = Instantiate(hordeEnemyToSpawn, p, Quaternion.LookRotation(-p));
+        // Setup Newly Spawned AI
+        var newController = nAI.GetComponent<AIStateController>();
+        newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
+        // Setup Chase Target
+        Transform playerT = GrabAPlayer();               
+        newController.chaseTarget = playerT;
+        nAI.GetComponent<AIFOV>().visibleTarget = playerT; // This will be a random player
     }
 }
 
@@ -122,5 +145,3 @@ public class EnemySpawner : MonoBehaviour
     (A location is valid if the y value is equal to the general level of the playing field. Basically, we don't
     want to spawn mobs inside trees, hills, crevasses, etc.)
 */
-
-// 
