@@ -6,20 +6,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject hordeEnemyToSpawn; // the horde enemy which will target a player automatically during spawn
     public GameObject RangedEnemyToSpawn; // the ranged enemy which will target a player automatically during spawn
-    private float TimeElapsed;
-    
-    private int maxSpawns; // max number of enemies to spawn
     public GameObject CameraMidpoint;
+    private float TimeElapsed;
+    private int maxSpawns; // max number of enemies to spawn
+    private int maxSpawnChecks;
     private Transform midpoint;
 
     void Start(){  
         TimeElapsed = 0f;
         maxSpawns   = 6;
+        maxSpawnChecks = 10;
     }
     
     void Update(){
@@ -57,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private Vector3 getRandPoint(){
-        var pos = new Vector3(Random.insideUnitSphere.x * 25f, 0, Random.insideUnitSphere.z * 25f);
+        var pos = new Vector3(Random.insideUnitSphere.x * 15f, 0, Random.insideUnitSphere.z * 15f);
         return pos += midpoint.position; 
     }
 
@@ -70,23 +72,27 @@ public class EnemySpawner : MonoBehaviour
     // e;se: spawnDist = 0;
     // NavMesh.SamplePosition(midpoint.position + spawnDist, out hit, 5.0f, NavMesh.Walkable)
     // return hit.position 
-    private Vector3 CheckBounds(Vector3 p){
-        // Check if inside an object up to 3 times
-        for(int i = 0; i < 3; i++){
-            if(Physics.CheckSphere(p, 1)){ // add LayerMask to fix 
-                // spawned inside something
-                // Debug.Log("Spawning inside something.. Hold on");
-                p = getRandPoint();
-            }
-        }
-        // Outside Boundaries
+    /*// Outside Boundaries
         if(p.x < -85){ p.x = -85; }
         if(p.x > 100){ p.x = 100; }
         if(p.z < -65){ p.z = -65; }
         if(p.z > 115){ p.z = 115; }
         // Flat Plane of the level
-        p.y = -20;
-        return p;
+        p.y = -20;*/
+    private Vector3 CheckBounds(Vector3 p){
+        float dist = Vector3.Distance(CameraMidpoint.transform.position, this.transform.position);
+        //Vector3 spawnDist = Vector3.zero;
+        int i = 0;
+        NavMeshHit loc;
+        //if(dist < 5){ spawnDist = 5 * Vector3.one; }
+
+        // check if valid location to spawn up to max checks
+        do{
+            NavMesh.SamplePosition(p, out loc, 5.0f, 1);
+            i++;
+        } while(i < maxSpawnChecks && !loc.hit);
+        //Debug.Log(loc.hit);
+        return loc.position;
     }
 
     // grab a player based on the number of players
