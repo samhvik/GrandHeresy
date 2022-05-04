@@ -38,9 +38,11 @@ public class EnemySpawner : MonoBehaviour
                 //      enemyCreator(RangedPrefab, CheckBound(pos), Quaternion.LookRotation(-pos))
                 // }
                 // enemyCreator(Prefab, CheckBound(pos), Quaternion.LookRotation(-pos))
+                var locale = CheckBounds(pos);
+                if(locale.hit == false){ continue; } // if it FAILED to find a valid location just skip
 
                 // Remove Below Later
-                GameObject nAI = Instantiate(hordeEnemyToSpawn, CheckBounds(pos), Quaternion.LookRotation(-pos));
+                GameObject nAI = Instantiate(hordeEnemyToSpawn, locale.position, Quaternion.LookRotation(-pos));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
                 newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
@@ -63,23 +65,8 @@ public class EnemySpawner : MonoBehaviour
         return pos += midpoint.position; 
     }
 
-    // AI.NavMeshHit hit;
-    // IFF Frame Rate issues reduce maxdist from 25f to 10f, iff persists lower to 4f
-    // float dist = Vector3.Distance(CameraMidpoint.transform.position,
-    //               this.transform.position);
-    // if dist < 5:
-    //   spawnDist = 5; 
-    // e;se: spawnDist = 0;
-    // NavMesh.SamplePosition(midpoint.position + spawnDist, out hit, 5.0f, NavMesh.Walkable)
-    // return hit.position 
-    /*// Outside Boundaries
-        if(p.x < -85){ p.x = -85; }
-        if(p.x > 100){ p.x = 100; }
-        if(p.z < -65){ p.z = -65; }
-        if(p.z > 115){ p.z = 115; }
-        // Flat Plane of the level
-        p.y = -20;*/
-    private Vector3 CheckBounds(Vector3 p){
+    // Check the boundaries of the position to spawn enemies
+    private NavMeshHit CheckBounds(Vector3 p){
         float dist = Vector3.Distance(CameraMidpoint.transform.position, this.transform.position);
         //Vector3 spawnDist = Vector3.zero;
         int i = 0;
@@ -91,8 +78,8 @@ public class EnemySpawner : MonoBehaviour
             NavMesh.SamplePosition(p, out loc, 5.0f, 1);
             i++;
         } while(i < maxSpawnChecks && !loc.hit);
-        //Debug.Log(loc.hit);
-        return loc.position;
+        
+        return loc;
     }
 
     // grab a player based on the number of players
@@ -117,9 +104,9 @@ public class EnemySpawner : MonoBehaviour
         return (TimeElapsed >= 10/complObj);
     }
 
-    private void enemyCreator(GameObject prefab, Vector3 p, Quaternion lookRot){
+    private void enemyCreator(GameObject prefab, Vector3 pos){
         // we use CheckBounds for making sure pos is valid
-        GameObject nAI = Instantiate(hordeEnemyToSpawn, p, Quaternion.LookRotation(-p));
+        GameObject nAI = Instantiate(prefab, pos, Quaternion.LookRotation(-pos));
         // Setup Newly Spawned AI
         var newController = nAI.GetComponent<AIStateController>();
         newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
