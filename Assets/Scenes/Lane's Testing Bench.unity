@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641293, b: 0.5748184, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657958, g: 0.4964137, b: 0.5748193, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8344,7 +8344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hordeEnemyToSpawn: {fileID: 8699875790224936442, guid: baf0a9a3bc37bab4797f68d34769ca6e, type: 3}
-  RangedEnemyToSpawn: {fileID: 8699875790224936442, guid: baf0a9a3bc37bab4797f68d34769ca6e, type: 3}
+  RangedEnemyToSpawn: {fileID: 3503865659662681892, guid: 5e83090c460930346b20fa85899f0f33, type: 3}
   CameraMidpoint: {fileID: 703195282}
 --- !u!114 &1452543180
 MonoBehaviour:
@@ -12389,6 +12389,10 @@ PrefabInstance:
       propertyPath: aSource
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4114430730772237107, guid: 5e83090c460930346b20fa85899f0f33, type: 3}
+      propertyPath: currState
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e4cd86336074c4c80901b20110577e, type: 2}
     - target: {fileID: 4114430730772237107, guid: 5e83090c460930346b20fa85899f0f33, type: 3}
       propertyPath: enemySounds.Array.size
       value: 2

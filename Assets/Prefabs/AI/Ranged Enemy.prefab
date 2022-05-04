@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948baa08e2e12bd49877c816443f31c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currState: {fileID: 11400000, guid: 97e4cd86336074c4c80901b20110577e, type: 2}
+  currState: {fileID: 11400000, guid: 9b116e05eac115e45a85b0296afdd325, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
   enemyStats: {fileID: 11400000, guid: 7e980283d8b391248816469e190c21bf, type: 2}
   aSource: {fileID: 0}

@@ -17,11 +17,12 @@ public class AIAttackAction : AIAction
         if(fov.visibleTarget != null && fov.visibleTarget.CompareTag("Player")){
             if(controller.CheckIfCountdownElapse(controller.enemyStats.attackCD)){
                 //Stop Controller from Moving briefly for animations
+                //controller.navMeshAgent.isStopped = true;
                 if (controller.checkRange()){
                     controller.navMeshAgent.isStopped = true;
                     controller.StartCoroutine(attackingPause(fov.visibleTarget.gameObject, controller));
                     controller.stateTimeElapsed = -controller.enemyStats.attackCD;  //offset by how long im waiting to resume the attacking pause
-                }
+                } //else {controller.navMeshAgent.isStopped = false;}
             }
         }
     }

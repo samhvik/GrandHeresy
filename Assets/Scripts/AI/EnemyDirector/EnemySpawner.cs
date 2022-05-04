@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start(){  
         TimeElapsed = 0f;
-        maxSpawns   = 6;
+        maxSpawns   = 5;
         maxSpawnChecks = 10;
     }
     
@@ -31,25 +31,16 @@ public class EnemySpawner : MonoBehaviour
         if(spawnRate(GameValues.instance.objectivesCompleted)){
             // spawn enemies randomly within the distance
             int waveNum = numberToSpawn();
-            for(int i = 0; i < waveNum; i++){
-                // Random Point within a Circle; *25f is the Radius of the circle, 0 is our floor level
+            for(int i = 1; i <= waveNum; i++){ // start at 1 for ranged enemy spawning math
+                // get valid spawn points
                 var pos = getRandPoint();
-                // if waveNum % (maxSpawn//3) == 0){ // spawn Ranged Enemy
-                //      enemyCreator(RangedPrefab, CheckBound(pos), Quaternion.LookRotation(-pos))
-                // }
-                // enemyCreator(Prefab, CheckBound(pos), Quaternion.LookRotation(-pos))
                 var locale = CheckBounds(pos);
                 if(locale.hit == false){ continue; } // if it FAILED to find a valid location just skip
-
-                // Remove Below Later
-                GameObject nAI = Instantiate(hordeEnemyToSpawn, locale.position, Quaternion.LookRotation(-locale.position));
-                // Setup Newly Spawned AI
-                var newController = nAI.GetComponent<AIStateController>();
-                newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
-                // Setup Chase Target
-                Transform playerT = GrabAPlayer();               
-                newController.chaseTarget = playerT;
-                nAI.GetComponent<AIFOV>().visibleTarget = playerT; // This will be a random player
+                
+                if ((waveNum/2) % i == 0){ // spawn a Ranged Enemy, pseudo randomized amount based on minSpawns in numToSpawn()
+                    enemyCreator(RangedEnemyToSpawn, locale.position);
+                }
+                enemyCreator(hordeEnemyToSpawn, locale.position);
             }
             TimeElapsed = 0f; // reset timer upon exit of WaveSpawn
         }
@@ -57,25 +48,22 @@ public class EnemySpawner : MonoBehaviour
 
     // change the range of random to influence amount per group spawned
     private int numberToSpawn(){
-        return Random.Range(1, maxSpawns);
+        return Random.Range(2, maxSpawns);
     }
 
     private Vector3 getRandPoint(){
+        // option: ensure no spawning too close to players?
         var pos = new Vector3(Random.insideUnitSphere.x * 15f, 0, Random.insideUnitSphere.z * 15f);
         return pos += midpoint.position; 
     }
 
     // Check the boundaries of the position to spawn enemies
     private NavMeshHit CheckBounds(Vector3 p){
-        float dist = Vector3.Distance(CameraMidpoint.transform.position, this.transform.position);
-        //Vector3 spawnDist = Vector3.zero;
         int i = 0;
         NavMeshHit loc;
-        //if(dist < 5){ spawnDist = 5 * Vector3.one; }
-
         // check if valid location to spawn up to max checks
         do{
-            NavMesh.SamplePosition(p, out loc, 5.0f, 1);
+            NavMesh.SamplePosition(p, out loc, 6.0f, 1);
             i++;
         } while(i < maxSpawnChecks && !loc.hit);
         
