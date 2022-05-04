@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
                 if(locale.hit == false){ continue; } // if it FAILED to find a valid location just skip
 
                 // Remove Below Later
-                GameObject nAI = Instantiate(hordeEnemyToSpawn, locale.position, Quaternion.LookRotation(-pos));
+                GameObject nAI = Instantiate(hordeEnemyToSpawn, locale.position, Quaternion.LookRotation(-locale.position));
                 // Setup Newly Spawned AI
                 var newController = nAI.GetComponent<AIStateController>();
                 newController.SetupAI(true, new List<Transform>()); // don't need to pass a waypoint list for these spawned ones
