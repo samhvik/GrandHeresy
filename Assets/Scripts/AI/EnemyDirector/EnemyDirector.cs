@@ -62,10 +62,6 @@ public class EnemyDirector : MonoBehaviour
     public void moveDirector(){
         this.transform.position = CameraMidpoint.transform.position;
     }
-
-    // TODO
-    // Turn Combat OFF when Player Midpoint have reached X distance away from the start of combat
-              // -- This may need some tuning in terms of how we want combat to behave
 }
 
 /*
