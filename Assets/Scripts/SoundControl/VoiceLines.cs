@@ -71,10 +71,10 @@ public class VoiceLines : MonoBehaviour
 
             // Slowly Fades out Text
             Color alphaChanger = voiceList[i].GetComponent<TextMesh>().color;
-            alphaChanger.a -= 0.003f;
+            alphaChanger.a -= 0.002f;
             voiceList[i].GetComponent<TextMesh>().color = alphaChanger;
 
-            if(voiceList[i].transform.position.y >= -7f)
+            if(voiceList[i].transform.position.y >= -7.5f)
             {
                 Destroy(voiceList[i]);
                 voiceList.Remove(voiceList[i]);

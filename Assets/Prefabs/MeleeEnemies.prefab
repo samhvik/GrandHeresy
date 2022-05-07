@@ -663,14 +663,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currState: {fileID: 11400000, guid: 44d00d8ecf05ede48af1287162d1a8e5, type: 2}
-  enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
   remainState: {fileID: 11400000, guid: 8427704730574c54e889c1447ecc4001, type: 2}
+  enemyStats: {fileID: 11400000, guid: f77801250ac9a9543a0f14207a171ced, type: 2}
+  aSource: {fileID: 0}
+  enemySounds: []
   navMeshAgent: {fileID: 0}
   wayPointList: []
   nextWayPoint: 0
   chaseTarget: {fileID: 0}
   lastKnownLocation: {x: 0, y: 0, z: 0}
   stateTimeElapsed: 0
+  enemySpawn:
+  - {fileID: 5972687589519913122, guid: a66e63a794288bd4a8840650f6ed7c67, type: 3}
+  - {fileID: 7229195791440251472, guid: 34300163b52e0f64db07d58f5d8f6d36, type: 3}
+  - {fileID: 7776458811269401123, guid: b4f96bcb65e1b08479ebe22f61c99d8d, type: 3}
+  - {fileID: 7027180071321386020, guid: 4c20d6588da3e844b9d54bd2bf8e5dea, type: 3}
+  - {fileID: 6709497803969559250, guid: 1b64da0c7965d0143a9a92ab98cbc393, type: 3}
 --- !u!195 &5283302981514193600
 NavMeshAgent:
   m_ObjectHideFlags: 0
