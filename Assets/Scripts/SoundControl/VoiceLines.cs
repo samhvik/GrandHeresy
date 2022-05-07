@@ -67,11 +67,11 @@ public class VoiceLines : MonoBehaviour
         // Moves Text Upwards and Eventually Deletes
         for(int i = 0; i < voiceList.Count; i++)
         {
-            voiceList[i].transform.position = new Vector3(this.transform.position.x, voiceList[i].transform.position.y + 0.1f, this.transform.position.z);
+            voiceList[i].transform.position = new Vector3(this.transform.position.x, voiceList[i].transform.position.y + 0.01f, this.transform.position.z);
 
             // Slowly Fades out Text
             Color alphaChanger = voiceList[i].GetComponent<TextMesh>().color;
-            alphaChanger.a -= 0.04f;
+            alphaChanger.a -= 0.003f;
             voiceList[i].GetComponent<TextMesh>().color = alphaChanger;
 
             if(voiceList[i].transform.position.y >= -7f)
