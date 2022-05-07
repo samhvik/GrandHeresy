@@ -81,24 +81,30 @@ public class MovementSM : StateMachine
     // OnAim rotates our player to aim with the right joystick
     public void OnAim(InputAction.CallbackContext context)
     {
+
+        //Debug.Log(context.control.device);
+
         if (GameValues.instance.whatGamepad[this.input.playerIndex] == "controller")
         {
             aimInput = context.ReadValue<Vector2>();
         }
-        else
+
+        else if (GameValues.instance.whatGamepad[this.input.playerIndex] == "keyboard")
         {
             // Aiming if RMB is held down
-            //if (context.ReadValue<float>() > 0.1f)
-            if (context.performed)
+            // if (context.ReadValue<float>() > 0.1f){
+            if (context.started)
             {
                 isAiming = true;
+                aimInput = context.ReadValue<Vector2>();
             }
-            else
+
+            if (context.canceled)
             {
                 isAiming = false;
             }
-
-            aimInput = context.ReadValue<Vector2>();
+            //}
+            
         }
 
         //aimInput = context.ReadValue<Vector2>();

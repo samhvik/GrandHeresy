@@ -55,7 +55,7 @@ public class StrafeAim : Moving
             }
         }
         // If a Keyboard is being used, aim with this method  
-        else
+        else if(GameValues.instance.whatGamepad[sm.input.playerIndex] == "keyboard")
         {
             // R_horizontalInput = sm.right_horizontal;
             // R_verticalInput = sm.right_vertical;

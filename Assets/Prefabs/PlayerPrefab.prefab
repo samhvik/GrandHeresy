@@ -565,9 +565,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/SwapWeapons[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 849709334750888097}
-        m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
-        m_MethodName: OnAim
+      - m_Target: {fileID: 2493648352027477128}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetGamepad
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -577,9 +577,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2493648352027477128}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: SetGamepad
+      - m_Target: {fileID: 849709334750888097}
+        m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
+        m_MethodName: OnAim
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
