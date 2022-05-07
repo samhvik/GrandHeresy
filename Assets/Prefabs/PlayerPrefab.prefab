@@ -842,6 +842,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 74544baee0de38043bec5b0b063a2701, type: 3}
   tauntStress:
   - {fileID: 8300000, guid: 211c6c87555e06f49bb5a92dfa745dcc, type: 3}
+  voiceText: {fileID: 5827193815183001825, guid: b39c259f589560547920281682fe758e, type: 3}
 --- !u!82 &7802562146992813176
 AudioSource:
   m_ObjectHideFlags: 0

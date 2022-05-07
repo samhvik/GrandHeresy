@@ -42,6 +42,11 @@ public class VoiceLines : MonoBehaviour
 
     private float cooldown = 0f;
 
+    // Holds the Prefab for Voice Text
+    public GameObject voiceText;
+    // Holds A List of Voice Text's
+    private List<GameObject> voiceList = new List<GameObject>();
+
     void Awake(){
         /*controls = new PlayerControls();
         controls.Gameplay.ProceedOrder.performed += ctx => ProceedOrder();
@@ -58,6 +63,23 @@ public class VoiceLines : MonoBehaviour
 
         if(cooldown < 0)
             cooldown = 0;
+
+        // Moves Text Upwards and Eventually Deletes
+        for(int i = 0; i < voiceList.Count; i++)
+        {
+            voiceList[i].transform.position = new Vector3(this.transform.position.x, voiceList[i].transform.position.y + 0.1f, this.transform.position.z);
+
+            // Slowly Fades out Text
+            Color alphaChanger = voiceList[i].GetComponent<TextMesh>().color;
+            alphaChanger.a -= 0.04f;
+            voiceList[i].GetComponent<TextMesh>().color = alphaChanger;
+
+            if(voiceList[i].transform.position.y >= -7f)
+            {
+                Destroy(voiceList[i]);
+                voiceList.Remove(voiceList[i]);
+            }
+        }
     }
 
     void Start()
@@ -118,6 +140,11 @@ public class VoiceLines : MonoBehaviour
         //source.PlayOneShot(source.clip);
         PlayLine();
         Debug.Log("ProceedOrder");
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Move Move Move!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void RetreatOrder(){
@@ -133,6 +160,11 @@ public class VoiceLines : MonoBehaviour
         //source.PlayOneShot(source.clip);
         PlayLine();
         Debug.Log("RetreatOrder");
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Fall Back!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void RequestHelp(){
@@ -147,6 +179,11 @@ public class VoiceLines : MonoBehaviour
         RandomizeSound();        //source.PlayOneShot(source.clip);
         PlayLine();
         Debug.Log("RequestAssistance");
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Need Help!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void BattleCry(){
@@ -162,6 +199,11 @@ public class VoiceLines : MonoBehaviour
         //source.PlayOneShot(source.clip);
         PlayLine();
         Debug.Log("BattleCry");
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Lets Die Trying!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void RecieveDamage(){
@@ -178,6 +220,11 @@ public class VoiceLines : MonoBehaviour
         }
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Damn It!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void FriendlyFire(){
@@ -191,6 +238,11 @@ public class VoiceLines : MonoBehaviour
         }
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Watch your Fire!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
     public void Reload(){
         if(CooldownCheck())
@@ -206,6 +258,11 @@ public class VoiceLines : MonoBehaviour
         }
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Reloading!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void Deployment(){
@@ -219,6 +276,11 @@ public class VoiceLines : MonoBehaviour
         
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "What a Hell Hole...!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void ObjectiveComplete(){
@@ -235,6 +297,11 @@ public class VoiceLines : MonoBehaviour
         }
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Completed!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
     }
 
     public void Taunt(){
@@ -251,5 +318,32 @@ public class VoiceLines : MonoBehaviour
         }
         RandomizeSound();
         PlayLine();
+
+        chooseVoiceTextColor();
+        voiceText.GetComponent<TextMesh>().text = "Hell Scum!";
+        GameObject toInsert = Instantiate(voiceText, new Vector3(this.transform.position.x, this.transform.position.y + 7f, this.transform.position.z), Quaternion.Euler(30f, 0f, 0f));
+        voiceList.Add(toInsert);
+    }
+
+    // Choose the Color of the Player
+    public void chooseVoiceTextColor()
+    {
+        // Setting Color of Voicelines based on Players Color
+        if (this.GetComponent<PlayerInputHandler>().getPlayerIndex() == 0)
+        {
+            voiceText.GetComponent<TextMesh>().color = Color.red;
+        }
+        else if (this.GetComponent<PlayerInputHandler>().getPlayerIndex() == 1)
+        {
+            voiceText.GetComponent<TextMesh>().color = Color.green;
+        }
+        else if (this.GetComponent<PlayerInputHandler>().getPlayerIndex() == 2)
+        {
+            voiceText.GetComponent<TextMesh>().color = Color.blue;
+        }
+        else if (this.GetComponent<PlayerInputHandler>().getPlayerIndex() == 3)
+        {
+            voiceText.GetComponent<TextMesh>().color = Color.yellow;
+        }
     }
 }
