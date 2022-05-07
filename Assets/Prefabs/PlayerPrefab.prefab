@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 849709334750888124}
   - component: {fileID: 849709334750888125}
   - component: {fileID: 849709334750888121}
-  - component: {fileID: 849709334750888099}
   - component: {fileID: 2493648352027477128}
   - component: {fileID: 849709334750888103}
   - component: {fileID: 5899519913269160901}
@@ -327,54 +326,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &849709334750888099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 6173311423881550593}
-  - {fileID: 7568982787456035213}
-  - {fileID: 1707439828505757824}
-  - {fileID: 141422210295513846}
-  - {fileID: 3705335880198238675}
-  - {fileID: 8127553130922565217}
-  - {fileID: 6587664394146343687}
-  - {fileID: 6213571176355073795}
-  - {fileID: 5508862789913562911}
-  - {fileID: 6150382783353545613}
-  - {fileID: 8660152562683444020}
-  - {fileID: 7566710955454108044}
-  - {fileID: 5645925356920648319}
-  - {fileID: 7744515004176002951}
-  - {fileID: 8206300019180142607}
-  - {fileID: 5948273936258626055}
-  - {fileID: 6919910774148323555}
-  - {fileID: 7974798455617434759}
-  - {fileID: 7713161762633186091}
-  - {fileID: 8000821504398767917}
-  - {fileID: 8828375899873617593}
-  - {fileID: 4851419931837653380}
-  - {fileID: 712635433358162015}
-  - {fileID: 2445038870957190196}
-  - {fileID: 224375529453811009}
-  - {fileID: 5873181495836981950}
-  - {fileID: 7868049150465191254}
-  - {fileID: 5359766831262014457}
-  - {fileID: 7039131943648474184}
 --- !u!114 &2493648352027477128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,9 +565,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/SwapWeapons[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 849709334750888097}
-        m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
-        m_MethodName: OnAim
+      - m_Target: {fileID: 2493648352027477128}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetGamepad
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -626,9 +577,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2493648352027477128}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: SetGamepad
+      - m_Target: {fileID: 849709334750888097}
+        m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
+        m_MethodName: OnAim
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

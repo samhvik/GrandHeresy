@@ -211,11 +211,6 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: ComplexPlayerMesh
-      parentName: ComplexCharacter(Clone)
-      position: {x: 0.09616679, y: 13.278822, z: 0.22638988}
-      rotation: {x: 0.0012632499, y: 0.0029157202, z: -0.005573318, w: 0.99997944}
-      scale: {x: 112.66849, y: 112.6685, z: 112.6685}
     - name: Armature
       parentName: ComplexCharacter(Clone)
       position: {x: -0, y: 0, z: 0}
@@ -243,7 +238,7 @@ ModelImporter:
       scale: {x: 0.9999999, y: 0.99996835, z: 1.0000315}
     - name: rootBone
       parentName: Armature
-      position: {x: -0.000012251138, y: 0.0002546352, z: 0.00024175755}
+      position: {x: -0.000012251138, y: 0.0003, z: -0.0044}
       rotation: {x: 1, y: 6.064802e-10, z: 0.00000007421425, w: 0.000000059604645}
       scale: {x: 1, y: 0.9999999, z: 0.9999999}
     - name: IK.L
@@ -299,7 +294,7 @@ ModelImporter:
     - name: Hand.L
       parentName: LowerArm.L
       position: {x: 0.0000000014838588, y: 0.0199466, z: -0.0000000019930302}
-      rotation: {x: -0.058361184, y: -0.00031952932, z: -0.0005641106, w: 0.9982953}
+      rotation: {x: -0.058361188, y: -0.00031952932, z: -0.00056411064, w: 0.9982953}
       scale: {x: 1.0000006, y: 1.0000005, z: 0.9999998}
     - name: Hand.L_end
       parentName: Hand.L
@@ -319,7 +314,7 @@ ModelImporter:
     - name: Hand.R
       parentName: LowerArm.R
       position: {x: -0.0000000014838588, y: 0.0199466, z: -0.0000000019930302}
-      rotation: {x: -0.05836111, y: 0.00031952886, z: 0.00056411856, w: 0.9982953}
+      rotation: {x: -0.058361113, y: 0.00031952886, z: 0.0005641186, w: 0.9982953}
       scale: {x: 1.0000001, y: 1.0000005, z: 0.9999999}
     - name: Hand.R_end
       parentName: Hand.R
@@ -366,6 +361,11 @@ ModelImporter:
       position: {x: -0, y: 0.014460662, z: 0}
       rotation: {x: 0.015712198, y: -0.5625003, z: -0.8265887, w: -0.009881}
       scale: {x: 0.99999976, y: 0.99999315, z: 1.000007}
+    - name: ComplexPlayerMesh
+      parentName: ComplexCharacter(Clone)
+      position: {x: 0.09616679, y: 9.97, z: 0.22638988}
+      rotation: {x: 0.0012632499, y: 0.0029157202, z: -0.005573318, w: 0.99997944}
+      scale: {x: 112.66849, y: 112.6685, z: 112.6685}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

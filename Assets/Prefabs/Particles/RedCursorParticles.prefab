@@ -4826,4 +4826,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainCollider: {fileID: 0}
-  cursorDistance: 45
+  cursorDistance: 2

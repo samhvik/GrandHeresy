@@ -82,7 +82,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Sets up if the player is using a controller or a keyboard and mouse.
     public void SetGamepad(InputAction.CallbackContext context)
     {
-        bool isKeyboard = context.control.device is Keyboard;
+        bool isKeyboard = context.control.device is Mouse;
         bool isGamepad = context.control.device is Gamepad;
         
         if(isKeyboard)
