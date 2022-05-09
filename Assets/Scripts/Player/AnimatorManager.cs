@@ -102,6 +102,10 @@ public class AnimatorManager : MonoBehaviour
         else if(animator.GetBool("HasPistol") == true) animator.SetBool("HasPistol", false);
     }
 
+    public void HandlePistolState(bool condition){
+        animator.SetBool("HasPistol", condition);
+    }
+
     public void TriggerInteract(){
         animator.SetTrigger("Interact");
     }
