@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 13
   attackRange: 4
-  lookRadius: 80
+  lookRadius: 100
   lookAngle: 35
   searchTurnSpeed: 240
   searchDuration: 1
   damage: 10
   attackCD: 1
+  specialCD: 0

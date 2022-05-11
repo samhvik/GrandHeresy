@@ -31,7 +31,7 @@ public class AIStateController : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         aSource = GetComponent<AudioSource>();
 
-        // Playing our Partilce System
+        // Playing our Particle System
         for (int i = 0; i < 5; i++)
         {
             Instantiate(enemySpawn[i], new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
