@@ -39,17 +39,19 @@ public class AISpecialAttack: AIAction
     }
 
     IEnumerator attackingPause(Vector3 locale, AIStateController c){
-        Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 2); // destroy after cast
+        Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 1.75f); // destroy after cast
+        c.GetComponent<Animator>().enabled = false; // Replace with cast animation transition
         yield return new WaitForSeconds(1.5f); // Cast time
-        //Debug.Log("Attack Animation Here && Draw Circle on Ground");
+        // play Hit Sound
         //c.aSource.clip = c.enemySounds[Random.Range(0, c.enemySounds.Length-1)];
         //c.aSource.Play();
         // only hit players and update health
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
         //Debug.Log(hits);
         foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); }
-
+        
         yield return new WaitForSeconds(0.25f); // following a target CD time
+        c.GetComponent<Animator>().enabled = true; // restart walk animation cycle
         c.navMeshAgent.isStopped = false; // let the AI walk again
     }
 }
