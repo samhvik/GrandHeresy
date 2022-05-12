@@ -22,8 +22,9 @@ public class MovementSM : StateMachine
     [Header("Found on Awake")]
     public PlayerControls controls;
     public AnimatorManager animatorManager;
-    public Rig rigLayer_HandIK;
     public PlayerInputHandler input;
+    public CharacterController characterController;
+    public Rigidbody rb;
 
     [Header("Player Movement")]
     public float left_horizontal;
@@ -35,15 +36,25 @@ public class MovementSM : StateMachine
     private Vector2 right;
     private Vector2 movementInput = Vector2.zero;
     private Vector2 aimInput = Vector2.zero;
+    public bool isAiming = false;
 
-
-    [Header("Player Tweaking")]
+    [Header("Dodge Tweaking")]
     [SerializeField] [Range(200f, 900f)]
     public float lookSpeed = 250f;
-    [SerializeField] [Range(50f, 300f)]
-    public float dodgeSlideSpeed = 250f;
-    [SerializeField] [Range(1f, 20f)]
-    public float dodgeSlideFalloff = 10f;
+    [SerializeField] [Range(50f, 900f)]
+    public float runningLookSpeed = 250f;
+    public float dashSpeed;
+    public float dashTime;
+    public float endDashTime;
+    public float endDashSpeed;
+    public float dodgeCoolDown = 1f;
+    private float nextDodgeTime = 0;
+
+    // [SerializeField] [Range(50f, 300f)]
+    // public float dodgeSlideSpeed = 250f;
+    // [SerializeField] [Range(1f, 20f)]
+    // public float dodgeSlideFalloff = 10f;
+    [SerializeField] public AnimationCurve dodgeCurve;
 
 
     private void Awake(){
@@ -55,6 +66,8 @@ public class MovementSM : StateMachine
         dodgeState = new Dodge(this);
 
         input = this.gameObject.GetComponent<PlayerInputHandler>();
+        rb = this.gameObject.GetComponent<Rigidbody>();
+        characterController = this.gameObject.GetComponent<CharacterController>();
 
         initValue();
     }
@@ -68,19 +81,57 @@ public class MovementSM : StateMachine
     // OnAim rotates our player to aim with the right joystick
     public void OnAim(InputAction.CallbackContext context)
     {
-        aimInput = context.ReadValue<Vector2>();
+
+        //Debug.Log(context.control.device);
+
+        if (GameValues.instance.whatGamepad[this.input.playerIndex] == "controller")
+        {
+            aimInput = context.ReadValue<Vector2>();
+        }
+
+        else if (GameValues.instance.whatGamepad[this.input.playerIndex] == "keyboard")
+        {
+            // Aiming if RMB is held down
+            // if (context.ReadValue<float>() > 0.1f){
+            if (context.started)
+            {
+                isAiming = true;
+                aimInput = context.ReadValue<Vector2>();
+            }
+
+            if (context.canceled)
+            {
+                isAiming = false;
+            }
+            //}
+            
+        }
+
+        //aimInput = context.ReadValue<Vector2>();
     }
 
     // OnRun will make our player run
     public void OnRun(InputAction.CallbackContext context)
     {
-        ChangeState(runningState);
+        if(GetCurrentState() != "Dodge"){
+            animatorManager.HandleKeyboardAimState(false);
+            ChangeState(runningState);
+        }
     }
 
     // OnDodge will make our player Dodge
     public void OnDodge(InputAction.CallbackContext context)
     {
-        ChangeState(dodgeState);
+        if (context.performed)
+        {
+            if(Time.fixedTime > nextDodgeTime)
+            {
+                if(GetCurrentState() != "Idle" && GetCurrentState() != "Dodge") {
+                    ChangeState(dodgeState);
+                    nextDodgeTime = Time.fixedTime + dodgeCoolDown;
+                }
+            }
+        }
     }
 
     protected override BaseState GetInitialState(){
@@ -96,10 +147,6 @@ public class MovementSM : StateMachine
     void FixedUpdate(){
         GetInput();
         animatorManager.HandleAnimatorValues(left_horizontal, left_vertical, right_horizontal, right_vertical, false);
-        // if(controls.Gameplay.Dodge.triggered) {
-        //     Debug.Log("DodgeRolling Anim....");
-        //     animatorManager.HandleDodgeRollState(true);
-        // }
     }
 
     private void GetInput(){

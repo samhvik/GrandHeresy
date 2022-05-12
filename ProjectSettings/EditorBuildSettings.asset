@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 674f8cfdb8558142a99c065678de4adf
+  - enabled: 1
+    path: Assets/Scenes/Justin's Recap.unity
+    guid: a6b4164d5a5d14b4391057e62b6e55f6
   m_configObjects: {}

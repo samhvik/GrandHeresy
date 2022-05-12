@@ -8,6 +8,7 @@
     Methods listed are called upon the PlayerController.cs script.
 */
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Gun : MonoBehaviour{
@@ -26,7 +27,8 @@ public class Gun : MonoBehaviour{
     [Range(0f, 1f)] public float shakeMagnitude;                            // Hypotenuse of camera shake
     [Range(0.01f, 0.15f)] public float shakeSharpness;                      // How quickly the camera lerps during the shake
 
-    [Header("Properties")]
+    [Header("Properties")] 
+    private PlayerInventory playerInventory;
     [SerializeField] [Range(1f, 2000f)] private float firerate;             // How fast the gun shoots in rounds per minute
     [SerializeField] [Range(0f, 45f)] private float accuracy;               // The spawn angle of the round shot
     [SerializeField] private int roundsPerShot;                             // How many rounds are shot in one fire instance
@@ -76,9 +78,19 @@ public class Gun : MonoBehaviour{
                         remainingRounds = magSize + 1;
                     shootState = ShootState.Ready;
                 }
+
+                // Not the best way. Just a fix for now while we get reloading sounds in
+                FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                e_instance.getPlaybackState(out fmodPbState);
+                if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+
+
                 break;
             default:
-                FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                //FMOD.Studio.PLAYBACK_STATE fmodPbState;
                 e_instance.getPlaybackState(out fmodPbState);
                 if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
@@ -88,6 +100,13 @@ public class Gun : MonoBehaviour{
         }
     }
 
+    public void setInventory(PlayerInventory playerInventory) {
+        this.playerInventory = playerInventory;
+    }
+
+    public PlayerInventory getInventory() {
+        return playerInventory;
+    }
     public void Fire(){
         // Check if gun is ready to fire
         if(shootState == ShootState.Ready && remainingRounds > 0){
@@ -98,6 +117,8 @@ public class Gun : MonoBehaviour{
                     transform.position + transform.forward * muzzleOffset,
                     transform.rotation
                 );
+                
+                bullet.GetComponent<Round>().updateInventory(playerInventory);
 
                 // Apply accuracy value
                 bullet.transform.Rotate(new Vector3(
@@ -165,6 +186,12 @@ public class Gun : MonoBehaviour{
     public string Name{
         get{
             return gunName;
+        }
+    }
+
+    public float reloadingTime{
+        get{
+            return reloadTime;
         }
     }
 

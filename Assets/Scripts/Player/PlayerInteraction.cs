@@ -11,10 +11,12 @@ public class PlayerInteraction : MonoBehaviour {
     private PlayerControls controls;
     private static Collider[] interactables;
     private PlayerInventory playerInventory;
+    private AnimatorManager animManager;
 
     private void Start() {
         interactables = new Collider[maxInteractables];
         playerInventory = GetComponent<PlayerInventory>();
+        animManager = this.GetComponent<AnimatorManager>();
     }
 
     private void Awake() {
@@ -44,7 +46,9 @@ public class PlayerInteraction : MonoBehaviour {
                      interactable.CompareTag("ObjectiveSpawnNW") ||
                      interactable.CompareTag("ObjectiveSpawnSE") ||
                      interactable.CompareTag("ObjectiveSpawnSW") ||
-                     interactable.CompareTag("Drop")) {
+                     interactable.CompareTag("Beacon") ||
+                     interactable.CompareTag("Drop") ||
+                     interactable.CompareTag("Upload")){
                 var interactableDist = Vector3.Distance(interactable.transform.position, transform.position);
                 if (minDist > interactableDist) {
                     minDist = interactableDist;
@@ -62,6 +66,16 @@ public class PlayerInteraction : MonoBehaviour {
                 // run gear script
                 playerInventory.OnPickupWeapon(toInteract);
                 //Destroy(toInteract.gameObject);
+                break;
+            case "Beacon":
+                animManager.TriggerInteract();
+                if(GameValues.instance.extractionOpen){
+                    GameValues.instance.extractionStarted = true;
+                }
+                break;
+             // This is Temporary for Upload Data Script
+            case "Upload":
+                toInteract.gameObject.GetComponent<UploadObjective>().StartUpload();
                 break;
             case "ObjectiveSpawn":
             case "ObjectiveSpawnNE":

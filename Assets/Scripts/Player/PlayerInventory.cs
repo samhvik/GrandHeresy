@@ -11,10 +11,12 @@ public class PlayerInventory : MonoBehaviour {
     public int inventorySize;
     public Gun starterGun;
     public GameObject gunPosition;
+    public float health = 100.0f;
     
     private List<Gun> guns = new List<Gun>();
     private PlayerShooting shooter;
     private int head = 0;
+    private int kills = 0;
     
     PlayerControls controls;
     
@@ -22,6 +24,7 @@ public class PlayerInventory : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         var gun = Instantiate(starterGun,gunPosition.transform);
+        gun.setInventory(this);
         gun.tag = "Gear";
         guns.Add(gun);
         
@@ -50,12 +53,23 @@ public class PlayerInventory : MonoBehaviour {
         drop.transform.parent = gunPosition.transform;
         drop.transform.position = gunPosition.transform.position; 
         drop.transform.forward = gunPosition.transform.forward; 
-        drop.gameObject.SetActive(false); 
-        guns.Add(drop.gameObject.GetComponent<Gun>());
+        drop.gameObject.SetActive(false);
+        var gun = drop.gameObject.GetComponent<Gun>();
+        gun.setInventory(this);
+        guns.Add(gun);
     }
 
     public int getHead() {
         return head;
+    }
+
+
+    public int getKills() {
+        return kills;
+    }
+
+    public void addKills() {
+        kills++;
     }
 
     public int incrementHead() {
@@ -72,5 +86,10 @@ public class PlayerInventory : MonoBehaviour {
 
     public Gun getGunAtIndex(int index) {
         return guns[index];
+    }
+
+    // update health 
+    public void UpdateHealth(int damage){
+        health -= damage;
     }
 }

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4256962516c7a4da473e1a928829fd, type: 3}
   m_Name: Ranged Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6
   attackRange: 15
-  lookRadius: 80
-  lookAngle: 15
-  searchTurnSpeed: 240
+  lookRadius: 90
+  lookAngle: 40
+  searchTurnSpeed: 280
   searchDuration: 4
-  damage: 50
-  attackCD: 2
+  damage: 25
+  attackCD: 1
+  specialCD: 2

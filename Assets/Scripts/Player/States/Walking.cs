@@ -16,6 +16,7 @@ public class Walking : Moving
         L_verticalInput = sm.left_vertical;
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+        sm.animatorManager.HandleKeyboardAimState(false);
     }
 
     public override void UpdateLogic()
@@ -47,7 +48,8 @@ public class Walking : Moving
         }
 
         // If you aim while walking, switch to strafe state
-        if(R_horizontalInput != 0 || R_verticalInput != 0){
+        if (R_horizontalInput != 0 || R_verticalInput != 0 || sm.isAiming == true)
+        {
             stateMachine.ChangeState(sm.strafeAimState);
         }
     }

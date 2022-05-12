@@ -5,6 +5,7 @@
     References the source gun to access ballistics info.
 */
 
+using System;
 using UnityEngine;
 
 public class Round : MonoBehaviour
@@ -14,6 +15,7 @@ public class Round : MonoBehaviour
     public float despawnTime = 1.5f;        // travel time in seconds before despawning
     private float counter = 0f;
     public bool overPenetrate = false;      // determines if bullet will go through targets
+    private PlayerInventory inventory;
 
     void Update(){
         counter += Time.deltaTime;
@@ -21,27 +23,44 @@ public class Round : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    void OnTriggerEnter(Collider other){
+    public void updateInventory(PlayerInventory inventory) {
+        this.inventory = inventory;
+    }
+
+    void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Target"){
+            var target = other.gameObject.GetComponent<Target>();
             GameObject gust = Instantiate(
                     blood,
                     transform.position,
                     transform.rotation
-                );
+            );
 
-            other.gameObject.GetComponent<Target>().Hit(damage);
+            target.Hit(damage);
+            if (target.health <= 0) {
+                inventory.addKills();
+                Debug.Log("Kills: " + inventory.getKills());
+            }
 
             // Destroy this round if not overpenetratable 
             if(!overPenetrate)
                 Destroy(this.gameObject);
+            
+        }else if(other.gameObject.tag == "Player"){
+            other.gameObject.GetComponent<PlayerDamage>().FriendlyFire(this.damage);
+
+            var target = other.gameObject.GetComponent<Target>();
+            GameObject gust = Instantiate(
+                    blood,
+                    transform.position,
+                    transform.rotation
+            );
         }
         
         if(other.gameObject.tag == "Rune"){
             other.gameObject.GetComponent<RuneObjective>().Hit(damage);
 
-            // Destroy this round if not overpenetratable 
-            if(!overPenetrate)
-                Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

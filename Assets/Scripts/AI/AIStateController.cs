@@ -6,8 +6,10 @@ using UnityEngine.AI;
 public class AIStateController : MonoBehaviour
 {
     public AIStates currState;
-    public EnemyStats enemyStats; // Enemy Base Class create this next time
     public AIStates remainState;
+    public EnemyStats enemyStats; // Enemy Base Class create this next time
+    public AudioSource aSource;
+    public AudioClip[] enemySounds;
 
     // hidden inspector public variables for accessing
     // we dont wanna touch these in the editor
@@ -20,9 +22,20 @@ public class AIStateController : MonoBehaviour
 
     private bool active;
 
+
+    // Holds the Enemy Spawning Particles
+    public ParticleSystem[] enemySpawn = new ParticleSystem[5];
+
     void Awake(){
         // get ai components
         navMeshAgent = GetComponent<NavMeshAgent>();
+        aSource = GetComponent<AudioSource>();
+
+        // Playing our Particle System
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(enemySpawn[i], new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
+        }
     }
 
     void Update() {

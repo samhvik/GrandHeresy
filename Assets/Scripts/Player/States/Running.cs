@@ -16,6 +16,7 @@ public class Running : Moving
         L_verticalInput = sm.left_vertical;
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+        sm.animatorManager.HandleKeyboardAimState(false);
     }
 
     public override void UpdateLogic()
@@ -25,6 +26,8 @@ public class Running : Moving
         L_verticalInput = sm.left_vertical;
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+
+        sm.animatorManager.HandleAnimatorValues(L_horizontalInput, L_verticalInput, R_horizontalInput, R_verticalInput, true);
 
         // Move the character depending on stick direction
         sm.GetComponent<CharacterController>().SimpleMove(new Vector3(
@@ -40,7 +43,7 @@ public class Running : Moving
         sm.transform.Translate(sm.faceDirection * Time.deltaTime, Space.World);
         if(sm.faceDirection != Vector3.zero){
             Quaternion toRotation = Quaternion.LookRotation(sm.faceDirection, Vector3.up);
-            sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, toRotation, sm.lookSpeed * Time.deltaTime);
+            sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, toRotation, sm.runningLookSpeed * Time.deltaTime);
         }
 
         // If left stick magnitude reaches a certain threshold, switch to walk state
@@ -50,7 +53,8 @@ public class Running : Moving
         }
 
         // If right stick is moved, switch to strafe aim state
-        if(R_horizontalInput != 0 || R_verticalInput != 0){
+        if (R_horizontalInput != 0 || R_verticalInput != 0 || sm.isAiming == true)
+        {
             stateMachine.ChangeState(sm.strafeAimState);
         }
     }

@@ -8,7 +8,7 @@ public class PlayerSounds : MonoBehaviour
     private FMODUnity.StudioEventEmitter walkEmitter;
 
     // step info
-    public float m_StepDistance = 5.0f;
+    public float m_StepDistance = 3.5f;
     float m_DistanceTravelled;
     float m_StepRand;
     Vector3 m_PrevPos;
@@ -29,7 +29,7 @@ public class PlayerSounds : MonoBehaviour
         if (m_DistanceTravelled >= m_StepDistance + m_StepRand)
         {
             PlayFootstepSound();
-            m_StepRand = Random.Range(0.0f, 3.5f);      //Adding subtle random variation to the distance required before a step is taken - Re-randomise after each step.
+            m_StepRand = Random.Range(0.0f, 4.0f);      //Adding subtle random variation to the distance required before a step is taken - Re-randomise after each step.
             m_DistanceTravelled = 0.0f;
         }
         m_PrevPos = transform.position;

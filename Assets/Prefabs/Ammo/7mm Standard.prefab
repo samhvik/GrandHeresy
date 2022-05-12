@@ -45,7 +45,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.7643255, b: 0.21226418, a: 1}
-  m_Intensity: 100
+  m_Intensity: 10
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 769021483296282322}
   m_Layer: 0
   m_Name: 7mm Standard
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

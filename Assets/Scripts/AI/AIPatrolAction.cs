@@ -15,6 +15,7 @@ public class AIPatrolAction : AIAction
     {
         controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
+        controller.navMeshAgent.speed     = controller.enemyStats.moveSpeed/2;
         //Debug.Log("I should be patrolling...");
         if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending) 
         {
