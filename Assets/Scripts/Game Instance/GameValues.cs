@@ -62,10 +62,10 @@ public class GameValues : MonoBehaviour{
     public bool allPlayersInExtractionRange = false;
     public float extractionTimer;
     void Start(){
-        playerHealth = 100.0f;
+        playerHealth = 150.0f;
         playerSpeedWalk = 10.0f;
         playerSpeedAim = 7.0f;
-        playerSpeedRun = 16.0f;
+        playerSpeedRun = 17.5f;
 
         // Initializing player variables
         for(int i = 0; i < 4; i++)

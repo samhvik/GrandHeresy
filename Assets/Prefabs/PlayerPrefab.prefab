@@ -461,7 +461,7 @@ MonoBehaviour:
   inventorySize: 5
   starterGun: {fileID: 5066759550108367686, guid: d35214f1bc5bce74a9344b5ce0ecb3db, type: 3}
   gunPosition: {fileID: 8057053086923493147}
-  health: 100
+  health: 150
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
