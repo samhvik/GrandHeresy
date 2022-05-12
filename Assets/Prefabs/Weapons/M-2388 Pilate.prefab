@@ -121,9 +121,9 @@ MonoBehaviour:
   muzzleOffset: 2
   singleFire: 0
   round: {fileID: 4588328945193526212, guid: d5ca7e903ce475a40b4a20586fa96b15, type: 3}
-  magSize: 25
+  magSize: 20
   remainingRounds: 0
-  reloadTime: 1.2
+  reloadTime: 1.3
   reloadTimeEmpty: 1.6
   shootState: 0
 --- !u!82 &4532611741402156278
