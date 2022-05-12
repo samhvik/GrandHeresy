@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerInventory : MonoBehaviour {
     public int inventorySize;
     public Gun starterGun;
+    public Transform gunHandle;
     public GameObject gunPosition;
     public float health = 100.0f;
     
@@ -23,7 +24,11 @@ public class PlayerInventory : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        var gun = Instantiate(starterGun,gunPosition.transform);
+        //gunHandle = starterGun.gameObject.transform.GetChild(0);
+        var gun = Instantiate(starterGun, gunPosition.transform);
+
+        //gun.transform
+
         gun.setInventory(this);
         gun.tag = "Gear";
         guns.Add(gun);

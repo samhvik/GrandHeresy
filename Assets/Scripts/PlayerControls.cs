@@ -134,6 +134,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TriggerPistol"",
+                    ""type"": ""Button"",
+                    ""id"": ""a75e9e6b-b658-4c25-b490-39a9466f37e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -576,6 +585,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""BattleCry"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c2604a5-6d70-42a6-964c-2c7fccbf3cec"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""TriggerPistol"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1009,6 +1029,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_RetreatOrder = m_Gameplay.FindAction("RetreatOrder", throwIfNotFound: true);
         m_Gameplay_RequestHelp = m_Gameplay.FindAction("RequestHelp", throwIfNotFound: true);
         m_Gameplay_BattleCry = m_Gameplay.FindAction("BattleCry", throwIfNotFound: true);
+        m_Gameplay_TriggerPistol = m_Gameplay.FindAction("TriggerPistol", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
@@ -1086,6 +1107,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_RetreatOrder;
     private readonly InputAction m_Gameplay_RequestHelp;
     private readonly InputAction m_Gameplay_BattleCry;
+    private readonly InputAction m_Gameplay_TriggerPistol;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -1102,6 +1124,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @RetreatOrder => m_Wrapper.m_Gameplay_RetreatOrder;
         public InputAction @RequestHelp => m_Wrapper.m_Gameplay_RequestHelp;
         public InputAction @BattleCry => m_Wrapper.m_Gameplay_BattleCry;
+        public InputAction @TriggerPistol => m_Wrapper.m_Gameplay_TriggerPistol;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1147,6 +1170,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @BattleCry.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
                 @BattleCry.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
                 @BattleCry.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBattleCry;
+                @TriggerPistol.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerPistol;
+                @TriggerPistol.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerPistol;
+                @TriggerPistol.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTriggerPistol;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -1187,6 +1213,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @BattleCry.started += instance.OnBattleCry;
                 @BattleCry.performed += instance.OnBattleCry;
                 @BattleCry.canceled += instance.OnBattleCry;
+                @TriggerPistol.started += instance.OnTriggerPistol;
+                @TriggerPistol.performed += instance.OnTriggerPistol;
+                @TriggerPistol.canceled += instance.OnTriggerPistol;
             }
         }
     }
@@ -1280,6 +1309,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRetreatOrder(InputAction.CallbackContext context);
         void OnRequestHelp(InputAction.CallbackContext context);
         void OnBattleCry(InputAction.CallbackContext context);
+        void OnTriggerPistol(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -52,13 +52,13 @@ public class ObjectiveController : MonoBehaviour
         //picks a random objective from a list of objectives to spawn at a specified spawn point 
         if(objectivesToSpawn.Length >= 2){
             foreach(GameObject spawnPoint in chosenSpawns){
-                print(objectivesToSpawn.Length);
+                //print(objectivesToSpawn.Length);
                 int objSpawn = Random.Range(0,objectivesToSpawn.Length);
-                print("Random number" + objSpawn);
+                //print("Random number" + objSpawn);
                 Vector3 fixedSpawn = spawnPoint.transform.position;
                 fixedSpawn.y = -17;
                 objectSpawned = GameObject.Instantiate(objectivesToSpawn[objSpawn], fixedSpawn, Quaternion.identity);
-                print(spawnPoint.transform.position);
+                //print(spawnPoint.transform.position);
                 spawnedObjects.Add(objectSpawned);
             }
         }

@@ -54,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour {
                     minDist = interactableDist;
                     toInteract = interactable;
                 }
-                Debug.Log("help");
+                //Debug.Log("help");
             }
         }
 
