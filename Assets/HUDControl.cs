@@ -50,24 +50,31 @@ public class HUDControl : MonoBehaviour
             //print(inventory.CurrentWeapon.Name);
             switch(inventory.CurrentWeapon.Name){
                 case "Apostle":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(30,20);
                     weaponIcons[i].sprite = weaponSprites[0];
                     break;
                 case "Aribiter":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(68,20);
                     weaponIcons[i].sprite = weaponSprites[1];
                     break;
                 case "Bishop":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(68,20);
                     weaponIcons[i].sprite = weaponSprites[2];
                     break;
                 case "Harpy":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(68,20);
                     weaponIcons[i].sprite = weaponSprites[3];
                     break;
                 case "Patriarch":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(80,20);
                     weaponIcons[i].sprite = weaponSprites[4];
                     break;
                 case "Pilate":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(80,20);
                     weaponIcons[i].sprite = weaponSprites[5];
                     break;
                 case "Vindicator":
+                    weaponIcons[i].rectTransform.sizeDelta = new Vector2(75,20);
                     weaponIcons[i].sprite = weaponSprites[6];
                     break;
                 default:
