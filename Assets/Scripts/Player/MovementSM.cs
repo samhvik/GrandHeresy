@@ -99,7 +99,7 @@ public class MovementSM : StateMachine
                 aimInput = context.ReadValue<Vector2>();
             }
 
-            if (context.canceled)
+            else if (context.canceled)
             {
                 isAiming = false;
             }

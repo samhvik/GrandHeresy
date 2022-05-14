@@ -19,6 +19,7 @@ public class StrafeAim : Moving
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
 
+        sm.animatorManager.HandleIdleAimState(false);
         sm.animatorManager.HandleKeyboardAimState(true);
     }
 
@@ -48,8 +49,13 @@ public class StrafeAim : Moving
             sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
 
             // If the right stick is not in motion, switch to idle state
-            if (R_horizontalInput == 0 && R_verticalInput == 0)
+            if (L_horizontalInput == 0 && L_verticalInput == 0)
             {
+                sm.animatorManager.HandleKeyboardAimState(false);
+                stateMachine.ChangeState(sm.aimState);
+            }
+
+            else if (R_horizontalInput == 0 && R_verticalInput == 0){
                 sm.animatorManager.HandleKeyboardAimState(false);
                 stateMachine.ChangeState(sm.idleState);
             }
@@ -69,8 +75,13 @@ public class StrafeAim : Moving
             //var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
             //sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
 
-            if (sm.isAiming == false)
+            if (L_horizontalInput == 0 && L_verticalInput == 0)
             {
+                sm.animatorManager.HandleKeyboardAimState(false);
+                stateMachine.ChangeState(sm.aimState);
+            }
+
+            else if (!sm.isAiming){
                 sm.animatorManager.HandleKeyboardAimState(false);
                 stateMachine.ChangeState(sm.idleState);
             }
