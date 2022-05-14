@@ -57,25 +57,14 @@ public class StrafeAim : Moving
         // If a Keyboard is being used, aim with this method  
         else if(GameValues.instance.whatGamepad[sm.input.playerIndex] == "keyboard")
         {
-            // R_horizontalInput = sm.right_horizontal;
-            // R_verticalInput = sm.right_vertical;
-
-            // sm.animatorManager.HandleAnimatorValues(sm.left_horizontal, sm.left_vertical, sm.right_horizontal, sm.right_vertical, false);
-
             sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
             sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
-
-            //sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
-            //var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
-            //sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
 
             if (sm.isAiming == false)
             {
                 sm.animatorManager.HandleKeyboardAimState(false);
                 stateMachine.ChangeState(sm.idleState);
             }
-
         }
-        
     }
 }
