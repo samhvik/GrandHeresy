@@ -25,6 +25,8 @@ public class PlayerInputHandler : MonoBehaviour
     // Holds the Player Spawning Particles
     public ParticleSystem[] playerSpawn = new ParticleSystem[7];
 
+    private bool gamepadLock;
+
     private void Awake()
     {
         // Assigns the Player Index
@@ -51,6 +53,8 @@ public class PlayerInputHandler : MonoBehaviour
         // Setting our cursor
         GameValues.instance.playerCursors[playerIndex] = currentCursor;
 
+        gamepadLock = false;
+
         // Playing our Partilce System
         for(int i = 0; i < 7; i++)
         {
@@ -64,7 +68,7 @@ public class PlayerInputHandler : MonoBehaviour
         GameValues.instance.playerPosition[playerIndex] = this.GetComponent<Transform>();
 
         // Instantiates Cursor
-        if (GameValues.instance.whatGamepad[playerIndex] != "controller")
+        if (GameValues.instance.whatGamepad[playerIndex] != "controller" && gamepadLock == true)
         {
             if (GameValues.instance.cursorLock == false)
             {
@@ -88,10 +92,12 @@ public class PlayerInputHandler : MonoBehaviour
         if(isKeyboard)
         {
             GameValues.instance.whatGamepad[playerIndex] = "keyboard";
+            gamepadLock = true;
         }
         else if(isGamepad)
         {
             GameValues.instance.whatGamepad[playerIndex] = "controller";
+            gamepadLock = true;
         }
     }
 
