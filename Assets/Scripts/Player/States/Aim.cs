@@ -42,13 +42,6 @@ public class Aim : Stationary
         // If a Keyboard is being used, aim with this method                         
         else if(GameValues.instance.whatGamepad[sm.input.playerIndex] == "keyboard")
         {
-            // Temporary Comment
-            // (GameValues.instance.cursorLock == false)
-            //{
-            //    GameValues.instance.playerCursors[sm.input.playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[sm.input.playerIndex], new Vector3(sm.transform.position.x, sm.transform.position.y, sm.transform.position.z), sm.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
-            //    GameValues.instance.cursorLock = true;
-            //}
-
             sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
             sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
 

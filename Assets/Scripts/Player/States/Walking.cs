@@ -27,11 +27,12 @@ public class Walking : Moving
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
 
-        Vector3 moveDir = new Vector3(L_horizontalInput, 0, L_verticalInput).normalized;
-        Debug.DrawLine(sm.transform.position, sm.transform.position + moveDir*2, Color.green);
+        //Vector3 moveDir = new Vector3(L_horizontalInput, 0, L_verticalInput).normalized;
+        //Debug.DrawLine(sm.transform.position, sm.transform.position + moveDir*2, Color.green);
 
+        // Debug.Log("MOVING");
         // Move the character depending on stick direction
-        sm.GetComponent<CharacterController>().SimpleMove(new Vector3(
+        sm.characterController.SimpleMove(new Vector3(
             L_horizontalInput * GameValues.instance.playerSpeedWalk,
             0.0f,
             L_verticalInput * GameValues.instance.playerSpeedWalk

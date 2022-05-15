@@ -12,6 +12,7 @@ public class WeaponSwitching : MonoBehaviour {
   private Gun currentWeapon;
   private PlayerShooting shooter;
   private PlayerInventory inventory;
+  public AnimatorManager animatorManager;
   PlayerControls controls;
   private List<Gun> guns;
 
@@ -20,9 +21,9 @@ public class WeaponSwitching : MonoBehaviour {
 
   void Awake() {
     inventory = GetComponent<PlayerInventory>();
+    animatorManager = GetComponent<AnimatorManager>();
     shooter = gameObject.GetComponent<PlayerShooting>();
     controls = new PlayerControls();
-
     // callback function for the reload button
     controls.Gameplay.SwapWeapons.performed += ctx => Handle();
   }
@@ -37,12 +38,18 @@ public class WeaponSwitching : MonoBehaviour {
   }
 
   private void Handle() {
-    Debug.Log("I AM HERE OH YEA");
+    //Debug.Log("I AM HERE OH YEA");
     int prevWeaponIndex = inventory.getHead();
     int newWeaponIndex = inventory.incrementHead();
     if (prevWeaponIndex != newWeaponIndex) {
-      Debug.Log("WE FUCKING SELECTING WOOOOOOO");
+      //Debug.Log("WE FUCKING SELECTING WOOOOOOO");
       SelectWeapon();
+      if(currentWeapon.name == "P-2416 Apostle"){
+        animatorManager.HandlePistolState(true);
+      }
+      else{
+        animatorManager.HandlePistolState(false);
+      }
     }
   }
 
