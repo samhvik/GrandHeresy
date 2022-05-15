@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{142ed7d1-17af-475d-86ed-fdf74755b187}">
+		<property name="assetPath">
+			<value>LinSounds/DemonScreams.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>26</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{adb1a8e6-21f3-4265-b426-05904231e6b8}</destination>
+		</relationship>
+	</object>
+</objects>
