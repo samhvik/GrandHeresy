@@ -19,6 +19,8 @@ public class GameValues : MonoBehaviour{
     
     public static GameValues instance = null;
     public static bool inCombatStatus = false;
+
+    public Animator animator;
     
 
     public float playerHealth;
@@ -101,7 +103,7 @@ public class GameValues : MonoBehaviour{
                 numAlive -= 1;
             }
             if(findWhosAlive() < 0) { //Debug.Log("Player Death");
-                SceneManager.LoadScene("Justin's Recap"); 
+                Fade.ToggleLevelFade(animator);
             }
             playerKills[i] = playerInventory.getKills();
         }
