@@ -18,6 +18,8 @@ public class PlayerInventory : MonoBehaviour {
     private PlayerShooting shooter;
     private int head = 0;
     private int kills = 0;
+
+    public Animator am;
     
     PlayerControls controls;
     
@@ -39,6 +41,7 @@ public class PlayerInventory : MonoBehaviour {
     }
 
     void Awake(){
+        am = this.GetComponent<Animator>();
         controls = new PlayerControls();
     }
     
@@ -95,6 +98,8 @@ public class PlayerInventory : MonoBehaviour {
 
     // update health 
     public void UpdateHealth(int damage){
+        am.ResetTrigger("PlayerHit");
+        am.SetTrigger("PlayerHit");
         health -= damage;
     }
 }
