@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Footsteps.bank
   Name: Footsteps
   StudioPath: bank:/Footsteps
-  lastModified: 637881557785827249
+  lastModified: 637828808642426765
   FileSizes:
   - Name: Desktop
     Value: 58080
@@ -35,10 +35,30 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637881557787298503
+  lastModified: 637882499674692893
   FileSizes:
   - Name: Desktop
     Value: 95008
+  Exists: 1
+--- !u!114 &-6402296921836062771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637882499674923103
+  FileSizes:
+  - Name: Desktop
+    Value: 3113600
   Exists: 1
 --- !u!114 &-5713130072525487905
 MonoBehaviour:
@@ -92,7 +112,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5378561470495040067}
+  - {fileID: 2480113387669221025}
   MinDistance: 1
   MaxDistance: 20
   Length: 4718
@@ -115,7 +135,7 @@ MonoBehaviour:
     Data3: -296252772
     Data4: 1664851471
   Banks:
-  - {fileID: 3075431981819327509}
+  - {fileID: -6402296921836062771}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -140,7 +160,7 @@ MonoBehaviour:
   - {fileID: 7572683295186737330}
   - {fileID: -7731570218940196808}
   - {fileID: -7426376784604322164}
-  - {fileID: 3075431981819327509}
+  - {fileID: -6402296921836062771}
   EditorEvents:
   - {fileID: 8613150723390777529}
   - {fileID: -5713130072525487905}
@@ -151,7 +171,7 @@ MonoBehaviour:
   - {fileID: -7426376784604322164}
   StringsBanks:
   - {fileID: 7572683295186737330}
-  cacheTime: 637881557788219283
+  cacheTime: 637882499674923103
   cacheVersion: 10
 --- !u!114 &887768730236872051
 MonoBehaviour:
@@ -173,6 +193,30 @@ MonoBehaviour:
   ID:
     data1: 4219271600
     data2: 3762900313
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2480113387669221025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ShootingGun/GunSelection
+  m_EditorClassIdentifier: 
+  Name: GunSelection
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 2729521226
+    data2: 2569801033
   Type: 1
   IsGlobal: 0
   Labels: []
@@ -260,7 +304,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637881557787318513
+  lastModified: 637882499674722916
   FileSizes:
   - Name: Desktop
     Value: 1162
