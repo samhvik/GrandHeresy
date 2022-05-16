@@ -20,9 +20,6 @@ public class GameValues : MonoBehaviour{
     public static GameValues instance = null;
     public static bool inCombatStatus = false;
     
-    
-    public Animator animator;
-    
 
     public float playerHealth;
     public float playerSpeedWalk;
@@ -64,7 +61,6 @@ public class GameValues : MonoBehaviour{
     public bool extractionOpen = false;
     public bool allPlayersInExtractionRange = false;
     public float extractionTimer;
-    
     void Start(){
         playerHealth = 150.0f;
         playerSpeedWalk = 10.0f;
@@ -89,13 +85,13 @@ public class GameValues : MonoBehaviour{
         Cursor.visible = false;
     }
 
-    void Awake() {
+    void Awake(){
         if(instance == null)
             instance = this;
         else if(instance != this)
             Destroy(gameObject);
     }
-    
+
     void Update(){
         // "end" game on player death
         for(int i = 0; i < numPlayers; i++) {
@@ -105,7 +101,7 @@ public class GameValues : MonoBehaviour{
                 numAlive -= 1;
             }
             if(findWhosAlive() < 0) { //Debug.Log("Player Death");
-                Fade.ToggleLevelFade(animator);
+                SceneManager.LoadScene("Justin's Recap"); 
             }
             playerKills[i] = playerInventory.getKills();
         }
