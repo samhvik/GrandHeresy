@@ -17,6 +17,8 @@ public class Aim : Stationary
         base.Enter();
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+        GameValues.instance.LockCursor();
+        sm.animatorManager.HandleIdleAimState(true);
     }
 
     public override void UpdateLogic()
@@ -36,17 +38,26 @@ public class Aim : Stationary
             // If the right stick is not in motion, switch to idle state
             if (R_horizontalInput == 0 && R_verticalInput == 0)
             {
+                sm.animatorManager.HandleIdleAimState(false);
                 stateMachine.ChangeState(sm.idleState);
             }
         } 
         // If a Keyboard is being used, aim with this method                         
         else if(GameValues.instance.whatGamepad[sm.input.playerIndex] == "keyboard")
         {
+            // Temporary Comment
+            // if (GameValues.instance.cursorLock == false)
+            // {
+            //    GameValues.instance.playerCursors[sm.input.playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[sm.input.playerIndex], new Vector3(sm.transform.position.x, sm.transform.position.y, sm.transform.position.z), sm.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
+            //    GameValues.instance.cursorLock = true;
+            // }
+
             sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
             sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
 
             if (sm.isAiming == false)
             {
+                sm.animatorManager.HandleIdleAimState(false);
                 stateMachine.ChangeState(sm.idleState);
             }
         }

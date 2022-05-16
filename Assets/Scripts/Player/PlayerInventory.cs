@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerInventory : MonoBehaviour {
     public int inventorySize;
     public Gun starterGun;
-    public Transform gunHandle;
+    //public Transform gunHandle; 
     public GameObject gunPosition;
     public float health = 100.0f;
     

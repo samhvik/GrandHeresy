@@ -125,6 +125,11 @@ public class GameValues : MonoBehaviour{
         playerHealth -= damage;
     }
 
+    public void LockCursor(){
+        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
+
     // Returns how many players are in the game currently
     public int getNumPlayers()
     {
