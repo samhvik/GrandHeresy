@@ -14,7 +14,6 @@ public class MenuNavigation : MonoBehaviour
     public GameObject currentScreen;
     public GameObject prevScreen;
     public GameObject levelButton;
-    public Animator animator;
 
     void Awake()
     {
@@ -27,7 +26,7 @@ public class MenuNavigation : MonoBehaviour
     // loads the Main scene
     public void StartGame()
     {
-        Fade.ToggleLevelFade(animator);
+        SceneManager.LoadScene(GameValues.level);
     }
 
     public void GoBack()
