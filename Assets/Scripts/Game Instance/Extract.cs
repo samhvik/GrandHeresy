@@ -42,6 +42,8 @@ public class Extract : MonoBehaviour
     public float timeRemaining;
     //private int nextUpdate=1;
     private float elapsed = 0f;
+
+    public Animator animator;
     
     void Awake(){
         TimerPanel.SetActive(false);
@@ -93,7 +95,7 @@ public class Extract : MonoBehaviour
         if(timeRemaining == 0){ 
             //change scene to recap scene
             //print("change to recap scene");
-            SceneManager.LoadScene("Justin's Recap");
+            Fade.ToggleLevelFade(animator);
         }
 
     }

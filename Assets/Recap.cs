@@ -14,10 +14,11 @@ public class
     public TextMeshProUGUI P3Kills;
     public TextMeshProUGUI P4Kills;
     public TextMeshProUGUI MVP;
+    public Animator animator;
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        Fade.ToggleLevelFade(animator);
     }
 
     // closes the game application
