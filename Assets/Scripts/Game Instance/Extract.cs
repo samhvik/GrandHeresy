@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using FMOD.Studio;
 
 [System.Serializable]
 public class Extract : MonoBehaviour
@@ -90,7 +91,7 @@ public class Extract : MonoBehaviour
             elapsed = elapsed % 1f;
             timerUpdate();
         }
-        if(timeRemaining == 0){ 
+        if(timeRemaining == 0){
             //change scene to recap scene
             //print("change to recap scene");
             SceneManager.LoadScene("Justin's Recap");
