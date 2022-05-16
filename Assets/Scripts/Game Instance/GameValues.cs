@@ -79,7 +79,7 @@ public class GameValues : MonoBehaviour{
 
         // Uncomment this later, giving errors in my own scene
         // may need a better way to implement this so people can do stuff in their own scene
-        winText = GameObject.Find("Win Text").GetComponent<Text>();
+        //winText = GameObject.Find("Win Text").GetComponent<Text>();
 
         //Set Cursor to not be visible
         Cursor.visible = false;
@@ -116,8 +116,8 @@ public class GameValues : MonoBehaviour{
             Application.Quit();
         }
 
-        if(objectivesCompleted < objectivesTotal)
-            winText.text = "Objectives Completed: " + objectivesCompleted;
+        /*if(objectivesCompleted < objectivesTotal)
+            winText.text = "Objectives Completed: " + objectivesCompleted;*/
 
     }
 
@@ -143,7 +143,7 @@ public class GameValues : MonoBehaviour{
     }
 
     public void GameCompleted(){
-        winText.text = "All objectives complete, proceed to extract.";
+        //winText.text = "All objectives complete, proceed to extract.";
     }
 
     // Returns the only player that is alive

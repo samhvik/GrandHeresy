@@ -81,9 +81,6 @@ public class MovementSM : StateMachine
     // OnAim rotates our player to aim with the right joystick
     public void OnAim(InputAction.CallbackContext context)
     {
-
-        //Debug.Log(context.control.device);
-
         if (GameValues.instance.whatGamepad[this.input.playerIndex] == "controller")
         {
             aimInput = context.ReadValue<Vector2>();

@@ -76,8 +76,8 @@ using UnityEngine;
                 case "StrafeAim":
                     if (GameValues.instance.numAlive == 1)
                     {
-                        offset.x = 7f * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.Deg2Rad);
-                        offset.z = -18f + (5f * Mathf.Cos(playerTransform.eulerAngles.y * Mathf.Deg2Rad));
+                        offset.x = Mathf.Sin(GameValues.instance.players[0].transform.eulerAngles.y * Mathf.Deg2Rad) * 4f;
+                        offset.z = -18f + (5f * Mathf.Cos(GameValues.instance.players[0].transform.eulerAngles.y * Mathf.Deg2Rad));
                     }
                     else
                     {
