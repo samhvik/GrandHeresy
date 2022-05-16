@@ -34,7 +34,8 @@ public class AISpecialAttack: AIAction
 
     IEnumerator RangedAttack(Vector3 locale, AIStateController c){
         Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 1.75f); // destroy after cast
-        c.GetComponent<Animator>().enabled = false; // Replace with cast animation transition
+        //c.GetComponent<Animator>().enabled = false; // Replace with cast animation transition
+        c.animator.SetBool("IsAttacking", true);
         // play a casting sound
         yield return new WaitForSeconds(1.5f); // Cast time
         // only hit players and update health
@@ -44,7 +45,8 @@ public class AISpecialAttack: AIAction
         
         yield return new WaitForSeconds(0.25f); // following a target CD time
         c.navMeshAgent.isStopped = false; // let the AI walk again
-        c.GetComponent<Animator>().enabled = true; // restart walk animation cycle
+        
+        c.animator.SetBool("IsAttacking", false); // restart walk animation cycle
     }
     IEnumerator MeleeAttack(GameObject target, AIStateController c){
         c.GetComponent<Animator>().enabled = false; // Replace with melee animation transition

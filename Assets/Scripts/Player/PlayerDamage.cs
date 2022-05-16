@@ -6,10 +6,12 @@ public class PlayerDamage : MonoBehaviour
 {
     private VoiceLines voiceLines;
     private PlayerInventory player;
+    public Animator am;
 
     private float friendlyDamageModifier;
     
     void Start(){
+        am = this.GetComponent<Animator>();
         voiceLines = this.GetComponent<VoiceLines>();
         player = this.GetComponent<PlayerInventory>();
         friendlyDamageModifier = 0.33f;
@@ -31,11 +33,13 @@ public class PlayerDamage : MonoBehaviour
 
     public void FriendlyFire(float damage){
         player.UpdateHealth((int)(damage * friendlyDamageModifier));
+        am.SetTrigger("PlayerHit");
         voiceLines.FriendlyFire();
     }
 
     public void TakeDamage(float damage){
         player.UpdateHealth((int)damage);
+        am.SetTrigger("PlayerHit");
         voiceLines.RecieveDamage();
     }
 }
