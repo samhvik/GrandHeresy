@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Footsteps.bank
   Name: Footsteps
   StudioPath: bank:/Footsteps
-  lastModified: 637883136055542775
+  lastModified: 637883236846277325
   FileSizes:
   - Name: Desktop
     Value: 58080
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637883136055813001
+  lastModified: 637883236846517518
   FileSizes:
   - Name: Desktop
     Value: 95008
@@ -146,12 +146,13 @@ MonoBehaviour:
   - {fileID: -5713130072525487905}
   - {fileID: -3443081327360159927}
   - {fileID: -3051839781539705036}
+  - {fileID: 9001999246234165084}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7426376784604322164}
   StringsBanks:
   - {fileID: 7572683295186737330}
-  cacheTime: 637883136056713770
+  cacheTime: 637883236847078034
   cacheVersion: 10
 --- !u!114 &887768730236872051
 MonoBehaviour:
@@ -192,10 +193,10 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637883136056713770
+  lastModified: 637883236847078034
   FileSizes:
   - Name: Desktop
-    Value: 3113600
+    Value: 4691456
   Exists: 1
 --- !u!114 &5378561470495040067
 MonoBehaviour:
@@ -260,10 +261,10 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637883136055833020
+  lastModified: 637883236846537541
   FileSizes:
   - Name: Desktop
-    Value: 1162
+    Value: 1208
   Exists: 1
 --- !u!114 &8592666443049021908
 MonoBehaviour:
@@ -317,3 +318,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 85
   Length: 333
+--- !u!114 &9001999246234165084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu Music
+  Guid:
+    Data1: 1445135488
+    Data2: 1118778192
+    Data3: 1111999635
+    Data4: 357089220
+  Banks:
+  - {fileID: 3075431981819327509}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 120000

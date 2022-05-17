@@ -102,8 +102,6 @@ public class Gun : MonoBehaviour{
                 {
                     e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
-
-
                 break;
             default:
                 //FMOD.Studio.PLAYBACK_STATE fmodPbState;
