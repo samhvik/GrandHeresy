@@ -84,6 +84,10 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("IsStrafing", aimState);
     }
 
+    public void HandleIdleAimState(bool aimState){
+        animator.SetBool("IsIdleAiming", aimState);
+    }
+
     public void HandleDodgeRollState(bool condition){
         animator.SetBool("IsDodging", condition);
     }

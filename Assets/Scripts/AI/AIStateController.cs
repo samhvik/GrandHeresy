@@ -19,6 +19,7 @@ public class AIStateController : MonoBehaviour
     [HideInInspector] public Transform chaseTarget;
     [HideInInspector] public Vector3 lastKnownLocation;
     [HideInInspector] public float stateTimeElapsed;
+    [HideInInspector] public Animator animator;
 
     private bool active;
 
@@ -36,6 +37,9 @@ public class AIStateController : MonoBehaviour
         {
             Instantiate(enemySpawn[i], new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
         }
+
+        // Getting the animator
+        animator = GetComponent<Animator>();
     }
 
     void Update() {

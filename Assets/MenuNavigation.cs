@@ -14,6 +14,7 @@ public class MenuNavigation : MonoBehaviour
     public GameObject currentScreen;
     public GameObject prevScreen;
     public GameObject levelButton;
+    public Animator animator;
 
     void Awake()
     {
@@ -29,7 +30,9 @@ public class MenuNavigation : MonoBehaviour
         MainMenuMusic script = GameObject.Find("Main Camera").GetComponent<MainMenuMusic>();
         script.music_event.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         Destroy(script.gameObject);
+        
         SceneManager.LoadScene(GameValues.level);
+        Fade.ToggleLevelFade(animator);
     }
 
     public void GoBack()
