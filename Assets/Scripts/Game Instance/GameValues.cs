@@ -19,6 +19,8 @@ public class GameValues : MonoBehaviour{
     
     public static GameValues instance = null;
     public static bool inCombatStatus = false;
+
+    public Animator animator;
     
 
     public float playerHealth;
@@ -79,7 +81,7 @@ public class GameValues : MonoBehaviour{
 
         // Uncomment this later, giving errors in my own scene
         // may need a better way to implement this so people can do stuff in their own scene
-        winText = GameObject.Find("Win Text").GetComponent<Text>();
+        //winText = GameObject.Find("Win Text").GetComponent<Text>();
 
         //Set Cursor to not be visible
         Cursor.visible = false;
@@ -101,7 +103,7 @@ public class GameValues : MonoBehaviour{
                 numAlive -= 1;
             }
             if(findWhosAlive() < 0) { //Debug.Log("Player Death");
-                SceneManager.LoadScene("Justin's Recap"); 
+                Fade.ToggleLevelFade(animator);
             }
             playerKills[i] = playerInventory.getKills();
         }
@@ -116,13 +118,18 @@ public class GameValues : MonoBehaviour{
             Application.Quit();
         }
 
-        if(objectivesCompleted < objectivesTotal)
-            winText.text = "Objectives Completed: " + objectivesCompleted;
+        /*if(objectivesCompleted < objectivesTotal)
+            winText.text = "Objectives Completed: " + objectivesCompleted;*/
 
     }
 
     public void UpdateHealth(int damage){
         playerHealth -= damage;
+    }
+
+    public void LockCursor(){
+        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Returns how many players are in the game currently
@@ -138,7 +145,7 @@ public class GameValues : MonoBehaviour{
     }
 
     public void GameCompleted(){
-        winText.text = "All objectives complete, proceed to extract.";
+        //winText.text = "All objectives complete, proceed to extract.";
     }
 
     // Returns the only player that is alive

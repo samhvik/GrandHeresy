@@ -25,11 +25,15 @@ public class AIAttackAction : AIAction
             }
         }
     }
+    
 
     // delay AI movement below, defaul is wait half a second before turning the agent back on 
     IEnumerator MeleeAttack(GameObject target, AIStateController c){
-        c.GetComponent<Animator>().enabled = false; // Replace with melee animation transition
+        //c.GetComponent<Animator>().enabled = false; // Replace with melee animation transition
+        c.animator.SetBool("IsAttacking", true);
+
         yield return new WaitForSeconds(0.5f);
+        
         // Play Sound
         c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
         c.aSource.Play();
@@ -37,6 +41,8 @@ public class AIAttackAction : AIAction
         target.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage);
         yield return new WaitForSeconds(0.25f); // following a target CD time
         c.navMeshAgent.isStopped = false; // let the AI walk again
-        c.GetComponent<Animator>().enabled = true; // Restart Walk Animation
+
+        //c.GetComponent<Animator>().enabled = true; // Restart Walk Animation
+        c.animator.SetBool("IsAttacking", false);
     }
 }
