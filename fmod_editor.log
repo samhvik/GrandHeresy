@@ -1,0 +1,523 @@
+[LOG] System::create                           : Header version = 2.02.04. Current version = 2.02.04.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+[LOG] SystemI::init                            : Initialize version=20204 (121702), maxchannels=256, flags=0x00020000
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] SoundI::release                          : Rain Hell (00000286728C9B18)
+[LOG] SoundI::release                          :     Rain Hell (000002865B3FB3A8)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C268)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000286728C9B18 : node = 00000286796E6830
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000286728C9B18
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 00000286728CA028 : node = 00000286796E6D30
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SoundI::release                          :     Rain Hell (00000286728C9968)
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286796E6940
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBA28)
+[LOG] SystemI::createSoundInternal             :         exinfo->inclusionlistnum   = 1
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C5C8)
+[LOG] SystemI::createSoundInternal             :         exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SoundI::release                          :     Rain Hell (00000286728CA538)
+[LOG] SoundI::release                          :         Rain Hell (00000286731EC8A8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CC88)
+[LOG] SoundI::release                          :     Rain Hell (00000285865F73E8)
+[LOG] SoundI::release                          :         Rain Hell (00000286731EC568)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C0B8)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :     Rain Hell (00000285865F7238)
+[LOG] OutputWASAPI::init                       :     Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] SoundI::release                          :         Rain Hell (00000286731ECA48)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CAD8)
+[LOG] SoundI::release                          :     Rain Hell (00000285865F7088)
+[LOG] SoundI::release                          :         Rain Hell (00000286731EC088)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CE38)
+[LOG] SoundI::release                          :     Rain Hell (00000285865F7E08)
+[LOG] SoundI::release                          :         Rain Hell (00000286731ECBE8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C418)
+[LOG] Thread::initThread                       :     Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000286728C9B18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000286728CA028
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286796E6E40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] Thread::initThread                       :     Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       :     manager 000002865B8AC098 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       :     done
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000286728CA028
+[LOG] PlaybackSystem::init                     : 
+[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] PlaybackSystem::init                     : done
+[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          : Rain Hell (00000286728C9B18)
+[LOG] SoundI::release                          :     Rain Hell (000002865B3FB3A8)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C778)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000028672E45088 : node = 00000285AD2308D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD2309E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45088
+[LOG] SoundI::release                          : Rain Hell (0000028672E45088)
+[LOG] SoundI::release                          :     Rain Hell (000002865B3FBA28)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C928)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000028672E458F8 : node = 00000285AD230650
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E458F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD230760
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E458F8
+[LOG] SoundI::release                          : Rain Hell (0000028672E458F8)
+[LOG] SoundI::release                          :     Rain Hell (000002865B3FBD68)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C268)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000028672E45748 : node = 00000285AD230510
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45748
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45088 : node = 00000285AD230650
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD230620
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45E08 : node = 00000285AD230790
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 1
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45C58 : node = 00000285AD2308D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E458F8 : node = 0000028323971AB0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 3
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :     Rain Hell (00000286728CA028)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FB6E8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CC88)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45748
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD230760
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45088
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45E08
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD2308A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45E08
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45C58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD2309E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45C58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E458F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971BC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E458F8
+[LOG] SoundI::release                          : Rain Hell (0000028672E458F8)
+[LOG] SoundI::release                          :     Rain Hell (00000285ACE6C548)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C778)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000028672E458F8 : node = 0000028323971830
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E458F8
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45238 : node = 00000283239711F0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971940
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E453E8 : node = 00000283239715B0
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 1
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337CE18 : node = 00000283239716F0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337C248 : node = 0000028323971970
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 3
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337C908 : node = 0000028323971BF0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 4
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337C5A8 : node = 0000028323971470
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 5
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337C758 : node = 00000283239710B0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 6
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337CAB8 : node = 0000028323971AB0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 7
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002867337CC68 : node = 0000028323971D30
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 8
+[LOG] SoundI::release                          :     Rain Hell (0000028672E45C58)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBBC8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C418)
+[LOG] SoundI::release                          :     Rain Hell (0000028672E45E08)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBA28)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C0B8)
+[LOG] SoundI::release                          :     Rain Hell (0000028672E45088)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FB548)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CC88)
+[LOG] SoundI::release                          :     Rain Hell (0000028672E45748)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E458F8
+[LOG] SoundI::release                          :     Rain Hell (000002865B3FB3A8)
+[LOG] AsyncThread::threadFunc                  :     Starting Asynchronous operation on sound 0000028672E45238
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C268)
+[LOG] SystemI::createSoundInternal             :         Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SoundI::release                          :     Rain Hell (0000028672E458F8)
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971300
+[LOG] SoundI::release                          :         Rain Hell (00000285ACE6C548)
+[LOG] SystemI::createSoundInternal             :         exinfo->inclusionlistnum   = 1
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CE38)
+[LOG] SystemI::createSoundInternal             :         exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45238
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E453E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000283239716C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E453E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337CE18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971800
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337CE18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337C248
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971A80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337C248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337C908
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971D00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337C908
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337C5A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971580
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337C5A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337C758
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000283239711C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337C758
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337CAB8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971BC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337CAB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337CC68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971E40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337CC68
+[LOG] SoundI::release                          : Rain Hell (000002867337CC68)
+[LOG] SoundI::release                          :     Rain Hell (000002857FD1E038)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C268)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002867337CC68 : node = 0000028323971330
+[LOG] SystemI::createSound                     : add node to async list : head = 000002865D212218.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002867337CC68
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E458F8 : node = 0000028323971830
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971440
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45748 : node = 0000028323971D30
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 1
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45C58 : node = 0000028323971E70
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000028672E45E08 : node = 00000285AD230510
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002865D212218.  list count = 3
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :     Rain Hell (000002867337CAB8)
+[LOG] SoundI::release                          :         Rain Hell (000002857FD1E1D8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C0B8)
+[LOG] SoundI::release                          :     Rain Hell (000002867337C758)
+[LOG] SoundI::release                          :         Rain Hell (000002857FD1D678)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C928)
+[LOG] SoundI::release                          :     Rain Hell (000002867337C5A8)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FB548)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C778)
+[LOG] SoundI::release                          :     Rain Hell (000002867337C908)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBBC8)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C5C8)
+[LOG] SoundI::release                          :     Rain Hell (000002867337C248)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBA28)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CE38)
+[LOG] SoundI::release                          :     Rain Hell (000002867337CE18)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FB888)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CAD8)
+[LOG] SoundI::release                          :     Rain Hell (0000028672E453E8)
+[LOG] SoundI::release                          :         Rain Hell (000002865B3FBD68)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233CC88)
+[LOG] SoundI::release                          :     Rain Hell (0000028672E45238)
+[LOG] SoundI::release                          :         Rain Hell (00000285ACE6C548)
+[LOG] SoundI::release                          :         Rain Hell (00000286C233C418)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002867337CC68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E458F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971940
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E458F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45748
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971E40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45748
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45C58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000028323971F80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45C58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028672E45E08
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4686464
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4992
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000285AD230620
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Rain Hell', format=5, channels=2, frequency=48000, lengthbytes=1575488, lengthpcm=5760000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028672E45E08
+[LOG] SoundI::release                          : Rain Hell (0000028672E45C58)
+[LOG] SoundI::release                          :     Rain Hell (000002857FD1DCF8)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233CAD8)
+[LOG] SoundI::release                          : Rain Hell (0000028672E45748)
+[LOG] SoundI::release                          :     Rain Hell (000002857FD1DB58)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233CE38)
+[LOG] SoundI::release                          : Rain Hell (0000028672E458F8)
+[LOG] SoundI::release                          :     Rain Hell (000002857FD1E1D8)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C928)
+[LOG] SoundI::release                          : Rain Hell (000002867337CC68)
+[LOG] SoundI::release                          :     Rain Hell (000002857FD1DE98)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233C268)
+[LOG] SoundI::release                          : Rain Hell (0000028672E45E08)
+[LOG] SoundI::release                          :     Rain Hell (00000285ACE6C068)
+[LOG] SoundI::release                          :     Rain Hell (00000286C233CC88)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
