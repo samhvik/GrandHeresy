@@ -10,7 +10,7 @@ Key Gameplay Features:
 - **Features**: Explanation
 - 
 
-[Comment]: [](Enter Game Trailer Link Here)
+[](Enter Game Trailer Link Here)
 
 About the Team
 --------------
@@ -26,5 +26,4 @@ About the Team
 
 Installation
 ------------
-
-[comment2]: *Put the Link to Download here*
+*Put the Link to Download here*
