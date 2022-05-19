@@ -25,6 +25,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using FMOD.Studio;
 
 [System.Serializable]
