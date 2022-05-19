@@ -15,14 +15,17 @@ Key Gameplay Features:
 About the Team
 --------------
 
-- Producer:
-- AI Programmer:
-- Programmer:
-- Programmer:
-- UI Designer:
-- 3D Artist:
-- 3D Artist:
-- Sound:
+- Producer & Generalist Programmer: Sam Vik
+- AI Programmer: [Lane Albrecht](https://github.com/LaneAlb)
+- Programmer: Justin Quan
+- Programmer: Kevin Chacko
+- Programmer: Danny Baghdasarians
+- Programmer: Quinn Satow
+- UI Designer: 
+- 3D Artist: Josue
+- 3D Artist: Jerry Lin
+- 3D Artist: Zhe Kou
+- Sound: Satvik Srinivasan
 
 Installation
 ------------
