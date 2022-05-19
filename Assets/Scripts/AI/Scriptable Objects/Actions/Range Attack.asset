@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d7c02bb267b2f478aed2b32bc1fde2, type: 3}
   m_Name: Range Attack
   m_EditorClassIdentifier: 
+  SpikeObject: {fileID: 9177085369827089651, guid: 77ff1b528f93ce941b378126bba6785a, type: 3}
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 64
