@@ -47,10 +47,9 @@ public class Gun : MonoBehaviour{
 
     private float nextShootTime = 0f;                                       // The next time the gun is able to shoot
 
+    //FMOD Parameter setting
     private string eventpath = "event:/ShootingGun";
     private FMOD.Studio.EventInstance e_instance;
-
-
 
     void Start() {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraController>();
@@ -58,6 +57,23 @@ public class Gun : MonoBehaviour{
         firerate /= 60;
         remainingRounds = magSize;
         e_instance = FMODUnity.RuntimeManager.CreateInstance(eventpath);
+        if (gunName.Equals("Pilate"))
+        {
+            e_instance.setParameterByName("GunSelection", 2);
+        }
+        else if(gunName.Equals("Harpy"))
+        {
+            e_instance.setParameterByName("GunSelection", 1);
+        }
+        else if(gunName.Equals("Vindicator"))
+        {
+            e_instance.setParameterByName("GunSelection", 0);
+        }
+        else
+        {
+            e_instance.setParameterByName("GunSelection", 0); // default sound for now...
+        }
+        
     }
 
     void Update(){
@@ -86,8 +102,6 @@ public class Gun : MonoBehaviour{
                 {
                     e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
-
-
                 break;
             default:
                 //FMOD.Studio.PLAYBACK_STATE fmodPbState;

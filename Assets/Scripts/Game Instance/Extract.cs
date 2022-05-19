@@ -28,6 +28,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using FMOD.Studio;
 
 [System.Serializable]
 public class Extract : MonoBehaviour
@@ -94,7 +95,7 @@ public class Extract : MonoBehaviour
             elapsed = elapsed % 1f;
             timerUpdate();
         }
-        if(timeRemaining == 0){ 
+        if(timeRemaining == 0){
             //change scene to recap scene
             //print("change to recap scene");
             Fade.ToggleLevelFade(animator);
