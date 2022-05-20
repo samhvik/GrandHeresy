@@ -84,7 +84,7 @@ public class UploadObjective : MonoBehaviour
             amountUploaded = 100;
 
             // enable combat for enemy spawning
-            GameValues.inCombatStatus = true;
+            GameValues.instance.EnemyDirector.GetComponent<EnemyDirector>().StartObjectiveWave();
         }
     }
 

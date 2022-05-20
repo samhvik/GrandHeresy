@@ -13,13 +13,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject hordeEnemyToSpawn; // the horde enemy which will target a player automatically during spawn
     public GameObject RangedEnemyToSpawn; // the ranged enemy which will target a player automatically during spawn
     public GameObject CameraMidpoint;
-    private float TimeElapsed;
     private int maxSpawns; // max number of enemies to spawn
     private int maxSpawnChecks;
     private Transform midpoint;
 
-    void Start(){  
-        TimeElapsed = 0f;
+    void Start(){
         maxSpawns   = 5;
         maxSpawnChecks = 10;
     }
@@ -42,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
                 }
                 enemyCreator(hordeEnemyToSpawn, locale.position);
             }
-            TimeElapsed = 0f; // reset timer upon exit of WaveSpawn
+            GameValues.instance.aiSpawnTimer = 0f; // reset timer upon exit of WaveSpawn
         }
     }
 
@@ -82,16 +80,15 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // just subtly increase the frequency to spawn enemies based on objective completion for now
-    // grab the gamevalue for completedObjectives at some point
     private bool spawnRate(int completedObjectives){
         var complObj = completedObjectives; //add to this value to increase spawn rate 
-        if(complObj <= 0){ complObj = 1; } // don't divide by zero, our default spawn rate
-        TimeElapsed += Time.deltaTime;
+        if(complObj <= 0){ complObj = 1; } // don't divide by zero, this is our default spawn rate
+        GameValues.instance.aiSpawnTimer += Time.deltaTime;
         // default 20 second spawn timer reduced by number of completed objectives
-        // once completedObjectives is a static VAR we wont need to pass in a rate
-        return (TimeElapsed >= 10/complObj);
+        return (GameValues.instance.aiSpawnTimer >= 10/complObj);
     }
 
+    // Create and Setup the new batch of enemies
     private void enemyCreator(GameObject prefab, Vector3 pos){
         // we use CheckBounds for making sure pos is valid
         GameObject nAI = Instantiate(prefab, pos, Quaternion.LookRotation(-pos));
