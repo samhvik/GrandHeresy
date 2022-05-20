@@ -17,3 +17,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   AoEParticleSet: {fileID: 4691051846242378908, guid: 6078771e3c504834984b5912dae21356, type: 3}
+  SpikeParticleSet: {fileID: 7787669044383469463, guid: c62d6a7fd0139e542b01720e997aa4ea, type: 3}

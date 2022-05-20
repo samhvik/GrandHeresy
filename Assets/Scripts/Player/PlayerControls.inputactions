@@ -582,6 +582,33 @@
             "id": "3b398c06-a8fc-4b74-86bb-244a3dfcb567",
             "actions": [
                 {
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "ff2f25dc-9721-4f71-929d-3f9a1b412863",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "6add50bd-7869-4bd0-a666-91b6230ec584",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Navigate",
+                    "type": "Value",
+                    "id": "62514854-33a5-4c69-a45b-36122909eb66",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Submit",
                     "type": "Button",
                     "id": "f187291b-5010-4404-a74f-e72d50c6835b",
@@ -604,15 +631,6 @@
                     "type": "Button",
                     "id": "d79d3109-9ac3-4620-b515-b3f9fd822b07",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Navigate",
-                    "type": "PassThrough",
-                    "id": "62514854-33a5-4c69-a45b-36122909eb66",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -654,6 +672,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5201e875-7054-43f8-b594-86ddfdff9a67",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ec2d5346-91b0-4545-8d97-3b0088c6d2f6",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -682,6 +711,39 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "696b197f-97a3-4079-b15c-6dd5e1e8bc5f",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cccae8de-17db-465f-9cfc-b2f26153b333",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff9bc758-efc1-4a0c-a6cb-fc670b8f4ef4",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -929,34 +991,23 @@
                 },
                 {
                     "name": "",
-                    "id": "696b197f-97a3-4079-b15c-6dd5e1e8bc5f",
-                    "path": "<Keyboard>/backspace",
+                    "id": "61b0f441-8b28-42a0-a41c-d9fa20009bf3",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Cancel",
+                    "groups": "",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "cccae8de-17db-465f-9cfc-b2f26153b333",
-                    "path": "<XInputController>/buttonEast",
+                    "id": "e6a79fd2-8f23-417c-87cb-d6fd999df1a0",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ff9bc758-efc1-4a0c-a6cb-fc670b8f4ef4",
-                    "path": "<DualShockGamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Cancel",
+                    "groups": "",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
