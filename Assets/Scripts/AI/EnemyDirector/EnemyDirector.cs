@@ -55,12 +55,22 @@ public class EnemyDirector : MonoBehaviour
                     this.GetComponent<EnemySpawner>().enabled = false;
                 }
             }
-            this.transform.position = CameraMidpoint.transform.position * 0.80f;
+            this.transform.position = CameraMidpoint.transform.position * 0.90f;
         }
     }
 
     public void moveDirector(){
         this.transform.position = CameraMidpoint.transform.position;
+    }
+
+    public void StartObjectiveWave(){
+        GameValues.inCombatStatus = true;
+        moveDirector();
+        // make sure enemyspawner is enabled for the incoming wave
+        if(!this.GetComponent<EnemySpawner>().enabled){
+            this.GetComponent<EnemySpawner>().enabled = true;
+        }
+        GameValues.instance.aiSpawnTimer = 100f;
     }
 }
 

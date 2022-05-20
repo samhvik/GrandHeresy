@@ -19,6 +19,8 @@ public class GameValues : MonoBehaviour{
     
     public static GameValues instance = null;
     public static bool inCombatStatus = false;
+    public float aiSpawnTimer = 0f;
+    public GameObject EnemyDirector;
 
     public Animator animator;
     

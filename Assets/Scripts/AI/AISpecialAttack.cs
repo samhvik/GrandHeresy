@@ -38,26 +38,20 @@ public class AISpecialAttack: AIAction
     IEnumerator RangedAttack(Vector3 locale, AIStateController c){
         var particle = Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0));
         var obj = Instantiate(SpikeObject, locale, Quaternion.Euler(0, 0, 0)); // destroy after cast
-
-        
-        //Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 1.75f); // destroy after cast
-        //c.GetComponent<Animator>().enabled = false; // Replace with cast animation transition
         c.animator.SetBool("IsAttacking", true);
+        // play a casting sounds here if avail
         
-        // play a casting sound
         yield return new WaitForSeconds(1.5f); // Cast time
+
         // only hit players and update health
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
-
-        
-        
         obj.GetComponentInChildren<Animator>().SetBool("TriggerSpikes", true);
         obj.transform.position = locale;
-
         //Debug.Log(hits);
         foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); }
         
         yield return new WaitForSeconds(0.75f); // following a target CD time
+
         Destroy(obj);
         Destroy(particle);
         c.navMeshAgent.isStopped = false; // let the AI walk again
@@ -65,7 +59,7 @@ public class AISpecialAttack: AIAction
         obj.GetComponentInChildren<Animator>().SetBool("TriggerSpikes", false); // restart walk animation cycle
     }
     IEnumerator MeleeAttack(GameObject target, AIStateController c){
-        c.GetComponent<Animator>().enabled = false; // Replace with melee animation transition
+        c.GetComponent<Animator>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         // Play Sound
         c.aSource.clip = c.enemySounds[Random.Range(0, 1)];
@@ -77,10 +71,3 @@ public class AISpecialAttack: AIAction
         c.GetComponent<Animator>().enabled = true; // Restart Walk Animation
     }
 }
-
-// Projectile Ranged Attack Issues
-// using a bullet since the script is already made, altering the "round" script to detect when a bullet hits a "Player"
-// would induce friendly fire into the game. a way around that?
-// IDEAS
-// copy paste round to be something else and instantiate as that
-// ???
