@@ -1,9 +1,8 @@
 # Grand Heresy
 --------------
+<img alt="" src="https://i.imgur.com/uhbUyY3.jpg">
 
 Grand Heresy is a cooperative twin-stick shooter. Created for the UCSC senior capstone project. More information about our team or our game below.
-
-[//]: <img alt="" src="" width=""> (put image in here and delete '//')
 
 Key Gameplay Features:
 
@@ -14,18 +13,16 @@ Key Gameplay Features:
 
 About the Team
 --------------
-
-- Producer & Generalist Programmer: Sam Vik
+- Producer/Designer & Generalist Programmer: [Sam Vik](https://github.com/samhvik) 
 - AI Programmer: [Lane Albrecht](https://github.com/LaneAlb)
-- Programmer: Justin Quan
-- Programmer: Kevin Chacko
-- Programmer: Danny Baghdasarians
-- Programmer: Quinn Satow
-- UI Designer: 
-- 3D Artist: Josue
-- 3D Artist: Jerry Lin
+- UI & Generalist Programmer: Justin Quan
+- Level Designer & General Programmer: Kevin Chacko
+- Camera/Controls & Multiplayer Programmer: Danny Baghdasarians
+- General Programmer: Quinn Satow
+- 3D Artist, Animator & Programmer: Josue Uriarte
 - 3D Artist: Zhe Kou
-- Sound: Satvik Srinivasan
+- Sound Designer: Jerry Lin
+- Sound Designer: Satvik Srinivasan
 
 Installation
 ------------
