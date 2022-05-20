@@ -80,7 +80,6 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // just subtly increase the frequency to spawn enemies based on objective completion for now
-    // grab the gamevalue for completedObjectives at some point
     private bool spawnRate(int completedObjectives){
         var complObj = completedObjectives; //add to this value to increase spawn rate 
         if(complObj <= 0){ complObj = 1; } // don't divide by zero, this is our default spawn rate
@@ -89,6 +88,7 @@ public class EnemySpawner : MonoBehaviour
         return (GameValues.instance.aiSpawnTimer >= 10/complObj);
     }
 
+    // Create and Setup the new batch of enemies
     private void enemyCreator(GameObject prefab, Vector3 pos){
         // we use CheckBounds for making sure pos is valid
         GameObject nAI = Instantiate(prefab, pos, Quaternion.LookRotation(-pos));

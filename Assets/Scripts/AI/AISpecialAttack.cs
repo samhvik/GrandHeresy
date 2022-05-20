@@ -22,6 +22,7 @@ public class AISpecialAttack: AIAction
             if(controller.CheckIfCountdownElapse(controller.enemyStats.specialCD)){
                 // if within "melee" distance we choose to melee not cast, and reset state time to smaller amount
                 controller.navMeshAgent.isStopped = true;
+                // Melee Attack IF possible
                 if (Vector3.Distance(fov.visibleTarget.position, controller.transform.position) <= 5f){
                     controller.StartCoroutine(MeleeAttack(fov.visibleTarget.gameObject, controller));
                     controller.stateTimeElapsed = -controller.enemyStats.attackCD; // reset time elapsed
@@ -37,7 +38,7 @@ public class AISpecialAttack: AIAction
 
     IEnumerator RangedAttack(Vector3 locale, AIStateController c){
         var particle = Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0));
-        var obj = Instantiate(SpikeObject, locale, Quaternion.Euler(0, 0, 0)); // destroy after cast
+        var obj = Instantiate(SpikeObject, locale, Quaternion.Euler(0, 0, 0));
         c.animator.SetBool("IsAttacking", true);
         // play a casting sounds here if avail
         
