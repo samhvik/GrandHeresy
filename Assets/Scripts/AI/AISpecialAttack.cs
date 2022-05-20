@@ -8,6 +8,7 @@ public class AISpecialAttack: AIAction
     [SerializeField] private GameObject SpikeObject;
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private GameObject AoEParticleSet;
+    [SerializeField] private GameObject SpikeParticleSet;
     
 
     public override void Act(AIStateController controller){
@@ -38,6 +39,8 @@ public class AISpecialAttack: AIAction
     IEnumerator RangedAttack(Vector3 locale, AIStateController c){
         var particle = Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0));
         var obj = Instantiate(SpikeObject, locale, Quaternion.Euler(0, 0, 0)); // destroy after cast
+        Destroy(obj, 2.45f);
+        Destroy(particle, 2.45f);
 
         
         //Destroy(Instantiate(AoEParticleSet, locale, Quaternion.Euler(90, 0, 0)), 1.75f); // destroy after cast
@@ -50,7 +53,7 @@ public class AISpecialAttack: AIAction
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
 
         
-        
+        //Instantiate(SpikeParticleSet, locale, Quaternion.Euler(0, 0, 0));
         obj.GetComponentInChildren<Animator>().SetBool("TriggerSpikes", true);
         obj.transform.position = locale;
 
@@ -58,8 +61,7 @@ public class AISpecialAttack: AIAction
         foreach(Collider h in hits){ h.GetComponent<PlayerInventory>().UpdateHealth(c.enemyStats.damage); }
         
         yield return new WaitForSeconds(0.75f); // following a target CD time
-        Destroy(obj);
-        Destroy(particle);
+        
         c.navMeshAgent.isStopped = false; // let the AI walk again
         c.animator.SetBool("IsAttacking", false);
         obj.GetComponentInChildren<Animator>().SetBool("TriggerSpikes", false); // restart walk animation cycle
