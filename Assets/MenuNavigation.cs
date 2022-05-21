@@ -27,11 +27,11 @@ public class MenuNavigation : MonoBehaviour
     // loads the Main scene
     public void StartGame()
     {
-        MainMenuMusic script = GameObject.Find("Main Camera").GetComponent<MainMenuMusic>();
+        MainMenuMusic script = GameObject.Find("UICamera").GetComponent<MainMenuMusic>();
         script.music_event.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         Destroy(script.gameObject);
         
-        SceneManager.LoadScene(GameValues.level);
+        SceneManager.LoadScene("Main");
         Fade.ToggleLevelFade(animator);
     }
 
