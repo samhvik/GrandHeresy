@@ -21,13 +21,13 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.255
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.374
   rounded:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-4974947878387648788
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -43,16 +43,16 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 1.06
   intensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 0.55
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0
   clamp:
     m_OverrideState: 1
-    m_Value: 65472
+    m_Value: 65465.63
   tint:
     m_OverrideState: 1
     m_Value: {r: 1, g: 0.86571336, b: 0, a: 1}
@@ -61,13 +61,13 @@ MonoBehaviour:
     m_Value: 0
   skipIterations:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   dirtTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 958e6b9b36f25354db99deafd3eaaaa6, type: 3}
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 70.1
 --- !u!114 &-4083529106718012561
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -80,22 +80,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.1
   contrast:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 100
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-  hueShift:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: {r: 0.672063, g: 0.5712311, b: 0.497707, a: 1}
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 14
   saturation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 17
 --- !u!114 &-2654083209522549397
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -111,7 +111,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Post Processing Profile
+  m_Name: MenuBG
   m_EditorClassIdentifier: 
   components:
   - {fileID: 279815480732425220}
@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: -6942131870263809239}
   - {fileID: -4083529106718012561}
   - {fileID: -2654083209522549397}
+  - {fileID: 1506719379301748768}
 --- !u!114 &279815480732425220
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -142,16 +143,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   type:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 3
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.332
   response:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 0.656
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+--- !u!114 &1506719379301748768
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
+  gaussianStart:
+    m_OverrideState: 1
+    m_Value: 62.22
+  gaussianEnd:
+    m_OverrideState: 1
+    m_Value: 529.5
+  gaussianMaxRadius:
+    m_OverrideState: 0
+    m_Value: 1
+  highQualitySampling:
+    m_OverrideState: 0
+    m_Value: 0
+  focusDistance:
+    m_OverrideState: 1
+    m_Value: 30.75
+  aperture:
+    m_OverrideState: 1
+    m_Value: 6
+  focalLength:
+    m_OverrideState: 1
+    m_Value: 1
+  bladeCount:
+    m_OverrideState: 0
+    m_Value: 5
+  bladeCurvature:
+    m_OverrideState: 0
+    m_Value: 1
+  bladeRotation:
+    m_OverrideState: 0
+    m_Value: 0
