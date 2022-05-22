@@ -9,7 +9,9 @@ public class AISpecialAttack: AIAction
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private GameObject AoEParticleSet;
     [SerializeField] private GameObject SpikeParticleSet;
-    
+    [SerializeField] private GameObject SpikeDirtParticleSphere;
+    [SerializeField] private GameObject SpikeDirtParticleCircle;
+
 
     public override void Act(AIStateController controller){
         Attack(controller);
@@ -49,6 +51,12 @@ public class AISpecialAttack: AIAction
         
         // play a casting sound
         yield return new WaitForSeconds(1.5f); // Cast time
+
+        var dirtSphere = Instantiate(SpikeDirtParticleSphere, new Vector3(locale.x,locale.y - 0.5f,locale.z), Quaternion.Euler(0, 0, 0));
+        Destroy(dirtSphere, 2.45f);
+        var dirtCircle = Instantiate(SpikeDirtParticleCircle, new Vector3(locale.x, locale.y, locale.z), Quaternion.Euler(-90f, 0, 0));
+        Destroy(dirtCircle, 2.45f);
+
         // only hit players and update health
         Collider[] hits = Physics.OverlapSphere(locale, 3, PlayerLayer);
 
