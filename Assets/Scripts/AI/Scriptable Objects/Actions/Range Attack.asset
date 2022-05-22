@@ -18,3 +18,5 @@ MonoBehaviour:
     m_Bits: 64
   AoEParticleSet: {fileID: 4691051846242378908, guid: 6078771e3c504834984b5912dae21356, type: 3}
   SpikeParticleSet: {fileID: 7787669044383469463, guid: c62d6a7fd0139e542b01720e997aa4ea, type: 3}
+  SpikeDirtParticleSphere: {fileID: 553482623005350891, guid: 94996bc90952d7f46bed74be17ef508d, type: 3}
+  SpikeDirtParticleCircle: {fileID: 1846453403213186885, guid: 08e96904081021b40b093cad930726e3, type: 3}
