@@ -34,6 +34,7 @@ public class MovementSM : StateMachine
     public Vector3 faceDirection;
     private Vector2 left;
     private Vector2 right;
+    public float lastTimeMovePressed;
     private Vector2 movementInput = Vector2.zero;
     private Vector2 aimInput = Vector2.zero;
     public bool isAiming = false;

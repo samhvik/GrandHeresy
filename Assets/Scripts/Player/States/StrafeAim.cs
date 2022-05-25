@@ -8,6 +8,7 @@ public class StrafeAim : Moving
     private float L_verticalInput;
     private float R_horizontalInput;
     private float R_verticalInput;
+    private float lastTimeKeyPressDelay;
 
     public StrafeAim(MovementSM stateMachine) : base("StrafeAim", stateMachine) { }
 
@@ -18,6 +19,8 @@ public class StrafeAim : Moving
         L_verticalInput = sm.left_vertical;
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
+
+        // lastTimeKeyPressDelay = sm.lastTimeMovePressed + 1;
 
         sm.animatorManager.HandleIdleAimState(false);
         sm.animatorManager.HandleKeyboardAimState(true);
@@ -68,8 +71,20 @@ public class StrafeAim : Moving
 
             // sm.animatorManager.HandleAnimatorValues(sm.left_horizontal, sm.left_vertical, sm.right_horizontal, sm.right_vertical, false);
 
-            sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
-            sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+            // sm.faceDirection = GameValues.instance.playerCursors[sm.input.playerIndex].transform.position;
+            // var desiredRotation = Quaternion.LookRotation(new Vector3(sm.faceDirection.x, 0, sm.faceDirection.z));
+            // sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, 800 * Time.deltaTime);
+
+            Vector3 direction = GameValues.instance.playerCursors[sm.input.playerIndex].transform.position - sm.transform.position;
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rotation, 15 * Time.deltaTime);
+
+            //sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+            //sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
+
+
+            //sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
+            //sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
 
             //sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
             //var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
@@ -77,8 +92,12 @@ public class StrafeAim : Moving
 
             if (L_horizontalInput == 0 && L_verticalInput == 0)
             {
-                sm.animatorManager.HandleKeyboardAimState(false);
-                stateMachine.ChangeState(sm.aimState);
+                // if(Time.time > lastTimeKeyPressDelay)
+                // {
+                //     sm.lastTimeMovePressed = Time.time;
+                    sm.animatorManager.HandleKeyboardAimState(false);
+                    stateMachine.ChangeState(sm.aimState);
+                // }
             }
 
             else if (!sm.isAiming){

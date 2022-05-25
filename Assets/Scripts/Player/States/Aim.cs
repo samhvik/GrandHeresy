@@ -52,8 +52,12 @@ public class Aim : Stationary
             //    GameValues.instance.cursorLock = true;
             // }
 
-            sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
-            sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+            // sm.transform.LookAt(GameValues.instance.playerCursors[sm.input.playerIndex].transform);
+            // sm.transform.rotation = Quaternion.Euler(0, sm.transform.eulerAngles.y, 0);
+
+            Vector3 direction = GameValues.instance.playerCursors[sm.input.playerIndex].transform.position - sm.transform.position;
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rotation, 15 * Time.deltaTime);
 
             if (sm.isAiming == false)
             {

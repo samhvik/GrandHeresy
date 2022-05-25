@@ -320,6 +320,7 @@ MonoBehaviour:
   right_horizontal: 0
   right_vertical: 0
   faceDirection: {x: 0, y: 0, z: 0}
+  lastTimeMovePressed: 0
   isAiming: 0
   lookSpeed: 541
   runningLookSpeed: 377
@@ -377,6 +378,7 @@ MonoBehaviour:
   starterGun: {fileID: 5066759550108367686, guid: d35214f1bc5bce74a9344b5ce0ecb3db, type: 3}
   gunPosition: {fileID: 8057053086923493147}
   health: 150
+  am: {fileID: 0}
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,18 +409,6 @@ MonoBehaviour:
       - m_Target: {fileID: 849709334750888097}
         m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
         m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2493648352027477128}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: SetGamepad
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,18 +482,6 @@ MonoBehaviour:
     m_ActionName: Gameplay/SwapWeapons[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2493648352027477128}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: SetGamepad
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 849709334750888097}
         m_TargetAssemblyTypeName: MovementSM, Assembly-CSharp
         m_MethodName: OnAim
@@ -662,6 +640,46 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a75e9e6b-b658-4c25-b490-39a9466f37e0
     m_ActionName: Gameplay/TriggerPistol[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff2f25dc-9721-4f71-929d-3f9a1b412863
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6add50bd-7869-4bd0-a666-91b6230ec584
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2493648352027477128}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetKeyboardAsGamepad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: acaba99b-de45-4f52-8ad7-6782f54bb56f
+    m_ActionName: Gameplay/Spawn[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2493648352027477128}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetControllerAsGamepad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 91e6b033-75a5-4521-a997-097b843c7171
+    m_ActionName: Gameplay/SpawnController[/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID1/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -895,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf3d0d3a15b4e4e88112d1db1f0ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
 --- !u!95 &1424946431518444769
 Animator:
   serializedVersion: 4

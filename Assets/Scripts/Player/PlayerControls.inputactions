@@ -6,6 +6,24 @@
             "id": "e4160950-b98b-400f-ae87-c56c4d615bba",
             "actions": [
                 {
+                    "name": "SpawnKeyboard",
+                    "type": "Value",
+                    "id": "acaba99b-de45-4f52-8ad7-6782f54bb56f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SpawnController",
+                    "type": "PassThrough",
+                    "id": "91e6b033-75a5-4521-a997-097b843c7171",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "12f34eb0-d475-4d22-8a70-725b9e750d60",
@@ -574,6 +592,28 @@
                     "action": "TriggerPistol",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1756f340-467b-47f3-b9a1-ad3fdc022ff2",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnKeyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c5727a7-2832-45a1-a411-3107d7aa9c29",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnController",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -583,16 +623,16 @@
             "actions": [
                 {
                     "name": "Point",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "ff2f25dc-9721-4f71-929d-3f9a1b412863",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Click",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "6add50bd-7869-4bd0-a666-91b6230ec584",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -995,7 +1035,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false

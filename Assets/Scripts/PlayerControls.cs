@@ -28,6 +28,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""e4160950-b98b-400f-ae87-c56c4d615bba"",
             ""actions"": [
                 {
+                    ""name"": ""SpawnKeyboard"",
+                    ""type"": ""Value"",
+                    ""id"": ""acaba99b-de45-4f52-8ad7-6782f54bb56f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SpawnController"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""91e6b033-75a5-4521-a997-097b843c7171"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""12f34eb0-d475-4d22-8a70-725b9e750d60"",
@@ -596,6 +614,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""TriggerPistol"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1756f340-467b-47f3-b9a1-ad3fdc022ff2"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c5727a7-2832-45a1-a411-3107d7aa9c29"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnController"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -605,16 +645,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Point"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""ff2f25dc-9721-4f71-929d-3f9a1b412863"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Click"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""6add50bd-7869-4bd0-a666-91b6230ec584"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -1017,7 +1057,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1068,6 +1108,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_SpawnKeyboard = m_Gameplay.FindAction("SpawnKeyboard", throwIfNotFound: true);
+        m_Gameplay_SpawnController = m_Gameplay.FindAction("SpawnController", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
         m_Gameplay_Reload = m_Gameplay.FindAction("Reload", throwIfNotFound: true);
@@ -1148,6 +1190,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
+    private readonly InputAction m_Gameplay_SpawnKeyboard;
+    private readonly InputAction m_Gameplay_SpawnController;
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Shoot;
     private readonly InputAction m_Gameplay_Reload;
@@ -1165,6 +1209,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SpawnKeyboard => m_Wrapper.m_Gameplay_SpawnKeyboard;
+        public InputAction @SpawnController => m_Wrapper.m_Gameplay_SpawnController;
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
         public InputAction @Reload => m_Wrapper.m_Gameplay_Reload;
@@ -1187,6 +1233,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
+                @SpawnKeyboard.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnKeyboard;
+                @SpawnKeyboard.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnKeyboard;
+                @SpawnKeyboard.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnKeyboard;
+                @SpawnController.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnController;
+                @SpawnController.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnController;
+                @SpawnController.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnController;
                 @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
@@ -1230,6 +1282,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @SpawnKeyboard.started += instance.OnSpawnKeyboard;
+                @SpawnKeyboard.performed += instance.OnSpawnKeyboard;
+                @SpawnKeyboard.canceled += instance.OnSpawnKeyboard;
+                @SpawnController.started += instance.OnSpawnController;
+                @SpawnController.performed += instance.OnSpawnController;
+                @SpawnController.canceled += instance.OnSpawnController;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -1366,6 +1424,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IGameplayActions
     {
+        void OnSpawnKeyboard(InputAction.CallbackContext context);
+        void OnSpawnController(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
