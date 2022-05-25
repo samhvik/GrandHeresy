@@ -184,9 +184,9 @@ GameObject:
   - component: {fileID: 7802562146992813176}
   - component: {fileID: -7372704348808804457}
   - component: {fileID: 1424946431518444769}
-  - component: {fileID: 3076454396869156257}
+  - component: {fileID: 1913212729388408603}
   m_Layer: 6
-  m_Name: PlayerPrefab
+  m_Name: NewPlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849709334750888112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -616,11 +616,35 @@ MonoBehaviour:
     m_ActionId: 6add50bd-7869-4bd0-a666-91b6230ec584
     m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetKeyboardAsGamepad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: acaba99b-de45-4f52-8ad7-6782f54bb56f
     m_ActionName: Gameplay/Spawn[/Keyboard/anyKey]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SetControllerAsGamepad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 91e6b033-75a5-4521-a997-097b843c7171
     m_ActionName: Gameplay/SpawnController[/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID1/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
@@ -877,7 +901,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3076454396869156257
+--- !u!114 &1913212729388408603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -886,7 +910,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 849709334750888112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157ea8306ef2612458beadd280b97ee5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d14399e517f4024a8e35b3401cdcbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
@@ -904,12 +928,12 @@ MonoBehaviour:
   currentCursor: {fileID: 0}
   playerSpawn:
   - {fileID: 5972687589519913122, guid: 9f44239582a56934999da49f4ab381b5, type: 3}
-  - {fileID: 7229195791440251472, guid: 064abf110ab8f594cb5b96ee31c9b24b, type: 3}
   - {fileID: 7776458811269401123, guid: 3aa7e7782c75b444891385b25103a6e2, type: 3}
   - {fileID: 5591673472106774710, guid: e83bd74cf6c5b0842a2dab06d4b3d101, type: 3}
   - {fileID: 7027180071321386020, guid: ce5c626f743463f4cac1b76cddf2af65, type: 3}
   - {fileID: 6067778618121871272, guid: 1fedb4705a7774949abc9820c44c2e75, type: 3}
   - {fileID: 6709497803969559250, guid: 5339d5393994d27478cafb21e97f0eac, type: 3}
+  - {fileID: 7229195791440251472, guid: 064abf110ab8f594cb5b96ee31c9b24b, type: 3}
 --- !u!1 &986077193338013478
 GameObject:
   m_ObjectHideFlags: 0
