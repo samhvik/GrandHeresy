@@ -14,21 +14,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
-    // private void Awake()
-    // {
-    //     if(Instance != null)
-    //     {
-    //         Debug.Log("SINGLETON - Trying to make another instance of singleton");
-    //     }
-    //     else
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(Instance);
-    //         playerConfigs = new List<PlayerConfiguration>();
-    //     }
-    // }
-
-    private void OnEnable()
+    private void Awake()
     {
         if(Instance != null)
         {
@@ -42,14 +28,33 @@ public class PlayerConfigurationManager : MonoBehaviour
         }
     }
 
+    // private void OnEnable()
+    // {
+    //     if(Instance != null)
+    //     {
+    //         Debug.Log("SINGLETON - Trying to make another instance of singleton");
+    //     }
+    //     else
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(Instance);
+    //         playerConfigs = new List<PlayerConfiguration>();
+    //     }
+    // }
+
     //public void SetPlayerColor
+
+    public List<PlayerConfiguration> GetPlayerConfigs()
+    {
+        return playerConfigs;
+    }
 
     public void ReadyPlayer(int index)
     {
         playerConfigs[index].IsReady = true;
         if( playerConfigs.Count == MaxPlayers && playerConfigs.All(p => p.IsReady == true))
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("NewMain");
         }
     }
 

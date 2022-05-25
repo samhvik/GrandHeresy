@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9168037388284646843
+--- !u!1 &3754456509928287385
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,69 +8,64 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9168037388284646842}
-  - component: {fileID: 9168037388284646820}
-  - component: {fileID: 9168037388284646821}
-  m_Layer: 5
+  - component: {fileID: 6333178406449128903}
+  - component: {fileID: 6880322185321854592}
+  - component: {fileID: 4373930265880884523}
+  m_Layer: 0
   m_Name: PlayerConfigurationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &9168037388284646842
-RectTransform:
+--- !u!4 &6333178406449128903
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9168037388284646843}
+  m_GameObject: {fileID: 3754456509928287385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14.15214, y: -14.578348, z: 3.386877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9168037388284646820
+--- !u!114 &6880322185321854592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9168037388284646843}
+  m_GameObject: {fileID: 3754456509928287385}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7e9d82190352e14aa5dbea74d95aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxPlayers: 4
---- !u!114 &9168037388284646821
+  MaxPlayers: 2
+--- !u!114 &4373930265880884523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9168037388284646843}
+  m_GameObject: {fileID: 3754456509928287385}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: 4
+  m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9168037388284646820}
+      - m_Target: {fileID: 6880322185321854592}
         m_TargetAssemblyTypeName: PlayerConfigurationManager, Assembly-CSharp
         m_MethodName: HandlePlayerJoin
         m_Mode: 0
@@ -97,7 +92,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 1853272443732379388, guid: 0acf0bb1959721a4db4fa2bdb1608ccb, type: 3}
+  m_PlayerPrefab: {fileID: 324991498485821619, guid: 0acf0bb1959721a4db4fa2bdb1608ccb, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
