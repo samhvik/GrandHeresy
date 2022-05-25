@@ -28,6 +28,7 @@ public class UploadObjective : MonoBehaviour
     public float uploadRange;
 
     public GameObject ringRadius;
+    private GameObject uploadRing;
 
 
     void Start()
@@ -76,7 +77,7 @@ public class UploadObjective : MonoBehaviour
             // Spawn our Ring with our given range
             ParticleSystem.ShapeModule ringShape = ringRadius.GetComponent<ParticleSystem>().shape;
             ringShape.radius = uploadRange;
-            Instantiate(ringRadius, new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
+            uploadRing = Instantiate(ringRadius, new Vector3(this.transform.position.x, this.transform.position.y - 0.95f, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
 
             barInteractText.SetActive(false);
 
@@ -106,6 +107,9 @@ public class UploadObjective : MonoBehaviour
             {
                 GameValues.instance.GameCompleted();
             }
+
+            Destroy(uploadRing);
+            mat.material.color = Color.green;
         }
     }
 
