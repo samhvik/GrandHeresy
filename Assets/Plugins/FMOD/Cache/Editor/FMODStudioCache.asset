@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Footsteps.bank
   Name: Footsteps
   StudioPath: bank:/Footsteps
-  lastModified: 637828808642426765
+  lastModified: 637868333131715969
   FileSizes:
   - Name: Desktop
     Value: 58080
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637885701496275982
+  lastModified: 637891210076996330
   FileSizes:
   - Name: Desktop
     Value: 95008
@@ -55,7 +55,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637885701496576259
+  lastModified: 637891210077352578
   FileSizes:
   - Name: Desktop
     Value: 4691456
@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: -7426376784604322164}
   StringsBanks:
   - {fileID: 7572683295186737330}
-  cacheTime: 637885701496576259
+  cacheTime: 637891210077352578
   cacheVersion: 10
 --- !u!114 &887768730236872051
 MonoBehaviour:
@@ -305,7 +305,7 @@ MonoBehaviour:
   Path: Assets/Sounds/GrandHeresyStudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637885701496275982
+  lastModified: 637891210077081494
   FileSizes:
   - Name: Desktop
     Value: 1208
