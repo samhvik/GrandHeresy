@@ -9,31 +9,38 @@ using UnityEngine;
 
 public class RuneObjective : MonoBehaviour
 {
-    private float health;
+    public float health;
     private Renderer mat;
 
     void Start(){
-        health = 50;
         mat = gameObject.GetComponent<Renderer>();
         mat.material.color = Color.black;
     }
 
     void Update(){
         if(health <= 0){
-            mat.material.color = Color.green;
-            GameValues.instance.objectivesCompleted++;
-
             if(GameValues.instance.objectivesCompleted == GameValues.instance.objectivesTotal){
                 GameValues.instance.GameCompleted();
             }
-            health = 99999999;
         }
     }
 
     public void Hit(float damage){
-        health -= damage;
-        Debug.Log("Hit Objective");
-        // enable combat for enemy spawning
-        GameValues.inCombatStatus = true;
+        if(health > 0){
+            health -= damage;
+            Debug.Log("Hit Objective");
+
+            // Destroy event when health is less than zero
+            if(health <= 0) RuneDestroyed();
+
+            // enable combat for enemy spawning
+            GameValues.inCombatStatus = true;
+        }
+    }
+
+    public void RuneDestroyed()
+    {
+        mat.material.color = Color.green;
+        GameValues.instance.objectivesCompleted++;
     }
 }

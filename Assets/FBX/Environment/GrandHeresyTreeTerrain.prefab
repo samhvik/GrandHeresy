@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8250634037651685754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: curve2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3401730328820525805}
   - component: {fileID: 4450900516921939133}
   - component: {fileID: 1617517617576585089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,8 @@ GameObject:
   - component: {fileID: 2343690535319383919}
   - component: {fileID: 2343690535319383917}
   - component: {fileID: 2343690535319383916}
-  m_Layer: 0
+  - component: {fileID: 4640090754533678915}
+  m_Layer: 7
   m_Name: GrandHeresyTreeTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,6 +195,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1617517617576585089}
   m_Enabled: 1
+--- !u!136 &4640090754533678915
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156362202787116501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.34877324
+  m_Height: 8.537819
+  m_Direction: 1
+  m_Center: {x: 0.11762071, y: 4.2057858, z: 0}
 --- !u!1 &6573977894879498668
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4065087022700270731}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: curve3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230335687314639838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: curve1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
