@@ -15,16 +15,16 @@ MonoBehaviour:
   active: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   center:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.5}
+    m_Value: {x: 0.28, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.703
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0.224
   rounded:
     m_OverrideState: 1
     m_Value: 1
@@ -43,13 +43,13 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1.21
+    m_Value: 1.24
   intensity:
     m_OverrideState: 1
-    m_Value: 0.47
+    m_Value: 0.51
   scatter:
     m_OverrideState: 1
-    m_Value: 0.11
+    m_Value: 0.589
   clamp:
     m_OverrideState: 1
     m_Value: 65447.63
@@ -149,10 +149,10 @@ MonoBehaviour:
     m_Value: 3
   intensity:
     m_OverrideState: 1
-    m_Value: 0.332
+    m_Value: 0.484
   response:
     m_OverrideState: 1
-    m_Value: 0.656
+    m_Value: 0.428
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -186,13 +186,13 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 30.75
+    m_Value: 15.4
   aperture:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 5.6
   focalLength:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 132
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
