@@ -14,7 +14,7 @@ public class RuneObjective : MonoBehaviour
 
     void Start(){
         mat = gameObject.GetComponent<Renderer>();
-        mat.material.color = Color.black;
+        //mat.material.color = Color.black;
     }
 
     void Update(){
