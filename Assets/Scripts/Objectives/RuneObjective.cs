@@ -11,9 +11,13 @@ public class RuneObjective : MonoBehaviour
 {
     public float health;
     private Renderer mat;
+    private Destructible destruct;
+    private ParticleSystem particleSystem;
 
     void Start(){
         mat = gameObject.GetComponent<Renderer>();
+        destruct = GetComponent<Destructible>();
+        particleSystem = GetComponent<ParticleSystem>();
         //mat.material.color = Color.black;
     }
 
@@ -40,6 +44,8 @@ public class RuneObjective : MonoBehaviour
 
     public void RuneDestroyed()
     {
+        particleSystem.Stop();
+        destruct.Explode();
         mat.material.color = Color.green;
         GameValues.instance.objectivesCompleted++;
     }

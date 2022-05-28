@@ -96,21 +96,26 @@ public class UploadObjective : MonoBehaviour
 
         if(bar.GetComponent<Slider>().value >= 1)
         {
-            bar.SetActive(false);
-            barText.SetActive(false);
-
-            amountUploaded = -2;
-
-            GameValues.instance.objectivesCompleted++;
-
-            if (GameValues.instance.objectivesCompleted == GameValues.instance.objectivesTotal)
-            {
-                GameValues.instance.GameCompleted();
-            }
-
-            Destroy(uploadRing);
-            mat.material.color = Color.green;
+            doneUploading();
         }
+    }
+
+    public void doneUploading()
+    {
+        bar.SetActive(false);
+        barText.SetActive(false);
+
+        amountUploaded = -2;
+
+        GameValues.instance.objectivesCompleted++;
+
+        if (GameValues.instance.objectivesCompleted == GameValues.instance.objectivesTotal)
+        {
+            GameValues.instance.GameCompleted();
+        }
+
+        Destroy(uploadRing);
+        mat.material.color = Color.green;
     }
 
     // Checks to see if all players are in range of object

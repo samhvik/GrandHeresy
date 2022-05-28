@@ -50,9 +50,7 @@ public class Extract : MonoBehaviour
     
     void Awake(){
         TimerPanel.SetActive(false);
-    }
-    void Start()
-    {
+
         if(beaconPrefab == null){
            beaconPrefab = (GameObject)Resources.Load("Tree",typeof(GameObject));
         }
@@ -63,6 +61,19 @@ public class Extract : MonoBehaviour
         // print("extractionTime = " + extractionTime);
         timeRemaining = extractionTime;
         GameValues.instance.extractionTimer = extractionTime;
+    }
+    void Start()
+    {
+        // if(beaconPrefab == null){
+        //    beaconPrefab = (GameObject)Resources.Load("Tree",typeof(GameObject));
+        // }
+        // beaconSpawnPoint = chooseBeaconPoint();
+        // GameObject.Instantiate(beaconPrefab, beaconSpawnPoint.transform.position, Quaternion.identity);
+        // // extractionTime = Random.Range(30.0f, 90.0f) * Time.deltaTime;
+        // extractionTime = Mathf.Round(Random.Range(30.0f, 90.0f));
+        // // print("extractionTime = " + extractionTime);
+        // timeRemaining = extractionTime;
+        // GameValues.instance.extractionTimer = extractionTime;
         
     }
 
