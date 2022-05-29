@@ -10,13 +10,14 @@ public class Target : MonoBehaviour{
 
     public float health;
 
-    void Update(){
-        if(health <= 0)
-            Destroy(this.gameObject);
-    }
-
     public void Hit(float damage){
         health -= damage;
+        if(health <= 0) KillObject();
         Debug.Log("Hit");
+    }
+
+    public void KillObject()
+    {
+        Destroy(this.gameObject);
     }
 }
