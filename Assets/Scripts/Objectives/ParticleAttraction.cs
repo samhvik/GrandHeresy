@@ -5,7 +5,7 @@ using System.Collections;
 public class ParticleAttraction : MonoBehaviour
 {
     public bool targetExtractionPoint;
-    public Transform target;
+    public Transform target = null;
     public float speed;
     private ParticleSystem.Particle[] particles;
     private ParticleSystem particleSystem;
@@ -18,7 +18,7 @@ public class ParticleAttraction : MonoBehaviour
         {
             beaconTransform = GameObject.FindWithTag("Beacon").transform;
             target = beaconTransform;
-        } 
+        }
     }
  
     void Update()

@@ -94,7 +94,7 @@ public class MovementSM : StateMachine
             if (context.started)
             {
                 isAiming = true;
-                aimInput = context.ReadValue<Vector2>();
+                //aimInput = context.ReadValue<Vector2>();
             }
 
             else if (context.canceled)

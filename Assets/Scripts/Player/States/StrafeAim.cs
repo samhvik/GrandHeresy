@@ -49,7 +49,7 @@ public class StrafeAim : Moving
 
             sm.faceDirection = Vector3.forward * R_verticalInput + Vector3.right * R_horizontalInput;
             var desiredRotation = Quaternion.LookRotation(sm.faceDirection);
-            sm.transform.rotation = Quaternion.RotateTowards(sm.transform.rotation, desiredRotation, sm.lookSpeed * Time.deltaTime);
+            sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, desiredRotation, 8 * Time.deltaTime);
 
             // If the right stick is not in motion, switch to idle state
             if (L_horizontalInput == 0 && L_verticalInput == 0)

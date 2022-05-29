@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 102295576085961851}
   - component: {fileID: 1019989428588059216}
   - component: {fileID: 2945126433302378196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RedCursorParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4780,9 +4780,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2081180443
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
