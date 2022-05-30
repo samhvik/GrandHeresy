@@ -563,6 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  numberOfDeathAnimations: 3
+  timeTillDestroy: 6
 --- !u!114 &4114430730772237117
 MonoBehaviour:
   m_ObjectHideFlags: 0
