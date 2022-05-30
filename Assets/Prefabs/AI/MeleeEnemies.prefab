@@ -575,7 +575,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4677920196057444594}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -615,6 +615,10 @@ MonoBehaviour:
   health: 20
   numberOfDeathAnimations: 3
   timeTillDestroy: 4
+  dissolveStartDelayMin: 1
+  dissolveStartDelayMax: 3
+  change: 0.05
+  dissolveDelay: 0.05
 --- !u!114 &5283302981514193603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1070,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: f6fec6b7a81ece6489b14db8fd90f75e, type: 3}
+  - {fileID: 2100000, guid: 557f188b1d3ef794dafa42c56cc63a6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
