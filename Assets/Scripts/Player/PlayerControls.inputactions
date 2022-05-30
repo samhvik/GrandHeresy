@@ -353,6 +353,17 @@
                 },
                 {
                     "name": "",
+                    "id": "95f61f70-11f6-407c-9e26-c73eee065198",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "601a16f5-71f1-4a64-a2c0-3784a5154ce4",
                     "path": "<DualShockGamepad>/leftStickPress",
                     "interactions": "",
