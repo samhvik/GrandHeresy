@@ -30,6 +30,7 @@ public class UploadObjective : MonoBehaviour
     public GameObject ringRadius;
     private GameObject uploadRing;
 
+    private ParticleSystem particleSystem;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class UploadObjective : MonoBehaviour
         amountUploaded = 0;
         lockUpload = false;
         mat = gameObject.GetComponent<Renderer>();
+        particleSystem = GetComponent<ParticleSystem>();
         mat.material.color = Color.black;
     }
 
@@ -114,6 +116,7 @@ public class UploadObjective : MonoBehaviour
             GameValues.instance.GameCompleted();
         }
 
+        particleSystem.Stop();
         Destroy(uploadRing);
         mat.material.color = Color.green;
     }
