@@ -62,6 +62,10 @@ public class PlayerInventory : MonoBehaviour {
         drop.transform.position = gunPosition.transform.position; 
         drop.transform.forward = gunPosition.transform.forward; 
         drop.gameObject.SetActive(false);
+
+        drop.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        drop.gameObject.GetComponent<FlashMaterialInRange>().enabled = false;
+
         var gun = drop.gameObject.GetComponent<Gun>();
         gun.setInventory(this);
         guns.Add(gun);

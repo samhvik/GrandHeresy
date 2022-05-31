@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2303700659782897364}
   - component: {fileID: 506311829638698872}
   - component: {fileID: 8289311818374134389}
+  - component: {fileID: -2408960462921077654}
+  - component: {fileID: 1077087757458092391}
   m_Layer: 0
   m_Name: P-2416 Apostle
   m_TagString: Drop
@@ -222,3 +224,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2408960462921077654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532808677140683003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b7f08c99f63a24ba8b6e9247ba8af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFlash: 1
+  flashColor: {r: 1, g: 0.889333, b: 0, a: 0}
+  flashSpeed: 1.35
+--- !u!54 &1077087757458092391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532808677140683003}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
