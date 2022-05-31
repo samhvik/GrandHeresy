@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     // Enables the controls for UI
     void OnEnable()
     {
+        controls.Gameplay.Disable();
         controls.UI.Enable();
     }
 

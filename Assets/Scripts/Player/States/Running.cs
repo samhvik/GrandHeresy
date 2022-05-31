@@ -36,6 +36,8 @@ public class Running : Moving
             L_verticalInput * GameValues.instance.playerSpeedRun
         ));
 
+        sm.characterController.Move(new Vector3(0,-1,0));
+
         // -------------- New way to rotate character w/ lookSpeed variable -------
         sm.faceDirection = new Vector3(L_horizontalInput, 0 , L_verticalInput);
         sm.faceDirection.Normalize();

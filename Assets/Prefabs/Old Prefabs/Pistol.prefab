@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6076505355323323959}
   - component: {fileID: 6076505355323323958}
   - component: {fileID: 8814395278966582712}
+  - component: {fileID: -6605496633620848930}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Drop
@@ -112,7 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Pistol
-  cameraShake: {fileID: 0}
   shakeMagnitude: 0.1
   shakeSharpness: 0.025
   firerate: 350
@@ -127,7 +127,6 @@ MonoBehaviour:
   reloadTime: 0.5
   reloadTimeEmpty: 0.6
   shootState: 0
-  sound: {fileID: 8814395278966582712}
 --- !u!82 &8814395278966582712
 AudioSource:
   m_ObjectHideFlags: 0
@@ -224,3 +223,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6605496633620848930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076505355323323956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b7f08c99f63a24ba8b6e9247ba8af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFlash: 1
+  flashColor: {r: 1, g: 0.889333, b: 0, a: 0}
+  flashSpeed: 1.35

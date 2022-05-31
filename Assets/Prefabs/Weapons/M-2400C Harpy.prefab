@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8794007812493440805}
   - component: {fileID: 1093810530844706124}
   - component: {fileID: 4615241370681995753}
+  - component: {fileID: -95843821222326670}
+  - component: {fileID: 2228331119069515319}
   m_Layer: 0
   m_Name: M-2400C Harpy
   m_TagString: Drop
@@ -222,3 +224,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &-95843821222326670
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420825944070363213}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2228331119069515319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420825944070363213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b7f08c99f63a24ba8b6e9247ba8af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFlash: 1
+  flashColor: {r: 1, g: 0.889333, b: 0, a: 0}
+  flashSpeed: 1.35
+  range: 3

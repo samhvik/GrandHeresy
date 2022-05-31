@@ -47,12 +47,19 @@ public class Gun : MonoBehaviour{
 
     private float nextShootTime = 0f;                                       // The next time the gun is able to shoot
 
+    // private Renderer renderer;
+    // private Color _emissionColorValue;
+
     //FMOD Parameter setting
     private string eventpath = "event:/ShootingGun";
     private FMOD.Studio.EventInstance e_instance;
 
     void Start() {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraController>();
+
+        // renderer = GetComponent<MeshRenderer>();
+        // _emissionColorValue = renderer.material.GetColor("_EmissionColor");
+
         // Fill the magazine
         firerate /= 60;
         remainingRounds = magSize;
@@ -73,10 +80,29 @@ public class Gun : MonoBehaviour{
         {
             e_instance.setParameterByName("GunSelection", 0); // default sound for now...
         }
+
+        
         
     }
 
+    // void OnCollisionEnter(Collision collisionInfo)
+    // {
+        
+    //     if(collisionInfo.gameObject.CompareTag("Player"))
+    //     {
+    //         Debug.Log("Gun Entered Colliding With Player");
+    //         //renderer.material.SetColor("_EmissionColor", _emissionColorValue * Mathf.PingPong(Time.time, 1000));
+    //         renderer.material.SetColor("_EmissionColor",  _emissionColorValue * Mathf.PingPong(Time.time, 1000));
+    //     }
+    //     // Debug-draw all contact points and normals
+    //     // foreach (ContactPoint contact in collisionInfo.contacts)
+    //     // {
+    //     //     Debug.DrawRay(contact.point, contact.normal * 10, Color.white);
+    //     // }
+    // }
+
     void Update(){
+        
         switch(shootState){
             case ShootState.Shooting:
                 // If enough time has passed for the gun to shoot again
@@ -112,6 +138,12 @@ public class Gun : MonoBehaviour{
                 }
                 break;
         }
+
+        // float emission = Mathf.PingPong(Time.time, 1000.0f);
+        // Color baseColor = Color.yellow;
+        // Color finalColor = baseColor * Mathf.LinearToGammaSpace (emission);
+
+        // renderer.material.SetColor("_EmissionColor",  finalColor);
     }
 
     public void setInventory(PlayerInventory playerInventory) {
