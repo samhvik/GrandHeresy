@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerMaster" id="{289e5601-4b26-49ea-b3c1-e081017b88ec}">
+		<property name="note" />
 		<property name="name">
 			<value>Master Bus</value>
 		</property>
+		<relationship name="masters">
+			<destination>{a1933ad1-9b53-4f28-aba1-334d398ab00d}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{e613d31d-8141-4311-8610-11087d9e70c6}</destination>
 		</relationship>

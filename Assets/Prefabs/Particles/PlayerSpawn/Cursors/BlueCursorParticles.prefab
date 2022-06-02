@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2981138447554977411}
   m_Layer: 0
   m_Name: BlueCursorParticles
-  m_TagString: Untagged
+  m_TagString: Pointer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4825,5 +4825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec7612cd21acb6418b2c1a8280c1b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allTerrains: []
   terrainCollider: {fileID: 0}
   cursorDistance: 30
