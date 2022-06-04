@@ -12,7 +12,7 @@ public class MainMenuMusic : MonoBehaviour
     //private Slider slider;
 
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         //slider = GetComponent<Slider>();
         music_event = FMODUnity.RuntimeManager.CreateInstance(music_path);

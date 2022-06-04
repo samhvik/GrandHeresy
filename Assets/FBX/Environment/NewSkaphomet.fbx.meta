@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 0750adab09b0785428f8e67343308272
+guid: 95fab3af0967d6942993ff9ad07c9b3e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SpikyRockMaterial
-    second: {fileID: 2100000, guid: 15ca89e63e7506c4abdfb204b9b7a59c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

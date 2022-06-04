@@ -28,9 +28,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private bool gamepadLock;
 
-    [DllImport("user32.dll")]
-    static extern bool SetCursorPos(int X, int Y);
-    int xPos = 30, yPos = 1000;   
+    // [DllImport("user32.dll")]
+    // static extern bool SetCursorPos(int X, int Y);
+    // int xPos = 0, yPos = 0;
 
     private void Awake()
     {
@@ -77,11 +77,13 @@ public class PlayerInputHandler : MonoBehaviour
         {
             Debug.Log("Setting Keyboard as Gamepad...");
             GameValues.instance.whatGamepad[playerIndex] = "keyboard";
+            Cursor.visible = false;
             //gamepadLock = true;
             GameValues.instance.playerCursors[playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[playerIndex], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
             currentCursor = GameValues.instance.playerCursors[playerIndex];
-            SetCursorPos((int)this.transform.position.x, (int)this.transform.position.y);//Call this when you want to set the mouse position
+            //SetCursorPos((int)this.transform.position.x, (int)this.transform.position.y);//Call this when you want to set the mouse position
             //GameValues.instance.cursorLock = true;
+            GameValues.instance.playerCursors[playerIndex].transform.position = this.transform.position;
         }
 
     }

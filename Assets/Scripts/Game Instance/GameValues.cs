@@ -86,7 +86,7 @@ public class GameValues : MonoBehaviour{
         //winText = GameObject.Find("Win Text").GetComponent<Text>();
 
         //Set Cursor to not be visible
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     void Awake(){
@@ -129,10 +129,10 @@ public class GameValues : MonoBehaviour{
         playerHealth -= damage;
     }
 
-    public void LockCursor(){
-        Cursor.lockState = CursorLockMode.Confined;
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
+    // public void LockCursor(){
+    //     Cursor.lockState = CursorLockMode.Confined;
+    //     //Cursor.lockState = CursorLockMode.Locked;
+    // }
 
     // Returns how many players are in the game currently
     public int getNumPlayers()

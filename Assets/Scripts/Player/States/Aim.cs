@@ -17,7 +17,7 @@ public class Aim : Stationary
         base.Enter();
         R_horizontalInput = sm.right_horizontal;
         R_verticalInput = sm.right_vertical;
-        GameValues.instance.LockCursor();
+        //GameValues.instance.LockCursor();
         sm.animatorManager.HandleIdleAimState(true);
     }
 

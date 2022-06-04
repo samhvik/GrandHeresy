@@ -76,6 +76,10 @@ public class Gun : MonoBehaviour{
         {
             e_instance.setParameterByName("GunSelection", 0);
         }
+        else if (gunName.Equals("Apostle"))
+        {
+            e_instance.setParameterByName("GunSelection", 3);
+        }
         else
         {
             e_instance.setParameterByName("GunSelection", 0); // default sound for now...

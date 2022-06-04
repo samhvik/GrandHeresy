@@ -22,12 +22,12 @@ public class AimPointController : MonoBehaviour
     [Range(-100.0F, 100.0F)]
     public float cursorDistance = 40f;
     
-    [DllImport("user32.dll")]
-    static extern bool SetCursorPos(int X, int Y);
-    int xPos = 30, yPos = 1000;   
+    // [DllImport("user32.dll")]
+    // static extern bool SetCursorPos(int X, int Y);
+    // int xPos = 0, yPos = 0;
     
 
-    void Awake()
+    void Start()
     {
         allTerrains = Terrain.activeTerrains;
 
@@ -40,14 +40,16 @@ public class AimPointController : MonoBehaviour
         }
 
         mainCam = GameObject.FindWithTag("SceneCamera").GetComponent<Camera>();
-        Cursor.lockState = CursorLockMode.Confined;
+        
 
-        //terrainCollider = mainTerrain.GetComponent<TerrainCollider>();
-        SetCursorPos(Screen.width /2, Screen.height /2);//Call this when you want to set the mouse position
+        // terrainCollider = mainTerrain.GetComponent<TerrainCollider>();
+        //SetCursorPos(mainCam.pixelWidth /2, mainCam.pixelHeight /2);//Call this when you want to set the mouse position
+
+        //Cursor.lockState = CursorLockMode.Confined;
 
     }
 
-    void Update()
+    void LateUpdate()
     {
         //mousePos = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, 0);
         //mousePos = GetScreenPosition();
@@ -55,7 +57,7 @@ public class AimPointController : MonoBehaviour
         //mousePos = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, 0);
         //ray = Camera.main.ScreenPointToRay(mousePos * cursorDistance);
 
-        mousePos = GetScreenPosition();
+        mousePos = GetBoundedScreenPosition();
         ray = mainCam.ScreenPointToRay(mousePos);
 
         //ray = Camera.main.ViewportPointToRay(Mouse.current.position.ReadValue() * cursorDistance);
@@ -77,12 +79,12 @@ public class AimPointController : MonoBehaviour
         return Mouse.current.position.ReadValue();
     }
 
-    // public Vector3 GetBoundedScreenPosition()
-    // {
-    //     Vector3 raw = GetScreenPosition();
-    //     return new Vector3( Mathf.Clamp(raw.x, 0, Screen.width), 
-    //                             Mathf.Clamp(raw.y, 0, Screen.height), 0);
-    // }
+    public Vector3 GetBoundedScreenPosition()
+    {
+        Vector3 raw = GetScreenPosition();
+        return new Vector3( Mathf.Clamp(raw.x, 0, Screen.width * 0.8f), 
+                                Mathf.Clamp(raw.y, 0, Screen.height * 0.8f), 0);
+    }
 
     // public Vector2 GetViewportPosition()
     // {
