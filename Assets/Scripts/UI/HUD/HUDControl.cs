@@ -31,12 +31,21 @@ public class HUDControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activateHUDElemnt(GameValues.instance.getNumPlayers());
-        if(GameValues.instance.objectivesCompleted< GameValues.instance.objectivesTotal){
-            objectiveText.text = "Objectives Completed: " + GameValues.instance.objectivesCompleted;
+
+        if(GameValues.instance.isPaused)
+        {
+            deActivateHUDElemnt(GameValues.instance.getNumPlayers());
         }
-        else{
-            objectiveText.text = "Proceed to extraction";
+
+        else
+        {
+            activateHUDElemnt(GameValues.instance.getNumPlayers());
+            if(GameValues.instance.objectivesCompleted< GameValues.instance.objectivesTotal){
+                objectiveText.text = "Objectives Completed: " + GameValues.instance.objectivesCompleted;
+            }
+            else{
+                objectiveText.text = "Proceed to extraction";
+            }
         }
         
     }
@@ -101,10 +110,19 @@ public class HUDControl : MonoBehaviour
     void changeWeapon(){
 
     }
+
     void activateHUDElemnt(int numPlayers){
         for(int i = 0; i < numPlayers; i++){
             playerHUDPanels[i].SetActive(true);
             playerHUDHighlights[i].SetActive(true);
+        }
+       
+    }
+
+    void deActivateHUDElemnt(int numPlayers){
+        for(int i = 0; i < numPlayers; i++){
+            playerHUDPanels[i].SetActive(false);
+            playerHUDHighlights[i].SetActive(false);
         }
        
     }
