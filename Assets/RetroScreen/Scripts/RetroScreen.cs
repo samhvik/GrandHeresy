@@ -284,7 +284,7 @@ namespace NorthLab.Effects
             RenderTexture.active = rt;
 
             oldSettings = new CameraSettings(RenderCamera);
-            RenderCamera.tag = "Untagged";
+            RenderCamera.tag = "SceneCamera";
             RenderCamera.allowMSAA = false;
             RenderCamera.allowHDR = false;
             RenderCamera.targetTexture = rt;

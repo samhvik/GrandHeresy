@@ -18,6 +18,9 @@ TagManager:
   - Upload
   - PlayerProjectile
   - PlayerRadius
+  - Pointer
+  - Trees
+  - SceneCamera
   layers:
   - Default
   - TransparentFX

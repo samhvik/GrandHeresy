@@ -65,6 +65,8 @@ public class PauseMenu : MonoBehaviour
         // enables player to start moving and shooting again
         movement.OnEnable();
         shooting.OnEnable();
+
+        Cursor.visible = false;
     }
 
     // enables pause menu ui, pauses game time, and sets GameIsPaused to true
@@ -80,6 +82,8 @@ public class PauseMenu : MonoBehaviour
 
         // sets resume as the first selected game object
         EventSystem.current.SetSelectedGameObject(firstButton);
+
+        Cursor.visible = true;
     }
 
     // loads the MainMenu scene

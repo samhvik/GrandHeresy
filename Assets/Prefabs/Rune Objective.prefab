@@ -101,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5077806, z: 1}
-  m_Center: {x: 0, y: 0.23267946, z: 0}
+  m_Size: {x: 1, y: 1.7770838, z: 1}
+  m_Center: {x: 0, y: 0.59802973, z: 0}
 --- !u!114 &5269153864854864592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5021,7 +5021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BrokenPrefab: {fileID: 5276011168963276008, guid: c0f9bd75b8e8dc746ad3eed39db349d9, type: 3}
   DestructionClip: {fileID: 8300000, guid: 6b667bee10429414090ad6def7833373, type: 3}
-  ExplosiveForce: 200
+  ExplosiveForce: 507.91
   ExplosiveRadius: 2
   PieceFadeSpeed: 1
   PieceDestroyDelay: 5

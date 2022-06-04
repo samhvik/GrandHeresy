@@ -109,7 +109,9 @@ public class Extract : MonoBehaviour
         if(timeRemaining == 0){
             //change scene to recap scene
             //print("change to recap scene");
-            Fade.ToggleLevelFade(animator);
+            // Fade.ToggleLevelFade(animator);
+            SceneManager.LoadScene("Recap");
+            //Fade.SwapLevelStr("Recap");
         }
 
     }

@@ -537,6 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862316757031165952}
+  - component: {fileID: 3871341654354945703}
   m_Layer: 0
   m_Name: newGreyBoxV3
   m_TagString: Untagged
@@ -576,6 +577,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3871341654354945703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862316757031165955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce3c874f523cf94eaf348075d4773e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlwaysShowCollider: 1
+  IncludeCollidersInChildren: 1
+  GizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &862316757040299709
 GameObject:
   m_ObjectHideFlags: 0

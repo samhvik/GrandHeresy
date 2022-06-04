@@ -42,6 +42,7 @@ public class
 
     void Start() {
         var gameValues = GameValues.instance;
+        if(gameValues == null) return;
         objectivesNum.SetText($"{gameValues.objectivesCompleted}");
 
         // to add onto later

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Runtime.InteropServices;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class PlayerInputHandler : MonoBehaviour
     public ParticleSystem[] playerSpawn = new ParticleSystem[7];
 
     private bool gamepadLock;
+
+    // [DllImport("user32.dll")]
+    // static extern bool SetCursorPos(int X, int Y);
+    // int xPos = 0, yPos = 0;
 
     private void Awake()
     {
@@ -72,10 +77,13 @@ public class PlayerInputHandler : MonoBehaviour
         {
             Debug.Log("Setting Keyboard as Gamepad...");
             GameValues.instance.whatGamepad[playerIndex] = "keyboard";
-            gamepadLock = true;
-
+            Cursor.visible = false;
+            //gamepadLock = true;
             GameValues.instance.playerCursors[playerIndex] = Transform.Instantiate(GameValues.instance.playerCursors[playerIndex], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation * Quaternion.Euler(-90f, 0f, 0f));
-            GameValues.instance.cursorLock = true;
+            currentCursor = GameValues.instance.playerCursors[playerIndex];
+            //SetCursorPos((int)this.transform.position.x, (int)this.transform.position.y);//Call this when you want to set the mouse position
+            //GameValues.instance.cursorLock = true;
+            GameValues.instance.playerCursors[playerIndex].transform.position = this.transform.position;
         }
 
     }

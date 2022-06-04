@@ -95,8 +95,8 @@ public class StrafeAim : Moving
                 // if(Time.time > lastTimeKeyPressDelay)
                 // {
                 //     sm.lastTimeMovePressed = Time.time;
-                    sm.animatorManager.HandleKeyboardAimState(false);
-                    stateMachine.ChangeState(sm.aimState);
+                sm.animatorManager.HandleKeyboardAimState(false);
+                stateMachine.ChangeState(sm.aimState);
                 // }
             }
 

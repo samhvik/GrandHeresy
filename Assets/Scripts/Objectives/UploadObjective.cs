@@ -118,6 +118,8 @@ public class UploadObjective : MonoBehaviour
 
         particleSystem.Stop();
         Destroy(uploadRing);
+        this.GetComponent<MeshRenderer>().enabled = false;
+        this.GetComponentInChildren<Light>().enabled = false;
         mat.material.color = Color.green;
     }
 
