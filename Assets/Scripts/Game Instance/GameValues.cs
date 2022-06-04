@@ -23,13 +23,13 @@ public class GameValues : MonoBehaviour{
     public GameObject EnemyDirector;
 
     public Animator animator;
-    
 
     public float playerHealth;
     public float playerSpeedWalk;
     public float playerSpeedAim;
     public float playerSpeedRun;
     private Text winText;
+    public bool isPaused;
 
     /// <summary>
     /// Handling Player
@@ -85,8 +85,12 @@ public class GameValues : MonoBehaviour{
         // may need a better way to implement this so people can do stuff in their own scene
         //winText = GameObject.Find("Win Text").GetComponent<Text>();
 
-        //Set Cursor to not be visible
+        //Set Cursor to be visible
         Cursor.visible = true;
+
+        //
+        isPaused = false;
+
     }
 
     void Awake(){

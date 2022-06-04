@@ -346,6 +346,9 @@ MonoBehaviour:
   gunPosition: {fileID: 8057053086923493147}
   health: 150
   am: {fileID: 0}
+  playerRenderer: {fileID: 8848343338691313232}
+  lerpMaterial: {fileID: 2100000, guid: 07e2da1e3c0ce274889a4c28994ff77b, type: 2}
+  lerpTime: 27.15
 --- !u!114 &8748554809732624351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &712635433358162015
 Transform:
   m_ObjectHideFlags: 0
@@ -1668,7 +1671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3128712680134878552
 Transform:
   m_ObjectHideFlags: 0
@@ -1984,7 +1987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7488134142515057847
 Transform:
   m_ObjectHideFlags: 0

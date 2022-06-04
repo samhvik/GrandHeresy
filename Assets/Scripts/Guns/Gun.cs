@@ -107,40 +107,43 @@ public class Gun : MonoBehaviour{
 
     void Update(){
         
-        switch(shootState){
-            case ShootState.Shooting:
-                // If enough time has passed for the gun to shoot again
-                if(Time.time > nextShootTime)
-                    shootState = ShootState.Ready;
-                break;
-            case ShootState.Reloading:
-                // If the gun has finished reloading
-                if(Time.time > nextShootTime){
-                    // If mag is empty, remainig rounds = mag size
-                    // If mag contains rounds, remaining rounds = mag size plus chamber
-                    if(remainingRounds == 0)
-                        remainingRounds = magSize;
-                    else
-                        remainingRounds = magSize + 1;
-                    shootState = ShootState.Ready;
-                }
+        if(!GameValues.instance.isPaused)
+        {
+            switch(shootState){
+                case ShootState.Shooting:
+                    // If enough time has passed for the gun to shoot again
+                    if(Time.time > nextShootTime)
+                        shootState = ShootState.Ready;
+                    break;
+                case ShootState.Reloading:
+                    // If the gun has finished reloading
+                    if(Time.time > nextShootTime){
+                        // If mag is empty, remainig rounds = mag size
+                        // If mag contains rounds, remaining rounds = mag size plus chamber
+                        if(remainingRounds == 0)
+                            remainingRounds = magSize;
+                        else
+                            remainingRounds = magSize + 1;
+                        shootState = ShootState.Ready;
+                    }
 
-                // Not the best way. Just a fix for now while we get reloading sounds in
-                FMOD.Studio.PLAYBACK_STATE fmodPbState;
-                e_instance.getPlaybackState(out fmodPbState);
-                if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                }
-                break;
-            default:
-                //FMOD.Studio.PLAYBACK_STATE fmodPbState;
-                e_instance.getPlaybackState(out fmodPbState);
-                if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                }
-                break;
+                    // Not the best way. Just a fix for now while we get reloading sounds in
+                    FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                    e_instance.getPlaybackState(out fmodPbState);
+                    if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                    {
+                        e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    }
+                    break;
+                default:
+                    //FMOD.Studio.PLAYBACK_STATE fmodPbState;
+                    e_instance.getPlaybackState(out fmodPbState);
+                    if (fmodPbState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                    {
+                        e_instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    }
+                    break;
+            }
         }
 
         // float emission = Mathf.PingPong(Time.time, 1000.0f);
@@ -159,7 +162,7 @@ public class Gun : MonoBehaviour{
     }
     public void Fire(){
         // Check if gun is ready to fire
-        if(shootState == ShootState.Ready && remainingRounds > 0){
+        if(shootState == ShootState.Ready && remainingRounds > 0 && !GameValues.instance.isPaused){
             // Instantiate each round, given roundsPerShot
             for(int i = 0; i < roundsPerShot; i++){
                 GameObject bullet = Instantiate(

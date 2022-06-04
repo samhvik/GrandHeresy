@@ -20,6 +20,10 @@ public class PlayerInventory : MonoBehaviour {
     private int kills = 0;
 
     public Animator am;
+    // public Renderer playerRenderer;
+    // public Material lerpMaterial;
+    // public float lerpTime;
+    // private Material originalMaterial;
     
     PlayerControls controls;
     
@@ -38,6 +42,8 @@ public class PlayerInventory : MonoBehaviour {
         //what the fuck
         shooter = GetComponent<PlayerShooting>();
         shooter.SwitchWeapon(guns[head]);
+
+        //originalMaterial = playerRenderer.material;
     }
 
     void Awake(){
@@ -104,6 +110,7 @@ public class PlayerInventory : MonoBehaviour {
     public void UpdateHealth(int damage){
         am.ResetTrigger("PlayerHit");
         am.SetTrigger("PlayerHit");
+        //playerRenderer.material.Lerp(originalMaterial, lerpMaterial, 2);
         health -= damage;
     }
 }

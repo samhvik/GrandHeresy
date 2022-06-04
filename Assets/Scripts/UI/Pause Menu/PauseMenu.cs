@@ -58,6 +58,7 @@ public class PauseMenu : MonoBehaviour
     // removes pause menu ui, resumes game time, and sets GameIsPaused to false
     public void Resume()
     {
+        GameValues.instance.isPaused = false;
         // deactivates the pause menu and resumes time scale for game
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -72,6 +73,8 @@ public class PauseMenu : MonoBehaviour
     // enables pause menu ui, pauses game time, and sets GameIsPaused to true
     void Pause()
     {
+        GameValues.instance.isPaused = true;
+
         // disables player's ability to move and shoot
         movement.OnDisable();
         shooting.OnDisable();
@@ -89,7 +92,10 @@ public class PauseMenu : MonoBehaviour
     // loads the MainMenu scene
     public void LoadMenu()
     {
+        Cursor.visible = true;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Justin's Main Menu"); // CHANGE "Menu" INTO A SCENE VARIABLE IN THE FUTURE
+        //GameValues.instance.isPaused = false;
     }
 
     // closes the game application
