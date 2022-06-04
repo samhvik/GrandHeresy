@@ -12,9 +12,10 @@ public class MouseHoverSelection : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     
     //public BlurBackground blurSelection;
+    //public virtual void DoStateTransition(Selectable.SelectionState state, bool instant){}
 
     [SerializeField]
-     private Selectable selectable = null;
+     public Selectable selectable = null;
      public GameObject dummyButton;
      //public Volume m_UIVolume;
      
@@ -25,7 +26,10 @@ public class MouseHoverSelection : MonoBehaviour, IPointerEnterHandler, IPointer
 
      public void OnPointerExit(PointerEventData eventData)
      {
+         //selectable.SelectionState = 0;
          EventSystem.current.SetSelectedGameObject(dummyButton);
+         //eventData.selectedObject
+         //selectable.DoStateTransition(0, true);
      }
 
      public void DebugStuff()

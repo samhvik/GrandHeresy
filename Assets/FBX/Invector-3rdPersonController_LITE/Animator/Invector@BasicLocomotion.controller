@@ -200,7 +200,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: f4bfcb8e4bb019d46bda19b18a0cca27, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9fe1810c70d4ac1418bb17c912ad2725, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -16258,7 +16258,7 @@ BlendTree:
   m_Name: Strafing Locomotion
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: f4bfcb8e4bb019d46bda19b18a0cca27, type: 3}
+    m_Motion: {fileID: 7400000, guid: 9fe1810c70d4ac1418bb17c912ad2725, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -16266,7 +16266,7 @@ BlendTree:
     m_DirectBlendParameter: InputHorizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 06a1127f0578b4840aead8a8fbf37791, type: 3}
+    m_Motion: {fileID: 7400000, guid: c5ad40753a6551e438229e34fab1981b, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -16274,7 +16274,7 @@ BlendTree:
     m_DirectBlendParameter: InputHorizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 281b65a02e142c241a93810817b44eb5, type: 3}
+    m_Motion: {fileID: 7400000, guid: a85516200b55a4a4898a2c7ea318db0b, type: 2}
     m_Threshold: 2
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -16282,7 +16282,7 @@ BlendTree:
     m_DirectBlendParameter: InputHorizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: ba24b8e85fe58784fb939c98068536af, type: 3}
+    m_Motion: {fileID: 7400000, guid: b3e4c6296ad46fa448a041939b9bf58f, type: 2}
     m_Threshold: 3
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -16290,7 +16290,7 @@ BlendTree:
     m_DirectBlendParameter: InputHorizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 9235dc86144ebf749a9177df52be8dd5, type: 3}
+    m_Motion: {fileID: 7400000, guid: 22d998da0f0ba394a8c4051d9512babb, type: 2}
     m_Threshold: 4
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1

@@ -71,7 +71,8 @@ public class AimPointController : MonoBehaviour
             worldPosition = hitData.point;
         }
 
-        this.transform.position = worldPosition;
+        if(!GameValues.instance.isPaused) this.transform.position = worldPosition;
+
     }
     
     public Vector2 GetScreenPosition()
