@@ -7,11 +7,6 @@
 
 Grand Heresy is a cooperative twin-stick shooter created for the UCSC senior capstone project. More information about our team or our game below.
 
-Key Gameplay Features:
-
-- **Features**: Explanation
-- 
-
 [](Enter Game Trailer Link Here)
 
 About the Team
@@ -29,4 +24,4 @@ About the Team
 
 Installation
 ------------
-*Put the Link to Download here*
+GrandHeresyGame.com
