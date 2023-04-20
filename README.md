@@ -7,8 +7,6 @@
 
 Grand Heresy is a cooperative twin-stick shooter created for the UCSC senior capstone project. More information about our team or our game below.
 
-[](Enter Game Trailer Link Here)
-
 About the Team
 --------------
 - Producer/Designer & Generalist Programmer: [Sam Vik](https://github.com/samhvik) 
